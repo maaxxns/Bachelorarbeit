@@ -30,18 +30,22 @@ for n in range(len(files)):
 
     data = np.array([Delay, X])
     Fdata = np.array([FDelay,np.abs(FX)])
-    data_name = ['X', 'FX']
-    data_name_x = ['Delay / ps', 'Frequency / THz']
-    data_name_y = ['X', 'Fourier[X]']
+    data_name = ['X', 'FX', 'log(FX)']
+    data_name_x = ['Delay / ps', 'Frequency / THz', 'log(Frequecy / THz']
+    data_name_y = ['X', 'Fourier[X]', 'log(X)']
     fig, ax = plt.subplots(len(data_name),1, figsize=(16,8))
 
     ######################
     #   Plotting
     ######################
 
-    plot_data = [data, Fdata]
+    plot_data = [data, Fdata, Fdata]
     for i in range(len(data_name)):
-        ax[i].plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
+        if data_name[i] == 'log(FX)':
+            ax[i].plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
+            ax[i].set_yscale('log')
+        else:
+            ax[i].plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
         ax[i].grid()
         ax[i].set_xlabel(data_name_x[i])
         ax[i].set_ylabel(data_name_y[i])
