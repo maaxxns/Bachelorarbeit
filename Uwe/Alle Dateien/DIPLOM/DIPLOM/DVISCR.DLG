@@ -1,0 +1,134 @@
+% dviscr 1.4s  11-Mar-1998  19:34
+%
+% Input file: BEAT.DVI
+%
+/b:*
+/d:-
+/e:*
+/k:0
+/n:65535
+/z-
+/cf:1
+/cp:1
+/cs:1
+/fb
+/fl:0
+/fm:hplaser
+/fo-
+/fs:1
+/fd:2
+/ft:0.2
+/fu-
+/fz::0,:h,:1,:2,:3,:4,:5,:6,:7,:8,:9
+/l:1in
+/la:0px
+/t:1in
+/ta:0px
+/h:11in
+/w:8.5in
+/tr:0
+/r:300
+/rf:300
+/rg:0
+/pd:{,$DVIDRVINPUT:}@i
+/pf:{pic,$DVIDRVFONTS:pixel.lj\@Rrdpi}\@f{.pk,.pxl}
+/pg:{pic,$DVIDRVGRAPH:}{@Rrdpi\,}@PBf{@Ef,.msp,.pcx,.bmp}
+/pj:{$TMP:,}dv@u.mfj
+/pl:
+/pm:{$TEXTFM:,\emtex\tfm\}@f
+/pr:{,$PATH:}@f
+/ps:
+/pt:@d.dlg
+/pv:
+/pw:
+/v:2
+/u:in
+/xe+
+/xx+
+/hx:1in
+/hy:1in
+/o:4
+/oa:0
+/ocp:2 /ocr:2 /ocs:2
+/oi-
+/or-
+/os+
+/ou:cm
+/s:1
+/ci:1 /cx:0in /cy:0in
+/ci:1
+@
+
+' TeX output 1998.03.11:1934'
+Loading font cmbx10 scaled 2488
+  (C:\emtex\emtex\texfonts\pixel.lj\746dpi\cmbx10.pk)
+Loading font cmti10 scaled 1440
+  (C:\emtex\emtex\texfonts\pixel.lj\432dpi\cmti10.pk)
+Loading font cmbx10 scaled 2074
+  (C:\emtex\emtex\texfonts\pixel.lj\622dpi\cmbx10.pk)
+Loading font cmbx10 scaled 1728
+  (C:\emtex\emtex\texfonts\pixel.lj\518dpi\cmbx10.pk)
+Loading font cmmi10 scaled 1728
+  (C:\emtex\emtex\texfonts\pixel.lj\518dpi\cmmi10.pk)
+Loading font cmbx10 scaled 1440
+  (C:\emtex\emtex\texfonts\pixel.lj\432dpi\cmbx10.pk)
+Loading font cmmi10 scaled 1440
+  (C:\emtex\emtex\texfonts\pixel.lj\432dpi\cmmi10.pk)
+Loading font cmr10 scaled 1440
+  (C:\emtex\emtex\texfonts\pixel.lj\432dpi\cmr10.pk)
+Loading font cmbx12 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmbx12.pk)
+Loading font cmsl12 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmsl12.pk)
+Loading font cmti12 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmti12.pk)
+Loading font cmex10 scaled 1200
+  (C:\emtex\emtex\texfonts\pixel.lj\360dpi\cmex10.pk)
+Loading font cmsy10 scaled 1200
+  (C:\emtex\emtex\texfonts\pixel.lj\360dpi\cmsy10.pk)
+Loading font cmmi12 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmmi12.pk)
+Loading font cmr12 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmr12.pk)
+Loading font cmbx9 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmbx9.pk)
+Loading font cmsy8 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmsy8.pk)
+Loading font cmmi8 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmmi8.pk)
+Loading font cmr8 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmr8.pk)
+Loading font cmmi6 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmmi6.pk)
+Loading font cmr6 scaled 1000
+  (C:\emtex\emtex\texfonts\pixel.lj\300dpi\cmr6.pk)
+Loading page pointers... 105 input pages, 105 output pages.
+ [1] [2] [1] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15]
+ [16] [17] [18]
+
+Memory usage:
+Strings                          90       1536
+Page buffers                      3      30720
+Sorted page buffers               3      30720
+Sorted page index              3300      26400
+Position stack                   15        420
+Font table                       21       1764
+Font indices                     21        210
+Page list                       105          0
+Characters                     2688      86016
+Raster data                     238      25336
+Virtual fonts                     0          0
+VF characters                     0          0
+VF macros                         0          0
+Graphics                          8      25580
+Lines                             0          0
+Font library directories          0          0
+Band buffer                       0          0
+TOTAL                                   228702
+
+Number of deallocations:    440
+Temporary file size:          0
+EMS bytes used:            6144
+XMS bytes used:               0
+External memory reads:      129
+External memory writes:       3

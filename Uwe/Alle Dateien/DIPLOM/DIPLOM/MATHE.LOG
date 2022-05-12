@@ -1,0 +1,26 @@
+This is emTeX, Version 3.0 [3a] (preloaded format=lplaing 92.6.10)  7 APR 1995 18:16
+**&lplaing.fmt MATHE.TEX
+(mathe.tex
+LaTeX Version 2.09 <25 March 1992>
+! Undefined control sequence.
+l.2 \chapter
+            {Mathematische Auswertemethoden}
+? h
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+? e
+You want to edit file mathe.tex at line 2 
+Here is how much of TeX's memory you used:
+ 4 strings out of 6965
+ 27 string characters out of 13278
+ 22995 words of memory out of 65533
+ 1977 multiletter control sequences out of 3500
+ 18996 words of font info for 72 fonts, out of 32766 for 127
+ 0 hyphenation exceptions out of 307
+ 4i,0n,1p,67b,7s stack positions out of 200i,40n,60p,1024b,600s
+
+No pages of output.

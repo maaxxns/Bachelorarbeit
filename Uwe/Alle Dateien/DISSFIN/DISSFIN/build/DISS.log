@@ -1,0 +1,1634 @@
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.4.4)  12 MAY 2022 13:55
+ restricted system commands enabled.
+**DISS.TEX
+(./DISS.TEX
+LaTeX2e <2021-11-15> patch level 1
+Lua module: luaotfload 2022-03-18 3.21 Lua based OpenType font support
+Lua module: lualibs 2021-05-20 2.74 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2021-05-20 2.74 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/home/max_linux/.local/texlive/2022
+/texmf-var/luatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2022-02-24.lua" from kpse-res
+olved path "/home/max_linux/.local/texlive/2022/texmf-dist/tex/luatex/luaotfload
+/fontloader-2022-02-24.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.119
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/max_linux/.local/texlive/2022
+/texmf-var/luatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' at position 1 in `glyph_stream_provider'
+.
+Inserting `luaotfload.harf.finalize_vlist' at position 1 in `post_linebreak_filt
+er'.
+Inserting `luaotfload.harf.finalize_hlist' at position 2 in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' at position 1 in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' at position 1 in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' at position 1 in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2022-02-24>
+Inserting `tracingstacklevels' at position 1 in `input_level_string'.
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/max_linux/.local/texlive
+/2022/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz)
+\c@part=\count183
+\c@chapter=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen137
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2022/02/26 3.73 The Babel package
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@german-x-2022-03-16=\language4
+\l@ngerman-x-2022-03-16=\language5
+\l@afrikaans=\language6
+\l@ancientgreek=\language7
+\l@ibycus=\language8
+\l@arabic=\language9
+\l@armenian=\language10
+\l@basque=\language11
+\l@belarusian=\language12
+\l@bulgarian=\language13
+\l@catalan=\language14
+\l@pinyin=\language15
+\l@churchslavonic=\language16
+\l@coptic=\language17
+\l@croatian=\language18
+\l@czech=\language19
+\l@danish=\language20
+\l@dutch=\language21
+\l@ukenglish=\language22
+\l@usenglishmax=\language23
+\l@esperanto=\language24
+\l@estonian=\language25
+\l@ethiopic=\language26
+\l@farsi=\language27
+\l@finnish=\language28
+\l@schoolfinnish=\language29
+\l@french=\language30
+\l@friulan=\language31
+\l@galician=\language32
+\l@georgian=\language33
+\l@german=\language34
+\l@ngerman=\language35
+\l@swissgerman=\language36
+\l@greek=\language37
+\l@monogreek=\language38
+\l@hungarian=\language39
+\l@icelandic=\language40
+\l@assamese=\language41
+\l@bengali=\language42
+\l@gujarati=\language43
+\l@hindi=\language44
+\l@kannada=\language45
+\l@malayalam=\language46
+\l@marathi=\language47
+\l@oriya=\language48
+\l@pali=\language49
+\l@panjabi=\language50
+\l@tamil=\language51
+\l@telugu=\language52
+\l@indonesian=\language53
+\l@interlingua=\language54
+\l@irish=\language55
+\l@italian=\language56
+\l@kurmanji=\language57
+\l@classiclatin=\language58
+\l@latin=\language59
+\l@liturgicallatin=\language60
+\l@latvian=\language61
+\l@lithuanian=\language62
+\l@macedonian=\language63
+\l@mongolian=\language64
+\l@mongolianlmc=\language65
+\l@bokmal=\language66
+\l@nynorsk=\language67
+\l@occitan=\language68
+\l@piedmontese=\language69
+\l@polish=\language70
+\l@portuguese=\language71
+\l@romanian=\language72
+\l@romansh=\language73
+\l@russian=\language74
+\l@sanskrit=\language75
+\l@serbian=\language76
+\l@serbianc=\language77
+\l@slovak=\language78
+\l@slovenian=\language79
+\l@spanish=\language80
+\l@swedish=\language81
+\l@thai=\language82
+\l@turkish=\language83
+\l@turkmen=\language84
+\l@ukrainian=\language85
+\l@uppersorbian=\language86
+\l@welsh=\language87
+\babelcatcodetablenum=\catcodetable12
+\bbl@pattcodes=\catcodetable13
+)
+\babel@savecnt=\count192
+\U@D=\dimen138
+\l@unhyphenated=\language88
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/babel-german/german
+.ldf
+Language: german 2021/02/27 v2.13 German support for babel (pre-1996 orthograph
+y)
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/babel-german/german
+b.ldf
+Language: germanb 2021/02/27 v2.13 German support for babel (pre-1996 orthograp
+hy)
+Package babel Info: Making " an active character on input line 139.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/hyph-utf8/loadhyph/
+loadhyph-de-1901.tex
+UTF-8 German hyphenation patterns (traditional orthography)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/generic/hyph-utf8/patterns/
+tex/hyph-de-1901.tex
+German Hyphenation Patterns (Traditional Orthography) `dehypht-x' 2021-02-26 (W
+L))))))
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/srcltx/srcltx.sty
+Package: srcltx 2006/11/12 v1.6 Source specials for inverse search in DVI files
+
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\src@lastline=\count193
+\src@new@everypar=\toks16
+\src@new@output=\toks17
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen139
+))
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 236.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
+\dotsspace@=\muskip16
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks19
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks20
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks28
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2020/02/18 v1.2g A4 based page layout
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks29
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics
+.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+Package srcltx Info: Expanded filename `luatex.def' to `luatex.def.tex' on inpu
+t line 108.
+
+:<+ luatex.def.tex
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics-def/luatex.d
+ef
+File: luatex.def 2021/06/01 v1.2c Graphics/color driver for luatex
+)
+:<-
+)
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen150
+\epsfysize=\dimen151
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count272
+\mult@box=\box52
+\multicol@leftmargin=\dimen152
+\c@unbalance=\count273
+\c@collectmore=\count274
+\doublecol@number=\count275
+\multicoltolerance=\count276
+\multicolpretolerance=\count277
+\full@width=\dimen153
+\page@free=\dimen154
+\premulticols=\dimen155
+\postmulticols=\dimen156
+\multicolsep=\skip55
+\multicolbaselineskip=\skip56
+\partial@page=\box53
+\last@line=\box54
+\maxbalancingoverflow=\dimen157
+\mult@rightbox=\box55
+\mult@grightbox=\box56
+\mult@firstbox=\box57
+\mult@gfirstbox=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\c@minrows=\count278
+\c@columnbadness=\count279
+\c@finalcolumnbadness=\count280
+\last@try=\dimen158
+\multicolovershoot=\dimen159
+\multicolundershoot=\dimen160
+\mult@nat@firstbox=\box95
+\colbreak@box=\box96
+\mc@col@check@num=\count281
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2021/01/29 v2.0g defines alltt environment
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+
+\openout3 = DISS.idx
+
+Writing index file DISS.idx
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip57
+\f@nch@O@elh=\skip58
+\f@nch@O@erh=\skip59
+\f@nch@O@olh=\skip60
+\f@nch@O@orh=\skip61
+\f@nch@O@elf=\skip62
+\f@nch@O@erf=\skip63
+\f@nch@O@olf=\skip64
+\f@nch@O@orf=\skip65
+) (/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip66
+\LTright=\skip67
+\LTpre=\skip68
+\LTpost=\skip69
+\LTchunksize=\count282
+\LTcapwidth=\dimen161
+\LT@head=\box97
+\LT@firsthead=\box98
+\LT@foot=\box99
+\LT@lastfoot=\box100
+\LT@gbox=\box101
+\LT@cols=\count283
+\LT@rows=\count284
+\c@LT@tables=\count285
+\c@LT@chunks=\count286
+\LT@p@ftn=\toks30
+)
+\tbreite=\skip70
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-l
+uatex.def
+File: l3backend-luatex.def 2022-02-07 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count287
+\l__pdf_internal_box=\box102
+) (./build/DISS.aux (./build/titel.aux) (./build/zitat.aux)
+(./build/abkuerz.aux) (./build/tableofc.aux) (./build/einl.aux)
+(./build/umwelt.aux) (./build/ftirgrdl.aux))
+\openout1 = DISS.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+42.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.
+mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count288
+\scratchdimen=\dimen162
+\scratchbox=\box103
+\nofMPsegments=\count289
+\nofMParguments=\count290
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count291
+\MPscratchDim=\dimen163
+\MPnumerator=\count292
+\makeMPintoPDFobject=\count293
+\everyMPtoPDFconversion=\toks32
+)
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf
+-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-
+sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+:<+ titel.tex
+
+\openout2 = titel.aux
+(./titel.tex [1
+
+
+
+{/home/max_linux/.local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
+p}] [2
+
+])
+:<-
+:<+ zitat.tex
+
+\openout2 = zitat.aux
+(./zitat.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[3
+
+
+
+
+] [4
+
+])
+:<-
+:<+ abkuerz.tex
+
+\openout2 = abkuerz.aux
+(./abkuerz.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(/home/max_linux/.local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[5
+
+
+
+
+] [6])
+:<-
+:<+ tableofc.tex
+
+\openout2 = tableofc.aux
+(./tableofc.tex (./build/DISS.toc)
+\tf@toc=\write4
+
+\openout4 = DISS.toc
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[1
+
+
+
+
+
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2
+
+])
+:<-
+:<+ einl.tex
+
+\openout2 = einl.aux
+(./einl.tex
+Kapitel 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--48
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[1
+
+
+
+
+
+]
+
+LaTeX Warning: Citation `to1697' on page 2 undefined on input line 55.
+
+
+LaTeX Warning: Citation `vdi98' on page 2 undefined on input line 58.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--106
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 107--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--130
+
+ []
+
+
+LaTeX Warning: Citation `saarinen91' on page 3 undefined on input line 143.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--160
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 161--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--188
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4])
+:<-
+:<+ umwelt.tex
+
+\openout2 = umwelt.aux
+(./umwelt.tex
+Kapitel 2.
+
+LaTeX Warning: Citation `schoenwiese99' on page 5 undefined on input line 37.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--38
+
+ []
+
+
+Overfull \hbox (3.50697pt too wide) in paragraph at lines 60--60
+ [][] 
+ []
+
+
+LaTeX Warning: Citation `schoenwiese99' on page 5 undefined on input line 60.
+
+
+LaTeX Warning: Citation `schoenwiese99' on page 5 undefined on input line 60.
+
+
+LaTeX Warning: Citation `schoenwiese99' on page 5 undefined on input line 86.
+
+
+LaTeX Warning: Citation `schoenwiese99' on page 5 undefined on input line 86.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--113
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5
+
+
+
+
+
+
+]
+
+LaTeX Warning: Citation `caspary98' on page 6 undefined on input line 120.
+
+
+Overfull \hbox (10.94171pt too wide) in paragraph at lines 114--128
+[][]\T1/lmr/m/n/12 Oh-ne an die-ser Stel-le im De-tail auf s*mt-li-che Aus-wir-k
+un-gen ei-ner glo-ba-len Erw*rmung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--128
+
+ []
+
+
+Underfull \vbox (badness 5862) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+
+LaTeX Warning: Citation `seinfeld98' on page 7 undefined on input line 137.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--138
+
+ []
+
+
+Underfull \vbox (badness 4193) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+
+LaTeX Warning: Citation `zellner93' on page 8 undefined on input line 161.
+
+
+LaTeX Warning: Citation `traub98' on page 8 undefined on input line 186.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--187
+
+ []
+
+
+Overfull \hbox (0.39696pt too wide) in paragraph at lines 188--199
+[][]\T1/lmr/m/n/12 Die in die-sem Ab-schnitt auf-ge-zeig-ten star-ken Aus-wir-ku
+n-gen der Spuren-- und Schad-
+ []
+
+
+Overfull \hbox (0.4523pt too wide) in paragraph at lines 203--214
+\T1/lmr/m/n/12 Schad-ga-se wer-den di-rekt in die of-fe-ne At-mo-sph*re emit-tie
+rt, wo-hin-ge-gen die se-kund*ren
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--214
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8]
+Overfull \hbox (2.3048pt too wide) in paragraph at lines 215--234
+\T1/lmr/m/n/12 on fos-si-le Brenn-stof-fe ein-set-zen (z.B. Stahl-wer-ke, Heiz-k
+raft-wer-ke) und ge-ra-de in L*ndern
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--256
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9]
+
+LaTeX Warning: Citation `dfg99' on page 10 undefined on input line 266.
+
+
+LaTeX Warning: Citation `heise96' on page 10 undefined on input line 266.
+
+
+LaTeX Warning: Citation `johansen97' on page 10 undefined on input line 268.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--269
+
+ []
+
+
+LaTeX Warning: Citation `bmbf99' on page 10 undefined on input line 286.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--295
+
+ []
+
+
+LaTeX Warning: Citation `farmer97' on page 10 undefined on input line 303.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--304
+
+ []
+
+
+Overfull \hbox (14.30132pt too wide) in paragraph at lines 305--316
+[][]\T1/lmr/m/n/12 F*r die At-mo-sph*ren-for-schung sind zu-dem verl*ss-li-che 
+Aus-brei-tungs-mo-del-le vonn*ten,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--316
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 317--320
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12
+
+])
+:<-
+:<+ ftirgrdl.tex
+
+\openout2 = ftirgrdl.aux
+(./ftirgrdl.tex
+Kapitel 3.
+
+LaTeX Warning: Citation `griffiths77' on page 13 undefined on input line 5.
+
+
+LaTeX Warning: Citation `griffiths86' on page 13 undefined on input line 19.
+
+
+LaTeX Warning: Citation `günzler96' on page 13 undefined on input line 19.
+
+
+LaTeX Warning: Citation `gottwald97' on page 13 undefined on input line 19.
+
+
+LaTeX Warning: Citation `schrader95' on page 13 undefined on input line 20.
+
+
+Overfull \hbox (9.06256pt too wide) in paragraph at lines 23--23
+[][][]\T1/lmr/bx/n/17.28 Mo-le-kül-bau und Wech-sel-wir-kung mit IR---Strahl-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13
+
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 63--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--97
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+Overfull \hbox (185.76488pt too wide) in paragraph at lines 106--112
+\T1/lmr/m/n/12 mit: $[]\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT
+1/cmr/m/n/12 )  = [] (\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 + [])$ \T1/lmr/m/n/12 
+und $[]\OML/cmm/m/it/12 B[] \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/
+m/it/12 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 + [])$ \T1/lmr/m/n
+/12 (I--Trägheitsmoment, $[]\OML/cmm/m/it/12 $\T1/lmr/m/n/12 --Rotations--Schw
+ingungs--Wechselwirkungskonstante,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--117
+
+ []
+
+
+LaTeX Warning: Citation `hollas92' on page 15 undefined on input line 121.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--155
+
+ []
+
+
+Overfull \hbox (0.8736pt too wide) in paragraph at lines 156--161
+[]$[]$\T1/lmr/m/n/12 : In die-sem Be-reich deu-ten De-for-ma-ti-ons-schwin-gun-g
+en von
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 162--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--172
+
+ []
+
+
+LaTeX Warning: Citation `günzler96' on page 16 undefined on input line 176.
+
+
+LaTeX Warning: Citation `gottwald97' on page 16 undefined on input line 177.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--188
+
+ []
+
+
+LaTeX Warning: Reference `michelso.wmf' on page 16 undefined on input line 196.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--214
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 239--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--265
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+
+LaTeX Warning: Citation `schrader95' on page 18 undefined on input line 284.
+
+
+Overfull \hbox (13.307pt too wide) in paragraph at lines 280--287
+\T1/lmr/m/n/12 Blen-de ist hö-her als der der zwei Spal-te in-ner-halb ei-nes 
+Mo-no-chro-ma-tors (\T1/lmr/m/it/12 Jacquinot--
+ []
+
+
+Overfull \hbox (14.40549pt too wide) in paragraph at lines 296--296
+[][][]\T1/lmr/bx/n/14.4 Fourier--Transformation und Ein-ka-nal-spek-tren-be-rech
+-nung 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--330
+
+ []
+
+
+LaTeX Warning: Citation `higham96' on page 18 undefined on input line 337.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--338
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+
+LaTeX Warning: Citation `mertz67' on page 19 undefined on input line 361.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--367
+
+ []
+
+
+LaTeX Warning: Reference `int2spe1.wmf' on page 19 undefined on input line 377.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--387
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
+
+ []
+
+
+LaTeX Warning: Citation `griffiths86' on page 20 undefined on input line 423.
+
+
+LaTeX Warning: Citation `zhu198' on page 20 undefined on input line 448.
+
+
+LaTeX Warning: Citation `zhu298' on page 20 undefined on input line 448.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--452
+
+ []
+
+
+LaTeX Warning: Citation `griffiths86' on page 20 undefined on input line 461.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--474
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 475--488
+
+ []
+
+
+LaTeX Warning: Citation `ramsay52' on page 21 undefined on input line 492.
+
+
+LaTeX Warning: Reference `no2.wmf' on page 21 undefined on input line 500.
+
+
+Overfull \hbox (40.99272pt too wide) in paragraph at lines 489--503
+\T1/lmr/m/n/12 wor-den. Für di-sper-si-ve Spek-tro-me-ter wird die \T1/lmr/m/i
+t/12 Dreiecks--\T1/lmr/m/n/12 Funktion bei nicht--beugungsbegrenzten
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--503
+
+ []
+
+
+LaTeX Warning: Reference `h2ouni.wmf' on page 21 undefined on input line 511.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 504--514
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+Overfull \hbox (0.25089pt too wide) in paragraph at lines 516--516
+[][][]\T1/lmr/bx/n/14.4 Lambert--Beer'sches Ge-setz und Extink-ti-ons-spek-tren-
+be-
+ []
+
+
+Overfull \hbox (0.86879pt too wide) in paragraph at lines 554--559
+[][]\T1/lmr/m/n/12 Um ei-ne der Kon-zen-tra-ti-on pro-por-tio-na-le li-nea-re Gr
+öÿe zu er-hal-ten, wird die Extink-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--569
+
+ []
+
+
+LaTeX Warning: Reference `int2spe2.wmf' on page 22 undefined on input line 570.
+
+
+
+LaTeX Warning: Reference `int2spe1.wmf' on page 22 undefined on input line 573.
+
+
+
+LaTeX Warning: Reference `int2spe2.wmf' on page 22 undefined on input line 574.
+
+
+
+LaTeX Warning: Reference `int2spe2.wmf' on page 22 undefined on input line 577.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--607
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+LaTeX Warning: Citation `kyle84' on page 23 undefined on input line 622.
+
+
+LaTeX Warning: Citation `kyle84' on page 23 undefined on input line 628.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--629
+
+ []
+
+
+LaTeX Warning: Reference `nwg' on page 23 undefined on input line 639.
+
+
+LaTeX Warning: Citation `chaffin99' on page 23 undefined on input line 641.
+
+
+LaTeX Warning: Citation `mattuip' on page 23 undefined on input line 641.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--645
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+LaTeX Warning: Reference `aufbau.bmp' on page 24 undefined on input line 650.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--657
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--664
+
+ []
+
+
+LaTeX Warning: Citation `richardson298' on page 24 undefined on input line 683.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--685
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+LaTeX Warning: Citation `to1697' on page 25 undefined on input line 706.
+
+
+LaTeX Warning: Citation `vdi98' on page 25 undefined on input line 708.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 731--748
+
+ []
+
+
+LaTeX Warning: Citation `platt94' on page 25 undefined on input line 750.
+
+
+LaTeX Warning: Citation `becker-ross97' on page 25 undefined on input line 756.
+
+
+
+LaTeX Warning: Citation `platt94' on page 25 undefined on input line 759.
+
+
+Overfull \hbox (19.18068pt too wide) in paragraph at lines 749--765
+\T1/lmr/m/n/12 oder Echelle--Gitter ver-wen-det wer-den [[]]. Auch wur-den Fouri
+er--Transform--Spektrometern
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--765
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 780--796
+
+ []
+
+
+LaTeX Warning: Citation `demtröder93' on page 26 undefined on input line 801.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+LaTeX Warning: Citation `silver92' on page 27 undefined on input line 830.
+
+
+LaTeX Warning: Citation `zybin95' on page 27 undefined on input line 834.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 816--835
+
+ []
+
+
+LaTeX Warning: Citation `werle98' on page 27 undefined on input line 838.
+
+
+LaTeX Warning: Citation `grisar92' on page 27 undefined on input line 839.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--852
+
+ []
+
+
+LaTeX Warning: Citation `werle98' on page 27 undefined on input line 858.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 863--876
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+LaTeX Warning: Citation `measures84' on page 28 undefined on input line 892.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 896--908
+
+ []
+
+
+Overfull \hbox (8.48207pt too wide) in paragraph at lines 909--928
+\T1/lmr/m/n/12 Orts-auf-lö-sung kann wei-ter ver-bes-sert wer-den, wenn Pikosek
+unden-- oder Femtosekunden--
+ []
+
+
+Overfull \hbox (29.14536pt too wide) in paragraph at lines 909--928
+\T1/lmr/m/n/12 Titan--Saphir--Laser, fre-quenz-ver-dop-pel-te Farb-stoff-la-ser)
+ wie auch IR--Laser (z.B. CO$[][][]$--Laser,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 909--928
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+Overfull \hbox (7.15012pt too wide) in paragraph at lines 929--935
+[][]\T1/lmr/m/n/12 LIDAR--Systeme kön-nen aber auch für Ab-sorp-ti-ons-mes-sun
+-gen ge-nutzt wer-den. Durch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 929--935
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 939--948
+
+ []
+
+
+LaTeX Warning: Reference `bibliotheken' on page 29 undefined on input line 963.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 949--969
+
+ []
+
+
+LaTeX Warning: Citation `hirschbergerip' on page 29 undefined on input line 988
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 970--989
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 990--1007
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30])
+:<-
+:<+ quaspek.tex
+
+\openout2 = quaspek.aux
+(./quaspek.tex
+Kapitel 4.
+
+LaTeX Warning: Reference `spektrometereinfluesse' on page 31 undefined on input
+ line 8.
+
+
+LaTeX Warning: Reference `austempdr' on page 31 undefined on input line 10.
+
+
+LaTeX Warning: Reference `hintergrund' on page 31 undefined on input line 15.
+
+
+LaTeX Warning: Reference `crosscorr' on page 31 undefined on input line 15.
+
+
+Overfull \hbox (0.2582pt too wide) in paragraph at lines 23--23
+[][][]\T1/lmr/bx/n/14.4 Pho-to-me-tri-sche Ge-nau-ig-keit mit FT--IR--Spektromet
+ern 
+ []
+
+
+LaTeX Warning: Citation `chase82' on page 31 undefined on input line 33.
+
+Package luatex.def Info: Option `bb' equivalent to `viewport' with the luatex d
+river on input line 54.
+
+LaTeX Warning: File `nlkorr1.wmf' not found on input line 54.
+
+
+! LaTeX Error: File `nlkorr1tif' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 willk\"{u}rlichen Einheiten dargestellt.}
+                                            
+
+Here is how much of LuaTeX's memory you used:
+ 5396 strings out of 477785
+ 100000,662416 words of node,token memory allocated
+ 22927 words of node memory still in use:
+   70 hlist, 6 vlist, 5 rule, 2 mark, 313 disc, 8 local_par, 3 dir, 2 math, 302 
+glue, 164 kern, 26 penalty, 2059 glyph, 220 attribute, 82 glue_spec, 112 attribu
+te_list, 3 temp, 10 if_stack, 15 write, 12 special nodes
+   avail lists: 1:1,2:1224,3:111,4:27,5:378,6:25,7:6302,8:40,9:599,10:19,11:781
+ 25706 multiletter control sequences out of 65536+600000
+ 54 fonts using 3492927 bytes
+ 55i,12n,60p,298b,447s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,0 +1,41 @@
+\contentsline {chapter}{\numberline {1}Einleitung}{3}
+\contentsline {chapter}{\numberline {2} Exzitonen}{5}
+\contentsline {section}{\numberline {2.1}Konzept des Exzitons}{5}
+\contentsline {section}{\numberline {2.2}Effektive--Massen--N\newumlaut aherung (EMA)}{6}
+\contentsline {section}{\numberline {2.3}Exziton--Polaritonen}{7}
+\contentsline {section}{\numberline {2.4}Brillouin--Streuung}{9}
+\contentsline {chapter}{\numberline {3}Das Materialsystem CdS}{13}
+\contentsline {section}{\numberline {3.1}Kristallsymmetrie und Bandstruktur}{13}
+\contentsline {section}{\numberline {3.2}Eigenschaften freier und gebundener Exzitonen in CdS}{15}
+\contentsline {subsection}{\numberline {3.2.1}Optische Auswahlregeln}{15}
+\contentsline {subsection}{\numberline {3.2.2}Exzitonzust\newumlaut ande im Magnetfeld}{18}
+\contentsline {subsection}{\numberline {3.2.3}Oszillatorst\newumlaut arken gebundener Exzitonen}{22}
+\contentsline {chapter}{\numberline {4}Quantum--Beat--Spektroskopie}{25}
+\contentsline {section}{\numberline {4.1}Methode der Quantum--Beat--Spektroskopie}{25}
+\contentsline {section}{\numberline {4.2}Quantum--Beats in der Dichtematrixtheorie}{27}
+\contentsline {subsection}{\numberline {4.2.1}Aufstellung der Dichtematrix f\newumlaut ur t=0}{30}
+\contentsline {subsubsection}{Nichtentarteter Grundzustand}{30}
+\contentsline {subsubsection}{Entarteter Grundzustand}{31}
+\contentsline {subsection}{\numberline {4.2.2}Zeitentwicklung der Dichtematrix f\newumlaut ur $t>0$}{32}
+\contentsline {chapter}{\numberline {5}Mathematische Auswertungsmethoden}{35}
+\contentsline {section}{\numberline {5.1}Die diskrete Fouriertransformation}{35}
+\contentsline {section}{\numberline {5.2}LPSVD--Verfahren von Barkhuijsen et al.}{39}
+\contentsline {subsubsection}{Mathematisches Modell}{39}
+\contentsline {section}{\numberline {5.3}Vergleich beider Methoden}{43}
+\contentsline {chapter}{\numberline {6}Experimenteller Aufbau}{49}
+\contentsline {section}{\numberline {6.1}Picosekunden--Me\ss {}platz}{49}
+\contentsline {section}{\numberline {6.2}Das verwendete Probenmaterial}{53}
+\contentsline {subsection}{\numberline {6.2.1}Me\ss {}geometrie}{54}
+\contentsline {subsection}{\numberline {6.2.2}\newumlaut Ubersichtsspektren}{54}
+\contentsline {subsubsection}{CDSS1}{55}
+\contentsline {subsubsection}{CDSR4}{58}
+\contentsline {chapter}{\numberline {7}Quantum--Beat--Messungen}{61}
+\contentsline {section}{\numberline {7.1}Zeitaufgel\newumlaut oste Messungen am $X_A^T$--Exziton}{61}
+\contentsline {subsubsection}{Detektion in der 2LO--Phononenreplik}{70}
+\contentsline {section}{\numberline {7.2}Zeitaufgel\newumlaut oste Messungen am $I_3$--\newumlaut Ubergang}{73}
+\contentsline {section}{\numberline {7.3}Zeitaufgel\newumlaut oste Messungen am $I_1$-- und $I_2$--\newumlaut Ubergang}{77}
+\contentsline {section}{\numberline {7.4}Zeitaufgel\newumlaut oste Messungen an der Brill\discretionary {-}{}{}ou\discretionary {-}{}{}in--\discretionary {-}{}{}Streu\discretionary {-}{}{}ung}{82}
+\contentsline {chapter}{\numberline {8}Zusammenfassung}{86}
+\contentsline {chapter}{\numberline {A}LPSVD--Auswertungsprogramm}{90}
+\contentsline {section}{\numberline {A.1}Implementierung in MathCad 5.0 Plus}{90}
+\contentsline {chapter}{Literaturverzeichnis}{101}

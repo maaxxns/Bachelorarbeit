@@ -1,0 +1,160 @@
+\documentclass[twoside,a4paper,12pt,german]{report}
+    \usepackage[T1]{fontenc}
+    % \usepackage[ansinew]{inputenc}
+    \usepackage{babel}
+    \usepackage[active]{srcltx} % SRC Specials for DVI Searching
+   % \usepackage{amssymb} % AMS-LaTeX Symbole werden eingebunden
+   % \usepackage{amsmath}
+   \usepackage[centertags]{amsmath}
+   \usepackage{amsfonts}
+   \usepackage{amssymb}
+   \usepackage{amsthm}
+    \usepackage{a4}
+    \usepackage{graphicx} % Zum Einbinden von BMP - Bitmaps
+    \usepackage[dvips]{epsfig} % Zum Einbinden von EPS- Vektorgrafiken
+    \usepackage{multicol}
+    \usepackage{alltt} % Programmlisting am Ende der Datei kann dargestellt werden
+    \usepackage{makeidx} \makeindex % Erstellen eines Index
+    \usepackage{fancyhdr}  % Die neue Version von fancyheadings zur Erstellung von Kopfzeilen
+    \usepackage{longtable}
+    \pagestyle{fancyplain}
+
+
+    \usepackage{graphicx}
+    \DeclareGraphicsRule{.wmf}{bmp}{tif}{}{}% declare WMF filename extension
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+\setlength{\textwidth}{15.5cm}
+\newlength{\tbreite}
+\setlength{\tbreite}{15.5cm}
+\setlength{\evensidemargin}{-0.1cm}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\setcounter{tocdepth}{3} \setcounter{secnumdepth}{3}
+
+
+%\bild{htb}{test.wmf}{270}{180}{beispiel}
+\newcommand{\bild}[5]{ % wo htb , name , breite , hoehe , Unterschrift
+\begin{figure}[#1]
+\unitlength1mm
+\begin{center}
+\includegraphics*[bb=0 0 #3 #4]{#2}
+\\[-2mm]
+\addtolength{\tbreite}{-10mm}
+\begin{minipage}[t]{\tbreite}
+\caption[#2, Breite: #3mm, H\"{o}he: #4mm] %[#6]
+{\label{#2} \sl #5}
+\end{minipage}
+\end{center}
+\setlength{\tbreite}{\textwidth}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}
+
+
+%\bildlinks{htb}{spektrosw.wmf}{275}{340}{130}{75}{-35}{\rm
+%beispiel}
+\newcommand{\bildlinks}[8]{% wo htb , name , skalierende breite , skalierende hoehe ,wahre breite abstand Kasten f\"{u}r Text Unterschrift
+
+\begin{figure}[#1]
+\vspace{3mm} \unitlength1mm
+\begin{picture}(0,#5)
+\includegraphics*[bb=-15 0 #3 #4]{#2}
+\put(0,2){\parbox[b]{0mm}{\hfill\ }
+\setlength{\tbreite}{\textwidth} \addtolength{\tbreite}{-#6mm}
+\addtolength{\tbreite}{#7mm}
+\begin{minipage}[b]{\tbreite}
+\caption[#2, Breite: #6mm, H\"{o}he: #4mm] {\label{#2}\sl #8}
+\end{minipage}}
+\end{picture}
+\vspace{2mm}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}
+
+
+
+\newcommand{\bildlinksanhang}[8]{% wo htb , name , skalierende breite , skalierende hoehe ,wahre breite abstand Kasten f\"{u}r Text Unterschrift
+
+\begin{figure}[#1]
+\vspace{3mm}
+\unitlength1mm
+\begin{picture}(0,#5)
+\includegraphics*[bb=0 0 #3 #4]{#2}
+\put(0,2){\parbox[b]{0mm}{\hfill\ }
+\setlength{\tbreite}{\textwidth} \addtolength{\tbreite}{-#6mm}
+\addtolength{\tbreite}{#7mm}
+\begin{minipage}[b]{\tbreite}
+%\caption[#2, Breite: #6mm, H\"{o}he: #4mm]
+{\label{#2}\sl #8}
+\end{minipage}}
+\end{picture}
+\vspace{2mm}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}
+
+
+\newcommand{\bildlinksohnetext}[7]{% wo htb , name , skalierende breite , skalierende hoehe ,wahre breite abstand Kasten f\"{u}r Text Unterschrift
+
+\begin{figure}[#1]
+\vspace{3mm} \unitlength1mm
+\begin{picture}(0,#5)
+\includegraphics*[bb=0 0 #3 #4]{#2}
+\put(0,2){\parbox[b]{0mm}{\hfill\ }
+\setlength{\tbreite}{\textwidth} \addtolength{\tbreite}{-#6mm}
+\addtolength{\tbreite}{#7mm}
+\begin{minipage}[b]{\tbreite}
+%\caption[#2, Breite: #6mm, H\"{o}he: #4mm] {\label{#2}\sl #8}
+\end{minipage}}
+\end{picture}
+\vspace{2mm}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}
+
+
+
+\newcommand{\tabelle}[5]{
+\renewcommand{\arraystretch}{#2} % htb , Abstand , name , Tabelle selbst , Unterschrift
+\begin{table}[#1]
+\begin{center}
+\begin{tabular}
+#4
+\end{tabular}\\[2mm]
+\addtolength{\tbreite}{-10mm}
+\begin{minipage}[t]{\tbreite}
+\caption[]{\label{#3} \sl #5}
+\end{minipage}
+\end{center}
+\end{table}
+\renewcommand{\arraystretch}{1}
+\setlength{\tbreite}{\textwidth}}
+
+\newcommand{\up}[1]{$^{#1}$}
+\newcommand{\down}[1]{$_{#1}$}
+\newcommand{\nus}[1]{$\stackrel{\sim}{\nu}$}
+\newcommand{\bra}[1]{\langle{#1}|}
+\newcommand{\ket}[1]{|{#1}\rangle}
+\newcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
+\pagestyle{empty}
+
+\begin{document}
+\include{titel}
+\include{zitat}
+\include{abkuerz}
+\include{tableofc}
+\include{einl}
+\include{umwelt}
+\include{ftirgrdl}
+\include{quaspek}
+\include{expsyst}
+\include{kalibgas}
+\include{messkamp}
+\include{zusamm}
+\include{liter}
+\include{anhang}
+\include{public}
+\include{lebensl}
+\include{dank}
+\end{document}

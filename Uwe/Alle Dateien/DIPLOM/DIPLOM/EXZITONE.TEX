@@ -1,0 +1,286 @@
+\chapter{\label{exziton} Exzitonen}
+
+\section{Konzept des Exzitons}
+
+Ein idealer, st”rstellenfreier Halbleiter besitzt bei T=0~K ein vollbesetztes
+Valenzband und ein leeres Leitungsband mit einer Energielcke $E_g$ von einigen
+eV. Durch Absorption eines optischen Photons kann nun ein Elektron vom
+Valenzband ins Leitungsband angeregt werden, wobei im Valenzband ein Loch
+zurckbleibt. Es sind auch Anregungen knapp unterhalb des Leitungsbandes
+m”glich ($\sim$ 2--50 meV), bei denen im Gegensatz zur Anregung ins Leitungsband
+die Wechselwirkung zwischen dem entstandenen Loch und dem Elektron bestehen
+bleibt.\\
+
+\bildlinks{htb}{exzband}{75}{80}{Bandstruktur eines direkten Halbleiters.
+Die gestrichelten Linien repr„sentieren die energetische Lage der šberg„nge
+des freien Exzitons bei k=0. Exzitonenzust„nde werden ad„quat in einem
+Zweiteilchen--k--Raum beschrieben.}
+
+Das Konzept dieses durch die Coulombkraft korrelierten Elektron--Loch--Paares
+als tiefsten Anregungszustand in einem idealen Halbleiter stammt von Frenkel
+(1931) und Peierls (1932). Frenkel gab ihm im Jahr 1936 den Namen \it Exziton \rm.\\
+
+Die theoretische Beschreibung von Exzitonen im Festk”rper ist ein Viel--Teilchen--Problem,
+welches ohne N„herungen nicht gel”st werden kann. Man unterscheidet aus diesem
+Grund Exzitonen auch nach der Gr”áe des Abstandes des Elektrons vom Loch. Ist
+der Abstand im Raum genau lokalisiert und betr„gt nicht mehr als einige
+Gitterkonstanten, so spricht man von einem \it Frenkel--Exziton \rm. Das
+Frenkel--Exziton kann sich gleichwohl mittels Energietransfer durch den
+Kristall bewegen.\\
+
+Da im Halbleiter jedoch die Wechselwirkung der Atome untereinander sehr groá
+ist, k”nnen elementare Anregungen meist nicht als lokalisiert betrachtet werden.
+Elektron--Loch--Paare mit groáen Abst„nden ($>$ 10 Gitterkonstanten) werden
+\it Wannier--Mott--Exzitonen \rm genannt. Da die Exzitonen in den in dieser
+Arbeit betrachteten II--VI--Halbleitern groáe Ausdehnungen haben, werden im
+folgenden nur die Wannier--Mott--Exzitonen betrachtet. Die \it Effektive--Massen--N„herung
+\rm (EMA) bietet eine ad„quate Beschreibung fr diese Exzitonen. Sie soll
+im folgenden kurz vorgestellt werden.
+
+\section{Effektive--Massen--N„herung (EMA)}
+
+Betrachtet werden ein Elektron am absoluten Minimum des Leitungsbandes und
+ein Loch am absoluten Maximum des Valenzbandes. Fr den Fall, daá das 
+Elektron--Loch--Paar so weit voneinander entfernt ist, daá die atomare
+Struktur des Kristalls vernachl„ssigt werden kann, gilt fr das Coulombpotential:
+\begin{equation}
+V(\vec{r}_h,\vec{r}_e)=\frac{1}{4\pi \epsilon \epsilon_0} \frac{-e^2}{\left| \vec{r}_h-\vec{r}_e \right|}
+\ ,
+\end{equation}
+mit $\epsilon_0$ als makroskopische
+Dielektrizit„tskonstante.\\
+
+Analog zum Wasserstoffatom fhrt dieses Potential zu einer Serie diskreter
+Zust„nde mit folgenden Energien (z.B. \cite{rashba}):
+\begin{equation}
+\label{exz1}
+E_n(k)=\frac{-\mu e^4}{2 \hbar^2 \epsilon^2 \epsilon_0^2 n^2} + \frac{\hbar^2 K^2}{2 M}
+\ ,
+\end{equation}
+mit $n=1,2\ldots ,\infty$, $\mu^{-1}=(m_e^*)^{-1}+(m_h^*)^{-1}$, 
+$M=m_e^*+m_h^*$. $m_e^*$ und $m_h^*$ sind die effektiven Massen von Elektron
+und Loch, $\mu$ ist die reduzierte Masse, $\hbar \vec{K}$ ist der Impuls der
+Schwerpunktsmasse.\\
+
+Im Festk”rper sind die Wellenfunktion durch Blochfunktionen gegeben, um die
+Periodizit„t des Gitters zu bercksichtigen. Fr das Wannier-Mott-Exziton
+gilt unter Einbeziehung der Elektron-- und Loch--Blochfunktionen $\psi_{\vec{k}_e}(\vec{r}_e)$
+und $\psi_{\vec{k}_h}(\vec{r}_h)$ der folgende Ansatz:
+\begin{equation}
+\Psi(\vec{K}, \vec{R},\vec{r}_h,\vec{r}_e)=\sum_{k_e,k_h} {\cal F}[\exp(i\vec{K} \cdot \vec{R})
+F_{nlm}(\vec{r}_e,\vec{r}_h)] \psi_{\vec{k}_e}(\vec{r}_e) \psi_{\vec{k}_h}(\vec{r}_h)
+\ ,
+\end{equation}
+mit ${\cal F}$ dem Fouriertransformationsoperator, $\vec{k}_e$, $\vec{k}_h$
+den Wellenvektoren von Elektron und Loch im reziproken Gitter 
+($\vec{K}=\vec{k}_e+\vec{k}_h$) und den Wasserstoffwellenfunktionen $F_{nlm}$.
+
+Grunds„tzlich k”nnen Exzitonen nicht nur an absoluten, sondern auch an relativen
+Maxima und Minima des Bandes beschrieben werden. Das Kriterium fr die Existenz
+des Exitons ist die Gleichheit der Gradienten
+\begin{equation}
+\nabla_K E_e = \nabla_K E_h
+\ ,
+\end{equation}
+d.h. der Gruppengeschwindigkeiten von Loch und Elektron.\\
+
+\section{\label{polariton}Exziton--Polaritonen}
+
+Um die Wechselwirkung des Kristalls mit einem Lichtfeld zu beschreiben,
+muá ein weiteres Teilchen eingefhrt werden, das \it Polariton \rm. Es 
+beschreibt einen quantenmechanischen Mischzustand aus einem Exziton und
+einem Photon \cite{feynman}:
+\begin{equation}
+\ket{\mbox{Polariton}}=a(t) \ket{\mbox{Exziton}} + b(t) \ket{\mbox{Photon}}
+\ .
+\end{equation}
+a(t), b(t) sind die Wahrscheinlichkeiten dafr, daá sich das System im Zustand
+des Exzitons oder des Photons befindet.\\
+
+Im Polaritonenbild wird davon ausgegangen, daá ein auf einen Kristall einfallendes
+Photon ein Exziton erzeugt, welches im Medium propagiert und strahlend zerf„llt.
+Das beim Zerfall entstehende Photon erzeugt wiederum ein Exziton usw.. Dieser
+st„ndige Energieaustausch zwischen Lichtfeld und Exziton findet allerdings
+nur dann statt, wenn die Phaseninformation zwischen den beiden Systemen erhalten
+bleibt und nicht durch inelastische Streuung verloren geht.\\
+
+Das Exziton hat ebenso wie das Photon eine Polarisation $\vec{P}$. Diese
+Polarisation kann wie bei einem optischen Phonon longitudinal ($\vec{P} \| \vec{K}$)
+oder transversal ($\vec{P}\perp \vec{K}$) zur Exzitonausbreitungsrichtung liegen,
+wobei nur das transversale Exziton mit einem elektromagnetischen Feld koppeln
+kann. Die Kopplung der Zust„nde von Exziton und Photon fhrt weiterhin zu einer
+gemeinsamen Dispersionsrelation, die im folgenden klassisch nach \cite{hopfield58}
+abgeleitet wird, was fr die Anwendung in dieser Arbeit vollkommen ausreicht.
+Eine detaillierte quantenmechanische Ableitung ist z.B. im Bassani 
+\cite{bassani} oder Balslev \cite{balslev} zu finden.\\
+
+Um die Wechselwirkung des Polaritons mit einem Dielektrikum zu beschreiben,
+fhrt man im Rahmen der klassischen Elektrodynamik eine homogene Verteilung
+harmonischer Oszillatoren ein, die untereinander gekoppelt sind und somit 
+einen Energieaustausch zulassen (Erzeugung und Vernichtung von Polaritonen)
+\cite{jackson}. Die Resonanzfrequenz $\omega_0$ dieser Oszillatoren entsprechen
+der exzitonischen Resonanz. Die Wechselwirkung der elektronischen Polarisation
+des Dielektrikums $\vec{{\cal P}}$ mit der elektromagnetischen Welle ist dann
+gegeben durch \cite{battaglia}:
+\begin{equation}
+\label{exz2}
+\frac{\partial^2 \vec{{\cal P}}}{\partial t^2} + \Gamma \frac{\partial \vec{{\cal P}}}{\partial t}
++ \omega_0^2 \vec{{\cal P}} - \frac{\hbar \omega_0}{M} \triangle \vec{{\cal P}} =
+\alpha_{exz} \omega_0^2 \vec{E}
+\ ,
+\end{equation}
+mit $\Gamma \partial \vec{{\cal P}}/\partial t$ als ein ph„nomenologischer
+D„mpfungsterm, wobei $\Gamma^{-1}$ die Lebenszeit des Exzitons beschreibt.
+Der Term $(-\hbar \omega_0/M) \triangle \vec{{\cal P}}$ bercksichtigt die
+r„umliche Dispersion im Medium. $\omega_0$ ist durch die exzitonische
+Resonanz in Gl. (\ref{exz1}) $E^{1S}=\hbar \omega_0 +\hbar^2 K^2/(2M)$ gegeben,
+$\alpha_{exz}$ beschreibt die statische Polarisation des Exzitons.\\
+
+Battaglia \cite{battaglia} fhrt eine dielektrische Funktion im Fourierraum ein:
+\begin{equation}
+\label{exz3}
+[\epsilon(\vec{K}, \omega) - \epsilon_{\infty}] \vec{E}(\vec{K},\omega) =
+4 \pi \epsilon_0 \vec{{\cal P}}(\vec{K},\omega)
+\ ,
+\end{equation}
+($\epsilon_{\infty}$ ist die Hintergrundsdielektrizit„tskonstante) mit deren Hilfe
+und unter Bercksichtigung der Maxwell--Gleichungen und der Annahme ebener
+Wellen sich die Bewegungsgleichung (\ref{exz2}) l”sen l„át.\\
+
+Fr die dielektrische Funktion folgt daraus:
+\begin{equation}
+\epsilon(\vec{K},\omega)=\epsilon_{\infty} - \frac{4 \pi \epsilon_0 \alpha_{exz} \omega_0^2}{\omega^2-\omega_0^2 - \gamma c^2 K^2 + i \Gamma \omega}\\
+\quad \mbox{; mit} \quad \gamma= \frac{\hbar \omega_0}{M c^2} \quad \mbox{i.a. sehr klein.}
+\end{equation}
+
+Wie schon oben erw„hnt, muá $\epsilon (\vec{K}, \omega)$ zwei Bedingungen 
+erfllen:
+\begin{itemize}
+\item longitudinaler Fall ($\vec{{\cal P}} \| \vec{K}$, keine Kopplung mit dem 
+elektromagnetischen Feld);\\
+$\epsilon (\vec{K},\omega)=0$
+
+\item transversaler Fall ($\vec{{\cal P}} \perp \vec{K}$, Kopplung mit dem
+elektromagnetischen Feld);\\
+$\epsilon(\vec{K},\omega)=c^2 K^2/\omega^2$
+\end{itemize}
+
+Somit folgt fr die Dispersion des longitudinalen Polaritons
+\begin{equation}
+K_L^2(\omega)=\frac{1}{c^2 \omega^2}[\omega^2 - \omega_0^2 (1 + \frac{4 \pi 
+\epsilon_0 \alpha_{exz}}{\epsilon_{\infty}}
++ i \Gamma \omega)]
+\ ,
+\end{equation}
+
+weiterhin existieren zwei entartete L”sungen fr das transversale Polariton:
+\begin{eqnarray}
+K_{T_{1,2}}^2 & = & \frac{1}{c^2} \frac{\epsilon_{\infty}}{\epsilon_0} 
+\omega^2 +\frac{1}{2 \gamma c^2}[\omega^2(1-\gamma \frac{\epsilon_{\infty}}{\epsilon_0})
+-\omega_0^2+i\Gamma \omega]\\
+& & \pm \frac{1}{2 \gamma c^2} \sqrt{[\omega^2(1-\gamma \frac{\epsilon_{\infty}}{\epsilon_0})
+-\omega_0^2 + i\Gamma \omega]^2
++4 \gamma(4 \pi \alpha_{exz}\omega_0^2)\omega^2}\nonumber
+\ .
+\end{eqnarray}
+
+\bildlinks{htb}{polar}{75}{95}{Dispersionsrelation fr das transversale 
+Polariton; 
+OP--oberer Polaritonenast, UP--unterer Polaritonenast. Die gestrichelten Linien
+zeigen die reine Exzitonenparabel und die reine Lichtgerade.}
+
+Die Dispersionsverl„ufe der Polaritonen sind in Abb. \ref{polar} dargestellt.
+Die gestrichelten Linien zeigen die Dispersion des reinen Lichts und des reinen
+Exzitons. An deren Schnittpunkt bei der Resonanzfrequenz $\omega_0$ spalten die
+Dispersionskurven in den oberen (OP) und in den unteren Polaritonenast (UP) auf.
+Die L”sung fr das longitudinale Polariton ist nicht eingezeichnet, weil dieses
+Polariton nicht an das einfallende Licht ankoppelt. Fr kleine Lichtfrequenzen
+$\omega$ breitet sich das Polariton wie Licht im Kristall aus. Fr groáe
+$\omega$ existieren eine photonartige und eine exzitonartige Mode zusammen.
+Generell gilt, daá im Gegensatz zum klassischen Lorentzoszillator fr keine
+Frequenz eine Totalreflexion besteht. Alle Frequenzen k”nnen sich im Kristall
+ausbreiten.
+
+\section{\label{brillouin}Brillouin--Streuung}
+
+Die im vorherigen Kapitel \ref{polariton} beschriebenen Exziton--Polaritonen
+k”nnen bei der Propagation durch den Kristall an Phononen gestreut werden. 
+Die elastische Streuung nennt man \it Rayleigh--Streuung\rm.
+Die unelastische Streuung an transversal oder longitudinal optischen Phononen
+heiát \it Raman--Streuung\rm, die an transversal oder longitudinal akustischen
+Phononen \it Brillouin--Streuung\rm. Dabei l„uft der Streuprozeá in der
+Weise ab, daá durch Lichteinstrahlung knapp unterhalb der Bandkante des 
+Kristalls Polaritonen erzeugt werden, die bei der Propagation durch den Kristall
+an Phononen gestreut werden. Die gestreuten Polaritonen wandern zur 
+Kristalloberfl„che, an der sie wieder zu Licht transformieren und detektiert
+werden k”nnen.\\
+
+Da bei sichtbarem Licht die Wellenl„nge groá gegenber der Gitterkonstanten
+und dem Netzebenenabstand ist, gilt fr den Wellenvektor $\vec{k}_i$ des
+einfallenden Lichtes $|\vec{k}_i|\approx 0$, ebenso fr das gestreute Licht
+$|\vec{k}_s|\approx0$. Somit liegt auch der Wellenvektor des gestreuten
+Phonons auf jeden Fall in der ersten Brillouin--Zone und es wird kein 
+reziproker Gittervektor $\vec{G}$ ben”tigt. Fr die Energie-- und Impulserhaltung
+im Innern des Kristalls gilt dann:
+\begin{eqnarray}
+\label{1} \hbar \omega_i - \hbar \omega_s & = & \pm \hbar \omega_q \ ,\\
+\label{2} \hbar \vec{k}_i - \hbar \vec{k}_s & = & \pm \hbar \vec{q}
+\ .
+\end{eqnarray}
+Der Mechanismus des Streuprozesses kann folgendermaáen erkl„rt werden.
+Durch die Gitterwelle wird mit der Dichte auch der 
+Brechungsindex r„umlich (Periode $\lambda_y$) und zeitlich (Periode $\omega_q
+\ll \omega_0$) moduliert. Die r„umliche Periodizit„t bewirkt die Reflexion
+der Welle und fhrt zu Gl. (\ref{1}). Die zeitliche Periodizit„t bewirkt eine
+Amplitudenmodulation des Streulichts und das Auftreten von Seitenb„ndern
+im Streuspektrum (Gl. (\ref{2})) \cite{hellwege}.
+
+\bild{htb}{brill1}{130}{34}{Vektordarstellung der Impulserhaltung bei der
+Streuung von Polaritonen an akustischen Phononen. Die unelastisch gestreuten
+Linien werden Stokes-- und Antistokes--Linien, die elastisch gestreuten
+Rayleigh--Linien genannt.}
+
+Streuungen aus verschiedenen Elementarzellen k”nnen desweiteren
+miteinander interferieren. Eine konstruktive Interferenz tritt nur dann auf,
+wenn
+\begin{equation}
+2 \lambda_{Phonon}\frac{\Theta}{2}=\frac{\lambda_i}{n}
+\end{equation}
+ann„hernd erfllt ist ($\lambda_{Phonon}$ und $\lambda_i$ sind die Wellenl„ngen des Phonons
+bzw. des einfallenden Lichts, n ist der Brechungsindex des Kristalls).\\
+
+Wird bei der Streuung ein akustisches Phonon erzeugt, so ist die Energie des
+gestreuten Lichts um $\hbar \omega_q$ geringer (\it Stokes--Linie\rm). Wird
+hingegen ein akustisches Phonon vernichtet, so hat das gestreute Licht eine
+um $\hbar \omega_q$ h”here Energie (\it Antistokes--Linie\rm, Abb. \ref{brill1}). 
+Um diesen
+Streuvorgang in einem Termschema veranschaulichen zu k”nnen, wird ein 
+\it virtueller \rm Zwischenzustand eingefhrt, dem keine reale physikalische
+Bedeutung zukommt und der somit auch zu keiner Zeit durch Absorption besetzt
+werden kann (Abb. \ref{brill2}).
+
+\bild{htb}{brill2}{130}{48}{Darstellung der Stokes--, Antistokes-- und 
+Rayleigh--Linie in einem Termschema mit virtuellem Zwischenniveau. Das
+virtuelle Niveau ist gestrichelt eingezeichnet. Es besitzt keine reale
+Bedeutung, sondern dient nur zur Veranschaulichung.}
+
+Nach Gl. (\ref{2}) ist jede Lichtstreuung fr einen Winkel $\Theta \neq 0$
+mit der Erzeugung oder Vernichtung eines Phonons verbunden und die einfallende
+Lichtfrequenz $\omega_i$ sollte nicht mehr auftreten. $\omega_i$ ist in den
+Spektren aber intensit„tsm„áig sehr stark vertreten. Sie rhrt von der 
+elastischen Rayleigh--Streuung her. Die Intensit„tsverh„ltnisse
+der Stokes-- und der Antistokes--Linie h„ngen stark von der Kristalltemperatur
+ab. Je h”her die Temperatur, desto mehr akustische Phononen sind angeregt
+und um so intensit„tsst„rker ist auch die Antistokes--Linie. Bei sehr tiefen
+Temperaturen ist sie sehr intensit„tsschwach.\\
+
+Die Brillouin--Streuung der Polaritonen fhrt zu nderungen des $\vec{k}$--Vektors
+des Polaritons. In Abb. \ref{brill3} sind m”gliche Streuvorg„nge fr CdS
+eingezeichnet. Man unterscheidet zwischen Interband-- (der Ausgangszustand
+liegt auf einem anderen Dispersionsast als der Endzustand) und Intrabandberg„ngen
+(Anregungs-- und Endzustand liegen auf demselben Dispersionsast).\\
+
+\clearpage
+\ \ \ \\
+
+\clearpage

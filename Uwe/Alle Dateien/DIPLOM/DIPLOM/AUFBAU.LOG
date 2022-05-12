@@ -1,0 +1,29 @@
+This is emTeX, Version 3.0 [3a] (preloaded format=lplaing 92.6.10)  29 MAR 1995 20:34
+**&lplaing.fmt AUFBAU.TEX
+(aufbau.tex
+LaTeX Version 2.09 <25 March 1992>
+! Undefined control sequence.
+l.2 \chapter
+            {Experimentelle Methoden}
+? 
+LaTeX error.  See LaTeX manual for explanation.
+              Type  H <return>  for immediate help.
+! Missing \begin{document}.
+\@latexerr ...diate help.}\errmessage {#1}
+                                          
+<to be read again> 
+                   E
+l.2 \chapter{E
+              xperimentelle Methoden}
+? e
+You want to edit file aufbau.tex at line 2 
+Here is how much of TeX's memory you used:
+ 5 strings out of 6965
+ 54 string characters out of 13278
+ 23409 words of memory out of 65533
+ 1977 multiletter control sequences out of 3500
+ 18996 words of font info for 72 fonts, out of 32766 for 127
+ 0 hyphenation exceptions out of 307
+ 7i,0n,3p,61b,10s stack positions out of 200i,40n,60p,1024b,600s
+
+No pages of output.

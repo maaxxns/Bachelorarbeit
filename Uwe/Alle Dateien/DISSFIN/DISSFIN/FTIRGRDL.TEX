@@ -1,0 +1,1008 @@
+\chapter{\label{grundlagen}Grundlagen FTIR und alternative Messmethoden}
+
+FTIR--Spektrometer besitzen im mittleren Infrarotbereich eine
+ganze Reihe von Vorteilen gegenüber dispersiven Spektrometern
+(siehe auch Kap. \ref{vorteile} und \cite{griffiths77}), benötigen
+aber für die zu rechnende Fourier--Transformation leistungsstarke
+Rechner. Seit den letzten zwei Jahrzehnten stehen solche Rechner
+zur Verfügung und die Fourier--Transformations--Spektroskopie hat
+die dispersive Spektroskopie aufgrund ihrer überlegenheit im
+mittleren Infrarotbereich vollständig verdrängt. In dieser Arbeit
+konnten deutliche Verbesserungen bei der quantitativen Auswertung
+von FTIR--Spektren aus Messungen in der offenen Atmosphäre erzielt
+werden. Um das Verständnis der folgenden Kapitel zu erleichtern,
+werden zuerst die Grundlagen der FTIR--Spektroskopie kurz
+zusammengestellt und im letzten Abschnitt mit alternativen
+Techniken zur Messung von Schadgasen in der offenen Atmosphäre
+verglichen. Für eine ausführliche Darstellung der Grundlagen der
+FTIR--Spektroskopie sei auf die einschlägigen Lehrbücher verwiesen
+(z.B. \cite{griffiths86}, \cite{günzler96}, \cite{gottwald97} oder
+\cite{schrader95}).
+
+\section{\label{molekuelbau}Molekülbau und Wechselwirkung mit
+ IR--\-Strahl\-ung}
+
+In der IR--Spektroskopie wird üblicherweise die Wellenzahl
+$\stackrel{\sim}{\nu}$ als Einheit zur Beschreibung der
+elektromagnetischen Strahlung verwendet. Sie gibt die Anzahl der
+elektromagnetischen Wellen pro cm an. Für die Umrechnung der
+Wellenlänge $\lambda$ [$\mu$m] in die Wellenzahl
+$\stackrel{\sim}{\nu}$ [cm\up{-1}] gilt:
+\begin{equation}\label{eqlanu}
+  \stackrel{\sim}{\nu}=\frac{10000}{\lambda}
+\end{equation}
+
+Der infrarote Bereich im elektromagnetischen Spektrum erstreckt
+sich von 10--12800 cm\up{-1} (1000--0.78 $\mu$m). Dieser Bereich
+wird noch einmal unterteilt in
+\begin{itemize}
+  \item das nahe IR (4000--12800 cm\up{-1}),
+  \item das mittlere IR (200--4000 cm\up{-1})
+  \item und das ferne IR (10--200 cm\up{-1}).
+\end{itemize}
+
+
+\subsection{\label{rotschwing}Rotations-- Schwingungsspektren}
+
+In der Praxis wird das zu analysierende Gas mit einer
+breitbandigen Infrarotstrahlungsquelle, üblicherweise ein
+Silicium--Carbid--Stift, auch Globar genannt, mit einer
+Be\-triebs\-tem\-pe\-ra\-tur von 1200--1600 K bestrahlt. Die
+IR--Strahlung, die bestimmte Atomgruppen im betrachteten Molekül
+zum Schwingen anregt, wird beim Durchgang durch das zu
+analysierende Gas absorbiert und liefert die charakteristischen
+Absorptionsbanden im Spektrum. Für das Auftreten von
+detektierbaren Absorptionssignalen im Spektrum ist eine
+periodische änderung des Dipolmomentes $\mu$ erforderlich. Die
+änderung der Sig\-nal\-in\-ten\-si\-tät I ist dabei direkt
+proportional zum Quadrat der Dipolmomentänderung $\Delta \mu^2$.
+\begin{equation}\label{eqmu}
+  I \sim \Delta \mu^2
+\end{equation}
+
+Moleküle, bei denen die Schwingungsanregung mit einer
+Dipolmomentänderung verbunden ist, werden \it IR--aktiv \rm
+genannt (z.B. NH\down{3}, N\down{2}O). Demgegenüber sind z.B. die
+Schwingungen von homöonuklearen zweiatomigen Molekülen \it
+IR--inaktiv \rm , da hier keine Dipolmomentänderung gegeben ist.\\
+
+Die Anzahl der Schwingungsfreiheitsgrade Z (\it
+Normalschwingungen\rm ) berechnen sich in einem linearen Molekül
+(z.B. CO\down{2}) zu (N--Anzahl der Atome im Molekül):
+\begin{equation}\label{eqlin}
+ \text{Z}=3 \cdot \text{N} - 5
+\end{equation}
+und bei einem nichtlinearen Molekül (z.B. H\down{2}O) zu:
+\begin{equation}\label{eqnlin}
+ \text{Z}=3 \cdot \text{N} - 6
+\end{equation}
+
+Neben diesen Normalschwingungen können in einem Spektrum auch
+intensitätsmä{\ss}ig schwächere \it Oberschwingungsbanden \rm
+auftreten, die von übergängen mit einer
+Schwingungsquantenzahländerung $\mid\!\Delta v\!\mid>1$ in andere
+Schwingungszustände resultieren. Weiterhin können auch Banden
+auftreten, die durch eine kombinierte Anregung von
+Normalschwingungen entstehen (\it Kombinationsbanden\rm ).\\
+
+Weisen zwei verschiedene Normalschwingungen die gleiche Frequenz
+auf, so nennt man diese \it entartet\rm . Nun können aber auch
+Grund-- und Oberschwingungen verschiedener Schwingungsformen
+zufällig dieselbe Energie besitzen. Diese werden dann \it zufällig
+entartet \rm genannt. Die Folge der zufälligen Entartung (z.B. bei
+gleicher Symmetrie der Schwingungsniveaus) ist die Absto{\ss}ung der
+Energieniveaus und ein Auseinanderrücken beider Schwingungsbanden
+(\it Fermi--Resonanz\rm ) und ein Angleichen der
+Bandenintensitäten.\\
+
+Für die Wellenzahl $\stackrel{\sim}{\nu}$ eines
+Rotationsschwingungsübergangs für ein lineares zweiatomiges
+Molekül mit parallel zur Molekülachse schwingendem Dipolmoment
+gilt mit der Schwingungsquantenzahl v und der Rotationsquantenzahl
+J in guter erster Näherung:
+
+\begin{equation}\label{eqnu}
+  \stackrel{\sim}{\nu} = G(v')-G(v'')+B'_vJ'(J'+1)-B''_vJ''(J''+1)
+\end{equation}
+mit: $G(v)\,=\,\stackrel{\sim}{\nu}(v+\frac{1}{2})$ und
+$B_v=\frac{h}{8\pi^{2}c \cdot I}-\alpha(v+\frac{1}{2})$
+(I--Trägheitsmoment,
+$\alpha$--Rotations--Schwingungs--Wechselwirkungskonstante,
+c--Lichtgeschwindigkeit).\\
+
+Als Auswahlregeln gelten für die Schwingungsquantenzahl $\Delta v
+= \pm 0,1,2,3 \ldots$ und für die Rotationsquantenzahl $\Delta
+J=\pm 1$. Banden mit $\Delta J=-1$ werden \it P--Zweig \rm und mit
+$\Delta J=1$ \it R--Zweig \rm genannt.\\
+
+Für lineare Moleküle mit senkrecht zur Molekülachse ausgeführten
+Schwingungen sind die Auswahlregeln zu erweitern; zugelassen ist
+in diesem Fall auch $\Delta J=0$ (\it Q--Zweig\rm ). Für
+komplexere Molekülmodelle sei auf \cite{hollas92} verwiesen.\\
+
+Die für ein Molekül charakteristischen Rotations-- und
+Schwingungsübergänge liefern vorwiegend Banden auch im mittleren
+Infrarot im Bereich von 650--4000 cm\up{-1}. Aus diesem Grund sind
+die in dieser Arbeit verwendeten Geräte auf diesen
+Wellenzahlbereich optimiert.\\
+
+
+\subsection{\label{qualitativ}Qualitative Spektrenaussagen}
+
+Ein IR--Spektrum ist für jede Substanz charakteristisch und kann
+zu ihrer Identifizierung dienen. Die gesamte Information des
+molekularen Stoffaufbaus steckt im IR--Spektrum, so dass im
+Prinzip eine Gesamtspektrenanalyse möglich ist. Da die Spektren
+aber mannigfaltig sind wie die Anzahl der chemischen Substanzen,
+gelingt eine Modellierung mit einem erheblichen Rechenaufwand nur
+für relativ einfach gebaute Moleküle. Oft helfen aber
+Interpretationen der Spektren aufgrund von empirischen Regeln, um
+qualitative Aussagen machen zu können.\\
+
+Bei organischen Verbindungen besteht das Grundgerüst aus C--, N--
+und O--Atomen, deren Einfachbindungsstärke ähnlich gro{\ss} ist.
+Schwingungen, die solche molekularen Teilgruppen betreffen,
+befinden sich im Bereich von 1000--1430 cm\up{-1}. Vielfach lässt
+sich eine Zuordnung zu Teilstrukturen schwierig treffen. Der
+Bereich ist aber sehr gut geeignet, mit Vergleichsspektren einer
+Bibliothek die Substanz zu identifizieren (\it
+Fingerprint--Bereich \rm). Grundsätzlich lassen sich folgende
+Aussagen treffen:\\
+
+\noindent\underline{Bereich von 1000--1270 cm\up{-1}}:\ Starke
+Banden weisen auf C--O--haltige Verbindungen wie Ester, Ether,
+Alkohole und Phenole hin.\\
+
+\noindent\underline{Bereich von 1350--1440 cm\up{-1}}:\ In diesem
+Bereich deuten Deformationsschwingungen von
+Kohlenwasserstoffgruppen z.B. auf Methyl-- oder Methylengruppen
+hin, wobei an einem Kohlenstoffatom hängende Dimethyl-- oder
+Trimethylgruppen typische Dublette ausbilden.\\
+
+\noindent\underline{Bereich von 1500--1900 cm\up{-1}}:\ Alkene
+besitzen im Bereich von 1630--1685 cm\up{-1}, aromatische Ringe
+zwischen 1460 und 1600 cm\up{-1} charakteristische Banden.
+Zwischen 1660 und 1950 cm\up{-1} weisen Carbonylgruppen starke
+Banden auf.\\
+
+\noindent\underline{Bereich von 2250--3800 cm\up{-1}}:\ Gesättigte
+Kohlenwasserstoffe zeigen CH--Streck\-schwing\-ungs\-ban\-den im
+Bereich von 2850--3000 cm\up{-1}, aromatische oder ungesättigte
+Grundgerüste im Bereich 3000--3100 cm\up{-1}.\\
+
+Nach dieser ersten Grobeinteilung der Banden eines Spektrums,
+können dann anhand sehr viel feinerer Korrelationstabellen
+Aussagen über das Gerüst und die anhängenden funktionellen Gruppen
+getroffen werden (siehe z.B. \cite{günzler96},\\
+\noindent\cite{gottwald97}).\\
+
+
+\section{\label{ftir}FTIR--Spektroskopie}
+
+\subsection{\label{spektrometertypen}Michelson--Interferometer}
+
+Dispersive Spektrometer zerlegen die einfallende Strahlung mittels
+eines Prismas oder eines Gitters in ihre Spektralfarben.
+Wellenzahlabhängig wird dann in der Spektrometrie am Detektor die
+Strahlungsleistung sowohl mit als auch ohne Probe gemessen.\\
+
+% \bild{htb}{michelso.wmf}{400}{300}{\it Schema eines
+% Fourier--Transform--Spektrometers mit klassischem
+% Michelson--Interferometer.}
+
+Fourier--Transform--Spektrometer hingegen, die in den
+überwiegenden Fällen auf einem
+Mi\-chel\-son--\-In\-ter\-fe\-ro\-me\-ter basieren (siehe Abb.
+\ref{michelso.wmf}), nutzen die gesamte auffallende
+Strahlungsleistung aus. Eine zunächst einmal monochromatische
+Strahlungsquelle G emittiere Strahlung, die auf den
+halbdurchlässigen Strahlteiler trifft. Die eine Hälfte der
+Strahlungsleistung wird in Richtung des festen Spiegels
+reflektiert, die andere Hälfte fällt auf den beweglichen Spiegel,
+der sich mit annähernd konstanter Geschwindigkeit um den Punkt
+gleichen Abstandes beider Spiegel vom Strahlteiler bewegt. Bei
+gleichem Abstand der beiden Spiegel vom Strahlteiler interferieren
+die reflektierten Strahlen mit gleicher Phase konstruktiv mit
+einem resultierenden grö{\ss}tmöglichem Maximum an Intensität (zero
+OPD--\bf o\rm ptical \bf p\rm ath \bf d\rm ifference). Bewegt sich
+der Spiegel und wird der OPD grö{\ss}er, so bewegen sich die zwei
+Strahlen fortschreitend in und aus der Phase. Die Intensität am
+Detektor variiert in Abhängigkeit einer Kosinusfunktion mit
+änderung des OPDs. Die Aufzeichnung der änderung dieser Intensität
+nach Abzug eines konstanten Terms wird \it Interferogramm \rm
+genannt.\\
+
+Bei polychromatischen Strahlungsquellen, wie z.B. einem Globar,
+zeigt jede Frequenz für sich dieses Phänomen und das resultierende
+Interferogramm \bf int \rm ist dann die Summe der Intensitäten
+$I(\stackrel{\sim}{\nu})$ über alle Frequenzen
+$\stackrel{\sim}{\nu}$ in Abhängigkeit vom Spiegelweg x:
+\begin{equation}\label{eqint}
+  \bf int\rm = \int I(\stackrel{\sim}{\nu})\: \cos (2\pi \stackrel{\sim}{\nu}
+  x)\;
+  \text{d}\stackrel{\sim}{\nu}
+\end{equation}
+
+Parallel mit der polychromatischen IR--Strahlungsquelle wird auch
+das Licht eines He--Ne--Lasers durch das Interferometer geschickt
+und erzeugt ein entsprechendes Interferogramm. Das Abtastintervall
+$\Delta x$, mit dem die Interferogramme digitalisiert werden,
+entspricht dann einem ganzzahligen Vielfachen der Nulldurchgänge
+des Lasersinussignals. $\Delta x$ bestimmt damit aus
+signaltheoretischen Gründen die maximale Wellenzahl, die noch
+eindeutig detektiert werden kann (\it Nyquist--Kriterium\rm ):
+\begin{equation}\label{eqnyquist}
+  \stackrel{\sim}{\nu}_{max}-\stackrel{\sim}{\nu}_{min} = \frac{1}{2\Delta
+  x}
+\end{equation}
+
+Das Michelson--Interferometer kann in den kommerziell erhältlichen
+Spektrometern auch modifiziert auftreten. So wurden die
+Planspiegel beim in dieser Arbeit benutzten K300--Spektrometer
+durch Kubusecken ersetzt und die Spektrometeranordnung pendelnd
+aufgehängt. Dadurch konnte der Spiegelweg im Gegensatz zum
+klassischen Interferometer auf ein Viertel verkürzt werden.
+Zusätzlich wird durch die Kubusecken eine Verkippung und ein
+Versatz der Spiegel kompensiert. Beide Modifikationen garantieren
+eine höhere Stabilität gegenüber Temperaturänderungen und
+Vibrationen.\\
+
+Der Detektor wandelt das optische Signal in ein elektrisches
+Signal um. Neben der Empfindlichkeit (änderung des erzeugten
+elektrischen Signals in Abhängigkeit von der Strahlungsleistung),
+sind vor allem auch die Ansprechgeschwindigkeit und das
+Detektorrauschen als Kriterien für den Einsatz in der Praxis
+wichtig. Zwei Gruppen von Detektoren werden heute in
+IR--Spektrometern verwendet. Die \it thermischen Detektoren \rm
+wandeln die durch die auffallende IR--Strahlung erzeugte Wärme in
+elektrische Energie um. \it Quantendetektoren \rm machen sich den
+inneren und äu{\ss}eren lichtelektrischen Effekt zunutze. In der
+Atmosphärenspektroskopie wird eine hohe Ansprechgeschwindigkeit
+und Empfindlichkeit des Detektors benötigt. MCT (\bf M\rm ercium
+\bf C\rm admium \bf T\rm ellurid) --Halbleiterdetektoren sind
+hierzu sehr gut geeignet. Sie müssen allerdings im Betrieb mit
+flüssigem Stickstoff gekühlt werden.\\
+
+
+\subsection{\label{vorteile}Vorteile von FT--Spektrometern gegenüber dispersiven
+Geräten}
+
+FT--Spektrometer haben im wesentlichen drei ganz entscheidende
+Vorteile gegenüber dispersiven Spektrometern im mittleren
+Infrarot:
+\begin{itemize}
+  \item Beim FT--Spektrometer empfängt der Detektor während der
+  ganzen Messzeit alle Frequenzbestandteile der von der IR--Quelle
+  ausgesandten Strahlung, was bei gleicher spektraler Auflösung
+  und gleichem Signal---/Rauschverhältnis eine um den Faktor 1/N
+  (N--Anzahl der Frequenzelemente) kürzere Messzeit im Vergleich zu dispersiven Spektrometern
+  bedeutet (\it Multiplex-- \rm oder \it Fellgett--\rm Vorteil).
+  \item Bei FT--Spektrometern kann gegenüber dispersiven Spektrometern ein wesentlich grö{\ss}erer
+  Durchsatz an Strahlungsleistung bei gleicher spektraler
+  Auflösung für den Strahlengang verwendet werden, was eine
+  deutliche Verbesserung des Signal/Rauschverhältnisses
+  bedeutet. Der Lichtleitwert \cite{schrader95} einer kreisförmigen Blende ist höher
+  als der der zwei Spalte innerhalb eines Monochromators
+  (\it Jacquinot-- \rm oder \it Throughput--\rm Vorteil).
+  \item Der Einsatz eines He--Ne--Referenzlasers sorgt für eine
+  hohe Wellenzahlgenauigkeit in den FT--Spektren (<0.01
+  cm\up{-1}). Das Interferogramm wird an den Nulldurchgängen des
+  Interferenzmusters des Lasers digitalisiert (\it Connes--\rm
+  Vorteil).
+\end{itemize}
+
+
+
+\subsection{\label{ft}Fourier--Transformation und Einkanalspektrenberechnung}
+
+Im Gegensatz zum Spektrum, in dem jeder Wellenzahl genau ein
+Messwert zugeordnet ist, enthält das Interferogramm in jedem
+Datenpunkt Informationen über den gesamten Spektralbereich. Um
+eine qualitative oder quantitative Auswertung der Daten zu
+ermöglichen, muss das Interferogramm in ein Spektrum überführt
+werden. Dies geschieht mittels der Fourier--Transformation.\\
+
+Das Prinzip der Fourier--Transformation besagt, dass eine gegebene
+Funktion als Summe von Kosinus-- und Sinusfunktionen beschrieben
+werden kann:
+\begin{equation}\label{eqft}
+  C(\stackrel{\sim}{\nu})= \int_{-\infty}^{\infty} I(x)\,
+  \exp{(i\,2\pi \stackrel{\sim}{\nu} x})\; \text{dx}
+\end{equation}
+
+Für digital abgetastete Signale I(n $\Delta x$) muss die diskrete
+Fouriertransformation (DFT) verwendet werden:
+
+\begin{equation}\label{eqdft}
+  C (k \cdot
+  \Delta\!\stackrel{\sim}{\nu})=\sum_{n=0}^{N-1}I(n\,\Delta x)\:
+  \exp (\frac{i\, 2\,\pi\, n\, k}{N})
+\end{equation}
+Die kontinuierlichen Variablen x und $\stackrel{\sim}{\nu}$ werden
+dabei durch die diskreten Stützpunkte $n\cdot \Delta x$ und $k
+\cdot \Delta\!\stackrel{\sim}{\nu}$ ersetzt. Die neue Funktion,
+die Fouriertransformierte C($k \cdot \Delta x$), besteht aus den
+Koeffizienten dieser Entwicklung nach Sinus-- und
+Kosinusfunktionen. Die von der Stellung des beweglichen Spiegels
+und somit von der optischen Wegdifferenz abhängige
+Interferogrammfunktion ist in die von der Wellenzahl abhängige
+Spektrenfunktion transformiert worden.\\
+
+In der Praxis wird Gleichung \ref{eqdft} meist nicht verwendet, da
+ihre Berechnung sehr rechenzeitintensiv ist. Schnellere
+Algorithmen basieren darauf, die Anzahl der notwendigen komplexen
+Multiplikationen und Sinus--/Kosinusberechnungen erheblich zu
+reduzieren. Oft eingesetzt wird der \it Cooley--Tukey\rm
+--Algorithmus. Einschränkung hierbei ist, dass die Gesamtzahl der
+Datenpunkte N eine Potenz von 2 sein muss (\cite{higham96}).\\
+
+% \bild{htb}{int2spe1.wmf}{400}{300}{\bf A \it mit einem
+% FT-Spektrometer aufgenommene Interferogramme (Atmosphärenspektrum
+% oben, Eigenstrahlungsspektrum unten), \bf B \it daraus nach der
+% Fourier--Transformation erhaltene Einkanalspektren. Zusätzlich ist
+% über dem Atmosphäreneinkanalspektrum ein berechnetes
+% Hintergrundeinkanalspektrum (in der Ordinate versetzt) gezeigt.
+% Die Intensitäten sind in willkürlichen Einheiten dargestellt.}
+
+Fällt keine der Abtastpositionen genau mit dem Maximum des
+Interferogramms zusammen, oder führen Optik, Detektor oder
+Verstärker zu wellenzahlabhängigen Phasenverschiebungen, so ist
+die Fouriertransformierte in Gleichung \ref{eqdft} nicht mehr
+reell, sondern komplex. Es muss eine Phasenkorrektur durchgeführt
+werden, um das reelle Spektrum $S(\stackrel{\sim}{\nu})$ aus dem
+komplexen Ergebnis C($\stackrel{\sim}{\nu}$) zu berechnen. Dies
+geschieht entweder durch die Berechnung des \it
+Amplitudenspektrums \rm P($\stackrel{\sim}{\nu}$) (oft auch
+"`Powerspektrum"' genannt), wobei keine Phasenkorrektur erfolgt
+\begin{equation}\label{eqpow}
+  P(\stackrel{\sim}{\nu})=\sqrt{C(\stackrel{\sim}{\nu}) \cdot
+  C^*(\stackrel{\sim}{\nu})}
+\end{equation}
+oder mit Hilfe der aufwendigeren Mertz--Methode \cite{mertz67} als
+multiplikative Phasenkorrektur. Das in dieser Arbeit verwendete
+K300--Spektrometer liefert beidseitige Interferogramme, die um das
+Maximum beim Zero OPD aufgenommen werden. Die Phasenabweichungen
+aufgrund der optischen Bauteile können durch die Berechnung des
+Powerspektrums ausreichend eliminiert werden.\\
+
+Für die quantitative Analyse der Spektren wird weiterhin zum
+Spektrum mit der Probe auch ein Spektrum ohne Probe (\it
+Hintergrundspektrum\rm ) benötigt, um die wellenzahlabhängigen
+Einflüsse von IR--Strahler, optischen Komponenten und Detektor
+mitberücksichtigen zu können. Zusätzlich zu beiden Spektren wird
+jedesmal noch das Spektrum der IR--Schwarzkörperstrahlung der
+Umgebung und der Spektrometeroptik bei abgeschalteter
+Strahlungsquelle benötigt. Dieses Spektrum wird \it
+Eigenstrahlungsspektrum \rm genannt. In Abbildung
+\ref{int2spe1.wmf} \bf A \rm sind die Interferogramme einer
+Atmosphärenmessung und der zugehörigen Eigenstrahlung gezeigt, in
+\bf B \rm die zugehörigen Einkanalspektren. Man sieht, dass der
+Eigenstrahlungsanteil deutlich kleiner ist als die Intensität des
+Atmosphärenspektrums. Da die Eigenstrahlungsspektren auch die
+spektralen Eigenschaften des Detektors und der optischen
+Komponenten des Aufbaus beinhalten, ist zusätzlich noch ein
+berechnetes Hintergrundeinkanalspektrum mit einem Offset
+dargestellt, das frei von atmosphärischen Absorptionsbanden ist
+und zur Berechnung des Atmosphärentransmissionsspektrums dient.\\
+
+
+\subsection{\label{faltung}Auflösung, Faltungseffekte und Zerofilling}
+
+Zwei Absorptionslinien sind im Spektrum dann noch voneinander zu
+unterscheiden, wenn zwei Absorptionsmaxima ungefähr gleicher Höhe
+durch ein Absorptionsminimum getrennt sind, welches eine um etwa
+20 \% höhere Transmission besitzt. Dieser Wert ist willkürlich
+gesetzt und wird in der IR--Spektroskopie nicht einheitlich
+gehandhabt. Grundsätzlich gilt in Interferogrammen für
+breitbandige Strahlungsemission, dass sie bei einem
+Weglängenunterschied der beiden Interferometerspiegel $\Delta x=0$
+ein ausgeprägtes Intensitätsmaximum haben. Die Intensität schwächt
+sich bei grö{\ss}er werdendem $\Delta x$ schnell ab. Liegen zwei
+Frequenzen im Spektrum weit auseinander, so werden sie mit grö{\ss}er
+werdendem $\Delta x$ im Interferogramm schnell au{\ss}er Phase
+geraten. Je näher sie allerdings beieinander liegen, desto grö{\ss}er
+muss $\Delta x$ sein, um sie noch voneinander trennen zu können.
+Für die Auflösung $\Delta \stackrel{\sim}{\nu}$ gilt:
+
+\begin{equation}\label{eqaufl}
+  \Delta \stackrel{\sim}{\nu} = \frac{1}{2\,x_{max}}
+\end{equation}
+
+Die Auflösung ist also direkt mit der maximalen Länge der
+Interferogramme x\down{max} korreliert.\\
+
+Ein zweiter Effekt ist bei einer endlichen Länge der
+Interferogramme zu berücksichtigen. Die Theorie der
+Fourier--Transformation in Kapitel \ref{ft} gilt für
+Interferogramme unendlicher Länge. Die endlich vorliegenden
+Interferogramme können als Produkt des Interferogramms mit einer
+speziellen Gewichtungsfunktion, nämlich der Rechteckfunktion (sog.
+\it Boxcar--\rm Funktion), beschrieben werden. Man kann zeigen,
+dass die Fouriertransformation des Produktes zweier Funktionen
+einer Faltungsoperation mit beiden Fouriertransformierten jener
+Funktionen entspricht (siehe z.B. \cite{griffiths86}).
+Mathematisch wird die Faltung eines Spektrums
+S($\stackrel{\sim}{\nu}$) mit einer Apparatefunktion
+f($\stackrel{\sim}{\nu}$) folgenderma{\ss}en beschrieben:
+\begin{eqnarray}\label{eqconv}
+  G(\stackrel{\sim}{\nu}) & = & S(\stackrel{\sim}{\nu})*f(\stackrel{\sim}{\nu})\nonumber\\
+& = & \int^{\infty}_{-\infty} S(\stackrel{\sim}{\nu}^{\:\prime})
+\; f(\stackrel{\sim}{\nu}-\stackrel{\sim}{\nu}^{\:\prime})\;
+\text{d}\!\stackrel{\sim}{\nu}^{\:\prime}
+\end{eqnarray}
+
+Das resultierende Spektrum G($\stackrel{\sim}{\nu}$) dieser
+Faltung enthält aber bei Verwendung einer Boxcar--Funktion
+unerwünschte Seitenmodulationen im Spektrum einer schmalen
+Absorptionslinie (\it Leakage--Effekt\rm ). So wird aus einer
+endlichen Kosinusfunktion nach der Fouriertransformation eine
+sinc-- statt einer Deltafunktion. Diese Seitenmodulationen kann
+man durch eine Gewichtung der Interferogrammpunkte verringern,
+z.B. durch Multiplikation mit einer Dreiecksfunktion. Diese
+Gewichtungsfunktion wird \it Apodisation \rm genannt. Die
+Fouriertransformation der Apodisationsfunktion wird \it
+instrumentelle Linienfunktion \rm oder auch \it Apparatefunktion
+\rm genannt. Sie hat allerdings zur Folge, dass die
+Halbwertsbreite der einzelnen Spektrallinien grö{\ss}er und somit die
+Auflösung schlechter wird. Es sind in der Literatur
+(\cite{zhu198}, \cite{zhu298}) neben der Dreiecksfunktion weitere
+Funktionen vorgeschlagen worden, die die Seitenmodulation bei
+möglichst geringer Vergrö{\ss}erung der Halbwertsbreite weiter
+verkleinern.\\
+
+Bei Fouriertransform--Spektrometern muss weiterhin auch die \it
+Selbstapodisation \rm berücksichtigt werden. Die Strahlung einer
+Quelle endlicher Ausdehnung, die durch eine Blende endlicher
+öffnung in das Spektrometer fällt und auf den Detektor fokussiert
+wird, ist nicht optimal kollimiert, sondern leicht divergent.
+Zwischen der Strahlung im Zentrum und den äu{\ss}eren Lichtstrahlen
+besteht eine Phasenverschiebung, was zu einer zusätzlichen
+Apodisation führt und die Auflösung somit leicht verschlechtert.
+Es kann weiterhin gezeigt werden \cite{griffiths86}, dass die
+Wellenlänge des äu{\ss}eren Strahls leicht grö{\ss}er ist als die des
+Zentralstrahls. In einer ersten Näherung ist dann die
+Wellenzahlposition der betrachteten Linie die Mittelung aus den
+Wellenzahlpositionen des äu{\ss}eren und des zentralen Strahls. Es
+tritt somit eine leichte Wellenzahlverschiebung der Bande auf.
+Angemerkt sei, dass in Fouriertransform--Spektrometern zusätzlich
+die Strahlung eines HeNe--Lasers durch das Interferogramm geführt
+wird, um das Interferometersignal bei den Nulldurchgängen des
+Lasersignals zu digitalisieren. Ist der Laser nun etwas
+unterschiedlich im Strahlengang des Interferometers im Vergleich
+zum IR--Strahl geführt, hat dies ebenfalls eine
+Wellenzahlverschiebung der Banden im Spektrum zur Folge.\\
+
+Die Faltung der Spektren erfolgt in der Transmissionsdomaine.
+Durch Logarithmierung dieser Transmissionsspektren erhält man
+danach die zugehörigen Extinktionsspektren. Abhängig von
+Auflösung, gewählter Apodisationsfunktion und Halbwertsbreite der
+betrachteten Bande, wird dann die Funktion der gemessenen
+Extinktion in Abhängigkeit von der wahren Extinktion für gro{\ss}e
+Extinktionen (ab bestimmten Extinktionswerten z.B. im
+Bandenmaximum) nichtlinear. Bei gleicher Apodisationsfunktion ist
+diese Nichtlinearität für schlechter aufgelöste Spektren grö{\ss}er
+als bei höher aufgelösten Spektren. Siehe hierzu auch die
+Abbildung im Anhang A für das Prüfgas Kohlenstoffmonoxid, wo diese
+nichtlineare Abhängigkeit für die Bande bei 2169.3 cm\up{-1} bei
+Auflösungen von 0.2 und 0.5 cm\up{-1} dargestellt ist.\\
+
+Diese Faltungseffekte sind sehr früh auch schon für dispersive
+Spektrometer gezeigt worden. Für dispersive Spektrometer wird die
+\it Dreiecks--\rm Funktion bei nicht--beugungsbegrenzten Spalten
+als Apparatefunktion verwendet. \cite{ramsay52} zeigt
+beispielhaft, dass bei der Wahl einer Spaltbreite, für die die
+Halbwertsbreite der zugehörigen Dreiecksfunktion halb so gro{\ss} ist
+wie die wahre Linienbreite der Absorptionsbande, sich der wahre
+und der gemessene Extinktionskoeffizient im Bandenmaximum um
+$\approx$ 20 \% unterscheiden. Der Unterschied der integralen
+Intensität beträgt jedoch nur $\approx$ 2--3 \%. Der Abfall der
+Linienintensität bei schlechterer Auflösung geht also mit einer
+Verbreiterung der Bande einher. In Abbildung \ref{no2.wmf} ist
+dieser Sachverhalt für ein NO\down{2}--Spektrum für eine Auflösung
+von 0.2 und 1.0 cm\up{-1} gezeigt.\\
+
+Ein weiterer unerwünschter Effekt in den Spektren ist die nicht
+ausreichende Dichte digitalisierter Punkte. Im Spektrum werden
+z.B. dann die Maxima von schmalen Banden nicht optimal abgetastet.
+Dieser Effekt lässt sich dadurch verringern, bzw. ganz vermeiden,
+wenn an das Ende des Interferogramms Nullen angefügt werden (\it
+Zerofilling\rm ). Dadurch wird die Anzahl der Punkte pro
+Wellenzahl im Spektrum erhöht, was einer Interpolation entspricht
+(siehe auch Abb. \ref{h2ouni.wmf}). Eine Verdoppelung der
+Interferogrammlänge entspricht dabei einem zusätzlichen
+Spektrendatenpunkt.\\
+
+
+\subsection{\label{lambertbeer}Lambert--Beer'sches Gesetz und Extinktionsspektrenberechnung}
+
+Bei IR--spektroskopischen Messungen wird der Anteil der durch die
+Probe absorbierten elektromagnetischen Strahlung gemessen und zur
+quantitativen Auswertung genutzt. Lambert fand 1760 heraus, dass
+die Intensität der Strahlung beim Durchgang durch das homogene
+absorbierende Medium proportional mit zunehmender Weglänge
+abnimmt. Beer erkannte 1852 zudem, dass die Strahlungsintensität
+ebenso proportional zur steigenden Konzentration des
+absorbierenden Mediums abgeschwächt wird.\ Das Lambert--Beer'sche
+Gesetz lautet in der Exponentialform:
+
+\begin{equation}\label{eqlb}
+  I=I_0 \cdot e^{-\epsilon^{\:\prime} \cdot c \cdot d}
+\end{equation}
+
+\begin{tabbing}
+mit \quad \=-- \=test \=\kill
+
+mit \> I \> -- \> Strahlungsintensität\\
+
+\> $I_0$ \> -- \> Intensität der auf die Probe fallenden
+Strahlung\\
+
+\> $\epsilon^{\:\prime}$ \> -- \> Extinktionskoeffizient zur Basis
+e\\
+
+\> c \> -- \>Konzentration \\
+
+\> d \> -- \> Schichtdicke\\
+\end{tabbing}
+
+% \bild{htb}{int2spe2.wmf}{400}{300}{\bf A \it durch Division eines
+% Atmosphärenspektrums, aufgenommen für eine optische Weglänge von
+% 130 m, und Hintergrundeinkanalspektrum erhaltenes
+% Transmissionsspekrum und \bf B \it aus dem Transmissionsspektrum
+% durch Logarithmierung erhaltenes Extinktionsspektrum.}
+
+Um eine der Konzentration proportionale lineare Grö{\ss}e zu erhalten,
+wird die Extinktion E eingeführt. üblicherweise wird zu deren
+Berechnung der dekadische Logarithmus verwendet, wobei der Faktor
+log e = 0.434 im Extinktionskoeffizienten $\epsilon$
+berücksichtigt wird.
+
+\begin{equation}\label{eqlbext}
+  E=-log \frac{I}{I_0} = \epsilon \cdot c \cdot d
+\end{equation}
+
+Der Extinktionskoeffizient $\epsilon$ ist abhängig von Wellenzahl,
+Temperatur und Druck. Zu beachten ist, dass aufgrund der
+Logarithmierung bei intensiven Banden eine kleine änderung der
+Transmission $\frac{I}{I_0}$ eine gro{\ss}e Extinktions-- und somit
+Konzentrationsänderung zur Folge hat.\\
+
+In Abbildung \ref{int2spe2.wmf} ist die Berechnung eines
+Transmissionsspektrums und des zugehörigen Extinktionsspektrums
+dargestellt. Vom Atmosphären-- und Hintergrundeinkanalspektrum aus
+Abbildung \ref{int2spe1.wmf} \bf B \rm wurden zur Berechnung des
+Transmissionsspektrums in Abb. \ref{int2spe2.wmf} \bf A \rm die
+zugehörigen Eigenstrahlungsspektren abgezogen und die
+resultierenden Spektren durcheinander dividiert. Abb.
+\ref{int2spe2.wmf} \bf B \rm zeigt das durch Logarithmierung
+erhaltene Extinktionsspektrum. Eingezeichnet sind zusätzlich die
+breiten Spektralbereiche, die in der Atmosphäre von H\down{2}O--
+und CO\down{2}--Banden dominiert werden und in denen die
+Auswertung anderer Komponenten oft nicht möglich ist. Das
+zusätzliche Fenster zeigt beispielhaft einen Spektralbereich mit
+Extinktionen, in dem üblicherweise Komponenten ohne Probleme
+ausgewertet werden (Extinktion<1).
+
+\subsection{\label{openpath}FTIR--Messaufbau zur Schadgasbestimmung
+in der offenen Atmosphäre}
+
+Der Einsatz von optischen Messverfahren in der offenen Atmosphäre,
+im angelsächsischen Sprachgebrauch auch \it open--path monitoring
+\rm genannt, hat eine Reihe von Vorteilen gegenüber extraktiven
+Probenahmeverfahren. Da die Messanordnung lediglich aus einer
+Strahlungsquelle und einer Empfangseinheit besteht, ist eine
+gesonderte Probenahmevorrichtung nicht erforderlich. Es können
+Messstrecken von wenigen Metern bis zu einigen hundert Metern
+realisiert werden, was eine wesentlich höhere Verlässlichkeit der
+Messwerte über die jeweiligen Messstrecken bedeutet als dies bei
+Punktmessverfahren der Fall ist. Die Messwerte sind dann
+Mittelwerte über die gesamte Messstrecke. Die Messungen erfolgen
+dabei zerstörungsfrei und \it in--situ\rm , wobei eine weit
+schnellere Messzeit und quasi on--line Auswertung ermöglicht wird,
+allerdings auch eine Probenaufbereitung wie z.B. Trocknung zur
+Entfernung der stark absorbierenden Wassers in der Atmosphärenluft
+ausschlie{\ss}t. Um kleine Emissionsquellen zu lokalisieren, muss aber
+zudem bei optischen Verfahren mit längeren Messstrecken oft ein
+grö{\ss}erer Aufwand betrieben werden.\\
+
+In der FTIR--Spektroskopie wird über eine ganze Anzahl von
+Interferogrammen gemittelt, um das Signal/Rauschverhältnis zu
+verbessern. Bei dem in dieser Arbeit genutzten K300--Spektrometer
+mit 0.2 cm\up{-1} Auflösung haben sich 100 Mittelungen als guter
+Kompromiss zwischen Signal/Rauschverhältnis und Messzeit erwiesen.
+Die Fouriertransformation wird dann am über 100 Interferogrammen
+gemittelten Interferogramm vorgenommen. Die Dauer der Aufnahme
+eines Interferogramms liegt bei 1 s, welches danach auf der
+Festplatte abgespeichert wird. Für 100 Mittelungen benötigt der
+verwendete Pentium90 mit 32 MB Arbeitsspeicher ca. 3$\frac{1}{2}$
+min. In dieser Zeit können bei Messungen in der offenen Atmosphäre
+Dichteschwankungen der zu analysierenden Gase auftreten. Dies
+führt, vor allem bei änderungen des stark absorbierenden Wassers,
+zu Veränderungen der auf den Detektor fallenden
+Strahlungsintensität. \cite{kyle84} et al. zeigen, dass diese
+Intensitätsänderungen auf den Detektor mathematisch einer
+zusätzlichen Faltung des gemittelten Interferogramms entspricht,
+welche die Auflösung ein wenig verschlechtert. Bei normalerweise
+in der Atmosphäre vorliegenden Dichteschwankungen ist die
+Verschlechterung der Auflösung jedoch vernachlässigbar
+\cite{kyle84}.\\
+
+FTIR--Messungen haben weiterhin den Vorteil, dass eine Vielzahl
+von Molekülen (z.B. aromatische und halogenierte
+Kohlenwasserstoffe, Alkane, Alkene, Aldehyde, Ketone, Alkohole,
+Ester, Anorganika) simultan detektiert werden können. Weiterhin
+emittieren heiße Abgase oberhalb von ca. 70 C genügend
+IR--Strahlung, womit eine Analyse dieser Gase auch ohne
+zusätzliche IR--Quelle möglich ist (\it passive FTIR--Messungen\rm
+). Die Nachweisgrenzen für die einzelnen Stoffe liegen bei einem
+aktivem Aufbau mit IR--Strahlungsquelle im unteren ppb--Bereich
+(siehe auch Kap. \ref{nwg}), für passive Aufbauten, abhängig von
+der Hintergrundtemperatur, um 3 Grö{\ss}enordnungen darunter
+\cite{chaffin99}, \cite{mattuip}. Zu berücksichtigen ist, dass mit
+FTIR--Messungen Moleküle, die kein Dipolmoment besitzen (wie
+N\down{2}, O\down{2} und die Edelgase) nicht detektiert werden
+können.\\
+
+% \bild{htb}{aufbau.bmp}{400}{230}{\it Schematischer Aufbau eines
+% sogenannten bistatischen FTIR--Systems für Messungen in der
+% offenen Atmosphäre.}
+
+Abbildung \ref{aufbau.bmp} zeigt einen typischen Aufbau eines
+FTIR--Systems für Messungen in der offenen Atmosphäre. Aufbauten,
+wie in dieser Abbildung zu sehen, bei denen IR--Strahlungsquelle
+und Interferometer räumlich voneinander getrennt sind, werden \it
+bistatische \rm Messanordnungen genannt. Das Probevolumen wird
+dabei durch den Abstand von Strahlungquelle und Interferometer
+bestimmt.\\
+
+Bei \it monostatischen Systemen \rm hingegen bilden Sender und
+Empfänger eine Einheit. Die IR--Quelle ist im Spektrometer
+integriert und ein zusätzlicher Strahlteiler trennt den
+einkoppelnden von dem auskoppelnden Strahl. Ein Retroreflektor
+sorgt für die Rückführung des IR--Strahls zum Interferometer. Das
+Probevolumen wird in diesem Fall zweimal durchlaufen.\\
+
+Der Vorteil von monostatischen Systemen liegt hauptsächlich darin,
+dass sie einen modulierten Infrarotstrahl aussenden und
+detektieren. In diesem Fall liefert die unmodulierte Strahlung
+(Eigenstrahlung) der Umgebung nur einen Gleichspannungsanteil zum
+Signal. Weiterhin ist auch aufgrund des Einsatzes des
+Retroreflektors keine zusätzliche zweite Stromversorgung für den
+IR--Strahler notwendig, was bei Feldmessungen Probleme bereiten
+kann. Die Justage des Retroreflektors bei monostatischen Systemen
+ist unproblematischer als bei bistatischen Systemen, wo die
+optischen Achsen vom Parabolspiegel des IR--Strahlers und des
+Teleskopes des FT--Spektrometers zusammenfallen müssen. Der
+Einsatz eines Retroreflektors erlaubt zudem auch unproblematische
+Messungen in explosionsgeschützten Bereichen. Aufgrund des zweiten
+Strahlteilers werden diese Vorteile jedoch mit einem
+Strahlungsverlust erkauft, der bei gleicher Messstrecke aufgrund
+des zweimaligen Durchlaufens sich noch zusätzlich zur bistatischen
+Anordnung halbiert. Ein weiterer Nachteil der monostatischen
+Systeme liegt darin, dass Streulicht mit gemessen wird
+\cite{richardson298}. Im allgemeinen sind monostatische Systeme in
+der Anschaffung teurer als bistatische Systeme.\\
+
+Das in dieser Arbeit verwendete K300--Spektrometer arbeitet in der
+bistatischen Konfiguration. Die Einsatzmöglichkeiten solcher
+Systeme zur Messung diffuser Emissionen sind vielfältig:
+\begin{itemize}
+  \item Messung von Emissionen in oder neben Fabriken
+  \item Messung über Kläranlagen
+  \item Altlastendeponien (z.B. Aushubarbeiten)
+  \item Arbeitsplatzmessungen
+  \item Allgemeine Luftanalyse (Qualität der Atmosphäre)
+  \item Katastrophenfälle, Chemieunfälle, Brände
+  \item Messung von kontrollierten Verbrennungen
+  \item Automobile Abgase an Stra{\ss}en und Tunneln
+  \item Lackieranlagen und Tankstellen
+  \item Erfassung wichtiger Daten zur Erstellung von
+  Gas--Ausbreitungsmodellen
+\end{itemize}
+
+Der Einsatz eines solchen Verfahrens erfordert allerdings
+allgemein bindende Richtlinien, um vergleichbare und validierte
+Messergebnisse erhalten zu können. In den U.S.A. gibt es diese
+Richtlinien seit 1997 \cite{to1697}, in Deutschland liegen die
+entsprechenden VDI--Richtlinien zur Zeit im Gründruck vor
+\cite{vdi98} und sollen Ende 1999 erscheinen. Im Rahmen dieser
+Arbeit wurde ein entscheidender Beitrag zur Verbesserung der
+quantitativen Genauigkeit der Analyse geleistet. Hierzu wurde
+durchgängig ein hochauflösendes Spektrometer mit 0.2
+cm\up{-1}--Auflösung verwendet. In der Atmosphärenspektroskopie
+sind Auflösungen von 0.5, 1 cm\up{-1} oder schlechter üblich. Die
+Erkenntnisse dieser Arbeit konnten in eine Expertensoftware
+umgesetzt werden, womit eine neue Messqualität in der
+Atmosphärenspektrometrie erschlossen wird. Diese Erkenntnisse
+werden in den folgenden Kapiteln vorgestellt.\\
+
+
+\section{\label{anderemesstechniken}Vergleich mit alternativen
+optischen Messtechniken}
+
+Neben der FTIR--Spektroskopie gibt es noch andere optische
+Verfahren, die für Gasmessungen in der offenen Atmosphäre
+eingesetzt werden. Die wichtigsten dieser Verfahren werden in den
+nächsten Abschnitten vorgestellt und miteinander verglichen.
+
+
+\subsection{\label{doas}DOAS}
+
+Das DOAS--Verfahren (\bf D\rm ifferential \bf O\rm ptical \bf A\rm
+bsorption \bf S\rm pectroscopy) ist ein weiteres Verfahren,
+welches mit breitbandigen Strahlungsquellen arbeitet und womit
+Spektren im UV/VIS--Bereich von 200--500 nm ausgewertet werden
+können. Als Strahlungsquellen dienen dabei Glühlampen, die mit
+Temperaturen um die 3000 K oder Lichtbogenlampen (z.B. Xenon), die
+mit Temperaturen um die 6000--10000 K arbeiten. Anforderung an die
+Strahlungsquellen ist vor allem, dass sich ihre
+Spektralcharakteristik nur langsam ändert. Die Auswertung erfolgt
+in der Weise, dass ein Spektrum simultan oder kurz hintereinander
+mit zwei verschiedenen Auflösungen aufgenommen wird. Das
+hochaufgelöste Spektrum (z.B. 0.3 nm) enthält dann die Strukturen
+der zu messenden Banden, im schlecht aufgelösten Spektrum (z.B. 25
+nm) sind die Feinstrukturen nicht mehr zu erkennen und damit ist
+näherungsweise nur der spektrale Hintergrund enthalten. Die
+Differenz dieser beiden Spektren kann damit quantitativ
+ausgewertet werden.\\
+
+Zur Aufnahme der Spektren werden verschiedene
+Spektrometeranordnungen genutzt \cite{platt94}. Oft werden
+Spektrometer in
+Czer\-ny--\-Tur\-ner--\-Mo\-no\-chro\-ma\-tor\-an\-ordn\-ung
+verwendet (welche neben den Gittern zusätzlich mit zwei weiteren
+Spiegeln ausgerüstet sind). Es können in anderen
+Spektrometerkonfigurationen aber auch holographische oder
+Echelle--Gitter verwendet werden \cite{becker-ross97}. Auch wurden
+Fourier--Transform--Spektrometern eingesetzt, deren Vorteil im
+erhöhten Lichtleitwert liegt, wenn mit höherer Auflösung gemessen
+wird (siehe \cite{platt94} und darin zitierte Literatur). Abhängig
+vom Wellenzahlbereich und der gewünschten Empfindlichkeit werden
+ebenfalls eine ganze Reihe von unterschiedlichen Detektoren
+eingesetzt. Sie reichen dabei von nichtdispersiven
+Halbleiterdetektoren über Photomultiplier bis hin zu
+Photodiodenarrays.\\
+
+Der Vorteil von Messungen im UV--Bereich liegt vor allem darin,
+dass die Absorptionskoeffizienten in diesem Bereich deutlich
+grö{\ss}er sind als im IR--Bereich. Zudem können aufgrund der
+leistungsstarken Strahlungsquellen Wegstrecken bis zu mehreren
+Kilometern realisiert werden. Allerdings ist die Anzahl der
+Spezies, die schmale Banden im UV--Bereich besitzen, beschränkt.
+So können vorwiegend nur NO\down{x}, SO\down{2}, O\down{3},
+NH\down{3}, CS\down{2}, Benzol, HNO\down{2}, BrO und ClO gemessen
+werden, dies aber mit sehr guten Nachweisgrenzen mit
+Stoffmengenanteilen im ppb bis ppt--Bereich.
+
+
+\subsection{\label{diodenlaser}Diodenlaser}
+
+Die Messanordnung für die Absorptionsspektroskopie mit
+durchstimmbaren Diodenlasern (TDLAS--\bf T\rm unable \bf D\rm iode
+\bf L\rm aser \bf A\rm bsorption \bf S\rm pectroscopy) besteht
+vorwiegend aus einem durchstimmbaren Laser auf der einen und zwei
+Photodioden auf der anderen Seite der Messstrecke. Das Laserlicht
+wird an einem Strahlteiler geteilt und ein Strahl durch die
+kontaminierte Messstrecke, der zweite an ihr vorbei geleitet. Das
+Differenzsignal der beiden Photodioden gibt das
+Absorptionsspektrum. Durch den Einsatz von
+Mehrfachreflexionsküvetten kann die Nachweisgrenze bei
+Punktmessungen deutlich verbessert werden. Bei niedrigem Druck in
+der Zelle kann zudem die Druckverbreiterung reduziert werden. Der
+kleinste noch messbare Wert für den Absorptionskoeffizienten
+$\alpha$ hängt vom Verhältnis des spektral noch auflösbaren
+Intervalls $\Delta\omega$ zur Linienbreite des
+Absorptionsübergangs $\Delta\omega_D$ ab.\\
+
+Im Gegensatz zu den vorgenannten Verfahren mit breitbandigen
+Strahlungsquellen, emittiert der Diodenlaser monochromatisch und
+ist somit eine sehr schmalbandige Strahlungsquelle mit einer oft
+um Grö{\ss}enordnungen höheren Leistungsdichte. Dies bringt folgende
+Vorteile \cite{demtröder93}:
+\begin{itemize}
+  \item die spektrale Auflösung zur Messung von Absorptionen ist höher
+  als bei den anderen optischen Verfahren und vorwiegend durch die
+  Doppler--Breite der Absorptionslinie bestimmt
+  \item aufgrund der hohen spektralen Leistungsdichte treten
+  Rauschprobleme des Detektors in den Hintergrund
+  \item aufgrund der guten räumlichen Bündelung der Laserstrahlung
+  können längere Absorptionswege, z.B.bei Mehrfachreflexionen in
+  Absorptionszellen, realisiert werden.
+  \item die Laserfrequenz kann sehr schnell durchgestimmt werden.
+  Mit Diodenlasern sind Durchstimmbereiche über einige
+  Wellenzahlen im Mikrosekundenbereich möglich.
+\end{itemize}
+
+Die Nachweisgrenzen lassen sich noch einmal um Grö{\ss}enordnungen
+verbessern, wenn die Frequenz $\omega$ des Lasers während des
+Durchstimmens um einen Betrag $\Delta\omega$ moduliert wird. Mit
+Hilfe eines phasenempfindlichen Verstärkers erhält man dann mit
+Einstellung auf die n--te Harmonische der Modulationsfrequenz
+$\Delta\omega$ jeweils die n--te Ableitung des
+Absorptionskoeffizienten $\alpha(\omega)$ gegenüber reinen
+Absorptionsmessungen mit durchstimmbaren Lasern. Dadurch lassen
+sich spektrale Untergründe und technisches Rauschen eliminieren
+bzw. vermindern und somit die Nachweisempfindlichkeit steigern.
+Oft wird die zweite Harmonische zur Detektion herangezogen, weil
+die Signale symmetrisch und noch genügend hoch sind. Die optimale
+Modulationsfrequenz hängt von der Frequenzhalbwertsbreite der zu
+analysierenden Bande ab und beträgt in etwa das 2.2--fache dieses
+Wertes \cite{silver92}. Eine weitere Minimierung des Untergrundes
+ist mit Doppelmodulationsverfahren zu erzielen. Hierbei wird die
+Laserfrequenz mit einer zweiten zusätzlichen Frequenz moduliert
+und die Detektion findet z.B. auf der Summenfrequenz statt
+\cite{zybin95}.\\
+
+Die erreichbaren Nachweisgrenzen für Messungen in der offenen
+Atmosphäre mittels TDLAS hängen von mehreren Faktoren ab (siehe
+auch den übersichtsartikel von Werle \cite{werle98} oder eine
+übersicht möglicher Einsatzgebiete \cite{grisar92} ). Sie sind
+deutlich besser, wenn eine Mehrfachreflexionszelle eingesetzt und
+dadurch die optische Pfadlänge vergrö{\ss}ert und der Druck reduziert
+werden kann. Es ist in dem Fall aber zu prüfen, ob die untersuchte
+Gasmenge auch repräsentativ für das Messszenario ist. Für das zu
+detektierende Gas ist ein geeigneter Laser auszusuchen, der bei
+einer starken, möglichst schmalbandigen und von anderen
+Komponenten nicht überlagerten Absorptionslinie emittiert.
+Mittlerweile gibt es für den mittleren und fernen IR--Bereich
+(sog. Bleisalzlaser) und für den sichtbaren Spektralbereich
+Halbleiterlaser. Die Halbleiterlaser sind in
+Wellenlängenbereichen, die in der Kommunikationselektronik
+benötigt werden, in sehr guter Qualität zu erhalten.\\
+
+Die Halbleiterlaser, die Laserstrahlung bis zu Wellenlängen von
+etwa 2.8 $\mu$m emittieren, können bei Raumtemperatur betrieben
+werden, mit Wellenlängen darüber müssen sie mit Stickstoff oder
+Helium gekühlt werden. Abhängig von diesen Randbedingungen sind
+Nachweisgrenzen im ppb-- bis in den ppt--Bereich möglich
+\cite{werle98}.
+
+
+\subsection{\label{lidar}LIDAR}
+
+Ein optisches Verfahren, welches besonders für die Messung von
+Gasen in gro{\ss}er Höhe bzw. an unzugänglichen Orten geeignet ist,
+ist das LIDAR--Verfahren (\bf L\rm ight \bf D\rm etecting \bf A\rm
+nd \bf R\rm anging). Das Prinzip des LIDAR--Verfahrens beruht
+darauf, dass ein Laserpuls in die Atmosphäre ausgesandt und die
+rückgestreute Strahlung registriert und analysiert wird. Dabei
+gibt es verschiedene Arten von Wechselwirkung zwischen
+elektromagnetischer Strahlung und atmosphärischen Bestandteilen,
+die im Experiment ausgenutzt werden können. Der dominante Prozess
+ist die elastische Streuung von Photonen an Aerosolen und
+Staubteilchen (Mie--Streuung) und an Molekülen
+(Rayleigh--Streuung). Weiterhin sind auch nicht--elastische
+Streuprozesse wie die Raman--Streuung möglich.\\
+
+Das Rückstreusignal $S(\lambda,t)$ wird bei Messungen im
+UV/VIS--Spektralbereich von einem Photomultiplier zeitaufgelöst
+gemessen. Die Zeit $t=2 \cdot R/c$ hängt von der Entfernung R der
+streuenden Teilchen ab (c--Lichtgeschwindigkeit). Für die
+zurückgestrahlte Leistung in einem Zeitraum $\Delta t$ und somit
+eines bestimmten Probenvolumens gilt:
+\begin{equation}\label{eqlidar1}
+  S(\lambda , t_1)=\int^{t_1+\Delta t/2}_{t_1-\Delta t/2}
+  S(\lambda , t) \: {\rm dt}
+\end{equation}
+Diese rückgestreute Leistung $S(\lambda,t)$ hängt dabei von der
+Ausgangsleistung des Laserpulses $P_0$, von der Abschwächung durch
+den Absorptionskoeffizienten $\alpha(\lambda)$ auf Hin-- und
+Rückweg, der Teilchenzahldichte N, dem Rückstreukoeffizienten
+$\sigma_{streu}$ und dem vom Teleskop mit dem Durchmesser D
+erfassten Raumwinkel D\up{2}/R\up{2} ab \cite{measures84}:
+\begin{equation}\label{eqlidar2}
+  S(\lambda,t)=P_0(\lambda)\, N\, \sigma_{streu}(\lambda)\,
+  \frac{D^2}{R^2}\: \exp[-2\,\alpha(\lambda)\, R]
+\end{equation}
+Beim differentiellen Absorptions--LIDAR (DIAL) werden zwei
+Laserpulse mit unterschiedlichen Wellenlängen benötigt. Eine
+Wellenlänge wird so gewählt, dass sie mit dem
+Absorptionslinienmaximum des zu messenden Moleküls übereinstimmt.
+Die andere Wellenlänge wird möglichst nah der ersten gewählt, aber
+so, dass sie nicht im Absorptionsbereich des zu messenden Gases
+liegt. Für genügend kleine $\lambda_1-\lambda_2$ ändern sich dann
+die Mie--Rückstreukoeffizienten nicht merklich. Durch
+Quotientenbildung der beiden gemessenen Rückstreusignale lässt
+sich der gesuchte Volumenanteil der zu bestimmenden Moleküle
+ortsaufgelöst bestimmen.\\
+
+Die Ortsauflösung beträgt beim Einsatz von
+Nanosekunden--Laserpulsen heute ca. 5--10 m in Abständen, je nach
+Justage, ab etwa 200 m vom Messsystem entfernt. Die Ortsauflösung
+kann weiter verbessert werden, wenn Pikosekunden-- oder
+Femtosekunden--Laser genutzt werden. In heutigen Systemen werden
+sowohl gepulste UV/VIS-- (z.B. Titan--Saphir--Laser,
+frequenzverdoppelte Farbstofflaser) wie auch IR--Laser (z.B.
+CO\down{2}--Laser, optisch parametrische Oszillatoren (OPO))
+verwendet. Je nach benötigter Reichweite gibt es Systeme mit
+Ausgangsleistungen von wenigen mJoule bis in den Joule--Bereich
+hinein. Mit den Lasern im UV/VIS--Bereich können die anorganischen
+Komponenten H\down{2}O, O\down{3}, SO\down{2}, NO und NO\down{2}
+sowie aromatische Kohlenwasserstoffe wie Benzol gemessen werden,
+wobei die Nachweisgrenzen im unteren ppb--Bereich liegen. Im
+Gegensatz zu den UV/VIS--Systemen ist mit den IR--Systemen eine
+grö{\ss}ere Anzahl von organischen Substanzen messbar (Olefine,
+organische Lösungsmittel, halogenierte Kohlenwasserstoffe), sowie
+Ammoniak, SF\down{6}, O\down{3} und H\down{2}O. Die
+Nachweisgrenzen liegen hier im unteren ppm--Bereich.\\
+
+LIDAR--Systeme können aber auch für Absorptionsmessungen genutzt
+werden. Durch den Einsatz von \it Hardtargets \rm (d.h. festen
+Zielen im Hintergrund wie z.B. Bäume, Häuser etc.) kann eine sehr
+viel effizientere Rückstreuung erfolgen, wobei dann aber keine
+ortsaufgelöste Messung mehr möglich ist. Die Nachweisgrenzen
+können sich dann um bis zu zwei Grö{\ss}enordnungen verbessern.\\
+
+
+\subsection{\label{vergl}Vergleich der Methoden untereinander}
+
+Bei der Auswahl der bestgeeigneten optischen Methode für
+Gasmessungen in der offenen Atmosphäre für eine gegebene
+Problemstellung sind mehrere Kriterien zu beachten. Es ist zu
+klären, welche und wieviele Komponenten gleichzeitig mit welcher
+Nachweisgrenze gemessen werden sollen. Dabei sind auch die Länge
+der zu realisierenden Messstrecke und eventuelle Beschränkungen
+beim Aufbau der Strahlungsquelle mit zu berücksichtigen. Die
+Zeitdauer einer Messung und ein möglicher Dauerbetrieb sind neben
+den Kosten weitere Entscheidungskriterien.\\
+
+Das FTIR-- und das DOAS--Verfahren haben als Vollspektrenmethoden
+den Vorteil, dass mehrere Komponenten simultan bestimmt werden
+können. Querempfindlichkeiten können dabei in der Auswertung
+mitberücksichtigt werden. Mit der FTIR--Methode können dabei aber
+weitaus mehr Stoffe gemessen werden als beim DOAS--Verfahren.
+Dafür bietet die Absorptionsmessung im UV--Bereich bessere
+Nachweisgrenzen, und gerade Gase wie die NO\down{x}, SO\down{2}
+und O\down{3}, die im mittleren IR--Bereich nur relativ schwache
+Absorptionsbanden besitzen und z.T. stark von Wasser überlagert
+werden, können im UV--Bereich sehr gut gemessen werden. Beide
+Verfahren benötigen aber genügend lange Messwege und die
+Integrationszeiten für Messungen liegen im Minutenbereich. Für das
+mittlere Infrarot gibt es mittlerweile sehr umfangreiche
+Datenbanken, die trotz ihrer Nachteile (siehe Kap.
+\ref{bibliotheken}) für eine quantitative Analyse herangezogen
+werden können. Die Möglichkeit, Referenzspektren für den
+UV--Bereich zu erhalten, sind z.Z. noch deutlich eingeschränkter,
+was sich in den kommenden Jahren weiter verbessern wird. Beide
+Verfahren eignen sich vor allem auch für die Dauerüberwachung von
+diffusen Emissionsquellen,\\
+
+Das TDLAS--Verfahren hat aufgrund der hohen Leistungsdichte von
+Lasern um bis zu zwei bis drei Grö{\ss}enordnungen bessere
+Nachweisgrenzen. Zur Detektion mehrerer Stoffe müssen allerdings
+in der jeweiligen Messanordnung die Laser ausgetauscht werden, was
+kostspielig sein kann. Querempfindlichkeiten mit anderen
+Komponenten können oft im Signal erkannt, selten aber bei der
+quantitativen Bestimmung herausgerechnet werden, so wie das beim
+FTIR--Verfahren möglich ist (natürlich wird versucht, solche
+Banden, wenn möglich, zu meiden). Um Nachweisgrenzen bis in den
+unteren ppt--Bereich zu gewährleisten, ist der Einsatz von
+Mehrfachreflexionszellen unerlässlich. Hier ist sehr genau zu
+prüfen, ob das in der Zelle angesammelte Gasvolumen repräsentativ
+für die jeweilige Messaufgabe ist. Wird die Messzelle nicht
+benötigt, können Messungen im zeitlichen Abstand von Sekunden und
+darunter durchgeführt werden. Diodenlaser sind somit besonders für
+die Detektion von einem oder wenigen Gasen in zeitlich schnell
+veränderlichen Prozessen geeignet, bei denen zusätzlich auch nur
+kurze Wegstrecken realisiert werden können (z.B. Messung von
+Autoabgasen auf Prüfständen \cite{hirschbergerip}).\\
+
+Das LIDAR--Verfahren hingegen eignet sich gut für räumlich und
+zeitlich hochaufgelöste Bestimmung von Einzelgaskonzentrationen an
+Orten, die für die anderen Verfahren nicht zugänglich sind, wie
+z.B. die Höhenprofilmessung eines bestimmten Gases. Je nach
+verwendetem Lasersystem ist die Anzahl der möglichen zu
+detektierenden Spezies allerdings eingeschränkt.
+Querempfindlichkeiten mit anderen Komponenten müssen von
+vorneherein ausgeschlossen werden, da sie bei der Auswertung der
+gemessenen Intensitätssignale nicht erkannt werden können. Die
+Nachweisgrenzen liegen im allgemeinen nur im ppm--Bereich, was für
+viele Anwendungen aber ausreichend ist. Da das rückgestreute
+Signal mit einem Empfangsteleskop gesammelt und auf den Detektor
+fokussiert wird, ist es i.a. nicht möglich (genaugenommen hängt
+dies von der Justage des Teleskops ab), Konzentrationsbestimmungen
+für die ersten 200 m der Messstrecke vorzunehmen. Abhängig von der
+Laserleistung können aber Wegstrecken bis 30 km realisiert werden.
+Der Aufbau von LIDAR--Systemen ist noch sehr kostspielig.\\
+
+\cleardoublepage

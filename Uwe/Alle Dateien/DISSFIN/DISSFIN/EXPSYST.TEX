@@ -1,0 +1,405 @@
+\chapter{\label{expertensystem}Erstellung eines Expertensystems}
+
+Um Routinemessungen h\"{o}chst zuverl\"{a}ssig auch ohne
+hochqualifiziertes Fachpersonal durchf\"{u}hren zu k\"{o}nnen, muss eine
+Software vorhanden sein, die das bekannte Expertenwissen ohne
+Benutzerinteraktion zur Spektrenauswertung anwendet. Aufgabe in
+dieser Arbeit war es, die gewonnenen Erkenntnisse zur Verbesserung
+der univariaten und multivariaten Analyse gleichzeitig auch zur
+Entwicklung eines Expertensystems zu nutzen.\\
+
+Diese Software wurde mit Hilfe des Mathematikprogramms MATLAB 5.2
+(\bf Mat\rm rix \bf Lab\rm oratory, The Mathworks Inc., South
+Natick, MA) erstellt, welches f\"{u}r numerische Matrizenoperationen
+hervorragend geeignet ist. Ein Compiler erlaubt die schnelle
+Umsetzung der an die Computersprache C angelehnten
+MATLAB-Programmiersprache in C--Quellcode. Die MATLAB-Funktionen
+zur numerischen Matrizenberechnung stehen in einer
+C--Math--Library zur Verf\"{u}gung. Somit war es schnell und
+unproblematisch m\"{o}glich, Teile des MATLAB-Programms zur off--line
+Auswertung in die GRAMS--Spektrometersoftware des
+K300--Spektrometers, mit der gleichzeitig eine on--line Analyse
+m\"{o}glich ist, zu \"{u}bernehmen.\\
+
+Das Programm umfasst mittlerweile 88 Unterfunktionen (in der
+MATLAB-Sprache "`m-files"') mit insgesamt 10100 Zeilen
+Programmcode. Ziel der Software ist es, s\"{a}mtliche Schritte zu
+einer hochwertigen quantitativen Analyse von Atmosph\"{a}renspektren
+vorzunehmen, wenn gewollt ohne Benutzerinteraktion.\\
+
+Zu Anfang des Programmcodes k\"{o}nnen in einer Eingabemaske s\"{a}mtliche
+zur Auswertung ben\"{o}tigten Parameter gesetzt werden. Es kann auch
+der nicht--automatische Mode gestartet werden, in dem diese
+Parameter (z.B. Filenamen, Pfadl\"{a}nge, Auswertungsart) vor jeder
+Auswertung abgefragt werden.\\
+
+Das Programm gliedert sich in die vier Hauptteile:
+Spektrenvorbearbeitung, Auswahl der Referenzspektren, Auswertung
+und Darstellung, und Ermitteln und Abspeichern der besten
+statistischen Ergebnisse (siehe Abb. \ref{softw1.wmf}).\\
+
+\bild{htb}{softw1.wmf}{400}{300}{\it \"{U}bersichtsdiagramm zur
+CLS-Auswertungssoftware.}
+
+
+\section{\label{spektrenvorbearb}Spektrenvorbearbeitung}
+
+Es hat sich gezeigt, dass mit den verwendeten MCT-Detektoren f\"{u}r
+eine hochwertige Analyse eine Nichtlinearit\"{a}tskorrektur
+unerl\"{a}sslich ist. Dazu m\"{u}ssen die Interferogramme der Spektren
+vorliegen. In der Spektrometersoftware des K300--Spektrometers ist
+die Abspeicherung der Interferogramme mittlerweile vorgesehen.
+Desweiteren findet nach der Fouriertransformation in der
+Spektrendom\"{a}ne eine Anpassung der Sensitivit\"{a}t des Detektors
+statt, indem im auszuwertenden Einkanalspektrum der Q--Zweig der
+durchabsorbierenden CO\down{2}--Bande bei 667 cm\up{-1} auf das
+Niveau des dazugeh\"{o}rigen Eigenstrahlspektrums gebracht wird. Diese
+Korrekturen liegen in der Gr\"{o}{\ss}enordnung von 1 \%. Da die
+Nichtlinearit\"{a}tskorrektur recht zeitaufwendig ist, empfiehlt es
+sich, diese Vorbearbeitung der Spektren im vorhinein zu rechnen
+und die korrigierten Spektren abzuspeichern. Anschlie{\ss}end findet
+der f\"{u}r bistatische Spektrometersysteme notwendige
+Eigenstrahlungsabzug statt.\\
+
+Vor der weiteren Bearbeitung der Spektren ist eine
+Qualit\"{a}ts\"{u}berpr\"{u}fung notwendig. Grunds\"{a}tzlich wird mit dem
+Programm das MATLAB eigene bin\"{a}re mat--Format wie auch g\"{a}ngige
+ASCII--Files ohne Header unterst\"{u}tzt. Diese k\"{o}nnen sowohl nur als
+Einkanalspektren als auch als Einkanalspektren mit
+Wellenzahlachse, wie auch als bereits vorher bearbeitete
+Extinktionsspektren vorliegen. Da die Referenzspektren f\"{u}r die
+multivariate und Absorptionskoeffizienten f\"{u}r die univariate
+Auswertung z.Z. nur f\"{u}r 0.2 cm\up{-1}--Aufl\"{o}sung und
+Dreiecksapodisation vorliegen, sollten auch nur solche Spektren
+ausgewertet werden. Da die in dieser Arbeit gemessenen Pr\"{u}fgase
+aber als Interferogramme vorliegen, ist es in Zukunft auch
+grunds\"{a}tzlich m\"{o}glich, Spektren mit anderen Apodisationsfunktionen
+und schlechteren Aufl\"{o}sungen auszuwerten. Als Punktabstand sind
+die f\"{u}r das K300--Spektrometer charakteristischen 0.0904 cm\up{-1}
+notwendig. Bei Einkanalspektren wird weiterhin bei den
+Wellenzahlen 1098 und 2450 cm\up{-1} ein Signalh\"{o}hentest
+vorgenommen, um eventuell schadhafte Spektren auszusortieren.
+Diese Ergebnisse der Qualit\"{a}ts\"{u}berpr\"{u}fung werden wie alle
+folgenden Schritte bei der Auswertung der Spektren in einem
+"`filename"'.log--File dokumentiert.\\
+
+Grunds\"{a}tzlich ist es m\"{o}glich, dass zwischen den auszuwertenden
+Spektren und den Referenzspektren ein Wellenzahlshift auftritt.
+Diese Feinabstimmung ist vor allem f\"{u}r die pr\"{a}zise Auswertung sehr
+schmaler Rotations--/Schwingungsbanden von kleinen Molek\"{u}len
+notwendig (siehe auch Kap. \ref{wellenzahlstab} und Tab.
+\ref{wellenzahlgenauigkeit}). Um diesen zu detektieren, werden die
+immer vorhandenen querempfindlichkeitsfreien Wasserbanden bei
+784.46, 1014.48, 1149.47, 1187.02, 3969,08 und 4181.48 cm\up{-1}
+bestimmt. Dies geschieht durch eine Schwerpunktsbestimmung dieser
+Banden, wobei die Abtastung der einzelnen Linien durch einen
+Zerofill 8 in der Fourierdom\"{a}ne noch verbessert wird (siehe auch
+Abb. \ref{h2ouni.wmf} zur univariaten Auswertung). Aus dem
+Quotienten der ermittelten Verschiebung durch die genaue
+Wellenzahl wird ein relativer Wert bestimmt, der \"{u}ber s\"{a}mtliche
+o.g. Banden gemittelt wird. Mit diesem ist es nun m\"{o}glich, f\"{u}r
+jeden Wellenzahlbereich im Spektrum die entsprechende
+Wellenzahlverschiebung zu eliminieren. F\"{u}r die exakte Position der
+o.g. Banden liegen sowohl Literaturwerte wie auch die
+HITRAN96--Werte vor. Solange aber die meisten Referenzspektren
+noch der QASoft--Datenbank entnommen werden, sind die Werte des
+H\down{2}O--Spektrums aus dieser Datenbank relevant. Leider hat
+sich gezeigt, dass es auch kleine Unterschiede in der
+Wellenzahlverschiebung bei verschiedenen QASoft--Referenzspektren
+untereinander gibt. Die Auswirkungen bei der Auswertung sind
+allerdings nur sehr gering. Grunds\"{a}tzliches Vorgehen muss es in
+Zukunft sein, selbstgemessene Pr\"{u}fgasspektren auf die
+Literaturwerte anzupassen.\\
+
+Da die Benzolauswertung aufwendiger als bei anderen Stoffen ist
+und zus\"{a}tzliche Spektren bereit stehen m\"{u}ssen (siehe Kap.
+\ref{benzol}), macht es Sinn, im vorhinein durch eine vereinfachte
+Prozedur qualitativ abzukl\"{a}ren, ob Benzol im Gemisch enthalten
+ist. Optional kann dieser Test durchgef\"{u}hrt werden und der
+relevante Wellenzahlbereich nach CO\down{2}--Abzug, wenn
+gew\"{u}nscht, auch graphisch dargestellt werden.\\
+
+
+\section{\label{referenzauswahl}Auswahl der Referenzspektren}
+
+F\"{u}r eine CLS-Analyse werden von s\"{a}mtlichen in der Stoffmatrix
+enthaltenen Gasen, die in den auszuwertenden Bereichen
+signifikante Strukturen besitzen, Referenzspektren ben\"{o}tigt. Wird
+nur eine univariate Analyse des Gemisches durchgef\"{u}hrt, kann auf
+diese Auswahl verzichtet werden.\\
+
+Ist die Zusammensetzung der Stoffmatrix bekannt, k\"{o}nnen in dem
+Auswertungsprogramm auf MATLAB--Basis die einzuladenden
+Referenzspektren festgelegt werden. F\"{u}r die Gase, die im Rahmen
+dieser Arbeit vermessen wurden, wird f\"{u}r eine mittlere
+Konzentration das Referenzspektrum aus dem linearen, dem
+quadratischen und dem kubischen Anteil gerechnet (siehe Kap.
+\ref{pruefgasauswertung}). Zeigen sich nach der anschlie{\ss}enden
+Auswertung im Residuum noch Strukturen aufgrund vorhandener
+Nichtlinearit\"{a}ten, werden in einem zweiten Iterationsschritt die
+betroffenen Referenzspektren mit der im ersten Iterationsschritt
+erhaltenen Konzentration gerechnet. Im allgemeinen Fall werden
+somit die Nichtlinearit\"{a}ten bestm\"{o}glich ber\"{u}cksichtigt. Weitere
+Iterationsschritte sind zus\"{a}tzlich jedoch problemlos m\"{o}glich.\\
+
+Grunds\"{a}tzlich sollte die Anzahl der Referenzspektren der Anzahl
+der Gase in der Stoffmatrix entsprechen. Weniger Referenzspektren
+f\"{u}hren, sofern sie Querempfindlichkeiten zu den anderen Gasen
+besitzen, offensichtlich zu systematisch falschen Ergebnissen der
+analysierten Gase. Mehr Referenzspektren bergen die Gefahr, dass
+Strukturen im Gasgemisch von Referenzspektren mit angepasst
+werden, die in der Stoffmatrix nicht enthalten sind. Dies ist vor
+allem oft bei sehr breiten Banden von bestimmten Stoffen der
+Fall.\\
+
+F\"{u}r unbekannte Stoffmatrizes werden daher zwei leistungsstarke
+Hilfsprogramme zur Verf\"{u}gung gestellt. F\"{u}r den Spektroskopiker
+wird zus\"{a}tzlich ein Paket angeboten, in dem f\"{u}r jeden in der
+Referenzdatenbank enthaltenen Stoff der Bereich mit dessen gr\"{o}{\ss}ter
+Signatur (vorausgesetzt es gibt keine schwerwiegende H\down{2}O-
+oder CO\down{2}-Querempfindlichkeit) herausgesucht wird, und
+Gemisch- und jeweiliges Referenzspektrum normiert \"{u}bereinander
+dargestellt werden, so dass eine visuelle Auswahl der einzelnen
+Referenzspektren m\"{o}glich ist.\\
+
+Alternativ kann eine Kreuzkorrelation durchgef\"{u}hrt werden (siehe
+Kap. \ref{crosscorr}), die f\"{u}r \"{u}bliche Atmosph\"{a}ren- und
+Konzentrationsunterschiede sehr gute Ergebnisse liefert. Da diese
+Kreuzkorrelation recht zeitintensiv ist (ca. 2 min (P200) f\"{u}r die
+implementierten 36 Stoffe), sollte dann nat\"{u}rlich f\"{u}r folgende
+Spektren einer Messreihe \"{u}berlegt werden, ob die Stoffmatrix sich
+ge\"{a}ndert hat oder die Referenzspektren nun vorgegeben werden
+k\"{o}nnen.\\
+
+
+\section{\label{darstellung}Auswertung und Darstellung}
+
+Zur Auswertung der Spektren stehen 4 Module zur Auswahl. Diese
+k\"{o}nnen einzeln wie auch nebeneinander benutzt werden. Die
+univariate Auswertung in der MATLAB-Software ist f\"{u}r die 11 Gase
+H\down{2}O, CO\down{2}, N\down{2}O, CO, CH\down{4}, NH\down{3},
+C\down{2}H\down{6}, SF\down{6}, C\down{6}H\down{6},
+C\down{2}H\down{4} und C\down{3}H\down{6} m\"{o}glich. Zur Auswertung
+werden f\"{u}r jedes Gas mehrere Banden in den logarithmierten
+Einkanalspektren herangezogen. Diese Banden sind so ausgesucht
+worden, dass sie querempfindlichkeitsfrei sind. Ist das nicht der
+Fall, so werden verfeinerte Strategien verfolgt, die diese
+Querempfindlichkeiten ber\"{u}cksichtigen (siehe auch Kap.
+\ref{univariat}). Warnhinweise im log-File machen zudem auf die
+Problematik aufmerksam. Die Abtastung wird wie bei der
+Wellenzahlkorrektur durch einen Zerofill 8 in der Fourierdom\"{a}ne
+verbessert, die Basislinie l\"{a}sst sich gut durch einen linearen Fit
+in den Minima der Bandenflanken anpassen. Der
+Auswertungsalgorithmus liefert den Schwerpunkt, das Maximum und
+die Halbwertsbreite der Bande. Die Auswertung der einzelnen Banden
+kann auch graphisch dargestellt und ausgedruckt werden (siehe Abb.
+\ref{h2ouni.wmf}). Die Absorptionskoeffizienten wurden aus den
+Referenzspektren der QASoft--Datenbank gewonnen. Diese gelten
+strenggenommen nur f\"{u}r die Temperatur (meist 25°C) bei Aufnahme
+der Spektren und Abweichungen von diesen bei Feldmessungen k\"{o}nnen
+im Einzelfall zu signifikanten systematischen Fehlern f\"{u}hren
+(siehe auch Kap. \ref{austempdr}). Da aber das multivariate
+Analysenkonzept, wie schon ausf\"{u}hrlich beschrieben, deutliche
+Vorteile gegen\"{u}ber der univariaten Auswertung hat, wurden keine
+weiteren Anstrengungen unternommen, die Absorptionskoeffizienten
+auch temperaturabh\"{a}ngig zu bestimmen, abgesehen von den
+vorgestellten Studien basierend auf den HITRAN--Rechnungen.\\
+
+\bildlinks{htb}{h2ouni.wmf}{300}{220}{75}{85}{-30}{\it Beispiel
+einer graphischen Darstellung bei der univariaten Auswertung. Die
+Abtastung der Bande wurde durch ein Zerofill 8 im Interferogramm
+verbessert.}
+
+Die univariate Auswertung bietet vor allem dann Vorteile, wenn
+Komponenten aus der Stoffmatrix nicht als Referenzspektren
+vorliegen. Dann k\"{o}nnen ggf. bekannte Komponenten univariat
+bestimmt werden. Ansonsten ist in der Praxis eine parallele
+Analyse zum Herausfinden systematischer Fehler sinnvoll. Da Benzol
+mittels CLS nicht bestimmt werden kann, ist dort die univariate
+Analyse unerl\"{a}sslich. Bei der Benzolanalyse wird zus\"{a}tzlich ein
+Kurzweg-Referenzspektrum und ein Hintergrundspektrum mit ann\"{a}hernd
+gleicher CO\down{2}--Konzentration wie im zu analysierenden
+Spektrum ben\"{o}tigt. Dabei ist darauf zu achten, dass die
+CO\down{2}--Konzentrationen m\"{o}glichst genau \"{u}bereinstimmen. Bei
+Abweichungen um mehr als 10\% ist eine Auswertung i.a. nicht mehr
+m\"{o}glich. Der genaue Algorithmus wurde in Kap. \ref{benzol}
+beschrieben.\\
+
+Die multivariate CLS-Auswertung erfordert ein Hintergrundspektrum
+zur Extinktionsspektrenberechnung. Liegt kein gemessenes
+Hintergrundspektrum vor, k\"{o}nnen optional auch ein "`ideales"'
+Laborhintergrundspektrum oder ein berechneter Hintergrund benutzt
+werden. Ausf\"{u}hrlich wurde diese Problematik in Kap.
+\ref{hintergrund} diskutiert.\\
+
+\bildlinks{htb}{sf6temp.wmf}{275}{340}{115}{75}{-35}{\\ \bf A \it
+Laborspektrum SF\down{6} (T=25°C, 1.4 ppm $\cdot$ m, opt.
+Pfadl\"{a}nge 6.9 m, mit Offset) und darauf skaliertes Feldspektrum
+(T=7.3°C, opt. Pfadl\"{a}nge 119 m).\\
+
+\bf B \it Spektrale Residuen eines Feld- und Laborspektrums
+(Temperaturen siehe \bf A\it ) nach der CLS--Auswertung mit dem
+SF\down{6}--Referenzspektrum (T=25°C, QSoft). Die Residuen des
+Feldspektrums sind mit einem Offset dargestellt.}
+
+Es stehen z.Z. drei M\"{o}glichkeiten zur CLS--Auswertung mit
+mittlerweile 36 Stoffen zur Verf\"{u}gung, die auch nebeneinander
+genutzt werden k\"{o}nnen. Ihnen gemeinsam ist, dass sie auf denselben
+CLS--Auswertungs--Kernel zur\"{u}ckgreifen, der zus\"{a}tzlich zur
+eigentlichen Konzentrationsbestimmung mittels Least--Squares noch
+eine Gram--Schmidt--Orthogonalisierung der Referenzspektrenmatrix
+vornimmt. Neben einer verbesserten numerischen Stabilit\"{a}t (vor
+allem bei der Invertierung der Matrix), k\"{o}nnen so auch in Zukunft
+Spektren zur Referenzspektrenmatrix hinzugef\"{u}gt werden, ohne dass
+die Berechnungen (Matrixinvertierung) f\"{u}r das gesamte System noch
+einmal begonnen werden m\"{u}ssen. Vor der CLS-Analyse werden die
+Bereiche, die Extinktionen \"{u}ber ein vom Benutzer zu setzendes
+Limit (empfohlen: Extinktion 1) \"{u}berschreiten, eliminiert, um
+eventuell noch vorhandene Nichtlinearit\"{a}ten (vor allem bei nicht
+selbst gemessenen Referenzspektren) nicht in die Auswertung
+miteinbeziehen zu m\"{u}ssen.\\
+
+Aufgrund der Logarithmierung der Transmissionspektren ist das
+Rauschen in den Extinktionsmaxima gr\"{o}{\ss}er als in den Flanken. Dies
+kann mit einer gewichteten Analyse ber\"{u}cksichtigt werden. Die
+Temperaturproblematik besteht auch bei der CLS-Analyse, i.a.
+werden solche Effekte aber bei Rotationsfeinstruktur \"{u}ber den
+gesamten Bereich oft gemittelt (siehe Abb. \ref{cotemp.wmf}).
+Abbildung \ref{sf6temp.wmf} zeigt die Auswirkungen f\"{u}r
+Atmosph\"{a}renspektren mit SF\down{6} bei den unterschiedlichen
+Temperaturen 7.3°C und 25.0°C. Beide Spektren wurden mit einem
+Laborspektrum, bei 25°C aufgenommen, angepasst. Im Residuum f\"{u}r
+das bei 7.3°C erhaltene Spektrum ist noch eine deutliche Struktur
+zu sehen, die aufgrund der Temperaturdifferenz zum
+Referenzspektrum nicht mit angepasst werden konnte. Mit einer
+spektralen Verschiebung von 0.07 cm\up{-1} konnte die Auswertung
+noch verbessert werden (siehe Residuum mittleres Spektrum in Abb.
+\ref{sf6temp.wmf} \bf B\rm ).
+\\
+
+
+\subsection{\label{segmentierung}Segmentierung von
+Spektralbereichen}
+
+Unterschiede in den verschiedenen CLS--Modulen bestehen in der
+Bereichsauswahl und einer weiteren Selektierung der
+Referenzspektrenmatrix. Der Experte kann einen Bereich vorgeben,
+in dem er das Spektrum ausgewertet haben m\"{o}chte. S\"{a}mtliche bei der
+Auswahl der Referenzspektren festgelegten Spektren werden dann
+auch in die Auswertung miteinbezogen.\\
+
+\bild{htb}{seg3.wmf}{450}{280}{\it Beispiel der
+Bildschirmdarstellung des Segments Nr.3 bei der CLS--Auswertung.
+Sowohl die Referenz-- als auch das auszuwertende Gemischspektrum
+werden gezeigt.}
+
+Die anderen beiden Auswertungsmodi geben die auszuwertenden
+Bereiche automatisch vor (zur Bereichsauswahl siehe auch Kap.
+\ref{bereichsauswahl}). So kann eine Analyse in 6 Segmenten
+vorgenommen werden. Segment 1 ist dabei nur f\"{u}r die Benzolanalyse
+bestimmt, Segment 5 f\"{u}r H\down{2}O und Segment 6 f\"{u}r CO\down{2}.
+In diesen Segmenten werden dann auch nur die Referenzspektren zur
+Analyse herangezogen, die in diesem Bereich Signaturen
+aufweisen.\\
+
+Nochmal reduziert werden kann die Referenzmatrix im
+gasspezifischen Analysemodus. Das ist f\"{u}r die F\"{a}lle wichtig, in
+denen einige Komponenten des Gasgemisches nicht als Referenzgas
+vorliegen. Dort werden f\"{u}r jedes Gas wenige Bereiche mit den
+h\"{o}chsten Extinktionen vorgegeben, die im Normalfall deutlich
+kleiner sind als die Bereiche im Segmentauswertungsmodus. Folglich
+reduziert sich dort auch die Zahl der m\"{o}glichen
+Querempfindlichkeiten und somit die Referenzspektrenmatrix. Dies
+hat vor allem f\"{u}r den Fall unbekannter Komponenten im Gasgemisch
+den Vorteil, dass sie in einigen Bereichen nicht mehr mitangepasst
+werden m\"{u}ssen. Auf der anderen Seite stehen aber auch weniger
+Datenpunkte zur Auswertung zur Verf\"{u}gung. Es ist zus\"{a}tzlich
+m\"{o}glich, diesen Bereich in iterativen Schritten zu vergr\"{o}{\ss}ern. Das
+Segment mit dem kleinsten statistischen Fehler wird nach der
+Analyse als Ergebnis ausgegeben.\\
+
+Grunds\"{a}tzlich wird bei allen drei CLS--Auswertungsmodi die
+Basislinie durch einen Offset, einen linearen und einen
+quadratischen Term mitangepasst. Die Anpassung eines zus\"{a}tzlichen
+kubischen Terms ist auch m\"{o}glich, wobei von dieser Funktion jedoch
+sparsam Gebrauch gemacht werden sollte. Es ist m\"{o}glich, dass
+dadurch Strukturen des Spektrums als Basislinie mit angepasst
+werden. Jeder Schritt der Auswertung kann sofort w\"{a}hrend der
+Auswertung auf dem Bildschirm verfolgt werden (siehe Abb.
+\ref{seg3.wmf}).\\
+
+\bild{htb}{rescls.wmf}{450}{350}{\it Darstellung aller
+Segment--Residuen nach der CLS--Auswertung.}
+
+Das Gemischspektrum sowie s\"{a}mtliche Referenzspektren des zu
+analysierenden Segmentes werden nebeneinander auf dem Bildschirm
+dargestellt. Die aufgrund zu hoher Extinktion herausgeschnittenen
+Bereiche werden durch einen farbigen Balken gekennzeichnet. Das
+Residuum gibt sofort Hinweis auf noch nicht ber\"{u}cksichtigte
+Komponenten. S\"{a}mtliche Residuen der gasspezifischen Auswertung wie
+auch der Segmentauswertung werden zum Schluss noch einmal
+nebeneinander zusammengestellt (siehe Abb. \ref{rescls.wmf}). Sie
+k\"{o}nnen abgespeichert oder mit einem Kommentar versehen gedruckt
+werden. Abbildung \ref{rescls.wmf} zeigt sehr sch\"{o}n die
+zur\"{u}ckbleibenden Spikes aufgrund unzureichender
+Wasserkompensation. \"{U}ber die graphische Darstellung hinaus wird
+die Auswertung jedes einzelnen Segmentes nat\"{u}rlich mit erhaltener
+Konzentration f\"{u}r die einzelnen Stoffe und Anteile der
+Basislinienanpassung, Einzelstandardabweichungen, Anzahl der
+ausgewerteten und herausgeschnittenen Punkte, Konditionszahl der
+Referenzspektrenmatrix, Standardabweichung des Residuums und Gr\"{o}{\ss}e
+der vorgenommenen Wellenzahlverschiebung im log-File
+dokumentiert.\\
+
+Nach einem Auswertungsdurchlauf k\"{o}nnen weitere Iterationen folgen.
+So sollte bei signifikanten Strukturen im Residuum die
+Kreuzkorrelationsfunktion in diesem Bereich angewandt werden, um
+eventuell vorhandene, vorher noch nicht erkannte Komponenten in
+die Auswertung iterativ miteinzubeziehen (zu dieser Problematik
+siehe auch Kap. \ref{crosscorr}). Ebenfalls ist es sinnvoll, nach
+einer ersten Voranalyse der Stoffe, Referenzspektren zu w\"{a}hlen,
+die m\"{o}glichst nah an der Konzentration der Komponente im
+Gasgemisch heranreicht. Mit dem in dieser Arbeit verfolgten
+Konzept der Abspeicherung der Parameter der Pr\"{u}fgase, um auch
+nichtlineare Terme mitber\"{u}cksichtigen zu k\"{o}nnen (siehe auch Kap.
+\ref{kalibriergas}), k\"{o}nnen diese Referenzspektren f\"{u}r die 2.
+Iteration sehr schnell bereitgestellt werden.\\
+
+
+\section{\label{abspeichern}Ermitteln der besten statistischen Ergebnisse}
+
+
+\bild{htb}{ergfile.wmf}{399}{564}{\it Beispiel eines erg--Files
+mit den Auswertungsergebnissen, die den geringsten statistischen
+Fehler aufweisen}
+
+
+Um aus dieser Flut von Daten sofort eine \"{U}bersicht zu erhalten,
+wird ein Ergebnis--File ("`spektrenname"'.erg) angelegt (siehe
+Abb. \ref{ergfile.wmf}). Dort sind neben den ermittelten
+Konzentrationen der einzelnen Gase, deren 2$\sigma$--Fehler und
+dem Segment, in dem sie ausgewertet wurden, auch s\"{a}mtliche Daten
+der Qualiti\"{a}ts\"{u}berwachung enthalten. So kommen zu den schon in
+Kap. \ref{spektrenvorbearb} erw\"{a}hnten Punkten, die
+Standardabweichungen der Residuen der einzelnen Segmente und die
+Konditionszahlen der Referenzmatrix in diesen Bereichen und die
+Bestimmung des Signal/Rauschverh\"{a}ltnisses in den drei Bereichen
+vor, wie sie die \cite{to1697} vorschl\"{a}gt. Ebenfalls werden
+Warnhinweise gegeben, wenn z.B. die Nichtlinearit\"{a}ts- oder
+Wellenzahlkorrektur nicht durchgef\"{u}hrt wurde.\\
+
+Werden Messreihen ausgewertet, so ist es sinnvoll, die
+Konzentrationen der einzelnen Komponenten im zeitlichen Verlauf
+als \"{U}bersicht zu haben. Das Programm legt optional ASCII--Files
+mit den Konzentrationen der einzelnen ausgewerteten Gase und deren
+2$\sigma$--Fehler, zus\"{a}tzlich \"{u}ber das Signal/Rauschverh\"{a}ltnis in
+den Spektren an. Diese k\"{o}nnen dann problemlos in
+Spektrenbearbeitungsprogramme wie \it Excel \rm oder \it Origin
+\rm eingeladen werden.\\
+
+Aufbau und Struktur des auf MATLAB basierenden
+Auswertungsprogrammes erlauben eine schnelle Modifizierung und
+Erweiterung und somit eine schnelle Implementierung neuer
+Erkenntnisse in das vorliegende Expertensystem.
+
+\cleardoublepage

@@ -1,0 +1,3061 @@
+This is emTeX, Version 3.0 [3a] (preloaded format=lplaing 90.9.23)  11 MAR 1998 19:34
+**&lplaing.fmt BEAT.TEX
+(beat.tex
+ILaTeX Version 2.09 <9 Jan 1990>
+(twdiss.sty
+Document Style `twdiss' <13 Nov 89>, international version <20 Sep 90>.
+(twbk12.sty)
+\descriptionmargin=\dimen99
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+) (c:\emtex\texinput\german.sty
+Document Style Option `german' Version 2.3c of 28 Aug 1990
+\U@C=\count88
+\U@B=\box29
+\U@D=\dimen100
+\l@nguage=\count89
+\USenglish=\count90
+\german=\count91
+\austrian=\count92
+\french=\count93
+\english=\count94
+)
+\tbreite=\skip41
+ (beat.aux
+(titel.aux) (tableofc.aux) (einl.aux) (exzitone.aux) (material.aux) (qubea.aux)
+(mathe.aux
+LaTeX Warning: Label `gl3' multiply defined.
+) (aufbau.aux) (mess.aux) (zusamm.aux) (anhang.aux) (liter.aux) (dank.aux))
+(titel.tex [1
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(7.73332+2.3999)x441.01772
+.\mathon
+.\vbox(7.73332+2.3999)x444.93434
+..\hbox(7.73332+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(7.73332+0.0)x441.01772, glue set 435.14276fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[2
+
+]) (tableofc.tex (beat.toc [1
+
+
+
+])
+\tf@toc=\write3
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 301.37051fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[2]) (einl.tex
+Kapitel 1.
+
+Overfull \hbox (1.47862pt too wide) in paragraph at lines 3--8
+\twlrm ni-en-ver-brei-te-rung be-grenzt. Feinstruktur-- und Hy-per-fe-in-struk-
+turauf-spal-tun-gen k[]nnen
+
+\hbox(8.33331+2.33331)x441.01772, glue set - 1.0
+.\twlrm n
+.\twlrm i
+.\discretionary
+..\twlrm -
+.\twlrm e
+.\discretionary replacing 2
+..\twlrm n
+..\twlrm -
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--31
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--46
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[3
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 47--66
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--76
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+)
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 283.01233fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[4] (exzitone.tex
+Kapitel 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--13
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[5
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 23--30
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--64
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 282.27069fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--106
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--116
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 257.79181fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 131--138
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--149
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 282.27069fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[8]
+Underfull \hbox (badness 2221) in paragraph at lines 191--191
+\twlsl tion f[]r das trans-ver-sale Po-la-ri-
+
+\hbox(8.33331+0.0)x184.94293, glue set 2.8144
+.\twlsl t
+.\twlsl i
+.\twlsl o
+.\twlsl n
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--217
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 267.66806fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 276.39575fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 267--276
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--282
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 261.79312fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 276.39575fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[12
+
+]) (material.tex
+Kapitel 3.
+
+Underfull \hbox (badness 3118) in paragraph at lines 17--17
+[][]\twlbf Abbildung 3.1: []\twlsl Wurt-zit-struk-
+
+\hbox(8.33331+2.33331)x184.94293, glue set 3.1503
+.\hbox(0.0+0.0)x0.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlbf A
+.\twlbf b
+.\twlbf b
+.etc.
+
+
+Overfull \hbox (8.24152pt too wide) in paragraph at lines 18--24
+\twlrm ei-nes Kri-stalls in ei-nen phy-si-ka-lisch []qui-va-len-ten Punkt (Ha-m
+il-ton-ope-ra-tor und Schr[]din-
+
+\hbox(9.0+3.0)x441.01772, glue set - 1.0
+.\twlrm e
+.\twlrm i
+.\discretionary
+..\twlrm -
+.\twlrm n
+.\twlrm e
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--24
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[13
+
+
+
+
+]
+Underfull \hbox (badness 4634) in paragraph at lines 43--43
+[][]\twlbf Abbildung 3.2: []\twlsl No-men-kla-tur
+
+\hbox(8.33331+2.33331)x184.94293, glue set 3.59515
+.\hbox(0.0+0.0)x0.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlbf A
+.\twlbf b
+.\twlbf b
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--82
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 5.529
+.\glue(\topskip) 10.0
+.\hbox(0.0+0.0)x441.01772
+..\glue(\rightskip) 0.0
+.\glue(\parskip) 2.58333 plus 1.0
+.\glue(\baselineskip) 8.05176
+.\hbox(8.33331+2.33331)x441.01772, glue set - 0.0978
+..\hbox(0.0+0.0)x14.22636
+..\setlanguage1 (hyphenmin 2,3)
+..\twlrm C
+..\twlrm d
+..\twlrm S
+..etc.
+.etc.
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 96--113
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 8.66924fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[16]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 8.66924fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (0.7041pt too wide) in paragraph at lines 201--210
+[]\twlrm Um Quantum--Beats be-ob-ach-ten zu k[]nnen, sind zwei eng be-nach-bart
+e Ener-gie-zust[]nde
+
+\hbox(8.33331+2.33331)x441.01772, glue set - 1.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlrm U
+.\twlrm m
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\twlrm Q
+.etc.
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 233--233
+[][]\twlbf Abbildung 3.5: []\twlsl Auf-spal-tung der Ex-zi-to-nen-zust[]nde dur
+ch den li-nea-ren
+
+\hbox(8.33331+2.33331)x412.56497, glue set 2.18741
+.\hbox(0.0+0.0)x0.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlbf A
+.\twlbf b
+.\twlbf b
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--239
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[18]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 8.66924fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 245--253
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[20
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 284--291
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--307
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--322
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--329
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 8.66924fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[21
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 377--382
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 388--391
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--406
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 8.66924fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 184.04947fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[24
+
+]) (qubea.tex
+Kapitel 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--15
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--28
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.64334pt too wide) in paragraph at lines 29--32
+[][]\twlrm Koh[]rente Me^^Yver-fah-ren wie die \twlit Quantum--Beat--Spektrosko
+pie \twlrm erm[]gli-chen nun Mes-
+
+\hbox(8.33331+2.33331)x441.01772, glue set - 1.0
+.\hbox(0.0+0.0)x14.22636
+.\setlanguage1 (hyphenmin 2,3)
+.\twlrm K
+.\twlrm o
+.\twlrm h
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[25
+
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 142.77211fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--96
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--108
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--127
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+4.73322)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+4.73322)x441.01772
+..\hbox(8.2+2.33331)x441.01772
+...\hbox(8.2+2.33331)x441.01772, glue set 91.71152fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[27
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 140--146
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--173
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 142.77211fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 183--189
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--204
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+4.73322)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+4.73322)x441.01772
+..\hbox(8.2+2.33331)x441.01772
+...\hbox(8.2+2.33331)x441.01772, glue set 91.71152fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--265
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 142.77211fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--303
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--319
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+4.73322)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+4.73322)x441.01772
+..\hbox(8.2+2.33331)x441.01772
+...\hbox(8.2+2.33331)x441.01772, glue set 91.71152fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--353
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--360
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 142.77211fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--425
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--437
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+4.73322)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+4.73322)x441.01772
+..\hbox(8.2+2.33331)x441.01772
+...\hbox(8.2+2.33331)x441.01772, glue set 91.71152fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[33])
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 142.77211fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[34] (mathe.tex
+Kapitel 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--13
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[35
+
+
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 42--50
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--71
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--96
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 141.30544fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[37
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 144--147
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 117.33067fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 176--182
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 196--196
+\twlsl Ei-gen-werte kann klar ent-schie-
+
+\hbox(8.33331+2.33331)x170.71655, glue set 2.35324
+.\twlsl E
+.\twlsl i
+.\discretionary
+..\twlsl -
+.\twlsl g
+.\twlsl e
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--201
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--239
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 117.33067fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[42]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 205.66727fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[43
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 345--351
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--372
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 205.66727fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[45
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 397--400
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--408
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--444
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--453
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 205.66727fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[47
+
+])
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 77.76582fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[48] (aufbau.tex
+Kapitel 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--15
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--23
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--45
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[49
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 46--55
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[50]
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 4.38162
+.\vbox(640.63959+0.0)x441.01772
+..\penalty -51
+..\glue 13.0 plus 6.0 minus 8.0
+..\glue(\parskip) 0.0
+..\hbox(583.27843+0.0)x441.01772, glue set 35.56693fil
+...\glue(\leftskip) 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0
+...\hbox(0.0+0.0)x0.0 []
+...\penalty 0
+...etc.
+..\glue 0.0
+..etc.
+.\glue 12.0 plus 2.0 minus 4.0
+.\glue -12.0 plus -2.0 minus -4.0
+.\glue 16.0 plus 2.0 minus 4.0
+.\write-{}
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.33331+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.33331+2.3999)x441.01772
+..\hbox(8.33331+0.0)x441.01772
+...\hbox(8.33331+0.0)x441.01772, glue set 235.60173fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[51
+
+]
+Overfull \vbox (10.0pt too high) has occurred while \output is active
+\vbox(0.0+0.0)x0.0
+.\glue(\topskip) 10.0
+.\vbox(0.0+0.0)x0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--79
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--87
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--109
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--122
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 126--130
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--144
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 168.87875fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 155--170
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--193
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[54]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 168.87875fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[55]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[56]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 168.87875fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--232
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--253
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--264
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--279
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[58
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[][]\twlbf Abbildung
+
+\hbox(8.33331+2.33331)x199.16931
+.\hbox(0.0+0.0)x0.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlbf A
+.\twlbf b
+.\twlbf b
+.etc.
+
+
+Underfull \hbox (badness 2027) in paragraph at lines 288--288
+\twlbf 6.6: []\twlsl Re-so-nanz[]berh[]hung der $\twlmi I[]$\twlsl --
+
+\hbox(8.33331+2.33331)x199.16931, glue set 2.72917
+.\twlbf 6
+.\twlbf .
+.\twlbf 6
+.\twlbf :
+.\glue 6.0 plus 4.5 minus 0.75
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 168.87875fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[59]
+Overfull \hbox (12.07967pt too wide) in paragraph at lines 318--318
+ [] 
+
+\hbox(145.47296+139.47295)x441.01772
+.\glue(\leftskip) 0.0 plus 1.0fil
+.\hbox(145.47296+139.47295)x453.09738
+..\mathon
+..\vbox(145.47296+139.47295)x453.09738
+...\rule(0.4+0.0)x453.09738
+...\hbox(11.4695+4.91556)x453.09738 []
+...\glue(\lineskip) 0.0
+...\hbox(11.4695+4.91556)x453.09738 []
+...\rule(0.4+0.0)x453.09738
+...etc.
+..\mathoff
+.\penalty 10000
+.\glue(\parfillskip) 0.0
+.\glue(\rightskip) 0.0 plus 1.0fil
+
+)
+Overfull \vbox (222.76828pt too high) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set - 1.0
+.\vbox(354.02151+0.0)x441.01772
+..\penalty -51
+..\glue 13.0 plus 6.0 minus 8.0
+..\glue(\parskip) 0.0
+..\hbox(0.0+0.0)x441.01772, glue set 220.50885fil
+...\glue(\leftskip) 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0
+...\hbox(0.0+0.0)x0.0 []
+...\penalty 0
+...etc.
+..\penalty 300
+..etc.
+.\glue 12.0 plus 2.0 minus 4.0
+.\glue -12.0 plus -2.0 minus -4.0
+.\glue 16.0 plus 2.0 minus 4.0
+.\glue(\topskip) 10.0
+.etc.
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 177.53838fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[60] (mess.tex
+Kapitel 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 21--21
+\twlsl bene (vgl. Abb. 7.3[])
+
+\hbox(9.0+3.0)x142.2638, glue set 2.64023
+.\twlsl b
+.\kern0.32639
+.\twlsl e
+.\twlsl n
+.\twlsl e
+.etc.
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 21--21
+\twlsl li-near po-la-ri-sier-tem Licht.
+
+\hbox(8.33331+2.33331)x142.2638, glue set 2.34857
+.\twlsl l
+.\twlsl i
+.\discretionary
+..\twlsl -
+.\twlsl n
+.\twlsl e
+.etc.
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 21--21
+\twlsl De-tek-tiert wurde in der
+
+\hbox(8.33331+0.0)x142.2638, glue set 3.52127
+.\twlsl D
+.\twlsl e
+.\discretionary
+..\twlsl -
+.\twlsl t
+.\twlsl e
+.etc.
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 21--21
+\twlsl LO--Phononenreplik par-al-
+
+\hbox(8.33331+2.33331)x142.2638, glue set 2.98155
+.\twlsl L
+.\twlsl O
+.\twlsl { (ligature --)
+.\discretionary
+.\twlsl P
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--41
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 50--50
+[][]\twlbf Abbildung 7.2: []\twlsl Zeit-abh[]ngi-ger In-ten-sit[]ts-ver-lauf de
+s re-so-nant an-ge-reg-
+
+\hbox(8.33331+2.33331)x412.56497, glue set 2.39372
+.\hbox(0.0+0.0)x0.0
+.\setlanguage1 (hyphenmin 2,3)
+.\twlbf A
+.\twlbf b
+.\twlbf b
+.etc.
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 50--50
+\twlsl ten freien Ex-zi-tons f[]r ver-schie-dene Ma-gnet-fel-der, de-tek-tiert 
+in der LO--
+
+\hbox(8.33331+2.33331)x412.56497, glue set 2.26428
+.\twlsl t
+.\twlsl e
+.\twlsl n
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\twlsl f
+.etc.
+
+[61
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (0.69717pt too wide) in paragraph at lines 56--72
+\twlrm Vektor des de-tek-tier-ten Lichts liegt par-al-lel zum Ma-gnet-feld $[]$
+, Faraday--Konfiguration)
+
+\hbox(11.58664+3.0)x441.01772, glue set - 1.0
+.\twlrm V
+.\kern-0.97916
+.\twlrm e
+.\twlrm k
+.\twlrm t
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--72
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[62]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+5.43178)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+5.43178)x441.01772
+..\hbox(10.52496+3.03188)x441.01772
+...\hbox(10.52496+3.03188)x441.01772, glue set 108.96324fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[63
+
+]
+Overfull \vbox (10.0pt too high) has occurred while \output is active
+\vbox(0.0+0.0)x0.0
+.\glue(\topskip) 10.0
+.\vbox(0.0+0.0)x0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--109
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--120
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--179
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+5.43178)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+5.43178)x441.01772
+..\hbox(10.52496+3.03188)x441.01772
+...\hbox(10.52496+3.03188)x441.01772, glue set 108.96324fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 191--200
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[66]
+Underfull \vbox (badness 4673) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 3.60574
+.\vbox(642.19135+0.0)x441.01772
+..\penalty -51
+..\glue 13.0 plus 6.0 minus 8.0
+..\glue(\parskip) 0.0
+..\hbox(469.468+0.0)x441.01772, glue set 71.13268fil
+...\glue(\leftskip) 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0
+...\hbox(0.0+0.0)x0.0 []
+...\penalty 0
+...etc.
+..\glue 0.0
+..etc.
+.\glue 12.0 plus 2.0 minus 4.0
+.\glue -12.0 plus -2.0 minus -4.0
+.\glue 16.0 plus 2.0 minus 4.0
+.\write-{}
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+5.43178)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+5.43178)x441.01772
+..\hbox(10.52496+3.03188)x441.01772
+...\hbox(10.52496+3.03188)x441.01772, glue set 108.96324fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[67
+
+]
+Overfull \vbox (10.0pt too high) has occurred while \output is active
+\vbox(0.0+0.0)x0.0
+.\glue(\topskip) 10.0
+.\vbox(0.0+0.0)x0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--208
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--225
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--250
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--256
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \vbox (badness 2376) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 2.87836
+.\glue(\topskip) 10.0
+.\vbox(0.0+0.0)x0.0
+.\penalty 10000
+.\glue(\parskip) 2.58333 plus 1.0
+.\glue(\baselineskip) 8.05176
+.etc.
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 257--268
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--283
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--311
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+5.43178)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+5.43178)x441.01772
+..\hbox(10.52496+3.03188)x441.01772
+...\hbox(10.52496+3.03188)x441.01772, glue set 108.96324fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 347--352
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--361
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[70]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+5.43178)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+5.43178)x441.01772
+..\hbox(10.52496+3.03188)x441.01772
+...\hbox(10.52496+3.03188)x441.01772, glue set 108.96324fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[71]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 362--374
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--379
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--384
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 393--393
+\twlsl fluo-res-zenz des $\twlmi I[]$\twlsl ---[]b-er--
+
+\hbox(10.52496+1.79999)x142.2638, glue set 4.00484
+.\twlsl ^^M (ligature fl)
+.\twlsl u
+.\twlsl o
+.\discretionary
+..\twlsl -
+.\twlsl r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+\twlsl im $\twlmi I[]$\twlsl --[]ber-gang par-al-lel
+
+\hbox(10.52496+2.33331)x142.2638, glue set 4.6215
+.\twlsl i
+.\twlsl m
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\twlmi I
+.etc.
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 393--393
+\twlsl zum Nor-ma-len-vek-tor der
+
+\hbox(8.33331+0.0)x142.2638, glue set 3.74078
+.\twlsl z
+.\twlsl u
+.\twlsl m
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\twlsl N
+.etc.
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 393--393
+\twlsl Licht. De-tek-tiert wurde
+
+\hbox(8.33331+0.0)x142.2638, glue set 2.53705
+.\twlsl L
+.\twlsl i
+.\twlsl c
+.\kern-0.32639
+.\twlsl h
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+4.19989)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+4.19989)x441.01772
+..\hbox(10.52496+1.79999)x441.01772
+...\hbox(10.52496+1.79999)x441.01772, glue set 101.51091fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[73
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 426--445
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--450
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[74]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+4.19989)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+4.19989)x441.01772
+..\hbox(10.52496+1.79999)x441.01772
+...\hbox(10.52496+1.79999)x441.01772, glue set 101.51091fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[75]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[76]
+Underfull \hbox (badness 10000) in paragraph at lines 467--473
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--481
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--492
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--498
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--504
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (0.53304pt too wide) in paragraph at lines 510--510
+[][]\svtnbf Zeitaufgel[]ste Mes-sun-gen am $\svtnmi I[]$\svtnbf -- und $\svtnmi
+ I[]$\svtnbf --[]ber-
+
+\hbox(15.31197+3.36)x441.01772, glue set - 1.0
+.\hbox(11.13599+0.0)x45.26373
+..\glue 0.0
+..\svtnbf 7
+..\svtnbf .
+..\svtnbf 3
+..\glue 19.87189
+.\setlanguage1 (hyphenmin 2,3)
+.\svtnbf Z
+.\svtnbf e
+.\svtnbf i
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+4.19989)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+4.19989)x441.01772
+..\hbox(10.52496+1.79999)x441.01772
+...\hbox(10.52496+1.79999)x441.01772, glue set 51.2804fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[77
+
+]
+Overfull \vbox (4.22351pt too high) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set - 1.0
+.\vbox(647.10138+0.0)x441.01772
+..\glue 0.0
+..\glue(\parskip) 0.0
+..\hbox(469.468+0.0)x441.01772, glue set 93.89476fil
+...\glue(\leftskip) 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0
+...\hbox(0.0+0.0)x0.0 []
+...\penalty 0
+...etc.
+..\glue 0.0
+..\glue -5.69054
+..etc.
+.\glue 12.0 plus 2.0 minus 4.0
+.\glue -12.0 plus -2.0 minus -4.0
+.\glue 16.0 plus 2.0 minus 4.0
+.\glue(\topskip) 0.0
+.etc.
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[78]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+4.19989)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+4.19989)x441.01772
+..\hbox(10.52496+1.79999)x441.01772
+...\hbox(10.52496+1.79999)x441.01772, glue set 51.2804fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[79]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 541--556
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--573
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--590
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--598
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \vbox (badness 2376) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 2.87836
+.\write-{}
+.\glue(\topskip) 1.0
+.\hbox(9.0+3.0)x441.01772, glue set 0.48389
+..\setlanguage1 (hyphenmin 2,3)
+..\twlrm w
+..\kern-0.32639
+..\twlrm e
+..\twlrm r
+..etc.
+.\penalty 250
+.\glue(\baselineskip) 5.05176
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+4.19989)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+4.19989)x441.01772
+..\hbox(10.52496+1.79999)x441.01772
+...\hbox(10.52496+1.79999)x441.01772, glue set 51.2804fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[81
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 608--619
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set 7.18683
+.\glue(\topskip) 0.0
+.\hbox(10.52496+2.33331)x441.01772, glue set - 0.36128
+..\twlrm n
+..\twlrm e
+..\discretionary
+...\twlrm -
+..\twlrm r
+..\twlrm e
+..etc.
+.\penalty 100
+.\glue(\baselineskip) 5.71844
+.\hbox(8.33331+2.33331)x441.01772, glue set 0.32655
+..\twlrm B
+..\twlrm e
+..\twlrm a
+..\twlrm t
+..\twlrm s
+..etc.
+.etc.
+
+
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[82]
+Overfull \vbox (501.02934pt too high) has occurred while \output is active
+\vbox(665.40283+0.0)x441.01772, glue set - 1.0
+.\vbox(632.28258+0.0)x441.01772
+..\penalty -51
+..\glue 13.0 plus 6.0 minus 8.0
+..\glue(\parskip) 0.0
+..\hbox(426.7891+0.0)x441.01772, glue set 61.17427fil
+...\glue(\leftskip) 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x0.0
+...\glue 0.0
+...\hbox(0.0+0.0)x0.0 []
+...\penalty 0
+...etc.
+..\glue 0.0
+..etc.
+.\glue 12.0 plus 2.0 minus 4.0
+.\glue -12.0 plus -2.0 minus -4.0
+.\glue 16.0 plus 2.0 minus 4.0
+.\glue(\topskip) 10.0
+.etc.
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+2.3999)x441.01772
+..\hbox(10.52496+0.0)x441.01772
+...\hbox(10.52496+0.0)x441.01772, glue set 19.1858fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[83]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+4.73322)x441.01772
+.\mathon
+.\vbox(8.2+4.73322)x444.93434
+..\hbox(8.2+2.33331)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+2.33331)x441.01772, glue set 169.61629fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[84])
+Underfull \hbox (badness 10000) in paragraph at lines 660--79
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(10.52496+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(10.52496+2.3999)x441.01772
+..\hbox(10.52496+0.0)x441.01772
+...\hbox(10.52496+0.0)x441.01772, glue set 19.1858fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[85
+
+] (zusamm.tex
+Kapitel 8.
+
+Overfull \hbox (3.51517pt too wide) in paragraph at lines 3--16
+\twlrm wur-den erst-ma-lig au^^Yer den in-ten-sit[]tsm[]^^Yig star-ken Singulet
+t--[]berg[]ngen auch schwa-
+
+\hbox(10.52496+2.33331)x441.01772, glue set - 1.0
+.\twlrm w
+.\twlrm u
+.\twlrm r
+.\discretionary
+..\twlrm -
+.\twlrm d
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--16
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--24
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[86
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 71--76
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--84
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(7.73332+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(7.73332+2.3999)x441.01772
+..\hbox(7.73332+0.0)x441.01772
+...\hbox(7.73332+0.0)x441.01772, glue set 429.26782fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[87]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 228.3532fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[88])
+Underfull \hbox (badness 10000) in paragraph at lines 100--80
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(7.73332+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(7.73332+2.3999)x441.01772
+..\hbox(7.73332+0.0)x441.01772
+...\hbox(7.73332+0.0)x441.01772, glue set 429.26782fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[89
+
+] (anhang.tex
+Anhang A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--12
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--22
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[90
+
+
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 140.58046fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[91
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 139.60129fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[92
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 140.58046fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[93
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 139.60129fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[94
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 140.58046fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[95
+
+]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 139.60129fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[96
+
+])
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 140.58046fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[97
+
+] (liter.tex [98
+
+
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 278.3624fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[99]
+Overfull \hbox (3.91663pt too wide) has occurred while \output is active
+$[]$
+
+\hbox(8.2+2.3999)x441.01772
+.\mathon
+.\vbox(8.2+2.3999)x444.93434
+..\hbox(8.2+0.0)x444.93434
+...\glue 3.91663 plus 1.95831 minus 1.30554
+...\hbox(8.2+0.0)x441.01772, glue set 272.48746fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[100])
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+ $[]$
+
+\hbox(8.2+2.3999)x441.01772, glue set - 1.0
+.\glue 3.91663 plus 1.95831 minus 1.30554
+.\mathon
+.\vbox(8.2+2.3999)x441.01772
+..\hbox(8.2+0.0)x441.01772
+...\hbox(8.2+0.0)x441.01772, glue set 272.48746fill []
+..\kern1.43994
+..\rule(0.47998+0.0)x*
+.\mathoff
+
+[101] (dank.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--19
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+[102
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+
+\hbox(0.0+0.0)x441.01772
+.\glue(\rightskip) 0.0
+
+) [103
+
+] (beat.aux (titel.aux) (tableofc.aux) (einl.aux) (exzitone.aux)
+(material.aux) (qubea.aux) (mathe.aux) (aufbau.aux) (mess.aux) (zusamm.aux)
+(anhang.aux) (liter.aux) (dank.aux))
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+ ) 
+Here is how much of TeX's memory you used:
+ 631 strings out of 6951
+ 4789 string characters out of 13221
+ 54691 words of memory out of 65533
+ 2363 multiletter control sequences out of 3500
+ 21078 words of font info for 80 fonts, out of 32766 for 127
+ 0 hyphenation exceptions out of 307
+ 21i,15n,29p,317b,327s stack positions out of 200i,40n,60p,1024b,600s
+
+Output written on beat.dvi (105 pages, 288328 bytes).

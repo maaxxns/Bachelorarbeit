@@ -1,0 +1,86 @@
+\documentstyle[12pt,german]{twdiss}
+
+\newlength{\tbreite}
+\setlength{\tbreite}{\textwidth}
+\setlength{\evensidemargin}{-0.5cm}
+\renewcommand{\textfraction}{0.0}
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+
+
+\newcommand{\bild}[6]{ % wo htb , name , breite , hoehe , Unterschrift , Kurzunt.
+\begin{figure}[#1]
+\unitlength1mm
+\begin{center}
+\begin{picture}(#3,#4)
+\put(0,#4){\special{em:graph #2}}
+\end{picture}\\[-2mm]
+\addtolength{\tbreite}{-10mm}
+\begin{minipage}[t]{\tbreite}
+\caption[#2, Breite: #3mm, H”he: #4mm] %[#6] 
+{\label{#2} \sl #5}
+\end{minipage}
+\end{center}
+\setlength{\tbreite}{\textwidth}
+\end{figure} 
+\setlength{\tbreite}{\textwidth}}
+
+\newcommand{\bildlinks}[6]{
+\begin{figure}[#1]
+\vspace{2mm}
+\addtolength{\tbreite}{-15mm}
+\addtolength{\tbreite}{-#3mm}
+\unitlength1mm
+\begin{picture}(150,#4)
+\put(5,#4){\special{em:graph #2}}
+\put(#3,0){\parbox[b]{10mm}{\hfill\ }
+\begin{minipage}[b]{\tbreite} 
+\caption[#2, Breite: #3mm, H”he: #4mm] %[#6]
+{\label{#2}\sl #5}
+\end{minipage}}
+\end{picture}
+\vspace{2mm}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}
+
+\newcommand{\tabelle}[5]{ 
+\renewcommand{\arraystretch}{#2} % htb , Abstand , name , Tabelle selbst , Unterschrift
+\begin{table}[#1]
+\begin{center}
+\begin{tabular}
+#4
+\end{tabular}\\[2mm]
+\addtolength{\tbreite}{-10mm}
+\begin{minipage}[t]{\tbreite}
+\caption[]{\label{#3} \sl #5}
+\end{minipage}
+\end{center}
+\end{table} 
+\renewcommand{\arraystretch}{1}
+\setlength{\tbreite}{\textwidth}}
+
+\newcommand{\bra}[1]{\langle{#1}|}
+\newcommand{\ket}[1]{|{#1}\rangle}
+\newcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
+
+\pagestyle{headings}
+\unitlength1mm
+
+
+\begin{document}
+\include{titel}
+\include{tableofc}
+\include{einl}
+\include{exzitone}
+\include{material}
+\include{qubea}
+\include{mathe}
+\include{aufbau}
+\include{mess}
+\include{zusamm}
+\include{anhang}
+\include{liter}
+\include{dank}
+
+\end{document}
+

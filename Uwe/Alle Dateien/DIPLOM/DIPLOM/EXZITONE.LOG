@@ -1,0 +1,19 @@
+This is emTeX, Version 3.0 [3a] (preloaded format=lplaing 92.6.10)  7 APR 1995 16:22
+**&lplaing.fmt EXZITONE.TEX
+(exzitone.tex
+LaTeX Version 2.09 <25 March 1992>
+! Undefined control sequence.
+l.1 \chapter
+            {Grundlagen Exzitonen}
+? e
+You want to edit file exzitone.tex at line 1 
+Here is how much of TeX's memory you used:
+ 4 strings out of 6965
+ 36 string characters out of 13278
+ 22995 words of memory out of 65533
+ 1977 multiletter control sequences out of 3500
+ 18996 words of font info for 72 fonts, out of 32766 for 127
+ 0 hyphenation exceptions out of 307
+ 4i,0n,1p,60b,7s stack positions out of 200i,40n,60p,1024b,600s
+
+No pages of output.

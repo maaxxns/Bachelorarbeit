@@ -1,0 +1,467 @@
+\chapter{\label{qubea}Quantum--Beat--Spektroskopie}
+\section{\label{qubeaprinz}Methode der Quantum--Beat--Spektroskopie}
+
+Gepulste Lasersysteme erm”glichen im Zusammenhang mit zeitaufgel”sten
+Meáverfahren u.a. die Lebensdauerbestimmung angeregter atomarer Niveaus.
+Der Abbau der Niveaus ist bestimmt durch eine inkoh„rente spontane Emission
+und durch inelastische St”áe.
+\begin{equation}
+N(t)=N(0) e^{-\frac{t}{T_1}}
+\ ,
+\end{equation}
+mit \it N(t)\rm als zeitliche Besetzung des angeregten Zustandes. Die Zeitkonstante
+$T_1$ fr den Besetzungsabbau wird auch \it longitudinale Relaxationszeit \rm
+\cite{demtroeder} genannt.\\
+
+Werden die Niveaus \it koh„rent \rm angeregt, d.h. durch die optische Anregung
+haben die Wellenfunktionen der angeregten Niveaus eine definierte Phase, so
+fhrt deren šberlagerung bei der Relaxation zu Interferenzeffekten. Zus„tzlich
+zur Intensit„t ist es nun auch m”glich, die Phase der Wellenfunktion zu bestimmen.
+Da aber diese feste Phasenbeziehung der Wellenfunktionen untereinander nicht
+unendlich lange bestehen bleibt, sondern die Koh„renz zerst”rt wird, 
+wird eine zweite Relaxationszeit $T_2$ (die
+\it transversale Relaxationszeit\rm ) eingefhrt, die phasenst”rende Prozesse
+und z.B. auch die Geschwindigkeitsverteilung der Atome bercksichtigt. Phasenst”rende
+Prozesse fhren zu homogenen Linienverbreiterungen $\gamma_2^{hom}=1/T_2^{hom}$,
+Geschwindigkeitsverteilungen zu inhomogenen Linienverbreiterungen 
+$\gamma_2^{inhom}=1/T_2^{inhom}$.\\
+
+Koh„rente Meáverfahren wie die \it Quantum--Beat--Spektroskopie \rm erm”glichen
+nun Messungen dicht beieinander liegender Energieniveaus, deren Aufl”sung
+nicht durch inhomogene Verbreiterungen begrenzt ist.\\
+
+Das Prinzip der Quantum--Beat--Spektroskopie kann man sich an einem einfachen
+3--Niveau--System verdeutlichen.
+
+\bild{htb}{qbea}{75}{70}{Prinzip der Quantum--Beat--Spektroskopie}
+
+\rm Die Atome im Grundzustand $\ket{1}$ k”nnen durch kurze Laserpulse
+in die beiden Zust„nde $\ket{2}$ und $\ket{3}$ angeregt werden.
+Dabei ist die Zeit der Anregung $t_p$ sehr viel krzer als die Lebenszeit der
+Zust„nde $\ket{2}$ und $\ket{3}$. W„hlt man $t_p$ weiterhin so,
+daá die Energie--Zeit--Unsch„rfe $\Delta E\approx \hbar/t_p$ des Pulses
+gr”áer als die Energieaufspaltung der Zust„nde $\ket{2}$ und $\ket{3}$ ist, so 
+kann die Anregung beider Niveaus erfolgen.\  %@@
+Fr $t=0$ gilt fr die Wellenfunktion des Gesamtzustandes:  %@@
+\begin{equation}
+\ket{\Psi (t=0)} = a_2 \ket{2} + a_3 \ket{3}  %@@
+\ ,
+\end{equation}
+wobei $|a_2|^2$ und $|a_3|^2$ die Wahrscheinlichkeiten
+dafr sind, daá die Niveaus $\ket{2}$ und $\ket{3}$ angeregt
+sind. Im Falle einer Anregung mit fester Phasenbeziehung spricht man von
+einer \it koh„renten Anregung\rm , die zur Detektion von Quantum--Beats 
+ben”tigt wird.\\
+
+Die zeitliche Entwicklung einer Wellenfunktion ist in der Quantenmechanik
+durch  %@@
+\begin{equation}
+\ket{\Psi (t)}=e^{-\frac{i}{\hbar} E t} \ket{\Psi(0)} %@@
+\end{equation}
+\cite{fick} gegeben.
+Die angeregten Zust„nde zerfallen mit den Lebensdauern $T_1^{(2)}$ und $T_1^{(3)}$
+durch spontane Emission, so daá die endliche Lebensdauer des Zustandes $\ket{i}$
+in der zeitlichen Entwicklung durch einen
+zus„tzlichen Exponentialfaktor $\exp(-[t/2 T_1^{(i)}])$ bercksichtigt werden
+muá. Das Zerfallslicht wird mit einer gegebenen Polarisation $\vec{e}_d$ zum
+Grundzustand detektiert:
+\begin{equation}
+\ket{\Psi(t)}=a_2 e^{-\frac{i}{\hbar} E_2 t - \frac{t}{2 T_1^{(2)}}}
+\ket{2} + a_3 e^{-\frac{i}{\hbar} E_3 t - \frac{t}{2 T_1^{(3)}}} \ket{3}
+\ .
+\end{equation}
+\clearpage
+Die polarisiert emittierte Intensit„t ist dann gegeben durch
+\cite{blum}:
+\begin{eqnarray}  
+I(t) & = & |\bra{0}\vec{e}_dD\ket{\Psi(t)}|^2 \nonumber\\
+& = & |a_2 \bra{0}\vec{e}_d D \ket{\psi_2(t)}+a_3 \bra{0} \vec{e}_d D \ket
+{\psi_3(t)}|^2
+\ ,
+\end{eqnarray}
+mit $\vec{D}=e \cdot \vec{r}$ dem Dipoloperator des emittierten Lichts.\\  %@@
+
+Mit $A_i=\bra{0} \vec{e}_d D \ket{\psi_i(0)}$ und $T_1^{(2)}=T_1^{(3)}=T_1$ 
+(es wird angenommen, daá die Zust„nde diegleiche Relaxationszeit besitzen) folgt:
+\begin{eqnarray} 
+\label{interferenz}
+I(t) & \sim & |a_2 A_2|^2 e^{-\frac{t}{T_1}} + |a_3 A_3|^2 e^{-\frac{t}{T_1}}\nonumber\\
+& \sim & a_2 a_3^* A_2 A_3^* e^{- \frac{i}{\hbar}(E_2-E_3)t- \frac{t}{T_1}}\nonumber\\ 
+& & +a_2^*a_3 A_2^*A_3 e^{+ \frac{i}{\hbar}(E_2-E_3)t-\frac{t}{T_1}}
+\ .
+\end{eqnarray} 
+Die Amplitude von $I(t)$ ist somit mit der Frequenz
+($E_3-E_2$)/h moduliert. Weiterhin erfolgt eine vollst„ndige
+Durchmodulation dieses Signals, wenn $|a_2|^2=|a_3|^2$.\\  %@@
+
+\bildlinks{htb}{qbea1}{75}{55}{Mit Quantum--Beats moduliertes Streulicht.}
+
+Diese Schwebungen werden \it Quantum--Beats \rm genannt. Es sind
+quantenmechanische Interferenzen der koh„rent angeregten Zust„nde $\ket{2}$ und
+$\ket{3}$, die v”llig analog zum Young'schen Doppelspaltversuch interpretiert
+werden k”nnen. Bei Messung der Gesamtintensit„t kann nicht entschieden werden,
+ob das gemessene Photon vom šbergang $\ket{3}\rightarrow\ket{1}$ oder $\ket{2}
+\rightarrow \ket{1}$ stammt. Somit ist die Gesamtwahrscheinlichkeit fr die
+Emission eines Photons durch $|a_2+a_3|^2$ gegeben. Wird also ein šbergang
+herausgefiltert, so verschwinden die Beats (die Interferenzterme in Gl. (\ref{interferenz})
+ergeben 0).\\
+
+
+\section{\label{dichtematrixtheorie}Quantum--Beats in der Dichtematrixtheorie}
+
+Um nun die zeitliche Entwicklung der emittierten Intensit„t aus dem vorherigen
+Kapitel \ref{qubeaprinz} berechnen zu k”nnen, mssen die Wahrscheinlichkeitsamplituden
+$a_ia_j$ bestimmt werden, die von der $\underline{Polarisation}$, der 
+$\underline{Intensit"at}$ und dem 
+$\underline{spektralen\ Profil}$ des anregenden Lichtpulses abh„ngen. Sind die 
+Wahrscheinlichkeitsamplituden bestimmt, mssen s„mtliche Summationen in Gl. (\ref{interferenz})
+ausgefhrt werden, was bei Mehrniveausystemen sehr aufwendig sein kann. Das
+Problem kann wesentlich vereinfacht werden, wenn man die 1927 von J. von Neumann
+eingefhrte \it Dichtematrix \rm benutzt, die statistische Konzepte in der 
+Quantenmechanik beschreibt.
+Dort spricht man von einem \it reinen Zustand \rm , wenn
+s„mtliche zu untersuchenden Objekte sich in ein und demselben Zustand $\ket{\Psi}$ 
+befinden. Um die in $\ket{\Psi}$ enthaltenen
+Wahrscheinlichkeitsaussagen verifizieren zu k”nnen, muá eine Gesamtheit von
+gleichartig pr„parierten Objekten untersucht werden.\\  
+
+Neben diesem den einzelnen Zust„nden innewohnenden statistischem Charakter,
+kann darberhinaus noch eine statistische Verteilung von Zust„nden vorliegen.
+Man hat es dann mit einem \it gemischten Zustand \rm zu tun. Ein gemischter
+Zustand wird ad„quat durch eine Dichtematrix $\bf \rho \rm$ beschrieben, die
+s„mtliche Informationen ber das quantenmechanische System enth„lt.\  %@@
+Fr den Erwartungswert jeder physikalischen Observablen $\underline{L}$ gilt
+dann \cite{fick}:
+\begin{eqnarray}
+\label{observable}
+\langle \underline{L} \rangle & = & Spur ({\bf\rho}\cdot\underline{L}) \ , \\
+\mbox{mit}\qquad  \rho & = & \sum_k \sum_{i,j} w^k a_i^k a_j^{k*}\ket{i}\bra{j}\nonumber
+\ .
+\end{eqnarray}
+und $w^k$ der Wichtung der einzelnen Zust„nde \cite{blum}. Man erkennt, daá die 
+Mittelwertbildung des reinen Zustands durch die Amplituden $a_i a_j$ erfolgt
+und zu Interferenzen fhrt (siehe auch Gl. (\ref{interferenz})). Die Mittelung
+der gemischten Zust„nde hingegen erfolgt ber die Wichtung $w^k$, die zu
+keinen Interferenzen fhrt.\\
+
+Fr den vorliegenden Fall der Quantum-Beat-Spektroskopie an koh„rent
+angeregten Zust„nden wird die Energiedarstellung (Observable:
+Hamiltonoperator $\underline{H}$) gew„hlt. Als Basis k”nnen z.B. die
+Eigenvektoren des Hamiltonoperators $\underline{H}$ des Systems dienen.\  %@@
+Fr den Fall zweier angeregter Zust„nde lautet die Dichtematrix:  %@@
+\begin{equation}
+{\bf \rho} =\left(\begin{array}{ccc}\rho_{11} & \rho_{12} & \rho_{13}\\ \rho_{21}
+& \rho_{22} & \rho_{23}\\ \rho_{31} & \rho_{32} & \rho_{33} \end{array}
+\right)
+\end{equation}
+wobei ${\bf \rho}$ hermitesch ist, d.h. $\rho_{ij}=\rho_{ji}^*$, und
+die Diagonalelemente geben die Besetzungen der einzelnen Zust„nde an. Die
+$\rho_{1i}$ beschreiben die Kopplung der angeregten Zust„nde mit dem Grundzustand
+und werden \it optische Koh„renzen \rm genannt. Die $\rho_{ij}$ geben 
+die Koh„renzen der angeregten
+Zust„nde untereinander an (\it Hertzsche Koh„renzen \rm), die fr die hier
+betrachteten Quantum--Beat--Messungen entscheidend sind und mit ihr bestimmt
+werden k”nnen. Es gilt dabei $\rho_{ij}=\overline{a_i a_j^*}=\overline{|a_ia_j| e^{i(\phi_i-\phi_j)}}$,
+wobei $\phi_i$ und $\phi_j$ die Phasen der Zust„nde i und j sind und der Querstrich die Mittelung
+ber ein groáes Ensemble symbolisiert. Sind die Phasen der betrachteten Zust„nde statistisch
+verteilt, so mittelt sich die Summe ber das Ensemble zu Null. Ist $\rho_{ij}$ 
+hingegen ungleich Null, so besteht eine feste Phasenbeziehung zwischen den
+einzelnen Niveaus und man spricht von Koh„renz.   
+Liegt $\rho$ in Diagonalgestalt vor (in der $\psi_n$-Darstellung), so
+superponieren die Basisfunktionen $\mid \psi_n\rangle $ des Systems v”llig
+inkoh„rent.\\  %@@
+
+Die zeitliche Entwicklung der Dichtematrix wird durch die Liouvill'sche
+Bewegungsgleichung mit der Erg„nzung eines Relaxationsterms beschrieben  %@@
+\cite{stenholm}:
+\begin{equation}
+\label{liouville}
+\frac{{d\rho}}{dt}=- \frac{i}{\hbar} \left[
+\underline{H}_{ex},{\bf \rho} \right] + {\bf G} + \left(\frac{ \partial
+\rho}{ \partial t} \right)_{relax}
+\ .
+\end{equation}
+Der Relaxationsterm $\left(\partial \rho/\partial t\right)_{relax}$
+beschreibt die Wechselwirkung des Systems mit der Umgebung. Er bercksichtigt
+die endliche Lebensdauer des Zustandes, der sowohl durch strahlende wie auch durch
+nichtstrahlende Prozesse bestimmt wird. Die feste Phasenbeziehung der
+Zust„nde geht dabei verloren.\\  
+
+Die Energierelaxation ist gegeben durch:
+\begin{equation}
+\left(\frac{\partial \rho_{ii}}{\partial t} \right)_{relax}=-\gamma_i \rho_{ii}
+\ ,
+\end{equation}
+
+die Phasenrelaxation durch:
+\begin{equation}
+\left(\frac{\partial \rho_{ij}}{\partial t} \right)_{relax}=-\gamma_{ij} \rho_{ij}
+\ ,
+\end{equation}
+mit $\gamma_i=1/T_1^{(i)}$, $\gamma_j=1/T_1^{(j)}$
+und $\gamma_{ij}=\frac{1}{2}(\gamma_i+\gamma_j)+\gamma_{\Phi}$
+($\gamma_{\Phi}=2/T_2'$ ist die reine Phasenrelaxationsrate).\\
+
+Fr die Betrachtung in dieser Arbeit ist im folgenden die Zeitspanne $\tau_{coh}$
+wichtig, in der die Phasenbeziehung der einzelnen
+Zust„nde verloren geht. Es gilt:
+\begin{equation}
+\frac{1}{\tau_{coh}}=\frac{2}{\gamma_{ij}}=\frac{1}{2 T_1}+\frac{1}{T_2'}
+\ .
+\end{equation}
+$\tau_{coh}$ wird im folgenden als \it Koh„renzzeit \rm bezeichnet (i.a. 
+$\tau_{coh}<2T_1$). Mit Hilfe der Quantum--Beat--Spektroskopie erlaubt sie die
+direkte Bestimmung der homogenen Linienbreite eines inhomogen verbreiterten
+optischen šbergangs:
+\begin{equation}
+\delta E_{hom} \approx \frac{2\hbar}{\tau_{coh}}
+\ .
+\end{equation}
+
+\subsection{\label{t0}Aufstellung der Dichtematrix fr t=0}
+
+Die Anfangswerte der Dichtematrix zum Zeitpunkt $t=0$ werden durch die 
+Generationsmatrix \bf G \rm beschrieben \cite{pikus}, 
+welche die Besetzungsraten der angeregten Zust„nde angibt.\  %@@
+Es empfiehlt sich, als Basissystem die Eigenvektoren des Hamiltonoperators
+des angeregten Systems $\underline{H}_{ex}$ zu w„hlen. $\underline{H}_{ex}$
+liegt dann in Diagonalgestalt vor und der Kommutator $\left[
+\underline{H}_{ex},{\bf \rho} \right]= \underline{H}_{ex}
+\underline{\rho}-\underline{\rho}\underline{H}_{ex}$ kann sehr leicht
+bestimmt werden.\  %@@
+Bei einer $\delta$-pulsf”rmigen Anregung $({\bf G=G}\cdot\delta (t)=g_{ij}
+\cdot \delta (t))$ ergibt sich als L”sung fr die gekoppelte
+Differentialgleichung 1. Ordnung: \cite{stolz}:
+\begin{equation}
+\rho_{ij}(t)=g_{ij} e^{-\frac{i}{\hbar}\left( \epsilon_i-\epsilon_j \right)t}
+\ ,
+\end{equation}  
+mit $\epsilon_i$ den Eigenwerten von $\underline{H}_{ex}$.\\ 
+
+\subsubsection{Nichtentarteter Grundzustand}
+
+Fr einen nichtentarteten Grundzustand erh„lt man die Komponenten $g_{ij}$ 
+der Generationsmatrix \bf G \rm durch  
+\begin{equation}
+{\bf G=\left( M^L \right)^\dagger \cdot I^L \cdot M^L}
+\ .
+\end{equation}
+$\bf M^L$ \rm ist dabei eine Kopplungsmatrix des einfallenden Lichtfeldes und
+der angeregten Exzitonzust„nde. Sie ist gegeben durch:  
+\begin{equation}
+{\bf M^L_{\alpha i}}= \vec{M}_i \cdot \vec{e}_{\alpha ,L}
+\ ,
+\end{equation}
+wobei $\vec{e}_{\alpha ,L}$ die Basiszust„nde des Anregungslichtes und
+$\vec{M}_i$ das vektorielle šbergangsdipolmatrixelement des Zustandes
+$\ket{i}$ sind: 
+\begin{equation}
+\vec{M}_i=\bra{i} \vec{D} \ket{0}\qquad\ i=1,\dots ,N
+\ .
+\end{equation}
+Zur Berechnung von $\vec{M}_i$ werden gruppentheoretische šberlegungen
+ben”tigt, um herauszufinden, welche šberg„nge dipolerlaubt und welche
+--verboten sind (siehe auch Kapitel \ref{auswahl}).\\  
+
+\bf I \rm ist die Polarisationsdichtematrix des anregenden Lichtes:
+\begin{equation}
+{\bf I} =\frac{1}{2} \left( \begin{array}{cc} I_0+I_1 & I_2+iI_3\\ I_2-iI_3
+& I_0-I_1 \end{array} \right)
+\ .
+\end{equation}
+Dabei sind die $I_i$ die Komponenten des Stokes-Vektors. Fr sie gilt:
+
+\begin{tabbing}  %@@
+\hspace*{3.5cm}\=$I_3=2 a_x a_y
+\cos{\delta}$\=\hspace*{3cm}\=Zirkularpr„ferenz\=\kill  %@@
+\>$I_0=I(x)+I(y)$\>\>Gesamtintensit„t,\\  %@@
+\>$I_1=I(x)-I(y)$\>\>Horizontalpr„ferenz,\\  %@@
+\>$I_2=I(x')-I(y')$\>\>$45^{\circ}$-Pr„ferenz,\\  %@@
+\>$I_3=I(\sigma_+)-I(\sigma_-)$\>\>Zirkularpr„ferenz.  %@@
+\end{tabbing}  
+
+\newpage
+
+Mit
+\begin{tabbing}  
+\hspace*{3.5cm}\=$I_3=2 a_x a_y \cos{\delta}$\=\hspace*{3cm}\=Zirkularpr„ferenz\=\kill  %@@
+\>$\ket{x'}=\frac{1}{\sqrt{2}}(\ket{x}+\ket{y}),$\>\>\\  
+\>$\ket{y'}=\frac{1}{\sqrt{2}}(\ket{x}-\ket{y}),$\>\>\\ 
+\>$\ket{\sigma_{\pm}}=\frac{1}{\sqrt{2}}(\ket{x}\pm i \ket{y})$\\ 
+\end{tabbing}  %@@
+
+und $\ket{x}$, $\ket{y}$ in x-- bzw. in y--Richtung linear polarisiertes Licht.\\
+
+Die gestreute Lichtintensit„t erh„lt man mit:
+\begin{equation}
+{\bf I^S=M^S \cdot \rho^{e} \cdot \left( M^S \right)^{\dagger}}
+\ ,
+\end{equation}
+$\bf M^S$ ist dabei die Kopplungsmatrix des Streulichtes und
+$\bf \rho^{e}$ \rm die angeregte Dichtematrix (die Kopplung zum Grundzustand 
+f„llt weg, d.h. $\rho_{1i}=\rho_{i1}=0$).\\
+
+Die Aufstellung von ${\bf \rho^{e}}$ kann durch gruppentheoretische šberlegungen im
+Einzelfall sehr erleichtert werden. Wird etwa der Relaxationsterm nicht
+bercksichtigt (die Quantum-Beats treten unendlich lang auf) und ist der
+Kommutator $\left[ \underline{H}_{ex}, {\bf \rho^{e}} \right]=0 $ (das
+Magnetfeld B=0), so ist ${\bf \rho^{e}}(t=0)$ vollst„ndig durch die
+Generationsmatrix \bf G \rm gegeben. Da beide Basen aber nicht
+bereinstimmen, kann \bf G \rm leicht anhand der Tabellen von \cite{koster}
+in die ${\bf \rho^{e}}$-Darstellung berfhrt werden.  %@@
+
+\subsubsection{Entarteter Grundzustand}
+
+Liegt im betrachteten System ein entarteter Grundzustand vor, so muá das
+Modell erweitert werden (siehe z.B. \cite{stolz}). Die angeregten Zust„nde
+werden im folgenden mit $i=1,\ldots,N$ und die Grundzust„nde mit
+$l=1,\ldots,M$ bezeichnet.\\
+
+Fr die Generationsmatrix gilt nun:
+\begin{equation}
+{\bf G}=\sum_{l,m=1}^M{\bf \left( M^L_l \right)^{\dagger} \cdot I^L \cdot M^L_m \rho^g_{lm}}
+\ ,
+\end{equation}
+mit $\bf \rho^g$ der Dichtematrix des Grundzustandes vor der optischen Anregung. 
+Die Streuintensit„t ist dabei gegeben durch:
+\begin{equation}
+{\bf I^S=\sum_{l=1}^M M^S_l \cdot \rho^{e} \cdot \left(M^S_l \right)^{\dagger}}
+\ .
+\end{equation}
+Die Kopplungsmatrizen fr Anregungs-- und Streulicht sind folgendermaáen
+definiert
+\begin{eqnarray}
+{\bf M_{\alpha i,l}^L} & = & \vec{M}_{il} \cdot \vec{e}_{\alpha,L} \ ,\\
+{\bf M_{\alpha i,l}^S} & = & \vec{M}_{il} \cdot \vec{e}_{\alpha,S}
+\ ,
+\end{eqnarray}
+wobei die $\vec{e}_{\alpha ,L}$, $\vec{e}_{\alpha ,S}$ die Basiszust„nde des
+Anregungs-- bzw. Streulichtes sind.\\
+
+Oft sind die Grundzust„nde nach der Boltzmann--Verteilung thermisch besetzt,
+was sich dann auch in der Dichtematrix des Grundzustandes ${\bf \rho^g}$ wiederspiegelt.\\
+
+Bei einem nichtentarteten Grundzustand in einem 3--Niveau--System ist es, wie
+oben schon erw„hnt, bei einer breitbandigen Anregung der Niveaus $\ket{2}$ und
+$\ket{3}$ nicht m”glich zu entscheiden, von welchem Niveau ein emittiertes
+Photon relaxiert ist. Quantenmechanisch muá also die Wahrscheinlichkeitsamplitude
+$|a_2+a_3|^2$ gebildet werden und es treten Interferenzterme auf. Bei einem
+entarteten Grundzustand hingegen ist es sehr wohl m”glich anhand der 
+Relaxationsenergie festzustellen, in welchem Grundzustand der šbergang geendet
+hat. Quantenmechanisch ist dies dann mit einem Verschwinden der Interferenzterme
+verbunden.\\
+
+Oft reicht schon die Berechnung der Dichtematrix fr t=0, um Aussagen ber
+die Besetzungen der einzelnen Zust„nde treffen zu k”nnen und somit festzustellen, ob
+Quantum--Beats m”glich sind oder nicht. Im n„chsten Kapitel \ref{tn0} wird die
+zeitliche Entwicklung der Dichtematrix berechnet. Dabei beschr„nkt sich die
+Berechnung hier auf ein einfaches 3--Niveau--System, weil die Berechnung komplizierterer
+Systeme den Umfang dieser Arbeit weit bertreffen wrde.\\
+
+
+\subsection{\label{tn0}Zeitentwicklung der Dichtematrix fr $t>0$}
+
+Die Zeitentwicklung der Dichtematrix wird durch die Liouvill'sche 
+Bewegungsgleichung (\ref{liouville}) beschrieben. Der Hamiltonoperator
+$\underline{H}_{exz}$ ist dabei zeitabh„ngig und kann separiert werden in
+einen Hamiltonoperator $\underline{H}_{exz}^0$ des ungest”rten
+exzitonischen Systems und einer St”rung $V(t)=D \vec{E}(z,t)$, die aus der
+Kopplung an ein „uáeres sich in z--Richtung ausbreitendes Lichtfeld 
+$\vec{E}(z,t)$ herrhrt. Die Komponenten der Dichtematrix sind dann gegeben
+durch ein gekoppeltes inhomogenes Differentialgleichungssystem:
+\begin{eqnarray}
+i \hbar \dot{\rho_{ij}} & = & (E_i-E_j)\rho_{ij}-i \hbar \gamma_{ij} \rho_{ij}\nonumber\\
+& & + \sum_n[\bra{i}V \ket{n} \rho_{nj} - \rho_{in} \bra{n} V \ket{j}]
+\ .
+\end{eqnarray}
+Fr ein 3--Niveau--System sind somit die Dichtematrixkomponenten explizit
+gegeben durch \cite{langer}:
+\begin{eqnarray}
+\dot{\rho}_{11} & = & -\gamma_1 \rho_{11} - \frac{i}{\hbar} E(z,t) 
+\{[D_{12} \rho_{21}-D_{21} \rho_{12}]+[D_{13} \rho_{31}-D_{31} \rho_{13}]\}\\
+\dot{\rho}_{22} & = & -\gamma_2 \rho_{22} - \frac{i}{\hbar}E(z,t)
+\{D_{21} \rho_{12}-D_{12}\rho_{21}\}\\
+\dot{\rho}_{33} & = & -\gamma_3 \rho_{33} - \frac{i}{\hbar}E(z,t)
+\{D_{31}\rho_{13}-D_{13}\rho_{31}\}\\
+\dot{\rho}_{12} & = & -(\gamma_{12}+i \omega_{12})\rho_{12}-\frac{i}{\hbar}
+E(z,t)D_{12}(\rho_{22}-\rho_{11})-\frac{i}{\hbar}E(z,t)D_{13}\rho_{32}\\
+\dot{\rho}_{13} & = & -(\gamma_{13}+i \omega_{13})\rho_{13}-\frac{i}{\hbar}
+E(z,t)D_{13}(\rho_{33}-\rho_{11})-\frac{i}{\hbar}E(z,t)D_{12}\rho_{23}\\
+\dot{\rho}_{23} & = & -(\gamma_{23}+i \omega_{23})\rho_{23}- \frac{i}{\hbar}
+E(z,t) D_{21}\rho_{13}+ \frac{i}{\hbar}E(z,t)D_{13}\rho_{21}
+\end{eqnarray}
+mit $D_{ij}=\bra{i}\vec{e}_LD \ket{j}$ und $\omega_{ij}=\omega_i - \omega_j$.\\
+
+Dieses gekoppelte inhomogene Differentialgleichungssystem ist analytisch
+nicht l”s\-bar. Nimmt man zur Vereinfachung eine $\delta$--pulsf”rmige Anregung 
+zum Zeitpunkt t=0 an, so werden die Bewegungsgleichungen entkoppelt und es gilt:
+\begin{equation}
+\dot{\rho}_{ij} = -(\gamma_{ij}+ i \omega_{ij})\rho_{ij}+\rho_{ij}^0
+\ ,
+\end{equation}
+dabei ist $\rho_{ij}^0$ das Matrixelement $\rho_{ij}$ zum Zeitpunkt t=0.
+Die Integration dieser Gleichung liefert:
+\begin{equation}
+\rho_{ij}(t) = \rho_{ij}^0 \exp[-(i\omega_{ij}+\gamma_{ij})t]
+\ .
+\end{equation}
+Fr die emittierte Intensit„t I(t) folgt dann fr einen beliebigen
+Detektionsoperator $\underline{D}_{ij}=b_ib_j$ mit $b_i=\bra{1}\vec{e}_dD \ket{i}$ nach
+der allgemeinen quantenmechanischen Beziehung Gl. (\ref{observable}):
+\begin{eqnarray}
+I(t) & \sim & <\underline{D}> = Spur (\rho(t)\cdot \underline{D}) \nonumber\\
+& \sim & (a_2^2b_2^2\rho_{22}^0 + a_3^2b_3^2\rho_{33}^0)\exp(-\frac{t}{T_1}) \nonumber\\
+& & + 2 \Re e \{ a_2a_3b_2b_3 \rho_{23}^0 \cos(\omega_{32}t)\}\exp(-\frac{2t}{\tau_{coh}})
+\ .
+\end{eqnarray}
+
+Dieser Term hat natrlich diegleiche Form wie die schon vorher betrachtete
+allgemeine Beschreibung der emittierten Intensit„t ohne Dichtematrixformalismus
+(Gl. (\ref{interferenz})). Der erste Teil der Gleichung beschreibt die spontane
+Emission der Zust„nde $\ket{2}$ und $\ket{3}$ mit der Energierelaxationszeit
+$T_1$. Der zweite Teil enth„lt die Schwebung $\omega_{32}$, die aus der 
+Interferenz der beiden aufgespaltenen Zust„nde resultiert und mit $\tau_{coh}$
+ged„mpft wird.\\
+
+Der Modulationsgrad $\eta$ (Verh„ltnis aus periodischer nderung der emittierten
+Intensit„t und nichtperiodischem Untergrund) der Beats ist gegeben durch 
+\cite{langer}:
+\begin{eqnarray}
+\eta =\frac{2 a_2a_3b_2b_3\rho_{23}^0}{a_2^2b_2^2\rho_{22}^0+a_3^2b_3^2\rho_{33}^0}
+\ .
+\end{eqnarray}
+Fr $\eta=1$ ist das Signal optimal durchmoduliert, bei $\eta=0$ handelt es
+sich um einen inkoh„renten Streuprozeá. Es treten nur Dichtematrixelemente
+vom Zeitpunkt t=0 auf, d.h. die Pr„paration durch den anregenden Laserpuls
+bestimmt den Grad der Modulation.\\
+
+In der Einleitung zu diesem Kap. \ref{dichtematrixtheorie} wurde festgestellt, 
+daá die Wahrscheinlichkeitsamplituden $a_ia_j$ auáer von der Polarisation
+und der Intensit„t, die bisher schon bercksichtigt wurden, auch vom spektralen
+Profil des anregenden Lichtpulses abh„ngen. Dabei k”nnen zwei Grenzf„lle
+unterschieden werden:
+\begin{enumerate}
+\item der anregende Lichtpuls ist koh„rent und bandbreitenbegrenzt,
+\item zur Anregung werden breitbandige Pulse verwandt, die als statistische
+Folge koh„renter Wellenzge beschrieben werden k”nnen.
+\end{enumerate}
+In der Literatur finden sich ausfhrliche Rechnungen fr die zeitliche
+Entwicklung der Dichtematrix in diesen F„llen (siehe z.B. \cite{langer},
+\cite{haroche} oder \cite{stenholm}).
+\cite{langer} stellt als Endergebnis fest:
+\begin{enumerate}
+\item \it ,, Eine Hertzsche Koh„renz l„át sich durch einen koh„renten optischen
+Puls beliebiger Dauer erzeugen, wobei fr den Nachweis des freien Zerfalls
+nur das hinreichend schnelle Abschalten der Anregung entscheidend ist''\rm.
+
+\item \it ,, Durch einen breitbandigen optischen Puls k”nnen ebenfalls 
+Hertzsche Koh„renzen induziert werden, die sich aus den Beitr„gen der
+einzelnen, durch die in einem solchen Puls enthaltenen koh„renten Wellenzge
+erzeugten Koh„renzen zusammensetzen''\rm.
+
+\item \it ,, Der Modulationsgrad $\eta$ der Quantum--Beats h„ngt nicht von
+der Pulsdauer des anregenden Pulses ab''\rm.
+\end{enumerate}
+Desweiteren wird auch auf oben genannte Literatur verwiesen, um Rechnungen
+fr die zeitliche Entwicklung der Dichtematrixkomponenten im Falle eines
+nichtentarteten Grundzustandes zu finden.

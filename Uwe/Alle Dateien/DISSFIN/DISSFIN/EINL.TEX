@@ -1,0 +1,189 @@
+\chapter{\label{einleitung}Einleitung}
+
+
+Insbesondere zur Charakterisierung diffus emittierender
+Fl\"{a}chenquellen wie z.B Deponien, Industrieanlagen, Kl\"{a}ranlagen,
+landwirtschaftlich genutzte Fl\"{a}chen, Verkehrsstrecken oder auch
+zur \"{U}berwachung von industriellen Prozessen oder bei
+Umweltunf\"{a}llen werden zuverl\"{a}ssige, kosteng\"{u}nstige,
+automatisierbare und somit nicht personalintensive analytische
+Methoden gesucht. Seit einigen Jahren wird verst\"{a}rkt die \bf F\rm
+ourier \bf T\rm ransform \bf I\rm nfrarot \bf S\rm pektroskopie
+(FTIR--Spektroskopie) auch als Fernmessverfahren f\"{u}r die
+Atmosph\"{a}renspektroskopie eingesetzt. Dabei kann anhand der durch
+Luftverunreinigungen bedingten Absorption von IR--Strahlung auf
+dem Weg zwischen einer k\"{u}nstlichen IR--Strahlungsquelle und einem
+FTIR--Spektrometer der integrale Volumenanteil \"{u}ber die
+Messstrecke bestimmt werden (open--path FTIR).\\
+
+Die Ergebnisse punktf\"{o}rmig messender Verfahren, die in der
+Vergangenheit zur Verf\"{u}gung standen, sind oft nicht repr\"{a}sentativ
+f\"{u}r die Emissionen einer Fl\"{a}chenquelle. Die ermittelten
+Analyseergebnisse der im Feld genommenen und dann im Labor
+ausgewerteten Proben geben meist nur einen kurzen zeitlichen
+Ausschnitt der jeweiligen Messsituation wieder. Die
+FTIR--Spektroskopie hingegen erlaubt die kontinuierliche
+\"{U}berwachung von Emissionen in kleinen Zeitfenstern mit
+gleichzeitiger online--Auswertung der Messergebnisse. Aufgrund der
+ber\"{u}hrungslosen optischen Messung kann auch in Bereichen gemessen
+werden, die f\"{u}r Personen nicht zug\"{a}nglich sind. Weiterhin ist
+weder eine Probenaufbereitung erforderlich, noch ist eine
+Kontamination des verwendeten Messsystems gegeben. Der Aufbau
+eines "`optischen Zaunes"' um eine Anlage erlaubt zudem eine
+kontinuierliche Kontrolle \"{u}ber den Gesamtemissionsaustrag dieser
+Anlage.\\
+
+Der Vorteil der FTIR--Spektroskopie gegen\"{u}ber anderen optischen
+Langwegmessverfahren, wie z.B. der Verwendung von Diodenlasern
+oder dem DOAS (\bf D\rm ifferentielle \bf o\rm ptische \bf A\rm
+b\-sorp\-ti\-ons \bf S\rm pektroskopie)--Verfahren, beruht vor
+allem darin, dass weitaus mehr Komponenten simultan in demselben
+Probenvolumen detektiert werden k\"{o}nnen. Die Clean Air Act
+Amendments der USA von 1990 fordern z.B. von der Vielstoffanalytik
+die \"{U}berwachung von 189 Luftschadstoffen, was mit der
+IR--Spektroskopie m\"{o}glich ist. Auf der anderen Seite sind die
+Nachweisgrenzen der Stoffe, die mittels Diodenlaser oder DOAS
+bestimmt werden k\"{o}nnen, meist besser als mit FT--spektrometrischen
+Methoden.\\
+
+F\"{u}r die Akzeptanz der FTIR--Methode f\"{u}r Atmosph\"{a}renmessungen und
+der damit gewonnenen Analysenergebnisse ist es wichtig, dass
+wissenschaftlich anerkannte Vorschriften zur Planung, Durchf\"{u}hrung
+und Dokumentation von Messungen bestehen. In den USA hat die EPA
+(\bf E\rm nvironmental \bf P\rm rotection \bf A\rm gency) hierzu
+im Jahr 1997 die \it Compendium Method TO--16 \rm herausgegeben
+\cite{to1697}, in Deutschland werden voraussichtlich im Herbst
+1999 die VDI--Richtlinien f\"{u}r \it Fernmessverfahren -- Messungen
+in der bodennahen Atmosph\"{a}re nach dem FTIR--Prinzip \rm vorliegen
+(Entwurf: \cite{vdi98}). Die TO--16 sieht die letztendliche
+Bedeutung, die der FTIR--Spektroskopie in der offenen Atmosph\"{a}re
+zukommt, wie folgt:\\
+
+\it "`The ultimate significance of remote sensing with FT--IR
+systems is a matter of cost--effectiveness and of technological
+advances. Technological advances are required in at least two
+important areas:
+
+\begin{enumerate}
+
+\item the improvement in the characteristics of the
+instrumentation itself
+
+\item the development of 'intelligent' software "' \rm
+
+\end{enumerate}
+
+\rm W\"{a}hrend die Spektrometerhersteller mittlerweile sehr robuste,
+stabil laufende und weitgehend auch kompakte Systeme auf den Markt
+gebracht und somit der ersten Forderung aus der TO--16
+nachgekommen sind, wurden nur \"{a}u{\ss}erst wenige Anstrengungen auf die
+Verbesserung der quantitativen Auswertung der Spektren verwendet.
+Obwohl in der Analysensoftware die gerade bei
+Querempfindlichkeiten mit anderen Komponenten problematische
+univariate Auswertung von Absorptionsbanden durchgehend durch
+multivariate Auswertungsverfahren ersetzt wurde, gibt es noch eine
+Reihe von Defiziten, die es zu beheben gilt, um eine optimale
+quantitative Auswertung der Spektren zu gew\"{a}hrleisten.\\
+
+Die Defizite k\"{o}nnen in zwei Bereiche unterteilt werden. Der eine
+umfasst die Vorbearbeitung der gemessenen Interferogramme und
+Spektren und die Qualit\"{a}t der bereitgestellten Referenzdaten, der
+zweite Bereich die mathematische Auswertung selbst.\\
+
+F\"{u}r eine optimale mathematische Auswertung ist es notwendig, dass
+bei der Spektrenberechnung systematische Fehler reduziert werden.
+Hierzu geh\"{o}rt die Korrektur von Auswirkungen nichtlinearen
+Detektorverhaltens, welche bei der Aufnahme der prim\"{a}ren
+Information, n\"{a}mlich der Interferogramme, bei hohen
+Strahlungsleistungen auftreten und z.T. zu erheblichen
+photometrischen Fehlern f\"{u}hren k\"{o}nnen.Weiterhin bietet die
+FT--Spektroskopie an sich eine hohe Reproduzierbarkeit bzgl. der
+Wellenzahlachse, doch bei der \"{U}bertragung von Spektren auf andere
+Spektrometer m\"{u}ssen Abweichungen in der Wellenzahlskala unbedingt
+ber\"{u}cksichtigt werden. In dieser Arbeit werden die Auswirkungen
+solcher Abweichungen quantifiziert und eine effiziente
+automatische Korrekturstrategie vorgestellt.\\
+
+F\"{u}r die multivariate Auswertung wird zudem ein Hintergrundspektrum
+ben\"{o}tigt, um Extinktionsspektren berechnen zu k\"{o}nnen. In vielen
+F\"{a}llen k\"{o}nnen unter bestimmten Randbedingungen solche
+experimentell gemessen werden, doch auch f\"{u}r andere Situationen,
+in denen dies nicht m\"{o}glich ist, werden leistungsf\"{a}hige und
+praktikable Algorithmen zur Berechnung dieses Hintergrundspektrums
+gebraucht, die in dieser Arbeit entwickelt und getestet wurden.\\
+
+Die f\"{u}r die Auswertung erforderlichen Referenzspektren werden
+vorwiegend aus kommerziell erh\"{a}ltlichen oder von offiziellen
+Stellen (NIST/EPA) herausgegebenen Datenbanken entnommen.
+Abgesehen von der Tatsache, dass die angegebenen Extinktionswerte
+in den Spektren Unsicherheiten bis zu $\pm$ 10 \% aufweisen
+k\"{o}nnen, ber\"{u}cksichtigen diese Datenbanken nicht die nichtlinearen
+funktionalen Abh\"{a}ngigkeiten, die durch die Faltung der wahren
+Absorptionsbanden mit der instrumentellen Spektrometerfunktion
+existieren. Im Rahmen dieser Arbeit wurde eine Bibliothek von
+qualitativ hochwertigen Spektren von insgesamt 16 f\"{u}r die
+Atmosph\"{a}renspektroskopie wichtigen Gasen erstellt. Es wird ein
+Konzept beschrieben, mit dem eine generelle Spektrenberechnung
+unter Ber\"{u}cksichtigung nichtlinearer Extinkionsabh\"{a}ngigkeiten
+erfolgt, die Abweichungen vom Lambert--Beer'schen Gesetz
+einbeziehen.\\
+
+Der zweite Bereich der angesprochenen Defizite betrifft die
+multivariate Auswertung selbst. Eine in der
+Atmosph\"{a}renspektroskopie erfolgreich verfolgte Strategie geht von
+der Modellierung der gemessenen Spektren \"{u}ber eine Anpassung mit
+bekannten Komponentenspektren anhand einer Minimierung der
+Fehlerquadrate aus (Ausgleichsrechnung nach der Methode der
+kleinsten Quadrate, in der Literatur vielfach als klassisches
+Least Squares--Verfahren, engl. CLS, bezeichnet). Unabh\"{a}ngig davon
+werden seit kurzem auch statistische Kalibrierverfahren
+eingesetzt, deren Diagnostikm\"{o}glichkeiten bzgl.
+Modellbildungsdefiziten gegen\"{u}ber dem vorherigen Verfahren jedoch
+eingeschr\"{a}nkt sind. Unter Verwendung des bekannten
+CLS--Algorithmus (siehe z.B. \cite{saarinen91}), wurden in dieser
+Arbeit eine Reihe von Verbesserungen vorgenommen, insbesondere
+hinsichtlich einer Spektrenbereichsauswahl zur Optimierung der
+Selektivit\"{a}t des Auswerteverfahrens oder zur iterativen
+Ber\"{u}cksichtigung der von der Konzentration abh\"{a}ngigen
+nichtlinearen Extinktionssignale. Erfolgreiche Strategien zur
+Verbesserungen der Analytik hierzu werden aufgezeigt.
+Dar\"{u}berhinaus fordert das CLS--Verfahren die Kenntnis s\"{a}mtlicher
+im Spektrum vorhandener Komponenten. Mit Hilfe der
+Kreuzkorrelation wird hier eine Methode vorgestellt, die eine
+sichere qualitative Komponentenanalyse erm\"{o}glicht. Desweiteren ist
+die Auswertung von Benzolspektren aufgrund starker atmosph\"{a}rischer
+Untergrundabsorptionen aufwendiger als bei anderen Gasen und
+erfordert dementsprechend komplexere Vorgehensweisen. Ein solches
+Verfahren wird beschrieben, und es werden in dieser Arbeit
+erstmals verl\"{a}ssliche Daten f\"{u}r die Bestimmung der Nachweisgrenze
+bei Atmosph\"{a}renmessungen mit FTIR--Spektrometern geliefert.\\
+
+Kommerziell erh\"{a}ltliche Software bietet im allgemeinen nur den
+CLS--Algorithmus an, wobei Kom\-po\-nen\-ten-- und Segmentauswahl
+vom erfahrenen Spektroskopiker selbst vorgenommen werden m\"{u}ssen.
+Abgesehen davon, dass dies zum Teil sehr zeitaufwendig ist, ist es
+f\"{u}r die Akzeptanz der Methode unerl\"{a}sslich, die Auswertung soweit
+zu automatisieren, dass auch Nicht--Spektroskopiker die gemessenen
+Atmosph\"{a}renspektren auswerten k\"{o}nnen. Im Rahmen dieser Arbeit ist
+erstmals ein Expertensystem entstanden, welches s\"{a}mtliche der oben
+genannten Problematiken zur Spektrenvorbearbeitung und
+--auswertung ber\"{u}cksichtigt und eine automatische Analyse von
+umfangreichen Messreihen erlaubt, wobei eine neue Qualit\"{a}t in der
+Zuverl\"{a}ssigkeit der Analysenergebnisse angestrebt wurde.\\
+
+Die Spektren wurden mit einem hochaufl\"{o}senden K300--Spektrometer
+der Firma Kayser--Threde (M\"{u}nchen) aufgenommen. Vor-- und
+Nachteile gegeben\"{u}ber \"{u}blicherweise routinem\"{a}{\ss}ig eingesetzten,
+doch schlechter aufl\"{o}senden Spektrometern werden an verschiedenen
+Stellen dieser Arbeit diskutiert. Dar\"{u}berhinaus wurden die
+vorgestellten Strategien in zwei Messkampagnen \"{u}berpr\"{u}ft und die
+Verl\"{a}sslichkeit der Ergebnisse im Vergleich mit einem zweiten
+Spektrometer gezeigt. Die erreichten Forschritte in der
+Spektrenvorbearbeitung und Standardisierung der Auswertung, sowie
+bei der Erstellung des Expertensystems zur qualitativen und
+quantitativen Auswertung von Atmosph\"{a}renspektren wie sie bei der
+Erfassung diffuser Emissionen aus anthropogener Aktivit\"{a}t erhalten
+werden, sollen helfen, die Akzeptanz der FTIR--Spektroskopie in
+der Industrie und bei \"{U}berwachungsbeh\"{o}rden zu erh\"{o}hen.\\
+
+\cleardoublepage

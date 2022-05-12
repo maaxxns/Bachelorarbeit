@@ -1,0 +1,671 @@
+\chapter{\label{kalibriergas}Kalibriergasmessungen}
+
+F\"{u}r die multivariate Auswertung von FTIR--Atmosph\"{a}renspektren ist
+es notwendig, die Referenzspektren der zu analysierenden
+Komponenten vorliegen zu haben. F\"{u}r eine quantitativ hochwertige
+Analyse m\"{u}ssen die zur Verf\"{u}gung stehenden Bibliotheken bewertet
+und gegebenenfalls eigene Referenzspektren gemessen werden, um
+quantitativ bessere Auswertungsergebnisse zu gew\"{a}hrleisten.\\
+
+\section{\label{bibliotheken}Existierende FTIR--Gasspektrenbibliotheken}
+
+F\"{u}r die Analyse von Spektren, die mittels
+Gaschromatographie/IR--Verfahren im mittleren Infrarot erhalten
+wurden, stehen mittlerweile sehr gro{\ss}e Datenbanken (5000-10000
+Spektren) mit schlecht aufgel\"{o}sten (4--8 cm\up{-1} Aufl\"{o}sung)
+Spektren zur Verf\"{u}gung. Die Anzahl der Komponenten, von denen
+hochaufgel\"{o}ste Spektren zu erhalten sind, ist hingegen recht
+beschr\"{a}nkt.\\
+
+Grunds\"{a}tzlich kann man zwischen gemessenen Spektrenbibliotheken
+und Parameterdatenbanken unterscheiden, mit denen Spektren mit den
+gew\"{u}nschten Bedingungen bzgl. Temperatur, Druck, Abtastung und
+Aufl\"{o}sung berechnet werden k\"{o}nnen.\\
+
+
+\subsection{\label{spektrenbibliotheken}Spektrenbibliotheken}
+
+\subsubsection{\label{qasoft}QASoft--Spektrenbibliothek}
+
+Die QASoft--Spektrenbibliothek ist eine kommerzielle Datenbank der
+Infrared Analysis Inc., Anaheim, U.S.A.. Sie enth\"{a}lt mittlerweile
+quantitative Referenzspektren von 269 relevanten Schadgasen,
+welche mit den Aufl\"{o}sungen 0.25, 0.5, 1.0 und 2.0 cm\up{-1}
+erh\"{a}ltlich sind. Auf Anfrage sind 151 Gasspektren auch mit einer
+besseren Aufl\"{o}sung von 0.125 cm\up{-1} zu erhalten. Erst seit
+kurzer Zeit liegen das H\down{2}O--Spektrum in 20 und das
+CO\down{2}--Spektrum in 12 verschiedenen Konzentrationen vor.
+Vormals waren die Spektren beider Stoffe nur mit einer sehr
+geringen Konzentration zu erhalten. welche bei \"{u}blichen Wegl\"{a}ngen
+von 100 m in der Atmosph\"{a}re aber eindeutig zu klein war und
+Nichtlinearit\"{a}tseffekte nicht ber\"{u}cksichtigte.\\
+
+Eine Vielzahl der Spektren dieser Datenbank wurden mit einem
+Analect RFX--65--Spektrometer mit einer Aufl\"{o}sung von 0.125
+cm\up{-1} aufgenommen. Weitere Spektren wurden mit einem Digilab-
+und einem MIDAC-Spektrometer mit 0.5 cm\up{-1}, wieder andere mit
+einem Analect--Ger\"{a}t mit 0.25 cm\up{-1} Aufl\"{o}sung aufgenommen
+\cite{hanst97}. Die Interferogramme der Spektren sind nicht
+verf\"{u}gbar. Somit ist es nicht m\"{o}glich, eine andere
+Apodisationsfunktion als die vorgegebene Dreiecksapodisation zu
+w\"{a}hlen.\\
+
+Die meisten Spektren liegen mit Volumenanteilen von ca. 100
+ppm$\cdot$m vor. F\"{u}r Spurengase ist das im Normalfall ungef\"{a}hr die
+in der Praxis gemessene Gr\"{o}{\ss}enordnung. Die unzureichende
+CLS--Anpassung mit Referenspektren f\"{u}r Molek\"{u}le mit schmalen
+Banden wie CO und N\down{2}O und f\"{u}r H\down{2}O ist beispielhaft
+in Abbildung \ref{rescls.wmf} gezeigt.\\
+
+Zus\"{a}tzlich wird mit der Datenbank das kleine Unterprogramm RIAS
+(\bf R\rm eg\-ion \bf I\rm n\-te\-gra\-tion \bf A\rm nd \bf S\rm
+ub\-trac\-tion) vertrieben, welches unter dem
+Spektrenbearbeitungsprogramm GRAMS (Galactic Industries) l\"{a}uft.
+Dieses Programm f\"{u}hrt eine Subtraktion gew\"{a}hlter Referenzspektren
+aus dem Atmosph\"{a}renspektrum durch. Dabei wird \"{u}ber eine vom
+Benutzer zu w\"{a}hlende Bande integriert, um den Skalierungsfaktor zu
+erhalten. Desweiteren steht auch ein CLS--Modul zur Verf\"{u}gung, bei
+welchem der Benutzer Referenzspektren und den auszuwertenden
+Bereich selbst zu w\"{a}hlen hat. Eine Spektrenvorbearbeitung ist
+nicht m\"{o}glich.\\
+
+Eine generelle Aussage \"{u}ber die Qualit\"{a}t der Spektren zu machen,
+ist schwierig. Tatsache ist jedoch, dass Spektren (z.B. Wasser),
+ganz offensichtlich in Bereichen mit schwachen Banden in h\"{o}herer
+Konzentration gemessen und dann herunterskaliert wurden. Dies ist
+vor allem dann problematisch, wenn dadurch nichtlineare Anteile
+nicht mitber\"{u}cksichtigt werden. Weiterhin gibt es Bereiche in den
+Spektren, die herausgeschnitten und durch eine Gerade ersetzt
+wurden (siehe auch Abb. \ref{datbvgl.wmf}). Ebenso weisen die
+Spektren Unterschiede in der Wellenzahlgenauigkeit auf (dazu siehe
+auch Kap. \ref{wellenzahlstab}), was zu weiteren Fehlern in der
+quantitativen Auswertung f\"{u}hren kann. Dennoch ist die QASoft
+derzeit f\"{u}r die hochaufl\"{o}sende Atmosph\"{a}renspektroskopie die
+einzige Datenbank, die eine hohe Anzahl an Gasspektren in
+vertretbarer Qualit\"{a}t f\"{u}r die quantitative Analyse bereitstellt.\\
+
+\noindent(Internetadresse: http://www.infrared--analysis.com)
+
+\subsubsection{\label{nist}NIST--Spektrendatenbank}
+
+Die NIST (\bf N\rm ational \bf I\rm nstitute of \bf S\rm tandards
+and \bf T\rm echnology, U.S.A.)--Datenbank enth\"{a}lt zur Zeit 21
+Spektren im mittleren Infrarot von fl\"{u}chtigen organischen
+Komponenten. Diese Spektren sind in 5 verschiedenen Aufl\"{o}sungen
+von 0.125--2.00 cm\up{-1} und 5 verschiedenen
+Apodisationsfunktionen erh\"{a}ltlich. F\"{u}r jedes Spektrum wurde
+jeweils \"{u}ber 9 Transmissionsspektren gemittelt. Nichtlinearit\"{a}ten
+wurden nicht ber\"{u}cksichtigt. Eine Beschreibung der Datenbank
+findet sich bei \cite{chu98} oder eine ausf\"{u}hrliche Dokumentation
+auch auf der Internetseite.\\
+
+Diese Datenbank lag uns nicht vor, daher kann eine Bewertung nicht
+vorgenommen werden. Da diese Spektren aber von der NIST
+zertifiziert werden, kann davon ausgegangen werden, dass die Gase
+hochgenau vermessen worden sind. Ein ganz offensichtlicher
+Nachteil ist aber die doch stark begrenzte Anzahl der gemessenen
+Molek\"{u}le und die Nichtber\"{u}cksichtigung von
+Nichtlinearit\"{a}tseffekten bei hohen Werten f\"{u}r das Produkt aus
+Konzentration und Wegl\"{a}nge.\\
+
+\noindent(Internetadresse: http://www.nist.gov/srd/nist79.htm)
+
+
+\subsubsection{\label{epa}EPA--Spektrendatenbank}
+
+Die EPA (U.S. \bf E\rm nvironmental \bf P\rm rotection \bf A\rm
+gency) hat eine Datenbank mit gemessenen Infrarotspektren von \"{u}ber
+100 Schadgasen und der Aufl\"{o}sung von 0.25 cm\up{-1} erstellt. Die
+meisten Gase sind mit mehreren Konzentrationen und
+unterschiedlichen Temperaturen erh\"{a}ltlich. Die Spektren k\"{o}nnen
+kostenlos im Internet kopiert werden.\\
+
+Obwohl in den letzten Jahren Spektren einzelner Gase ausgetauscht
+wurden, um deren Qualit\"{a}t zu verbessern, gilt immer noch f\"{u}r viele
+Spektren, dass dort deutlich sichtbare H\down{2}O-- und
+CO\down{2}--Absorptionsbanden und unbefriedigende Basislinien
+vorhanden sind (siehe auch Abb. \ref{datbvgl.wmf}). Die
+quantitative Genauigkeit ist hier nicht untersucht worden, die
+mangelhafte Spektrenaufbearbeitung l\"{a}sst aber Ungenauigkeiten
+vermuten, die f\"{u}r eine hochgenaue Analyse nicht akzeptabel sind.
+F\"{u}r eine qualitative Analyse von Atmosph\"{a}renspektren sind diese
+Spektren als Hilfsmittel zur Identifikation unbekannter
+Komponenten aber durchaus brauchbar.\\
+
+\noindent(Internetadresse:
+http://www.epa.gov/ttnernc01/ftir/epaadata.html)
+
+\subsection{\label{parametersammlungen}Parametersammlungen zur Referenzspektrenberechnung}
+
+Die Parametersammlungen zur Referenzspektrenberechnung enthalten
+folgende Informationen f\"{u}r jede Absorptionslinie eines gegebenen
+Molek\"{u}ls:
+\begin{itemize}
+  \item die Wellenzahl [cm\up{-1}]
+  \item die Intensit\"{a}t [cm\up{-1}/(Molek\"{u}l$\cdot$cm\up{-1}]
+  \item der Energiegrundzustand der betrachteten \"{U}berg\"{a}nge
+  [cm\up{-1}]
+  \item die Quantenzahlen der Schwingungs--, Rotations-- und
+  elektronischen \"{U}berg\"{a}nge und die Hyperfeinstrukturaufspaltung
+  \item das \"{U}bergangsmoment [debye]
+  \item die Halbwertsbreite aufgrund der Verbreiterung durch
+  atmosph\"{a}rische Druckeffekte [cm\up{-1}/atm]
+  \item die Druckverschiebung der Bande [cm\up{-1}/atm]
+  \item Fehlerabsch\"{a}tzungen f\"{u}r Wellenzahl, Intensit\"{a}t und
+  Halbwertsbreite
+  \item Codes f\"{u}r die einzelnen Molek\"{u}le und Isotope, Datum der
+  Eintragung in die Datenbank
+\end{itemize}
+
+Die Motivation f\"{u}r die Erstellung der im folgenden aufgelisteten
+drei Parametersammlungen war am Anfang unterschiedlich.
+Mittlerweile wurden die Datenbest\"{a}nde aber mehr und mehr einander
+angeglichen.\\
+
+\subsubsection{\label{hitran}HITRAN--Datenbank}
+
+Das urspr\"{u}ngliche Ziel der HITRAN-- (\bf Hi\rm gh Resolution \bf
+Tran\rm smission Molecular Absorption database) Datenbank Ende der
+60er Jahre war die Zusammenstellung detaillierter Informationen
+\"{u}ber die Infraroteigenschaften terrestrischer Molek\"{u}le in der
+Atmosph\"{a}re. Die Datenbank enth\"{a}lt in der bislang letzten Ausgabe
+von 1996 Parameter von 35 kleinen Molek\"{u}len im Wellenzahlbereich
+von 0--22656 cm\up{-1}, das entspricht in etwa 1 000 000
+Spektrallinien \cite{rothman98}. Zus\"{a}tzlich liefert die Datenbank
+Informationen zu Isotopen der enthaltenen Molek\"{u}le,
+Brechungsindizes von Aerosolen und einigen ionisierten
+Komponenten. F\"{u}r hohe Temperaturen liegen diese Parameter in der
+HITEMP (\bf Hi\rm gh \bf Temp\rm erature spectroscopic absorption
+parameters)--Datenbank vor.\\
+
+F\"{u}r schwere Molek\"{u}le wie die Fluorchlorkohlenwasserstoffe liegen
+die Informationen nicht mit den o.g. Parametern vor, sondern als
+Absorptionsquerschnitt $k_{\stackrel{\sim}{\nu}}$:
+\begin{equation}\label{eqabsquer}
+  k_{\stackrel{\sim}{\nu}}=\frac{ln[I_0(\stackrel{\sim}{\nu})/I(\stackrel{\sim}{\nu})]}{n\cdot d}
+\end{equation}
+mit der Wellenzahl $\stackrel{\sim}{\nu}$,
+I\down{0}($\stackrel{\sim}{\nu}$) und I($\stackrel{\sim}{\nu}$)
+den Intensit\"{a}ten des einfallenden bzw. transmittierten Strahls,
+n--der Molek\"{u}ldichte und d--der durchstrahlten Wegstrecke.
+HITRAN96 enth\"{a}lt die Absorptionsquerschnitte von 8 zus\"{a}tzlichen
+Molek\"{u}len.\\
+
+Mittlerweile wird die HITRAN--Datenbank an der Atomic and
+Molecular Physics Division am Harvard--Smithonian Center for
+Astrophysics weiterentwickelt.
+
+\noindent(Internetadresse: http://www.hitran.com)
+
+\subsubsection{\label{geisa}GEISA--Datenbank}
+
+Neben der Zusammenstellung von IR--Daten terrestrisch relevanter
+Molek\"{u}le, war es Ziel der GEISA--Datenbank (\bf G\rm estion et \bf
+\'{E}\rm tude des \bf I\rm nformations \bf S\rm pectroscopiques \bf
+A\rm tmosph\'{e}riques), auch Atmosph\"{a}renmolek\"{u}le anderer Planeten
+miteinzubeziehen. Erste Arbeiten hierzu begannen 1974 am
+Laboratoire de M\'{e}t\'{e}orologie Dynamique du CNRS in Palaiseau/Cedex
+in Frankreich. Die Datenbank umfasst mittlerweile Parameter von 42
+Molek\"{u}len (und 96 Isotopen) im Wellenzahlbereich von 0--22656
+cm\up{-1} mit insgesamt 1 346 266 Eintragungen. Die letzte
+aktualisierte Ausgabe von 1997 \cite{husson99} enth\"{a}lt zus\"{a}tzlich
+die Absorptionsquerschnitte von 23 Molek\"{u}len im Spektralbereich
+von 556--1763 cm\up{-1}.\\
+
+\noindent(Internetadresse: http://www.ara.polytechnique.fr)
+
+
+\subsubsection{\label{atmos}ATMOS--Datenbank}
+
+Die ATMOS--Datenbank (\bf A\rm tmospheric \bf T\rm race \bf M\rm
+olecule \bf S\rm pectroscopy) wurde erstellt, um Infrarotspektren
+der Erdatmosph\"{a}re, aufgenommen bei mittlerweile vier Fl\"{u}gen des
+Space Shuttle 1985, 1992, 1993 und 1994, auswerten zu k\"{o}nnen. Sie
+besteht im wesentlichen aus einer \"{u}berarbeiteten Version der
+HITRAN--Ausgabe von 1992 mit zus\"{a}tzlichen Linien aus der GEISA von
+1991, enth\"{a}lt rund 700 000 Linienparameter von 49 Molek\"{u}len
+zwischen 0 und 10 000 cm\up{-1} und die Absorptionsquerschnitte
+von 8 weiteren Molek\"{u}len. Die Hauptarbeiten hierzu wurden im Jet
+Propulsion Laboratory am California Institute of Technology in
+Pasadena geleistet. Eine ausf\"{u}hrliche Darstellung der Datenbank
+und die Unterschiede zu den anderen Datenbanken findet sich bei
+\cite{brown96}. Im Gegensatz zur HITRAN und GEISA wird der
+Datenbestand der ATMOS z.Z. nicht mehr ver\"{a}ndert.\\
+
+\noindent(Internetadresse: http://remus.jpl.nasa.gov/atmos/)
+
+\subsubsection{\label{malt}Spektrenberechnungsprogramme HAWKS,
+GEISA--PC, AirSentry und MALT}
+
+Die Programme HAWKS (\bf H\rm ITRAN \bf A\rm tmospheric \bf W\rm
+or\bf ks\rm tation) und GEISA--PC, welche den Datenbanken
+beiliegen, erlauben die Spektrenberechnung aus den Parametern der
+Datenbanken. Sie sind allerdings in der Bedienung noch nicht sehr
+benutzerfreundlich. An Verbesserungen bei beiden Programmen wird
+gearbeitet. Die AirSentry--Software aus dem Laboratory of
+Theoretical Spectroscopy (LTS) am Institute of Atmospheric Optics
+in Tomsk/Russland ist in der Lage, sowohl die Softwareformate der
+HITRAN wie auch der GEISA zu bearbeiten. Die
+Benutzerfreundlichkeit zur Spektrenberechnung ist aber weitaus
+h\"{o}her. Unterschiede bei den Resultaten gibt es nicht.\\
+
+Die MALT (\bf M\rm ultiple \bf A\rm tmospheric \bf L\rm ayer \bf
+T\rm ransmission)--Software von Griffith et al. erlaubt
+dar\"{u}berhinaus die Berechnung der Spektren unter Ber\"{u}cksichtigung
+der instrumentellen Linienparameter, so dass die Aufl\"{o}sung und
+eventuelle Linienverschiebungen miteinbezogen werden
+\cite{griffith96}. MALT unterst\"{u}tzt z.Z. nur das HITRAN--Format.
+
+
+\paragraph{\label{parabewert}Kurze Bewertung der
+Parameterdatenbanken:}
+
+Alle drei Parameterdatenbanken beinhalten sehr zuverl\"{a}ssiges
+Informationsmaterial, wenn es um die Berechnung von Spektren der
+in ihr enthaltenen Molek\"{u}le geht. Aufgrund der engen
+Zusammenarbeit der drei federf\"{u}hrenden Gruppen bei der Erstellung
+dieser Datenbanken, ist die Redundanz der Daten untereinander aber
+recht hoch. Nicht mehr aktuelle Vergleiche der Datenbanken finden
+sich bei \cite{husson93} und \cite{brown96}, ein aktueller, bisher
+nicht publizierter Vergleich auf der Internetseite der GEISA.\\
+
+Der entscheidende Nachteil der Parameterdatenbanken liegt darin,
+dass sie auf ca. 40 Molek\"{u}le beschr\"{a}nkt sind. Dies ist f\"{u}r die
+Spurengasanalytik der Atmosph\"{a}re ausreichend, nicht aber f\"{u}r die
+Schadgasanalyse von Luftinhaltsstoffen wie sie bei der diffusen
+Emission z.B. aus industriellen Quellen auftreten. Es gibt Gase,
+bei denen bisher nur in bestimmten spektralen Intervallen
+charakterisiert sind (z.B. Ethan, siehe Abb. \ref{datbvgl.wmf},
+HF, SF\down{6}). Bei der CLS--Auswertung in diesen Bereichen sind
+diese Spektren dann nicht verwendbar. Im \"{u}brigen soll es Probleme
+bei der Genauigkeit der Intensit\"{a}tsberechnung bei hohen
+Temperaturen (um die 1000°C) geben, was aber f\"{u}r die
+atmosph\"{a}rische Schadgasbestimmung nicht relevant ist.\\
+
+
+
+\section{\label{motivation}Motivation f\"{u}r eigene Kalibriermessungen}
+
+Zu Beginn des Projektes standen zur CLS--Auswertung ausschlie{\ss}lich
+Spektren der QASoft--Datenbank (Kap. \ref{qasoft}) zur Verf\"{u}gung.
+Es zeigte sich recht schnell, dass deren Qualit\"{a}t f\"{u}r eine
+zufriedenstellende quantitative Auswertung nicht ausreichend war.
+Die Spektren wurden mit verschiedenen Spektrometern aufgenommen
+(siehe oben). All diese Ger\"{a}te zeigen Unterschiede in der
+photometrischen Genauigkeit untereinander und zu dem im Projekt
+benutzten K300. Die Gr\"{u}nde hierf\"{u}r liegen in der spektralen
+Aufl\"{o}sung, der Verwendung unterschiedlicher Detektoren und in der
+Selbstapodisation (siehe auch Kap. \ref{photometgen}). Da das
+K300--Spektrometer mit einer Aufl\"{o}sung von 0.2 cm\up{-1} arbeitet,
+m\"{u}ssen die Spektren mit 0.125 cm\up{-1} Aufl\"{o}sung mit einer
+instrumentellen Linienfunktion auf 0.2 cm\up{-1}--Aufl\"{o}sung
+umgerechnet werden, was zu Fehlern f\"{u}hren kann. Hinzu kommen
+weitere Abweichungen durch die Interpolations--Algorithmen, die
+die QASoft--Spektren auf den Punktabstand der K300--Spektren
+bringen. Die restlichen Spektren stehen nur mit einer schlechteren
+Aufl\"{o}sung von 0.5 cm\up{-1} zur Verf\"{u}gung und weisen somit noch
+gr\"{o}{\ss}ere Abweichungen zu mit K300--Spektrometer gemessenen Spektren
+auf.\\
+
+\bild{htb}{datbvgl.wmf}{420}{345}{\it Beispiele f\"{u}r qualitative
+Defizite von Datenbanken f\"{u}r hochaufgel\"{o}ste IR--Gasspektren. Diese
+Spektren werden verglichen mit in dieser Arbeit gemessenen
+Spektren (ISAS). Bis auf die untersten sind die Spektren in \bf
+A\it , \bf B \it und \bf C \it mit einem Offset dargestellt.}
+
+Ein weiterer entscheidender Nachteil ist, dass die Interferogramme
+der QASoft--Datenbank nicht verf\"{u}gbar sind. Somit ist es nicht
+m\"{o}glich, eine andere Apodisationsfunktion als die vorgegebene
+Dreiecksapodisation zu w\"{a}hlen. Es hat sich gezeigt (siehe Kap.
+\ref{faltung}), dass die Wahl anderer Apodisationsfunktionen zu
+besseren Ergebnissen, insbesondere zu einem erweiterten linearen
+Extinktionsbereich hinsichtlich der Abh\"{a}ngigkeit der Bandenmaxima
+von der Konzentration, f\"{u}hren kann. Die meisten Spektren liegen in
+der QASoft mit Volumenanteilen von ca. 100 ppm$\cdot$m vor, was
+oft ausreichend ist, aber auch bedeutet, dass Nichtlinearit\"{a}ten
+bei h\"{o}heren Volumenanteilen nicht ber\"{u}cksichtigt werden.\\
+
+Abbildung \ref{datbvgl.wmf} \bf C \rm und \bf D \rm illustrieren,
+wie bei der Bearbeitung einiger Spektren der Datenbank vorgegangen
+worden ist. Die gezeigten Beispiele sind nicht der Normalfall und
+auch nicht \"{a}u{\ss}erst gravierend. Sie zeigen dennoch, dass bei der
+Beurteilung der Qualit\"{a}t der Spektren vorsichtig vorgegangen
+werden muss. Im Anhang A sind bei s\"{a}mtlichen in dieser Arbeit
+vermessenen Pr\"{u}fgasen auch die Referenzwerte der st\"{a}rksten Bande
+im linearen Extinktionsbereich mit den Werten der QASoft
+verglichen worden und in den jeweiligen Abbildungen \bf A \rm
+eingezeichnet. Die Werte stimmen i.a. gut \"{u}berein.\\
+
+Die Parametersammlungen sind f\"{u}r die Molek\"{u}le, die letztendlich in
+ihnen enthalten sind, generell eine gute Alternative. Aber auch
+sie haben das Problem, dass einige Linien nicht beschrieben sind
+(siehe z.B. Abb. \ref{datbvgl.wmf} \bf A\rm ). Die
+EPA--Spektrendatenbank ist zum jetzigen Zeitpunkt f\"{u}r eine
+hochwertige quantitative Analyse nicht geeignet (Abb.
+\ref{datbvgl.wmf} \bf B\rm ).\\
+
+Ziel unserer eigenen Kalibriergasmessungen war es somit, die
+Fehler aufgrund der Spektrometereinfl\"{u}sse zu eliminieren und durch
+Messung eines gro{\ss}en Konzentrationsbereiches auch das nichtlineare
+Verhalten mitber\"{u}cksichtigen zu k\"{o}nnen (siehe auch Kap.
+\ref{pruefgasauswertung}). Desweiteren sollten Basislinieneffekte
+minimiert und H\down{2}O-- und CO\down{2}--Banden optimal
+eliminiert werden.\\
+
+Folgende Pr\"{u}fgase wurden in dieser Arbeit untersucht: Ammoniak,
+Acetaldehyd, Benzol, Distickstoffoxid, Ethen, Isobuten,
+Kohlenstoffmonoxid, Methan, Methanol, Propen, p--Xylol,
+Schwefeldioxid, Stickstoffdioxid, Toluol  und zus\"{a}tzlich Wasser
+und Kohlenstoffdioxid.\\
+
+
+\section{\label{aufbau}Aufbau einer Kalibriereinrichtung}
+
+\bild{htb}{laborg2.bmp}{375}{530}{\it Laboraufbau mit
+Blendensystem zur Verd\"{u}nnung von Pr\"{u}fgasen, Multireflexions--Zelle
+und K300--Spektrometer}
+
+F\"{u}r die Erstellung von qualitativ hochwertigen Referenzspektren
+wurde ein pr\"{a}zises, vielseitig einsetzbares, robustes und
+kosteng\"{u}nstiges Kalibrierverfahren f\"{u}r die
+infrarotspektrometrische Analytik von Spurengasen gesucht.
+Erfahrungen aus fr\"{u}heren Arbeiten \cite{heise85} zeigen, dass
+Apparaturen zur Verd\"{u}nnung von Pr\"{u}fgasen unter Verwendung von
+Mikroblenden hierf\"{u}r sehr gut geeignet sind (siehe Abb.
+\ref{laborg2.bmp}). Verwendet wurden Pr\"{u}fgase der Firma
+Messer--Griesheim, wobei die Spurengase in Stickstoff vorlagen. Um
+die Pr\"{u}fgase zu niedrigeren Konzentrationen heruntermischen und
+diese variieren zu k\"{o}nnen, wurde ein Zwei--Leitungsblendensystem
+aufgebaut, durch das definierte Gasvolumenstr\"{o}me von Stickstoff
+und dem Pr\"{u}fgas flie{\ss}en und vor der Multireflexionszelle
+(White--Zelle) zusammengef\"{u}hrt werden k\"{o}nnen. Die Gasfl\"{u}sse h\"{a}ngen
+hierbei einzig vom Vordruck der verwendeten Gase vor den
+entsprechenden Blenden ab (Druckmessung 1). Um einen m\"{o}glichst
+gro{\ss}en Konzentrationsbereich abdecken zu k\"{o}nnen, stehen insgesamt
+5 Blenden (0.15, 0.20, 0.36, 0.60 und 0.96 mm) zur Verf\"{u}gung, die
+bei demselben Vordruck (2.4 bis 6 bar) parallel geschaltet werden
+und f\"{u}r die Stickstoff--Verd\"{u}nnung genutzt werden k\"{o}nnen. Das
+Pr\"{u}fgas wird durch das zweite Leitungssystem, das mit nur einer
+Blende ausger\"{u}stet ist, geschickt. Die Blenden sind einfach
+austauschbar. F\"{u}r das Pr\"{u}fgas stehen Mikroblenden mit den Gr\"{o}{\ss}en
+0.10, 0.15, 0.20 und 0.36 mm, ausgelegt ebenfalls f\"{u}r den
+Druckbereich 2.4 bis 6 bar, zur Verf\"{u}gung. Beide Leitungssysteme
+werden vor der White--Zelle zusammengef\"{u}hrt, wo eine Mischung
+stattfindet. Es muss darauf geachtet werden, dass die
+Leitungsquerschnitte gro{\ss} genug sind, so dass kein Druckaufbau in
+den Leitungen entsteht. Dies wird bei der Druckmessung an der
+Stelle 2 \"{u}berpr\"{u}ft. Das System wurde mit 3 unabh\"{a}ngigen Verfahren
+\"{u}berpr\"{u}ft, um genaue Gasvolumenstr\"{o}me in Abh\"{a}ngigkeit vom Vordruck
+zu erhalten. Hierzu wurde zum einen das Multicon--System der Firma
+Draeger (L\"{u}beck) genutzt, das den Gasfluss anhand einer
+Differenzdruckmessung an einer Gleichrichterr\"{o}hre misst, zum
+zweiten das Gilibrator--2--System der Firma Sensidyne (Clearwater,
+Fl.) , welches die Geschwindigkeit einer vom Gasvolumen gebildeten
+Seifenhaut mittels zweier Lichtschranken misst und zum dritten
+eine handels\"{u}bliche Gasuhr der Firma Elster (Wiesbaden) verwendet.
+Bei s\"{a}mtlichen Blenden konnten im verwendeten Druckbereich, der
+eine laminare Str\"{o}mung hinter der Blende garantiert, sehr gute
+\"{U}bereinstimmungen in der Kalibration bzgl. Gasflusseinstellung und
+Messung erzielt werden.\\
+
+Als K\"{u}vette wurde eine Multireflexionsk\"{u}vette (White--Zelle) der
+Firma Bastian--Feinmechanik aus Wuppertal genutzt. Diese Zelle hat
+ein Volumen von 50 L und erlaubt die Einstellung von optischen
+Wegl\"{a}ngen von 6.92 m bis 110.72 m in 6.92 m--Abst\"{a}nden (zur
+Arbeitsweise von White--Zellen siehe auch \cite{hanst94}). Eine
+angeschlossene Pumpe mit K\"{u}hlfalle erlaubte die Evakuierung der
+Zelle von Atmosph\"{a}rendruck auf 2$\cdot$10\up{-3} bar innerhalb von
+7 min. Der Zelleninnendruck kann durch die Druckmessung an der
+Stelle 3 (siehe Abb. \ref{laborg2.bmp}) bestimmt werden. Die
+Voroptik konnte st\"{a}ndig mit Stickstoff gesp\"{u}lt werden.\\
+
+Abbildung \ref{snrpeak.wmf} zeigt, dass das Peak zu Peak--Rauschen
+in Extinktionseinheiten, bestimmt durch zwei direkt aufeinander
+folgende Messungen in der bei einem Druck von 1013 hPa Stickstoff
+gef\"{u}llten White--Zelle, bis 90 m nur sehr moderat ansteigt und
+somit eine problemlose Messung bis zu solchen Wegl\"{a}ngen
+erm\"{o}glicht, wodurch sehr gut praxisrelevante Situationen simuliert
+werden k\"{o}nnen.\\
+
+\bildlinks{htb}{snrpeak.wmf}{300}{250}{85}{85}{-35}{\it Peak zu
+Peak--Extinktionsrauschen, bestimmt durch zwei direkt
+aufeinanderfolgende Messungen mit 1 bar Stickstoff in der
+White--Zelle in Abh\"{a}ngigkeit von der Wegl\"{a}nge (Globar bei 6.92 m:
+12.02 V Betriebsspannung, bei den \"{u}brigen Wegl\"{a}ngen 13.12 V).}
+
+Die Datenaufnahme erfolgte auf einem handels\"{u}blichen PC mit
+Pentium90--Prozessor und 32 MB RAM Arbeitsspeicher unter
+Verwendung des mitgelieferten Spektrometerprogramms unter der
+GRAMS--Software. Die Aufnahme eines Spektrums unter Akkumulation
+von 100 Interferogrammen bei einer spektralen Aufl\"{o}sung von 0.2
+cm\up{-1} ben\"{o}tigte ca. 3$\frac{1}{2}$ min.\\
+
+
+\section{\label{messablauf}Messablauf}
+
+Ein Ziel der Pr\"{u}fgasmessungen war es, einen m\"{o}glichst breiten
+Konzentrationsbereich abzudecken und hierbei auch in einen Bereich
+relativ hoher Konzentrationen vorzusto{\ss}en, um nichtlineare
+Extinktionsabh\"{a}ngigkeiten ber\"{u}cksichtigen zu k\"{o}nnen. Weiterhin
+sollten qualitativ hochwertige Spektren hinsichtlich der
+Vermessung von Absorptionen atmosph\"{a}rischer Komponenten erhalten
+werden. Dazu war es n\"{o}tig, den in der Voroptik- und
+Spektrometeratmosph\"{a}re enthaltenen H\down{2}O-- und
+CO\down{2}--Gehalt m\"{o}glichst gering und konstant zu halten.
+Sichergestellt wurde dies durch eine kontinuierliche Sp\"{u}lung von
+Spektrometer und Voroptik mit Stickstoff der Reinheit 5.0 von
+$2\frac{1}{2}$ h vor bis zum Ende der Messungen. Gleichzeitig
+wurde ebenfalls weit vor Beginn der Messungen der Globar
+eingeschaltet und das K300--Spektrometer optimal justiert, um zu
+Beginn der Messungen m\"{o}glichst stabile Interferometerverh\"{a}ltnisse
+vorliegen zu haben, da sonst durch Temperatur\"{a}nderungen geringe
+optische Dejustagen des Interferometers auftreten, die eine \"{u}ber
+l\"{a}ngere Zeit gleichbleibende Interferogrammaufnahme verhindern.\\
+
+Desweiteren sollten f\"{u}r die sp\"{a}tere Mittelung von Spektren
+m\"{o}glichst viele Messungen vorliegen, wobei sich folgendes Vorgehen
+als vorteilhaft herausstellte. F\"{u}r jedes Pr\"{u}fgas wurden 2
+Messreihen mit jeweils 14 Spektren aufgenommen, so dass
+letztendlich 28 Spektren f\"{u}r jedes Pr\"{u}fgas zur Verf\"{u}gung standen.
+Jeweils zu Beginn und zum Ende einer Messreihe wurde ein
+Hintergrundspektrum von einer mit Stickstoff gef\"{u}llten K\"{u}vette und
+das dazugeh\"{o}rige Eigenstrahlungsspektrum aufgenommen. F\"{u}r die
+Pr\"{u}fgasmessungen wurde ein bestimmter Volumenstrom eingestellt
+(\"{u}blicherweise 7--9 l/min als Gesamtvolumenstrom) und die Wegl\"{a}nge
+von 6.92 bis 89.96 m schrittweise ver\"{a}ndert. Durch diese
+Volumenstr\"{o}me lassen sich eventuelle Wandadsorptionseffekte auch
+bei polaren Gasen in den vorliegenden Konzentrationen wie z.B.
+beim Ammoniak erheblich reduzieren. Um sie aber sicher
+auszuschlie{\ss}en, wurde am Ende der Messreihe noch einmal ein
+weiteres Spektrum bei 6.92 m Wegl\"{a}nge aufgenommen. H\"{a}tten
+Wandeffekte vorgelegen, w\"{u}rden sich das erste und letzte Spektrum
+der Messreihe voneinander unterscheiden. Desweiteren wurde darauf
+geachtet, dass sich 3--4 Konzentrationsmesspunkte in beiden
+Messreihen \"{u}berlagerten. So war eine zus\"{a}tzliche Kontrolle der
+Vordr\"{u}cke und verwendeten Blenden zur Einstellung reproduzierbarer
+Gasfl\"{u}sse m\"{o}glich.\\
+
+
+\section{\label{spekaufbereitung}Spektrenaufbereitung}
+
+Um eine z\"{u}gige Aufarbeitung der gemessenen Kalibrationsspektren zu
+erreichen, wurde eine Auswertung mittels selbst erstellter
+Software (ca. 7000 Programmzeilen unter MATLAB 5.2) vorgenommen.\\
+
+Grunds\"{a}tzlich wurden w\"{a}hrend der Messreihen die Interferogramme
+abgespeichert. Dies erlaubte die Nichtlinearit\"{a}tskorrektur
+s\"{a}mtlicher Einkanalspektren. Aus Kompatibilit\"{a}tsgr\"{u}nden zu den
+Referenzspektren aus der QASoft--\-Dat\-en\-bank wurde weiterhin
+die Dreiecksapodisation gew\"{a}hlt.\\
+
+\bildlinks{htb}{ethbas.wmf}{300}{250}{80}{85}{-35}{\it Ethen, 61
+ppm$\cdot$m, \bf A \it Extinktionsspektrum mit beispielhafter
+Basislinie und Splineanpassung durch die vorgegebenen St\"{u}tzstellen
+(mit Offset). \bf B \it Basislinienkorrigiertes
+Extinktionsspektrum.}
+
+Zur Bildung des Extinktionsspektrums standen die zwei
+Hintergrund-- und Eigenstrahlungsspektren vor und nach der
+Messreihe zur Verf\"{u}gung. Es wurde jeweils das Hintergrundspektrum
+gew\"{a}hlt, welches die geringsten Basislinieneffekte bei der
+Transmissionsspektrenberechnung verursachte. Leichte
+Konzentrationsunterschiede von atmosph\"{a}rischen Komponenten, die zu
+verbleibenden H\down{2}O-- und CO\down{2}--Absorptionsbanden
+f\"{u}hrten, waren nicht relevant, da diese in einem folgenden Schritt
+noch eliminiert wurden. Abbildung \ref{ethbas.wmf} \bf A \rm zeigt
+eine typische auftretende Basislinie. F\"{u}r jedes Pr\"{u}fgas wurden
+verschiedene Punkte festgelegt, die die St\"{u}tzstellen von
+Splinefunktionen abgaben. Somit konnte die Basislinienberechnung
+f\"{u}r s\"{a}mtliche Spektren einer Messung automatisiert werden. Der
+Teil \bf B \rm zeigt das basislinienkorrigierte Spektrum.\\
+
+Im basislinienkorrigierten Spektrum in Abbildung \ref{ethbas.wmf}
+\bf B \rm sind noch deutliche H\down{2}O-- und
+CO\down{2}--Absorptionssignaturen zu erkennen. Es hat sich
+herausgestellt, dass das Absorptionsspektrum von H\down{2}O und
+CO\down{2}, das aus beiden Hintergrundspektren vor und nach der
+Messreihe gebildet wurde, hervorragend geeignet war, um eine
+Eliminierung dieser Absorptionsbanden in den Pr\"{u}fgasspektren
+vorzunehmen. Zum einen ist der Konzentrationsbereich passend,
+desweiteren sind leichte Wellenzahlverschiebungen, Temperatur--
+und Druckunterschiede nicht relevant, um signifikante spektrale
+Residuen zu erzeugen. Abbildung \ref{ethwater.wmf} zeigt zwei
+typische Spektren zur Eliminierung der H\down{2}O-- und
+CO\down{2}--Signaturen. Die Extinktionen in Spektren der Messreihe
+2 in \bf B \rm sind deswegen kleiner, weil seit Beginn der Sp\"{u}lung
+von Spektrometer und Voroptik mit Stickstoff schon mehr Zeit
+vergangen war, womit die Volumenanteile von H\down{2}O und
+CO\down{2} weiter reduziert, jedoch nicht vollst\"{a}ndig eliminiert
+werden konnten.\\
+
+\bildlinks{htb}{ethwater.wmf}{300}{250}{80}{85}{-35}{\it Typische
+Extinktionsspektren, die zur Eliminierung von H\down{2}O-- und
+CO\down{2}--Absorptionen in den Pr\"{u}fgasspektren verwendet wurden,
+\bf A \it Messreihe 1 (Spektrum ist mit Offset dargestellt) und
+\bf B \it Messreihe 2.}
+
+\bildlinks{htb}{ethwatab.wmf}{300}{250}{80}{85}{-35}{\it Typisches
+Ethenspektrum \bf A \it ohne Abzug, \bf B \it nach H\down{2}O--
+und CO\down{2}--Absorptionsbanden Kompensation und \bf C \it nach
+H\down{2}O--, CO\down{2}--Bandenabzug und Spikeeliminierung. Die
+Spektren \bf A \it und \bf B \it sind mit einem Offset
+dargestellt.}
+
+Die Subtraktion der H\down{2}O-- und CO\down{2}--Absorptionsbanden
+erfolgt in den 4 relevanten Bereichen 630-760, 1256-2180,
+2299-2400 und 2950-4000 cm\up{-1}. Hierzu werden in jedem Bereich
+f\"{u}r jedes Pr\"{u}fgas individuell kleine Bereiche von 10-20 cm\up{-1}
+Breite, in denen keine Banden des Pr\"{u}fgases, aber intensive
+Absorptionslinien von H\down{2}O und CO\down{2} vorliegen,
+herausgesucht und die zu subtrahierenden Banden mittels
+Least--Squares--Fit an das individuelle Pr\"{u}fgasspektrum angepasst.
+Auch diese Prozedur konnte automatisiert werden. Abbildung
+\ref{ethwatab.wmf} \bf A \rm und \bf B \rm zeigt ein typisches
+Ethenspektrum vor und nach dem H\down{2}O-- und
+CO\down{2}--Bandenabzug.\\
+
+\"{A}u{\ss}erst kleine auftretende Unterschiede in der Wellenzahlachse
+f\"{u}hren zu Bildung von Spikes, d.h. normalerweise einzeln
+auftretenden Punkten, die keiner Bande entsprechen. Auch diese
+werden eliminiert. Hierzu wurde ein Programm entwickelt, welches
+diese Spektralpunkte erkennt und mittels Anpassung einer Geraden
+an die Nachbarpunkte eliminiert (siehe auch Abb.
+\ref{ethwatab.wmf} \bf C \rm und Abbildung \ref{ethspike.wmf}).
+Hierbei ist zu beachten, dass in Bereichen, in denen das Pr\"{u}fgas
+eigene Banden besitzt, sehr sorgf\"{a}ltig vorzugehen ist.\\
+
+
+\bildlinks{htb}{ethspike.wmf}{300}{250}{80}{85}{-35}{\it
+Ausschnitt aus einem typischen Ethenspektrum vor und nach der
+Spikeeliminierung (Spikes hellgrau).}
+
+
+\section{\label{pruefgasauswertung}Auswertung und Diskussion}
+
+Die Auswertung der 28 pro Pr\"{u}fgas erhaltenen Spektren erfolgt in
+zwei Schritten. Anhand der univariaten Auswertung der jeweils
+st\"{a}rksten Bande ist zu ersehen, ab welchem Extinktionsmaximum die
+Auswertung keine sinnvollen Ergebnisse mehr liefert, da das Gas
+optisch dick ist, d.h. eine Transmission unter 3$\cdot$10\up{-3}
+Transmissionseinheiten vorliegt ("`Totalabsorption"').
+Gleichzeitig ist hierdurch auch eine Qualit\"{a}tskontrolle m\"{o}glich.
+Bei groben Abweichungen von einer Kalibrierfunktion, die im
+Extremfall durch ein kubisches Polynom dargestellt werden kann,
+ist dies ein Hinweis auf einen systematischen Fehler bei der
+Aufnahme dieses Spektrums. Bei Banden mit Extinktionsmaxima um 2.5
+(d.h. die Transmission liegt nahe der Totalabsorption) ist es
+sinnvoll, in diesem Fall zus\"{a}tzlich eine Bande mit deutlich
+geringeren Extinktionen auszuwerten, um eventuelle systematische
+Fehler bei der Pr\"{u}fgasspektrenmessung zu detektieren.\\
+
+F\"{u}r die Auswertung in der Praxis w\"{a}re es w\"{u}nschenswert, spektrale
+Parameter vorliegen zu haben, mit denen man ein Spektrum
+gew\"{u}nschter Konzentration und optischer Wegl\"{a}nge berechnen kann,
+in dem auch Abweichungen vom Lambert--Beer'schen Gesetz,
+darstellbar durch nichtlineare Terme, ber\"{u}cksichtigt werden. Aus
+diesem Grund wurde im Anschluss an die Qualit\"{a}tskontrolle eine
+Parametrisierung der Spektren vorgenommen. Die univariate
+Auswertung der intensivsten Bande gab f\"{u}r jedes Pr\"{u}fgas eine
+individuelle Grenze der zu ber\"{u}cksichtigenden Extinktionen vor.
+Jeder Wellenzahlpunkt aller Pr\"{u}fgasspektren wurde dann einem
+linearen Fit unterzogen. Spektren, die bei der betrachteten
+Wellenzahl \"{u}ber dem vorgegebenen Extinktionslimit lagen, wurden
+nicht ber\"{u}cksichtigt. In einem zweiten Schritt wurde nun
+festgestellt, an welchen Wellenzahlpunkten ebenfalls ein
+quadratischer Term zu ber\"{u}cksichtigen war. Hierzu wurde das
+Residuum aus dem gemessenen Pr\"{u}fgasspektrum mit der h\"{o}chsten
+Konzentration und dem aus der linearen Anpassung f\"{u}r diese h\"{o}chste
+Konzentration berechneten Spektrum gebildet. Punkte, die \"{u}ber
+2$\sigma$ der Rauschfunktion lagen, wurden auch mit einem
+quadratischen Polynom angepasst. Die gleiche Vorgehensweise wurde
+noch f\"{u}r eine Anpassung mit einem kubischen Polynom gew\"{a}hlt. Somit
+liegt nun f\"{u}r jedes Pr\"{u}fgas eine 3xN--Matrix vor, mit der f\"{u}r eine
+beliebige Konzentration ein Spektrum berechnet werden kann, bei
+dem innerhalb der durch die Kalibration vorgegebenen maximalen
+Grenzen sowohl lineare, wie auch quadratische und kubische Terme
+ber\"{u}cksichtigt werden.\\
+
+\bildlinks{htb}{ethsnr.wmf}{300}{250}{80}{85}{-35}{\it Vergleich
+zwischen zwei typischen Extinktionsrauschspektren von einem
+berechneten gemittelten Referenzspektrum (oben, mit Offset) und
+einem gemessenen einzelnen Spektrum (unten) bei gleicher
+Konzentration.}
+
+Im Anhang A findet sich f\"{u}r alle 14 gemessenen Pr\"{u}fgase eine
+Dokumentation dieser Auswertungen. Die jeweils erste Abbildung
+zeigt die univariate Auswertung der st\"{a}rksten Bande, die zweite
+Abbildung zeigt den linearen, quadratischen und kubischen Term f\"{u}r
+eine in der Atmosph\"{a}re m\"{o}glich vorkommende Konzentration und die
+dritte Abbildung zeigt das Residuum des berechneten mit dem
+einzeln gemessenen Spektrum. F\"{u}r Kohlenstoffmonoxid wurde
+beispielhaft die Auswertung auch f\"{u}r eine spektrale Aufl\"{o}sung von
+0.5 cm\up{-1} vorgenommen. Der Vergleich der Auswertungen der
+st\"{a}rksten Bande bei 2169.3 cm\up{-1} in der Abbildung \bf A \rm im
+Anhang zeigt eindrucksvoll die gr\"{o}{\ss}eren Nichtlinearit\"{a}ten in den
+Spektren bei schlechterer spektraler Aufl\"{o}sung.\\
+
+Ein weiterer Vorteil dieser Auswertung liegt in dem durch die
+Mittelung verbesserten Signal/Rauschverh\"{a}ltnis. Bei den gemessenen
+Spektren h\"{a}ngt dieses vorwiegend von der in der White--Zelle
+eingestellten optischen Wegl\"{a}nge ab. Abbildung \ref{ethsnr.wmf}
+zeigt eine durchschnittliche Verbesserung um den Faktor 10
+gegen\"{u}ber einem Spektrum, das bei 20.76 m optischer Wegl\"{a}nge in
+der White--Zelle gemessen wurde.\\
+
+Die relative Analysengenauigkeit der Pr\"{u}fgase von der Firma
+Messer--Griesheim (D\"{u}sseldorf) betrug 2 \% (bei Acetaldehyd und
+p--Xylol 5 \%). Weiterhin trugen zum Fehler der hier vermessenen
+Pr\"{u}fgase die einzelnen Fehler der Wegl\"{a}ngenmessung, der
+Gesamtdruckmessung, der Temperaturmessung, der Druckmessungen vor
+den Mikroblenden von Pr\"{u}fgas und Stickstoff und die Kalibrierung
+der Volumenstrommessungen durch das System bei. Unter Verwendung
+des Fehlerfortpflanzungsgesetzes resultiert damit f\"{u}r die
+gemittelten Pr\"{u}fgasspektren (hierbei wurde ein gemittelter Fehler
+in der optischen Wegl\"{a}ngenbestimmung angenommen) ein maximaler
+relativer Fehler von $\pm 3 \%$ (bei Acetaldehyd und p--Xylol $\pm
+6 \%$). Dies ist ein \"{a}u{\ss}erst zufriedenstellende Pr\"{a}zision, wenn
+man bedenkt, dass sich die spektralen Extinktionsangaben in den
+o.g. Datenbanken teilweise um 10 \% und mehr voneinander
+unterscheiden.\\
+
+\cleardoublepage

@@ -1,0 +1,53 @@
+\documentclass[twoside,a4paper,12pt,german]{report}
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}  % -- becomes en-dash etc.
+
+    % \usepackage[ansinew]{inputenc}
+    \usepackage[american, ngerman]{babel}
+    \usepackage[autostyle]{csquotes}
+    \usepackage[active]{srcltx} % SRC Specials for DVI Searching
+   % \usepackage{amssymb} % AMS-LaTeX Symbole werden eingebunden
+   % \usepackage{amsmath}
+   \usepackage[centertags]{amsmath}
+   \usepackage{amsfonts}
+   \usepackage{amssymb}
+   \usepackage{amsthm}
+    \usepackage{a4}
+    \usepackage{graphicx} % Zum Einbinden von BMP - Bitmaps
+    \usepackage[dvips]{epsfig} % Zum Einbinden von EPS- Vektorgrafiken
+    \usepackage{multicol}
+    \usepackage{alltt} % Programmlisting am Ende der Datei kann dargestellt werden
+    \usepackage{makeidx} \makeindex % Erstellen eines Index
+    \usepackage{fancyhdr}  % Die neue Version von fancyheadings zur Erstellung von Kopfzeilen
+    \usepackage{longtable}
+    \pagestyle{fancyplain}
+
+
+    \usepackage{graphicx}
+    \DeclareGraphicsRule{.wmf}{bmp}{tif}{}% declare WMF filename extension
+
+
+
+
+%ich habe einen eigenen Bildbefehl definiert: \bild der wie unten
+%funktioniert. Das Bild selbst heisst 'test,wmf', 270 w�re die
+%Breite des Bildes, 180 die H�he, und 'beispiel' der Text, der
+%unter das Bild gesetzt wird.
+
+%\bild{htb}{test.wmf}{270}{180}{beispiel}
+
+\newcommand{\bild}[5]{ % wo htb , name , breite , hoehe , Unterschrift
+\begin{figure}[#1]
+\unitlength1mm
+\begin{center}
+\includegraphics*[bb=0 0 #3 #4]{#2}
+\\[-2mm]
+\addtolength{\tbreite}{-10mm}
+\begin{minipage}[t]{\tbreite}
+\caption[#2, Breite: #3mm, Höhe: #4mm] %[#6]
+{\label{#2} \sl #5}
+\end{minipage}
+\end{center}
+\setlength{\tbreite}{\textwidth}
+\end{figure}
+\setlength{\tbreite}{\textwidth}}

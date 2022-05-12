@@ -1,0 +1,2313 @@
+\chapter{\label{quantitativ}Quantitative Spektroskopie}
+
+In diesem Kapitel werden verschiedene Strategien zur quantitativen
+Auswertung von FT--IR Atmosph\"{a}renspektren vorgestellt. Um
+zuverl\"{a}ssige und richtige Ergebnisse bei dieser quantitativen
+Auswertung zu erhalten, m\"{u}ssen die Einfl\"{u}sse bekannt sein, die zu
+systematischen Fehlern f\"{u}hren k\"{o}nnen. Dabei muss zwischen
+Spektrometereinfl\"{u}ssen (Kap. \ref{spektrometereinfluesse}) und
+\"{A}nderungen in den atmosph\"{a}rischen Bedingungen (Kap.
+\ref{austempdr}) unterschieden werden. Die klassischen
+multivariaten Auswertungsmethoden erfordern zudem ein
+Hintergrundspektrum und die Kenntnis s\"{a}mtlicher Komponenten im
+Gasgemisch, die im Vergleich zum spektralen Rauschen signifikante
+Beitr\"{a}ge zum Atmosph\"{a}renspektrum aufweisen. In den Kapiteln
+\ref{hintergrund} und \ref{crosscorr} werden verschiedene bei
+Messungen im Feld auftretende Probleme und L\"{o}sungsm\"{o}glichkeiten
+aufgezeigt.
+
+\section{\label{spektrometereinfluesse}Spektrometerabh\"{a}ngige
+Einfl\"{u}sse}
+
+\subsection{\label{photometgen}Photometrische Genauigkeit mit
+FT--IR--Spektrometern}
+
+Eine m\"{o}gliche Quelle f\"{u}r systematische Fehler bei der
+quantitativen Auswertung liegt in der Berechnung der IR--Spektren
+mittels Fourier--Trans\-for\-ma\-tion aus den nur begrenzt
+vorliegenden Interferogrammen. Hier ist positiverweise anzumerken,
+dass die sonst \"{u}bliche Phasenkorrektur, die bei einseitig
+aufgenommenen Interferogrammen standardm\"{a}{\ss}ig nach der
+Mertz--Methode vorgenommen wird und die bei starken Absorptionen
+zu betr\"{a}chtlichen photometrischen Fehlern f\"{u}hren kann
+\cite{chase82}, f\"{u}r die mit dem K--300 Spektrometer aufgenommenen
+Interferogramme entf\"{a}llt. Diese Interferogramme liegen beidseitig
+vor, so dass kein N\"{a}herungsverfahren eingesetzt werden muss, um
+die realen Amplitudenanteile nach der Fourier--Transformation der
+Interferogramme zu berechnen. Da die berechneten Spektren
+\"{u}blicherweise nur Anteile gr\"{o}{\ss}er Null aufweisen, f\"{u}hrt die
+Berechnung des sogenannten Power-Spektrums \bf ps \rm ($\bf
+fft_{int}$--Fourier--Transformierte des Interferogramms) zum
+gew\"{u}nschten Einkanalspektrum:
+
+\begin{equation}\label{eqps}
+  \bf ps(\stackrel{\sim}{\nu})=\sqrt{\bf fft_{int}(\stackrel{\sim}{\nu}) \cdot fft_{int}^*(\stackrel{\sim}{\nu})}
+\end{equation}
+
+\bild{htb}{nlkorr1.wmf}{350}{430}{\bf A \it nicht korrigiertes und
+\bf B \it Einkanalspektrum mit Korrektur der
+Detektornichtlinearit\"{a}t einer SF\down{6}--Probe mit den
+dazugeh\"{o}rigen Eigenstrahlungsspektren (optische Pfadl\"{a}nge 41.5 m,
+SF\down{6} 31 hPa in N\down{2}, Gesamtdruck 1010 hPa). In den
+Nebenbildern ist die Differenz von Einkanal-- und
+Eigenstrahlungsspektrum gezeigt. Die Intensit\"{a}ten sind in
+willk\"{u}rlichen Einheiten dargestellt.}
+
+Ein weiterer Punkt, der zu ber\"{u}cksichtigen ist, betrifft die
+Spektrenabtastung, d.h. mit welcher Nyquist--Frequenz gerechnet
+werden kann. Standardm\"{a}{\ss}ig wird beim K300 das Interferogramm nicht
+wie sonst \"{u}blich mit einem Abstand von 633 nm digitalisiert,
+sondern nach jedem dritten Nulldurchgang des
+He--Ne--Laser--Sinussignals, was zur Digitalisierung des
+Interferogramms dient. Ein entsprechendes Zerofill im
+Interferogramm (Anf\"{u}gen von Nullen im Interferogramm, was einer
+Interpolation entspricht) bringt dann standardm\"{a}{\ss}ig einen
+spektralen Punktabstand von 0.0904 cm\up{-1}. Pro berechnetem
+Spektrum stehen somit insgesamt 65536 Datenpunkte im
+Spektralbereich 0 - 5924 cm\up{-1} zur Verf\"{u}gung. F\"{u}r die
+multivariate Auswertung der Spektren (Kap. \ref{multivariat}) ist
+dieser Punktabstand ausreichend, f\"{u}r die univariate Auswertung
+(Kap. \ref{univariat}) von schmalen Rotations--Schwingungsbanden
+kleiner Molek\"{u}le ist allerdings eine zus\"{a}tzliche Interpolation
+notwendig, die jedoch von schmalen spektralen Intervallen ausgehen
+kann (siehe auch Abb. \ref{h2ouni.wmf}).\\
+
+\bild{htb}{nlkorr2.wmf}{300}{370}{\bf A \it Laborspektrum
+SF\down{6}, gemessen in einer White-Zelle (31 hPa SF\down{6} in
+N\down{2}, Gesamtdruck 1010 hPa, 6.9 m Wegl\"{a}nge). \bf B \it
+Kalibrationskurven von SF\down{6}--Laborspektren bei
+unterschiedlichen optischen Wegl\"{a}ngen und unter Verwendung von
+verschiedenen Korrekturma{\ss}nahmen zur Spektrenberechnung (ESA:
+Eigenstrahlungsabzug, DNLK: Detektornichtlinearit\"{a}tskorrektur,
+RSK: Responsivitykorrektur).}
+
+Um entsprechende spektrale Signal/Rauschverh\"{a}ltnisse in
+angemessenen Messzeiten im Minutenbereich zu erhalten, m\"{u}ssen als
+Detektoren empfindliche gek\"{u}hlte Halbleiterdetektoren eingesetzt
+werden. Die K\"{u}hlung erfolgt \"{u}ber einen Joule--Thompson--K\"{u}hler, um
+die Verwendung von fl\"{u}ssigem Stickstoff zur Detektork\"{u}hlung bei
+Feldmessungen von vornherein zu vermeiden. Ein Nachteil dieser
+Photodetektoren ist, dass sie f\"{u}r h\"{o}here Strahlungsleistungen
+nichtlineare elektrische Signale liefern. Diese Situation tritt
+insbesondere f\"{u}r das zu messende Interferogrammmaximum auf, so
+dass hierdurch photometrische Fehler nach der \"{u}blichen
+Spektrenberechnung bedingt sind (siehe Abb. \ref{nlkorr1.wmf}).\\
+
+F\"{u}r die bistatische K300--Spektrometeranordnung wurde im Rahmen
+dieser Arbeit der Einfluss der Nichtlinearit\"{a}tskorrektur des
+Detektorsignals und die \"{A}nderungen der Detektor--Empfindlichkeit,
+die aufgrund der sehr unterschiedlichen, auf den Detektor
+treffenden Strahlungsintensit\"{a}ten auftreten, untersucht. Die
+Nichtlinearit\"{a}tskorrektur wird mittels Auswertung des gemessenen
+Interferogramms vorgenommen, wobei die Annahme gemacht wird, dass
+sich die Nichtlinearit\"{a}t des Detektorsignals durch ein Polynom 2.
+Grades approximieren l\"{a}sst (\cite{keens90}, \cite{keens93}).\\
+
+Die Auswirkungen des nichtlinearen Detektorverhaltens sind in
+Abbildung \ref{nlkorr1.wmf} anhand des positiven Signals unterhalb
+von ungef\"{a}hr 550 cm\up{-1} deutlich zu sehen, obwohl unterhalb
+dieser Wellenzahl aufgrund der halbleiterbedingten Bandl\"{u}cke kein
+MCT--Detektorsignal messbar ist. In den Bildeinsch\"{u}ben sind die
+Einkanalspektren nach Abzug der Eigenstrahlung gezeigt. Abbildung
+\ref{nlkorr1.wmf} \bf B \rm zeigt die signifikante Verbesserung
+nach der Detektor--Nichtlinearit\"{a}tskorrektur der gemessenen
+Interferogrammsignale.\\
+
+Bei bistatischen Anordnungen muss weiterhin die Eigenstrahlung
+ber\"{u}cksichtigt werden, deren Spektrum aufgrund der geringeren
+Intensit\"{a}ten im Vergleich zum Atmosph\"{a}renspektrum, welches mit dem
+Globarstrahler aufgenommen wurde, kaum von der
+Detektornichtlinearit\"{a}t beeinflusst wird. Auch nach der
+Nichtlinearit\"{a}tskorrektur des Probeneinkanalspektrums erreichen
+die Gebiete der vollst\"{a}ndigen Absorption bei hohen
+Signalintensit\"{a}ten noch nicht die Intensit\"{a}t des zugeh\"{o}rigen
+Eigenstrahlungsspektrums. Die Subtraktion beider Spektren ergibt
+dennoch gering negative Werte in dem f\"{u}r die Eigenstrahlung
+relevanten Spektralbereich. Dies ist ein Hinweis darauf, dass das
+Polynom 2. Grades, welches zur Nichtlinearit\"{a}tskorrektur genutzt
+wird, im Fall hoher Signalintensit\"{a}ten zur Modellierung
+m\"{o}glicherweise nicht ganz ausreichend ist. Weiterhin k\"{o}nnen
+leichte \"{A}nderungen in der Detektortemperatur (z.B. durch
+unterschiedliche Strahlungsleistungen bedingt) seine
+Empfindlichkeit geringf\"{u}gig \"{a}ndern. Die Multiplikation des
+Probeneinkanalspektrums mit einem Faktor wenig gr\"{o}{\ss}er als eins
+bringt eine bessere \"{U}bereinstimmung der Intensit\"{a}ten von Proben-
+und zugeh\"{o}rigem Eigenstrahlungsspektrum (Empfindlichkeitskorrektur
+des Detektors).\\
+
+Die Auswirkungen der verschiedenen Korrekturm\"{o}glichkeiten auf die
+photometrische Genauigkeit bei Auswertung des
+SF\down{6}--Bandenmaximums in Abbildung \ref{nlkorr2.wmf} \bf A
+\rm sind im Bild \bf B \rm beispielhaft gezeigt. Bei konstantem
+Partialdruck von SF\down{6} in der White--Zelle wurde die optische
+Pfadl\"{a}nge ge\"{a}ndert. Die gr\"{o}{\ss}ten photometrischen Fehler treten
+nat\"{u}rlich bei Nichtber\"{u}cksichtigung der Eigenstrahlung auf
+(unterste Kurve in Abb. \ref{nlkorr2.wmf} \bf B\rm ). Die
+zweitunterste Kurve (Linie mit Punkten) zeigt die Auswertung des
+betrachteten Bandenmaximums nach Abzug der Eigenstrahlung, aber
+ohne Nichtlinearit\"{a}tskorrektur. Die oberste Kurve ber\"{u}cksichtigt
+die Nichtlinearit\"{a}tskorrektur, die erhaltenen Intensit\"{a}tswerte f\"{u}r
+die Spektralbereiche vollst\"{a}ndiger Absorption stimmen aber noch
+nicht ganz mit den Intensit\"{a}ten der zugeh\"{o}rigen
+Eigenstrahlungsspektren \"{u}berein. Die zweite Kurve von oben (nach
+unten zeigende Dreiecke) ber\"{u}cksichtigt auch die f\"{u}r den Detektor
+notwendige Empfindlichkeitskorrektur und stellt die genaueste
+Vorbearbeitung der Spektren zur sp\"{a}teren quantitativen Analyse
+dar.\\
+
+Abbildung \ref{nlkorr2.wmf} zeigt sehr deutlich, dass, abh\"{a}ngig
+vom Produkt aus Volumenanteil $\cdot$ Wegl\"{a}nge, bei unzureichender
+Spektrenvorbearbeitung vor allem bei Banden mit hohen
+Extinktionswerten gro{\ss}e systematische Fehler bei der quantitativen
+Analyse auftreten k\"{o}nnen.\\
+
+\cite{richardson198} stellt weitere Strategien zur Korrektur von
+Detektornichtlinearit\"{a}ten vor, die sowohl durch
+Hardwareerweiterung als auch durch Softwareimplementierung
+erreicht werden k\"{o}nnen. Grunds\"{a}tzlich sind solche
+Hardwareerweiterungen sehr aufwendig. Die von Richardson et al.
+weiterhin vorgestellte Softwareimplementierung korrigiert die
+Nichtlinearit\"{a}ten in den Extinktionsspektren mit Hilfe einer
+Funktion ersten Grades. Die oben in dieser Arbeit vorgestellte
+Nichtlinearit\"{a}tskorrektur hingegen setzt mit Hilfe der Software
+bei der Ursache an und korrigiert das Interferogramm. Dies
+erscheint sinnvoller und ist zudem universeller und problemloser
+einsetzbar, weil die Nichtlinearit\"{a}tskorrektur der
+Extinktionsspektren von der jeweilig benutzten
+Apodisationsfunktion, den Halbwertsbreiten und maximalen
+Extinktionen der betrachteten Banden abh\"{a}ngt.\\
+
+
+\subsection{\label{wellenzahlstab}Stabilit\"{a}t der Wellenzahlskala}
+
+Die Wellenzahlstabilit\"{a}t von Spektren, die \"{u}ber FT--Spektrometer
+erhalten werden, ist auch \"{u}ber l\"{a}ngere Zeiten deutlich h\"{o}her als
+wenn dispersive Spektrometer eingesetzt werden. Dies liegt darin
+begr\"{u}ndet, dass die Frequenzskala des FT--Ger\"{a}tes \"{u}blicherweise an
+die 633 nm-Wellenl\"{a}nge des He--Ne--Lasers gekn\"{u}pft ist, der die
+Digitalisierungsschritte f\"{u}r jedes Interferogramm liefert. Die
+Reproduzierbarkeit der Wellenzahlwerte wird \"{u}blicherweise mit etwa
+0.01 cm\up{-1} angegeben, was f\"{u}r wiederholte Messungen mit einem
+Ger\"{a}t vorteilhaft ist. F\"{u}r die \"{U}bertragbarkeit der Ergebnisse
+zwischen verschiedenen Ger\"{a}ten m\"{u}ssen jedoch besondere
+Anstrengungen unternommen werden, um systematische Fehler bedingt
+durch Verschiebungen in der Wellenzahlskala bei der quantitativen
+Auswertung zu vermeiden. Diese sind insbesondere bei aufgel\"{o}ster
+Rotationsfeinstruktur und schmalen Absorptionslinien besonders
+gegeben. So sind zwangsl\"{a}ufig schon bei geringen
+Wellenzahlverschiebungen extrem gro{\ss}e spektrale Residuen zu
+erwarten.\\
+
+\tabelle{htb}{1.2}{wellenzahlgenauigkeit}{{|l c c c c|}\hline  &
+\rule[-4mm]{0cm}{1cm}\underline{$\stackrel{\sim}{\nu}$
+[cm\up{-1}]} & &
+\underline{$\bf\Delta\!\stackrel{\sim}{\nu}/\stackrel{\sim}{\nu}
+\cdot 10^{-5}$} &
+\\ \raisebox{2.7ex}[-1.5ex]{\bf Komponente} & \bf HITRAN96 & \bf
+Spektr.1 & \bf Spektr.2  & \bf Spektr.3 \\ \cline{1-5} \bf
+H\down{2}O & 576.112 & 5.0 & 5.2 & 2.7\\ \bf H\down{2}O & 1596.236
+& 4.6 & 5.6 & 2.3\\ \bf H\down{2}O & 1601.208 & 4.8 & 5.1 & 1.4\\
+\bf CO\down{2} & 2382.466 & 4.9 & 4.8 & 1.5\\ \bf CO\down{2} &
+2383.331 & 4.1 & 4.2 & 1.4\\ \bf H\down{2}O & 3969.082 & 4.8 & 5.2
+& 2.2\\ \cline{1-5}}{Wellenzahlgenauigkeit verschiedener
+K300--Spektrometer mit 0.2 cm\up{-1} Aufl\"{o}sung}
+
+Um die Wellenzahlgenauigkeit von drei K300--Spektrometern
+abzusch\"{a}tzen, wurde \"{u}ber den gesamten mittleren IR--Bereich die
+exakte Wellenzahlposition von in Atmosph\"{a}renspektren immer
+vorhandenen H\down{2}O-- und CO\down{2}--Banden bestimmt (Tab.
+\ref{wellenzahlgenauigkeit}). Hierzu wurde die Abtastung der
+ausgesuchten symmetrischen Linie durch Erg\"{a}nzung von Nullen in der
+Fourierdom\"{a}ne um den Faktor 16 verbessert und anschlie{\ss}end der
+Schwerpunkt der Linie bestimmt \cite{cameron82}. Als Referenzwerte
+wurden die Linienpositionen der HITRAN96--Bibliothek
+(\cite{rothman98}, Kap. \ref{hitran}) herangezogen, die als sehr
+genau gelten.\\
+
+Es zeigt sich, dass die Quotienten aus relativer
+Wellenzahlverschiebung und der genauen Linienposition f\"{u}r jedes
+Spektrometer ann\"{a}hernd konstant sind. Beim Vergleich der
+Spektrometer untereinander zeigt sich allerdings, dass
+Spektrometer 1 und 2  ungef\"{a}hr gleiche, wohingegen Spektrometer 3
+um den Faktor 2 kleinere Abweichungen zu den exakten Werten hat.\\
+
+Aus diesem Grunde wurden die Auswirkungen von unterschiedlich
+gro{\ss}en Wellenzahlverschiebungen exemplarisch an verschiedenen
+simulierten Spektren mit spektraler Aufl\"{o}sung von 0.2 cm\up{-1}
+untersucht (Tab. \ref{relkonzerror}), um die Toleranzen bei den
+Korrekturstrategien absch\"{a}tzen zu k\"{o}nnen.\\
+
+\tabelle{htb}{1.2}{relkonzerror}{{|l c c c c c c c|}\hline  &
+\rule[-4mm]{0cm}{1cm}{\underline{\bf Bereich}} & \underline{\bf V
+$\cdot$ L\up{\star}} & & & \underline{\bf
+$\Delta\!\stackrel{\sim}{\nu}$ [cm\up{.1}]} & & \\
+\raisebox{2.7ex}[-1.5ex]{\bf Kompon.} & \bf [cm\up{-1}] & \bf [ppm
+$\cdot$ m] & \bf 0.003 & \bf 0.01 & \bf 0.05 & \bf 0.09 \bf & \bf
+0.18\\ \cline{1-8} \bf Hexan & 2900-2965 & 120 & -0.02 & -0.08 &
+-0.35 & -0.60 & -1.18\\ \bf Toluol & 960-1080 & 180 & 0.03 & 0.10
+& 0.88 & 2.17 & 6.73\\ \bf Ammoniak & 840-960 & 85 & 0.01 & 0.06 &
+1.31 & 3.71 & 12.34\\ \bf Methan & 2900-2965 & 180 & 0.01 & 0.07 &
+1.65 & 4.61 & 15.13\\ \cline{1-8}}{Relativer
+Konzentrationsvorhersagefehler in \% aufgrund von
+Wellenzahlverschiebungen. Die Auswertung erfolgte mittels CLS, die
+Spektren wurden f\"{u}r eine nominale Aufl\"{o}sung von 0.2 cm\up{-1} und
+Dreiecksapodisation berechnet (QASoft). (\up{\star} V$\cdot$ L --
+Volumenanteil $\cdot$ Wegl\"{a}nge).}
+
+Die gr\"{o}{\ss}te der in Tabelle \ref{wellenzahlgenauigkeit} auftretenden
+Wellenzahlabweichungen liegt bei 0.18 cm\up{-1}. Da aber nicht die
+Abweichung zu den exakten Werten, sondern die zu den verwendeten
+Referenzspektren von Bedeutung ist, k\"{o}nnen auch sehr viel kleinere
+Abweichungen auftreten. Um die Auswirkungen der
+Wellenzahlabweichung abzusch\"{a}tzen, wurden aus der
+QASoft--Referenzdatenbank die Spektren von Hexan und Toluol (als
+Komponenten mit breiten Banden) und Ammoniak und Methan (als
+Komponenten mit schmalen Banden) f\"{u}r eine nominale Aufl\"{o}sung von
+0.2 cm\up{-1} und Dreiecksapodisation entnommen und mittels CLS
+f\"{u}r die aufgef\"{u}hrten Wellenzahlverschiebungen ausgewertet. Man
+sieht deutlich, dass die prozentualen Fehler gerade bei schmalen
+Banden, f\"{u}r gro{\ss}e Wellenzahlverschiebungen nicht zu
+vernachl\"{a}ssigen sind.\\
+
+Aus diesem Grund muss eine Strategie gefunden werden, die diese
+Wellenzahlverschiebungen zu korrigieren vermag. Da die relative
+Wellenzahlabweichung
+$\Delta\!\stackrel{\sim}{\nu}$/$\stackrel{\sim}{\nu}$ f\"{u}r ein
+Spektrometer hinreichend konstant ist, hat es sich gezeigt, dass
+es ausreichend ist, die auszuwertenden Wellenzahlbereiche in
+Unterbereiche von 50 cm\up{-1} aufzuteilen. Die
+Wellenzahlverschiebung in diesem Unterbereich berechnet sich dann
+aus der Multiplikation der f\"{u}r jedes Spektrum mit Hilfe der o.g.
+H\down{2}O-- und CO\down{2}--Linien zu bestimmenden relativen
+Wellenzahlverschiebung und der mittleren Wellenzahl des
+Unterbereichs. Die dadurch erhaltene Verschiebung kann dann in
+diesen Unterbereichen linear ausgeglichen werden. Es ist dabei
+darauf zu achten, dass die Spektrenpunkte durch Interpolation auf
+die Originalachse gebracht werden m\"{u}ssen.\\
+
+
+\subsection{\label{nichtlin}Lambert--Beer'sch\-es Gesetz und m\"{o}gliches
+nichtlineares Extinktionsverhalten}
+
+\markright{\sl NICHTLINEARES VERHALTEN BZGL. LAMBERT--BEER}
+
+Gl. \ref{eqlbext} zeigt, dass im Lambert--Beer'schen Gesetz die
+Extinktion linear abh\"{a}ngig von Konzentration und Schichtdicke ist.
+Im folgenden werden Einfl\"{u}sse der Messmethode gezeigt, die zu
+Abweichungen von dieser Linearit\"{a}t und damit zu systematischen
+Fehlern bei der Auswertung f\"{u}hren k\"{o}nnen.\\
+
+Die Auswirkungen der instrumentellen Linienfunktion, die die
+spektrale Aufl\"{o}sung des FT--Spektrometers bestimmt, auf die
+gemessenen Linien- und Bandenextinktionswerte ist bekannt (siehe
+Kap. \ref{faltung}). Dies l\"{a}sst sich durch Faltung der wahren
+Linienprofile mit den jeweiligen instrumentellen Linienfunktionen
+in der Transmissionsdomaine realisieren. Je h\"{o}her die spektrale
+Aufl\"{o}sung im Vergleich zur wahren Halbwertsbreite der vorliegenden
+Absorptionsbanden ist, desto geringer fallen die Abweichungen von
+der Linearit\"{a}t in den konzentrationsabh\"{a}ngigen maximalen
+Linienextinktionen aus. Nun wird die Verwendung einer hohen
+spektralen Aufl\"{o}sung mit einem geringeren spektralen
+Signal/Rauschverh\"{a}ltnis erkauft, so dass f\"{u}r die
+Atmosph\"{a}renspektroskopie Kompromisse eingegangen werden m\"{u}ssen.
+Die bei Atmosph\"{a}rendruck vorliegenden Linienhalbwertsbreiten von
+kleinen zwei- oder dreiatomigen Molek\"{u}len bewegen sich \"{u}berwiegend
+zwischen 0.1 und 0.2 cm\up{-1}, so dass die beim K300 routinem\"{a}{\ss}ig
+gew\"{a}hlte spektrale Aufl\"{o}sung von 0.2 cm\up{-1} f\"{u}r eine Vielzahl
+von F\"{a}llen einen zufriedenstellenden Linearit\"{a}tsbereich liefert.
+Hinzu kommt, dass speziell f\"{u}r den Bereich der atmosph\"{a}rischen
+H\down{2}O-- und CO\down{2}-- Absorptionen bei Verwendung einer
+solch hohen Aufl\"{o}sung die Querempfindlichkeiten der zu
+analysierenden Stoffe stark abnehmen und auch zus\"{a}tzliche
+Datenpunkte f\"{u}r die quantitative Auswertung zur Verf\"{u}gung stehen.
+Mit zunehmender Verbesserung der spektralen Aufl\"{o}sung nimmt im
+allgemeinen die Selektivit\"{a}t zu, wenn dem nicht eine entsprechende
+Verschlechterung des Signal/Rauschverh\"{a}ltnisses entgegensteht. Auf
+der anderen Seite l\"{a}sst sich durch eine Verringerung der
+spektralen Aufl\"{o}sung der nutzbare dynamische Konzentrationsbereich
+trotz einer nichtlinearen funktionellen Abh\"{a}ngigkeit vergr\"{o}{\ss}ern
+\cite{jaakola97}. Im Verlauf der Arbeit musste in der Praxis von
+dieser Option allerdings kein Gebrauch gemacht werden, da das
+Signal/Rauschverh\"{a}ltnis bei einer spektralen Aufl\"{o}sung von 0.2
+cm\up{-1} f\"{u}r alle Anwendungen ausreichend war.\\
+
+Anzumerken ist, dass das verwendete K--300 Spektrometer keine
+variable Eingangsaperturblende besitzt, da bereits bei der
+h\"{o}chsten spektralen Aufl\"{o}sung die Detektorfl\"{a}che voll
+ausgeleuchtet ist und somit keine weitere Vergr\"{o}{\ss}erung des
+optischen Lichtleitwertes (Throughput) sinnvoll ist, die bei
+schlechterer spektraler Aufl\"{o}sung sonst im allgemeinen erreichbar
+ist (siehe auch \cite{jaakola97} und darin zitierte Literatur).
+Dies hat zur Folge, dass das erreichbare Signal/Rauschverh\"{a}ltnis
+sich nur linear mit einer Reduzierung der Aufl\"{o}sung verbessert.\\
+
+Bei der FTIR--Spektroskopie sind eine Reihe von verschiedenen
+instrumentellen Linienfunktionen m\"{o}glich, die sich durch die Wahl
+einer geeigneten Gewichtsfunktion f\"{u}r das Interferogramm, der
+sogenannten Apodisationsfunktion, ergeben (Kap. \ref{faltung}). Da
+durch die Boxcar--Apodsation (keine Interferogrammgewichtung)
+recht erhebliche Linienseitenmodulationen bestehen, verwendet man
+\"{u}blicherweise andere Apodisationsfunktionen. Am weitesten
+verbreitet ist die Dreiecksapodisation, die auch bei der
+Erstellung einer umfangreichen kommerziell verf\"{u}gbaren
+Spektrenbibliothek von der Fa. Infrared Analysis (QASoft)
+ber\"{u}cksichtigt wurde. Daten dieser Spektralbibliothek wurden f\"{u}r
+die Bereitstellung von Referenzspektren genutzt, so dass auch f\"{u}r
+die weiteren Untersuchungen diese Apodisationsfunktion eingesetzt
+wurde. In der Literatur gibt es Untersuchungen \"{u}ber die Verwendung
+anderer Apodisationsfunktionen, die einen erweiterten
+Linearit\"{a}tsbereich im Vergleich zu den auf einer
+Dreiecksapodisationsfunktion basierenden Ergebnissen mit sich
+bringen (siehe \cite{zhu298}).\\
+
+Aufgrund unterschiedlicher Linienhalbwertsbreiten in den vorliegenden
+Atmosph\"{a}renspektren existieren verschiedene Linearit\"{a}tsbereiche f\"{u}r
+einzelne Linien, so dass eine allgemeine Grenze f\"{u}r die G\"{u}ltigkeit des
+linearen Lambert--Beer'schen Gesetzes nicht gegeben ist. In der
+Auswertungssoftware (Kap. \ref{expertensystem}) wurde als eine Strategie
+ein flexibel vorgebbarer Extinktionsgrenzwert gew\"{a}hlt, bei denen
+Extinktionen gr\"{o}{\ss}er als dieser Grenzwert bei der Auswertung ausgeblendet
+werden. Analytisch sinnvoller ist es nat\"{u}rlich, auch diese Punkte f\"{u}r die
+Auswertung nutzen zu k\"{o}nnen. In diesem Fall m\"{u}ssen die Nichtlinearit\"{a}ten
+schon in den Referenzspektren bei der Auswertung mitber\"{u}cksichtigt werden
+(siehe auch Kap. \ref{kalibriergas}). Dieser Weg wird in dieser Arbeit
+bei der Aufnahme eigener Referenzspektren konsequent verfolgt werden.\\
+
+\markright{\sl ABWEICHUNGEN VON STANDARDTEMPERATUR UND --DRUCK}
+
+\section{\label{austempdr}Auswirkungen durch Abweichungen von
+Standard\-temperatur und --druck}
+
+\markright{\sl ABWEICHUNGEN VON STANDARDTEMPERATUR UND --DRUCK}
+
+Zus\"{a}tzlich zu den spektrometerabh\"{a}ngigen Einfl\"{u}ssen, k\"{o}nnen auch
+Abweichungen von Temperatur und Druck von den Standardbedingungen
+(296 K, 1013 hPa), bei denen \"{u}blicherweise die Referenzdaten
+vorliegen, bei Messungen in der offenen Atmosph\"{a}re zu
+systematischen Fehlern bei der Auswertung f\"{u}hren. Dabei haben
+sowohl Temperatur und Druck Auswirkungen auf die Halbwertsbreite
+der Banden und auf das Bandenmaximum.\\
+
+Die Bandenintensit\"{a}t h\"{a}ngt vornehmlich von der Besetzungszahl der
+betrachteten \"{U}berg\"{a}nge ab. Die Besetzungszahl der angeregten
+Rotations-- und Schwingungsniveaus in Molek\"{u}len folgt der
+Boltzmann--Verteilung. Bei Raumtemperatur sind angeregte
+Rotationsniveaus schon besetzt, die Schwingungs\"{u}berg\"{a}nge erfolgen
+aber i.a. vom Grundzustand aus. Lediglich bei kleinen
+Anregungsenergien ist ein signifikanter Anteil bereits bei
+Raumtemperatur angeregt. Abh\"{a}ngig von der Temperatur T muss
+aufgrund der \"{A}nderung dieser Besetzungszahlen die integrierte
+Linienst\"{a}rke S einer Bande zu T=296 K korrigiert werden, wenn die
+Referenzspektren unter Normalbedingungen gemessen wurden:
+
+\begin{equation}\label{eqlinienstaerke}
+S(T) = S(296) \cdot \frac{Q(296)}{Q(T)} \cdot \frac{{\rm exp}
+\left(-\frac{c_2E_0}{T} \right)}{{\rm exp}
+\left(-\frac{c_2E_0}{296} \right)} \cdot \frac{\left(1-{\rm
+exp}\left(-\frac{c_2
+\stackrel{\sim}{\nu}_0}{T}\right)\right)}{\left(1-{\rm
+exp}\left(-\frac{c_2 \stackrel{\sim}{\nu}_0}{296}\right)\right)} ,
+\end{equation}
+dabei sind die Q--Funktionen die Zustandssummen, $c_2$ die zweite
+Strahlungskonstante (=hc/k=1.439 cm K) und $E_0$ die Energie des
+betrachteten \"{U}bergangs f\"{u}r $\stackrel{\sim}{\nu}_0$ (siehe auch
+\cite{griffith96}).\\
+
+Zur Linienverbreiterung tragen im wesentlichen zwei Punkte bei:
+Der Grund f\"{u}r die \it Doppler--Verbreiterung \rm liegt in der
+temperaturbedingten Geschwindigkeitsverteilung der Molek\"{u}le
+bedingt. Im thermischen Gleichgewicht haben die Molek\"{u}le eines
+Gases eine Geschwindigkeitsverteilung, die der Maxwell'schen
+Statistik folgt. Mit der wahrscheinlichsten Geschwindigkeit $v_W$
+(k--Boltzmannkonstante, T--Temperatur, m--Molek\"{u}lmasse)
+
+\begin{equation}\label{eqdopl1}
+  v_W=\sqrt{\frac{2kT}{m}}
+\end{equation}
+und $\gamma_G=\frac{\stackrel{\sim}{\nu}_0}{c}v_W$ der
+Gauss--Halbwertsbreite bei halber H\"{o}he folgt f\"{u}r das Gauss'sche
+Linienprofil $I_G$ bei einer Wellenzahl $\stackrel{\sim}{\nu}$:
+
+\begin{equation}\label{eqdopl1}
+  I_G(\stackrel{\sim}{\nu}) = \frac{1}{\gamma_G \sqrt{\pi}}
+  \quad {\rm exp} \left(-\frac{(\stackrel{\sim}{\nu}-\stackrel{\sim}{\nu}_o)^2}{\gamma_G^2}\right)
+\end{equation}
+
+Die Ursache f\"{u}r die Druckverbreiterung (\it Lorentz--Verbreiterung\rm )
+liegt in den St\"{o}{\ss}en des absorbierenden Molek\"{u}ls mit s\"{a}mtlichen anderen
+begr\"{u}ndet, was zu einer Verschiebung der Energieniveaus der Molek\"{u}le
+f\"{u}hrt. F\"{u}r das daraus resultierende Lorentzprofil gilt mit $\gamma_L$ der
+Lorentz--Halbwertsbreite bei halber H\"{o}he:
+\begin{equation}\label{eqlor}
+  I_L(\stackrel{\sim}{\nu})=\frac{\gamma_L/2\pi}{(\stackrel{\sim}{\nu}-\stackrel{\sim}{\nu}_0)^2+(\gamma_L/2)^2}
+\end{equation}
+
+F\"{u}r Molek\"{u}le mittlerer Gr\"{o}{\ss}e bei Raumtemperatur und Normaldruck
+liegen typische Werte f\"{u}r $\gamma_G$ bei 0.003 cm\up{-1} und
+$\gamma_L$ bei 0.07 cm\up{-1}. Somit dominiert in der
+Atmosph\"{a}renspektroskopie der Lorentzbeitrag zur Breite des
+Gesamtprofils, welches eine Faltung aus Doppler-- und
+Lorentzverbreiterung ist. Das resultierende Linienprofil wird \it
+Voigt--Profil \rm genannt.\\
+
+\tabelle{htb}{1.2}{tabtempdr}{{|l c c c|}\hline & &
+\rule[-4mm]{0cm}{1cm}\underline{\bf $\Delta c_{rel}/\Delta P \cdot 10^3
+$} & \underline{\bf $\Delta c_{rel}/\Delta T \cdot 10^3
+$}\\\raisebox{2.7ex}[-1.5ex]{\bf Komponente} &
+\raisebox{2.7ex}[-1.5ex]{\bf Aufl\"{o}sung} & \bf [ppm$\cdot$m/hPa] & \bf
+[ppm$\cdot$m/°C] \\ \cline{1-4} \bf CH\down{3}CL & wahre Linienbreite &
+0.79 & 0.51\\ \bf (652 ppm$\cdot$m) & 0.2 cm\up{-1} & 0.89 & 0.35\\ & 1.0
+cm\up{-1} & 0.96 & 0.25\\ \bf C\down{2}H\down{6} & wahre Linienbreite &
+0.53 & 1.12\\\bf (260 ppm$\cdot$m) & 0.2 cm\up{-1} & 0.70 & 0.75\\& 1.0
+cm\up{-1} & 0.91 & 0.29 \\\bf CH\down{4} & wahre Linienbreite & 0.77 &
+0.83\\\bf (128 ppm$\cdot$m) & 0.2 cm\up{-1} & 0.87 & 0.60\\& 1.0
+cm\up{-1} & 0.97 & 0.50\\ \bf CO & wahre Linienbreite & 0.46 & 0.50\\\bf
+(225 ppm$\cdot$m) & 0.2 cm\up{-1} & 0.76 & -0.36\\& 1.0 cm\up{-1} & 0.95
+& -0.91 \\ \cline{1-4} \multicolumn{4}{l}{\small Die Simulationen wurden
+mit der HITRAN96-Datenbank durchgef\"{u}hrt, wobei}\\
+\multicolumn{4}{l}{\raisebox{1.5ex}[-1.5ex]{\small der Druckbereich von
+960-1030 hPa und Temperaturen von 0-40°C ber\"{u}ck-}}\\
+\multicolumn{4}{l}{\raisebox{3ex}[-3ex]{\small sichtigt wurden.
+Ausgewertet wurde in den Bereichen 2900-3200 cm\up{-1}
+(CH\down{3}CL),}}\\ \multicolumn{4}{l}{\raisebox{4.5ex}[-4.5ex]{\small
+2950--3050 cm\up{-1} (C\down{2}H\down{6}), 2650--3250 cm\up{-1}
+(CH\down{4}) und 2000--2300 cm\up{-1} (CO).}}
+ }{Temperatur-- und Druckeffekte
+bei der CLS--Auswertung von mit der HITRAN96 berechneten Spektren mit
+unterschiedlichen Druck- und Temperaturbedingungen und Referenzspektren,
+berechnet mit den Standardbedingungen (1013 hPa, 20°C).}
+
+Der erfolgreiche Einsatz berechneter Referenzspektren mit den
+Linienparametern aus der HITRAN--Datenbank wurde u.a. von
+\cite{griffith96} und \cite{schaefer95} gezeigt. In diesem Zusammenhang
+ist ein weiterer wichtiger Punkt f\"{u}r die quantitative Auswertung der
+Einfluss von atmosph\"{a}rischen Druck-- und Temperaturschwankungen (siehe
+Tab. \ref{tabtempdr}) verglichen mit den Standardbedingungen 1013 hPa und
+20°C. Solche Effekte sind besonders signifikant f\"{u}r Substanzen mit
+aufgel\"{o}ster Rotations--Vibrationsfeinstruktur zu erwarten. Exemplarisch
+wurden die Spektren der Kohlenwasserstoffe Methan und Ethan, sowie der
+chlorierte Kohlenwasserstoff Methylchlorid und Kohlenmonoxid untersucht.
+Alle hier betrachteten synthetischen Spektren wurden mit der
+HITRAN96--Datenbank berechnet.\\
+
+F\"{u}r Tabelle \ref{tabtempdr} wurden Spektren im Druckbereich von
+960-1030 hPa in 10 hPa--Schritten bei konstanter Temperatur von
+20°C und im Temperaturbereich von 0-40°C in 10°C--Schritten bei
+konstantem Druck von 1013 hPa f\"{u}r jedes Gas im in der
+Tabellenunterschrift angegebenen Spektralbereich und f\"{u}r die in
+der Tabelle angegebene Konzentration berechnet. Diese Spektren
+wurden dann mit Referenzspektren, berechnet f\"{u}r die
+Standardbedingungen 1013 hPa und 20°C, mittels CLS ausgewertet. In
+Tabelle \ref{tabtempdr} sind die Steigungen der
+Regressionsgeraden, die die relativen Abweichungen der ermittelten
+Konzentrationen pro Kelvin und pro hPa von den wahren
+Konzentrationen angeben, dargestellt.\\
+
+Zur Abweichung von den wahren Konzentrationswerten tragen im
+wesentlichen zwei Effekte bei. Zum einen \"{a}ndert sich aufgrund des
+idealen Gasgesetzes die Dichte des betrachteten Gases. Dieser
+Effekt liefert zu den Steigungen in Tabelle \ref{tabtempdr} einen
+Beitrag von $\Delta c/(c \cdot \Delta P)=0.99\cdot10^{-3}$ f\"{u}r die
+Druck\"{a}nderungen und von $\Delta c/(c \cdot \Delta
+T)=-0.34\cdot10^{-2}$ f\"{u}r die Temperatur\"{a}nderungen. Desweiteren
+findet aufgrund der Temperatur\"{a}nderungen eine molek\"{u}labh\"{a}ngige
+Besetzungszahl\"{a}nderung der angeregten Rotationszust\"{a}nde im
+Schwingungsgrundzustand statt. Dies bedeutet, dass die
+Rotationslinien mit h\"{o}heren J--Quantenzahlen st\"{a}rker besetzt
+werden. F\"{u}r Druck\"{a}nderungen bei konstanter Temperatur sind nur die
+Linienverbreiterungen zu ber\"{u}cksichtigen.\\
+
+Ein dritter Effekt tritt auf, wenn mit endlicher spektraler
+Aufl\"{o}sung gemessen wird. Bei gegebenen Zustandsbedingungen f\"{u}r das
+Gas liegt eine Verteilung von Linienhalbwertsbreiten vor. Bei
+Temperatur\"{a}nderungen gibt es Verschiebungen in der von den
+Rotationsquantenzahlen abh\"{a}ngigen Intensit\"{a}tsverteilung der
+Linien. Druck\"{a}nderungen haben rotationsquantenzahlabh\"{a}ngige
+Linienhalbwertsbreiten\"{a}nderungen zur Folge. Bei der Faltung ist
+das Verh\"{a}ltnis aus wahren Linienhalbwertsbreiten und der
+Halbwertsbreite der instrumentellen Linienfunktion f\"{u}r die
+maximale Linienintensit\"{a}t von entscheidender Bedeutung. Durch die
+Least--Squares Auswertung ergibt sich f\"{u}r die Druckabh\"{a}ngigkeit
+eine Zunahme und f\"{u}r die Temperaturabh\"{a}ngigkeit eine Abnahme der
+Steigungen.\\
+
+Beim CO sind die temperatur-- und druckabh\"{a}ngigen Effekte sehr
+gro{\ss}, da hier besonders gro{\ss}e Unterschiede in den
+Linienhalbwertsbreiten vorliegen. Rotationslinien mit gro{\ss}em J
+besitzen im Vergleich zu denen mit niedrigem J, die bei tieferen
+Temperaturen st\"{a}rker besetzt sind, deutlich geringere
+Linienhalbwertsbreiten \cite{hartmann88}, so dass die
+Extinktionsmaxima solcher Linien nach der Faltung st\"{a}rker abnehmen
+als die \"{u}brigen Linien nahe der Schwingungfrequenz. Insgesamt
+f\"{u}hrt dieser Effekt zu den negativen Werten in Tabelle
+\ref{tabtempdr}.\\
+
+\bild{htb}{cotemp.wmf}{300}{370}{\bf A \it CO--Atmosph\"{a}renspektrum
+mit der HITRAN96 berechnet, Datenpunktabstand 0.0904 cm\up{-1},
+T=30°C,  Produkt aus Volumenanteil und Wegl\"{a}nge = 57 ppm m (\bf
+a\it), und Differenzen zu einem Spektrum mit 20°C (\bf b\it) und
+10°C (\bf c\it). Die Spektren \bf a \it und \bf b \it sind mit
+einem Offset dargestellt. \bf B \it Relative Abweichung in Prozent
+zwischen dem CO--Spektrum bei 30°C und denen bei 20°C und 10°C
+(Auswertung des Linienmaximums).}
+
+Bei der Auswahl der Linien f\"{u}r die univariate Auswertung ist vor
+allem hinsichtlich der Temperatureffekte Sorge zu tragen, wenn
+nicht explizit die Temperaturabh\"{a}ngigkeit ber\"{u}cksichtigt werden
+kann. Abbildung \ref{cotemp.wmf} zeigt, wie gro{\ss} die Abweichungen
+f\"{u}r die CO--Auswertung sein k\"{o}nnen, wenn nicht geeignete Linien
+f\"{u}r die Auswertung genommen werden. Angemerkt sei, dass deutlich
+zu sehen ist, dass die Abtastung $\Delta\stackrel{\sim}{\nu}$ in
+diesem Fall nicht ausreicht, um die Einh\"{u}llende der Linien exakt
+zu beschreiben.\\
+
+
+
+\section{\label{hintergrund}Hintergrundproblematik}
+
+Da die mit einem FTIR--Spektrometer gemessenen Einkanalspektren
+auch die spektralen Eigenschaften des Detektors und der optischen
+Komponenten des Aufbaus beinhalten, m\"{u}ssen diese Einkanalspektren
+f\"{u}r eine quantitative Analyse mittels multivariater Verfahren
+durch ein weiteres Einkanalspektrum, aufgenommen unter gleichen
+Bedingungen, aber ohne die zu quantifizierenden Komponenten,
+dividiert werden, um Transmissionsspektren zu erhalten (siehe auch
+Kap. \ref{ft}). Dieses weitere Einkanalspektrum wird
+Hintergrundspektrum genannt. Eines der gr\"{o}{\ss}ten Probleme bei der
+Auswertung von FTIR--Spektren liegt in der Messung oder
+Generierung eines geeigneten Hintergrundspektrums.\\
+
+In der Literatur wurden hierzu in den letzten Jahren eine Vielzahl
+von Vorschl\"{a}gen gemacht. Eine \"{U}bersicht findet sich bei
+\cite{giese97}, weitere Ans\"{a}tze z.B. bei \cite{espinoza98} und
+\cite{phillips96}. Grunds\"{a}tzlich kann man zwischen der
+experimentellen Messung und der synthetischen Berechnung eines
+Hintergrundspektrums unterscheiden.\\
+
+
+\subsection{\label{hintergrundexp}Experimentelle Methoden}
+
+Die in der Praxis wohl immer noch g\"{a}ngigste Methode zur Bestimmung
+eines experimentellen Hintergrundes in der
+Atmosph\"{a}renspektroskopie ist die Messung eines Spektrums unter
+gleichen meteorologischen und optischen Bedingungen wie sie f\"{u}r
+das zu analysierende Gasspektrum vorliegen, aber bei Abwesenheit
+der zu messenden Komponenten. Diese Hintergrundmessung sollte
+gleich im Anschluss an die Probenmessung erfolgen und wird
+\"{u}blicherweise entweder im  "`Upwind"'  -- oder im "`Sidewind"'
+--Verfahren erm\"{o}glicht. Bei einer z.B. angenommenen
+Nord--S\"{u}d--Windrichtung wird im Upwind--Verfahren eine Messstrecke
+gleicher L\"{a}nge n\"{o}rdlich zu der zu messenden Gaswolke aufgebaut.
+Beim Sidewind--Verfahren wird westlich oder \"{o}stlich der Gaswolke
+gemessen. Bei beiden Verfahren ist sorgf\"{a}ltig darauf zu achten,
+dass keine Anteile der Gaswolke in der Messstrecke liegen. Dieses
+Verfahren hat den Vorteil, dass die gemessenen H\down{2}O-- und
+CO\down{2}--Konzentrationen etwa denen im zu analysierenden
+Probengasspektrum entsprechen und Wellenzahlverschiebungen
+gew\"{o}hnlich nicht auftreten. Dadurch k\"{o}nnen H\down{2}O und
+CO\down{2} sehr gut kompensiert werden. Weiterhin muss kein
+zus\"{a}tzlicher apparativer oder rechnerischer Aufwand getrieben
+werden, um das Extinktionsspektrum zu berechnen.\\
+
+Ein sehr entscheidender Nachteil ist jedoch, dass es in der Praxis
+h\"{a}ufig sehr aufwendig ist, die Apparatur zu verlegen, wobei Globar
+und Spektrometer noch einmal aufeinander justiert werden m\"{u}ssen.
+Diese Unterschiede in der Justage k\"{o}nnen zu Basislinieneffekten im
+Extinktionsspektrum f\"{u}hren. Diese Nachteile bringen es mit sich,
+dass gew\"{o}hnlich im Verlauf einer Messreihe nur sehr wenige
+Hintergrundspektren aufgenommen werden und somit meteorologische
+und optische Ver\"{a}nderungen im Verlauf einer Messreihe nicht
+ber\"{u}cksichtigt werden. Desweiteren ist es aufgrund der \"{o}rtlichen
+und meteorologischen Gegebenheiten oft nicht m\"{o}glich, eine
+geeignete Wegstrecke f\"{u}r die Hintergrundmessung zu finden.\\
+
+Einen Ausweg hierf\"{u}r bietet die Messung eines "`Kurzweg"'
+--Hintergrundes. Dazu wird die IR--Strahlungsquelle direkt vor das
+Spektrometer gebracht. Um die S\"{a}ttigung des Detektors zu
+vermeiden, muss die Strahlungsintensit\"{a}t abgeschw\"{a}cht werden. Da
+eine Reduzierung der Globartemperatur eine \"{A}nderung der
+Strahlungscharakteristik bedeutet, die im Nachhinein rechnerisch
+korrigiert werden muss, ist der Einsatz z.B. eines Gitternetzes
+zur Strahlungsabschw\"{a}chung die vorzuziehende Alternative. Der
+Vorteil des Upwind--/Sidewind--Verfahrens zur optimalen
+H\down{2}O-- und CO\down{2}--Kompensation ist in diesem Fall nicht
+mehr gegeben, weiterhin muss aber noch der sehr aufwendige Umbau
+stattfinden. Da das K300--Spektrometer einen zus\"{a}tzlichen zweiten
+optischen Port besitzt, ist alternativ auch die Messung eines
+Kurzweghintergrundspektrums mit Hilfe eines an das Spektrometer
+befestigten Globarstrahlers m\"{o}glich. Weiterhin ist auch eine
+Anordnung mit einem zweiten zus\"{a}tzlichen Globarstrahler und einer
+Umlenkvorrichtung direkt vor dem Spektrometer m\"{o}glich. In diesem
+Fall entf\"{a}llt der aufwendige Umbau.\\
+
+
+\subsection{\label{hintergrundber}Methoden zur Berechnung eines
+Hintergrundspektrums}
+
+Die Nachteile bei der experimentellen Aufnahme von
+Hintergrundspektren lassen Methoden in den Vordergrund treten, die
+deren Nachteile nicht aufweisen. Es gibt mehrere einfache Methoden
+zur Hintergrundberechnung. So l\"{a}sst sich f\"{u}r einen betrachteten,
+meist recht schmalen Wellenzahlbereich, ein Polynom niedriger
+Ordnung anpassen, mit dem die Basislinie i.a. gut repr\"{a}sentiert
+wird. F\"{u}r schmale Banden ist es auch m\"{o}glich, die Bereiche von
+Peaks auszublenden und die Punkte in den Flanken der Bande durch
+eine Gerade zu verbinden. Eine weitere M\"{o}glichkeit zur iterativen
+Auswertung einer Messreihe besteht darin, ein in einer anderen
+Messreihe gewonnenes Hintergrundspektrum heranzuziehen, um die
+Messreihe auszuwerten. Im allgemeinen wird hier eine noch stark
+variierende Basislinie resultieren. Genommen wird nun das
+Einkanalspektrum mit der kleinsten Konzentration der zu
+analysierenden Komponente. Dieses Einkanalspektrum wird nun in
+einem zweiten Schritt als Hintergrundspektrum f\"{u}r die \"{u}brigen
+Spektren genommen, wobei die Konzentration der zu analysierenden
+Komponenten im Nachhinein um den Wert, der bei dem als
+Hintergrundspektrum genommenen Einkanalspektrum abgesch\"{a}tzt wurde,
+zu korrigieren ist.\\
+
+Ein weiteres iteratives Verfahren startet ebenfalls mit einem
+entweder im Labor oder in der offenen Atmosph\"{a}re bereits
+anderweitig gewonnenen Hintergrundspektrum. Es wird das
+Extinktionsspektrum berechnet und eine der zu analysierenden
+Komponenten wird aus diesem mittels skaliertem Bibliotheksspektrum
+spektral subtrahiert. Anschlie{\ss}end wird aus dem resultierenden
+Extinktionspektrum wieder ein Einkanalspektrum berechnet. Dieses
+Einkanalspektrum wird in einer zweiten Iteration als neues
+Hintergrundspektrum genutzt. Mit jeder Iteration wird i.a. das
+Hintergrundspektrum optimiert. Probleme gibt es dabei aber vor
+allem bei Komponenten mit geringen Konzentrationen.\\
+
+Es existieren weiterhin noch aufwendigere Methoden zur Umgehung
+der Hintergrundproblematik. So kann man anstatt des
+Extinktionsspektrums, gebildet mit einem anderweitig erhaltenen
+Hintergrund, auch die n--te Ableitung dieses Spektrums auswerten.
+Lineare Anteile der Basislinie treten z.B. im Fall n=1 nur noch
+als Offset auf. Desweiteren k\"{o}nnen \"{u}berlappende Peaks besser
+unterschieden werden. Je h\"{o}her die Ableitung desto besser die
+Unterscheidung \"{u}berlappender Peaks. Auf der anderen Seite geht mit
+jeder Erh\"{o}hung der Ordnung der Ableitung etwa eine Verdopplung des
+Rauschens einher, was Ordnungen gr\"{o}{\ss}er als n=2 oft als nicht
+geeignet f\"{u}r die atmosp\"{a}rische Infrarotspektroskopie erscheinen
+lassen.\\
+
+Um dieses Rauschproblem zu umgehen, wurde die sogenannte
+Shift--Methode vorgeschlagen \cite{xiao93}. Als
+Hintergrundeinkanalspektrum wird in diesem Fall das
+wellenzahlverschobene, zu analysierende Einkanalspektrum genommen.
+Je breiter die zu analysierende Bande, desto gr\"{o}{\ss}er muss auch die
+benutzte Verschiebung sein. Vergleiche mit den oben vorgestellten
+Methoden zeigen leicht bessere Ergebnisse. Eine erfolgreiche
+Anwendung dieser Methode erfordert jedoch auch eine gro{\ss}e
+Erfahrung des Spektroskopikers mit diesem Verfahren
+\cite{giese97}.\\
+
+Espinoza et al. \cite{espinoza98} schlagen ein anderes Verfahren
+zur Hintergrundberechnung vor. Als Grundlage wird das
+Interferogramm des zu analysierenden Gemischspektrums genommen.
+Dies wird um etwa den Faktor 100 gek\"{u}rzt und mit einer
+Gewichtsfunktion (z.B. der Gaussfunktion) multipliziert
+(Apodisierung). Das nach der FFT resultierende Einkanalspektrum
+(die schmalen Strukturen sind nun nicht mehr aufgel\"{o}st) wird dann
+als Hintergrundspektrum genommen. Auch dieses Verfahren erfordert
+bei der Auswahl der genauen Punkteanzahl im Interferogramm und der
+Gewichtsfunktion, die von der konkreten Messsituation abh\"{a}ngen,
+eine gro{\ss}e Erfahrung und ist nur bei Banden mit Halbwertsbreiten
+kleiner 2 cm\up{-1} erfolgreich.\\
+
+Phillips et al. \cite{phillips96} verfolgen einen anderen Ansatz,
+dessen Voraussetzung ebenfalls ein Frequenzabstand in den Signalen
+der Basislinie und des Komponentenspektrums ist. Sie gehen davon
+aus, dass ein Einkanalspektrum die Summe dreier Komponenten ist:
+eine sich relativ wenig \"{a}ndernde Basislinie, eine Reihe schmaler
+Absorptionssignale und Rauschen. In einem ersten Iterationsschritt
+wird das erwartete Komponentenspektrum durch Addition
+verschiedener Referenzspektren erzeugt und mit einer die
+Spektrometerfunktion repr\"{a}sentierenden Funktion gefaltet. Das
+gesch\"{a}tzte Hintergrundspektrum wird mit einer breiten
+Gl\"{a}ttungsfunktion gefaltet und beide Spektren voneinander
+abgezogen. Das erhaltene Residuum gibt Aufschluss dar\"{u}ber, wie gut
+die Sch\"{a}tzung des Komponentenspektrums war. Die Iteration wird nun
+solange wiederholt, bis das Residuum nur noch Rauschen zeigt. Da
+die L\"{o}sung nicht eindeutig ist, wird eine zweite Bedingung, die
+Entropie, eingef\"{u}hrt, welche in diesem Fall maximal sein muss.
+Dieses Verfahren ist sehr rechenintensiv und erfordert schon im
+vorhinein m\"{o}glichst viele Informationen \"{u}ber Zusammensetzung und
+Konzentrationen der Probe.\\
+
+Die bisher genannten Verfahren zur Hintergrunderzeugung sind f\"{u}r
+die Integration in ein Expertensystem wenig geeignet, da sie
+schlecht automatisierbar sind und aufgrund ihrer Komplexit\"{a}t und
+ihrer starken Abh\"{a}ngigkeit von der jeweiligen Messsituation ein
+hohes Ma{\ss} an individueller Erfahrung erfordern. Zudem sind sie
+meist sehr rechenzeitintensiv. Die multivariate CLS-Auswertung, zu
+der das Hintergrundspektrum ben\"{o}tigt wird, erfolgt in 6 Segmenten
+(siehe auch Kap. \ref{bereichsauswahl}). Gesucht wird ein
+Verfahren, bei dem automatisch der Hintergrund in diesen 6
+Segmenten angepasst wird. Es w\"{a}re w\"{u}nschenswert, wenn dies ohne
+Einschr\"{a}nkung f\"{u}r alle Spektrometer einer Baureihe zu realisieren
+w\"{a}re.\\
+
+\bild{htb}{ballsw.wmf}{300}{370}{\it verschiedene
+Einkanalcharakteristiken, \bf A \it eines Atmosph\"{a}renspektrums,
+\bf B \it eines N\down{2}--Laborspektrums, \bf C \it bearbeitetes
+Spektrum aus \bf B\it . Die Intensit\"{a}t ist in willk\"{u}rlichen
+Einheiten angegeben.}
+
+\bild{htb}{spektrsw.wmf}{380}{456}{\it Einkanalcharakteristiken
+verschiedener K300--Spektrometer. Die Intensit\"{a}t ist in
+willk\"{u}rlichen Einheiten angegeben.}
+
+Ein erfolgversprechender Weg besteht darin, ein Laborspektrum
+einer sehr gut mit Stickstoff gesp\"{u}lten K\"{u}vette aufzunehmen und zu
+\"{u}berpr\"{u}fen, welche Basislinieneffekte in den zu betrachtenden
+Segmenten auftreten. Abbildung \ref{ballsw.wmf} \bf A \rm zeigt
+die Einkanalcharakteristik eines Atmosph\"{a}renspektrums, welches zur
+Auswertung ansteht. \bf B \rm ist ein mit demselben Spektrometer
+aufgenommenes Laborspektrum, welches jedoch in einer sehr gut mit
+N\down{2} gesp\"{u}lten Multireflexionsk\"{u}vette aufgenommen wurde. Ein
+solches Spektrum weist nur noch sehr geringe H\down{2}O- und
+CO\down{2}-Banden auf. Diese H\down{2}O-- und CO\down{2}--Banden
+wurden in \bf C \rm gegl\"{a}ttet, so dass damit ein optimales
+Laborspektrum f\"{u}r die weitere Auswertung zur Verf\"{u}gung steht.\\
+
+Abbildung \ref{spektrsw.wmf} zeigt die
+Einkanalspektrencharakteristik von sechs verschiedenen
+K300--Spektrometern. Man sieht, dass vor allem im wichtigen
+Fingerprint--Bereich (1000--1500 cm\up{-1}) schon deutliche
+Unterschiede in den Signaturen, haupts\"{a}chlich durch
+MCT\---De\-tek\-tor\-en unterschiedlicher Chargen bedingt, zu
+erkennen sind. Negativ machen sich hier vor allem die gegen\"{u}ber
+dem KT--K300--1 und LUA--K300--1 bei den anderen Spektrometern
+beobachteten gro{\ss}en Intensit\"{a}tseinbr\"{u}che bei 1200 cm\up{-1}
+bemerkbar. Daraus resultiert ein erheblich schlechteres
+Signal/Rauschverh\"{a}ltnis in diesem wichtigen Bereich. Die
+unterschiedlichen Charakteristiken zeigen aber auch, dass die
+Strategie, ein ideales Laborspektrum als Hintergrundspektrum zu
+nehmen, nur f\"{u}r jedes Spektrometer individuell funktionieren
+kann.\\
+
+Da nicht f\"{u}r alle Spektrometer die M\"{o}glichkeit besteht, ein
+optimales Laborspektrum mittels Langwegzelle aufzunehmen, wurde
+eine zweite Strategie zur Berechnung eines synthetischen
+Hintergrundes entwickelt. Hierbei wird die erste Ableitung des
+Atmosph\"{a}ren--Einkanalspektrums und des optimalen
+Laborhintergrundspektrums gebildet. An Stellen mit einer
+Abweichung der beiden Werte um mehr als 10\%  sind Banden im
+Spektrum anzunehmen. Diese Punkte werden eliminiert und durch die
+\"{u}brigen eine Splinefunktion approximiert, wodurch ein
+synthetischer Hintergrund bereitgestellt werden kann. Um diese
+Strategie auf andere Spektrometer des gleichen Typs anwenden zu
+k\"{o}nnen, ist ein Laborspektrum eines Spektrometers einer Baureihe
+ausreichend. Je schmaler die Absorptionsbanden, desto exakter ist
+diese Hintergrundanpassung. Sie ist aber nicht, wie bei anderen
+Verfahren, auf Bandenhalbwertsbreiten kleiner 2 cm\up{-1}
+beschr\"{a}nkt und es ist damit auch eine Anpassung sehr
+strukturierter Basislinien m\"{o}glich (siehe z.B. Segment 2 in Abb.
+\ref{backse21.wmf}). Die Auswertung mittels CLS erfolgt in
+Wellenzahlsegmenten. Darauf wird n\"{a}her in Kapitel
+\ref{bereichsauswahl} eingegangen.\\
+
+\bild{htb}{backse21.wmf}{330}{445}{\bf A \it
+Atmosph\"{a}ren--Einkanalspektren im Segment 2. Spektrum \bf a \it
+zeigt das gemessene Feldspektrum und das zugeh\"{o}rige berechnete
+synthetische Hintergrundspektrum (mit Offset 2), \bf b \it das
+ideale Labor-- und \bf c \it das gemessene
+Feld--Hintergrundspektrum. In Teil \bf B \it sind die dazu
+geh\"{o}rigen Extinktionsspektren dargestellt. Hintergrundspektren bei
+der Berechnung der Extinktionsspektren waren in \bf a \it  das
+synthetische, in \bf b \it das ideale Labor-- und in \bf c \it das
+gemessene Feld--Hintergrundspektrum. Die Intensit\"{a}ten in \bf A \it
+sind in willk\"{u}rlichen Einheiten angegeben, die Spektren in \bf B b
+\it und \bf c \it sind mit einem Offset dargestellt. }
+
+\bild{htb}{backse22.wmf}{340}{227}{\it Resultierende Basislinien
+eines Atmosph\"{a}ren--Extinktionsspektrums unter Verwendung
+verschiedener Hintergrundspektren: \bf a \it gemessenes
+Hintergrundspektrum und \bf b \it ideales
+Laborhintergrundspektrum. In \bf c \it und \bf d \it werden die
+Atmosp\"{a}renspektren zweier Spektrometer gleicher Bauart betrachtet.
+\bf c \it zeigt die resultierende Basislinie f\"{u}r zwei zeitlich und
+\"{o}rtlich parallel gemessene Feldspektren zweier baugleicher
+Spektrometer, \bf d \it die resultierende Basislinie f\"{u}r ein
+Feldspektrum von Spektrometer 2 mit dem idealen
+Labor--Hintergrundspektrum von Spektrometer 1. Die Spektren \bf
+b\it , \bf c \it und \bf d \it sind mit einem Offset dargestellt.}
+
+In dem Segment 2 treten f\"{u}r CO\down{2} und im Segment 3 f\"{u}r
+N\down{2}O sehr breite Banden auf, f\"{u}r die durch den Algorithmus
+kein ad\"{a}quates Hintergrundspektrum angepasst wird. Daher muss f\"{u}r
+die Auswertung dieser Gase, die in allen Atmosph\"{a}renspektren
+enthalten sind, f\"{u}r diese Segmente bei Verwendung des Algorithmus
+weiterhin die Information \"{u}ber die Lage dieser breiten Bande
+implementiert werden, um in diesem Bereich eine lineare Basislinie
+anzupassen, was in beiden Segmenten ausreichend ist.\\
+
+Abbildung \ref{backse21.wmf} zeigt die Hintergrundproblematik im
+Segment 2 anhand eines auf einer M\"{u}lldeponie gemessenen
+Atmosph\"{a}reneinkanalspektrums (\bf A a\rm). Aufgrund der \"{o}rtlichen
+Gegebenheiten war es nicht m\"{o}glich, ein Hintergrundspektrum (\bf A
+c\rm ) ohne die gesuchten Komponenten zu messen. Das ideale
+Laborspektrum ist in \bf A b \rm dargestellt, das synthetische
+Hintergrundspektrum direkt \"{u}ber dem gemessenen
+Atmosph\"{a}renspektrum. In \bf B \rm sind die aus den verschiedenen
+Hintergrundspektren resultierenden Extinktionsspektren
+dargestellt. Das obere Spektrum \bf c \rm ist mit dem gemessenen
+und das mittlere Spektrum \bf b \rm mit dem idealen
+Labor-Hintergrund berechnet worden. Man sieht deutlich, dass im
+oberen Spektrum nicht nur die Absorptionsbanden von H\down{2}O und
+CO\down{2} kompensiert worden sind, sondern auch gesuchte
+Zielkomponenten. Die Basislinie ist im Fall des gemessenen
+Hintergrundspektrums akzeptabel, da bei der multivariaten
+CLS-Auswertung grunds\"{a}tzlich eine Basislinie bis zum quadratischen
+Term mitangepasst wird (siehe auch Kap. \ref{clstheorie}). Bei
+Auswertung des Spektrums \bf b \rm hingegen ist die Basislinie
+nicht vollst\"{a}ndig mit diesen Termen anpassbar.\\
+
+Das Extinktionsspektrum, welches mit dem synthetischen Hintergrund
+berechnet wurde, zeigt keinerlei Basislinieneffekte, und somit
+k\"{o}nnen s\"{a}mtliche Komponenten mit ihren wahren Konzentrationen
+analysiert werden.\\
+
+Die resultierende Basislinie, die abh\"{a}ngig vom verwendeten
+Hintergrundspektrum ist, ist f\"{u}r eine  quantitative Auswertung von
+gro{\ss}er Bedeutung. Je besser die Struktur dieser Basislinie durch
+einen Offset, einen linearen und einen quadratischen Term
+angepasst werden kann, desto kleiner ist auch der systematische
+Fehler bei der multivariaten Auswertung. In Abbildung
+\ref{backse22.wmf} sind verschiedene Basislinien dargestellt, die
+diese Problematik deutlich machen. Die Spektren \bf a \rm und \bf
+b \rm zeigen noch einmal die Basislinien aus Abbildung
+\ref{backse21.wmf} \bf B\rm , wobei beide Basislinien mit Spektren
+desselben Spektrometers erhalten wurden. Spektrum \bf c \rm zeigt
+die aufgrund unterschiedlicher Einkanalcharakteristiken
+resultierende Basislinie aus Atmosph\"{a}renspektren von zwei
+Spektrometern gleicher Bauart. Ein gemessenes
+Atmosph\"{a}ren--Hintergrundspektrum mit Spektrometer 1 w\"{u}rde somit
+bei der Auswertung eines Atmosph\"{a}renspektrums, gemessen mit
+Spektrometer 2, zu einer Basislinie f\"{u}hren, die mit den oben
+beschriebenen drei Termen nicht mehr anpassbar ist. Das gleiche
+gilt auch f\"{u}r \bf d\rm , wo anstatt des gemessenen
+Atmosph\"{a}ren--Hintergrundes, ein Labor--Hintergrundspektrum von
+Spektrometer 1 genommen wird. Wird allerdings der mathematische
+Algorithmus zur Berechnung eines Hintergrundspektrums verwendet,
+so lassen sich auch bei Spektrometer 2 die guten Ergebnisse aus
+Abb. \ref{backse21.wmf} \bf a \rm reproduzieren, auch wenn dann
+das Laborspektrum von Spektrometer 1 als Referenz genommen wird.
+Grunds\"{a}tzlich ist also festzuhalten, dass die in dieser Arbeit
+vorgestellte Methode zur Berechnung von Hintergrundspektren f\"{u}r
+Spektrometer der gleichen Bauart eingesetzt werden kann und
+bez\"{u}glich der Gewinnung nahezu idealer Basislinien hervorragende
+Ergebnisse liefert. Alle Komponenten k\"{o}nnen mit ihren wahren
+Konzentrationen ausgewertet werden. Eventuell vorhandene
+Querempfindlichkeiten zu Atmosph\"{a}renkomponenten werden allerdings
+nicht von vornherein eliminiert. Dieses Verfahren ist allerdings
+nur f\"{u}r schmale Absorptionsbanden anwendbar.\\
+
+\bild{htb}{isoback.wmf}{365}{410}{\bf A a \it zeigt ein mit
+Spektrometer 1 gemessenes Isobuten--Einkanalspektrum mit direkt
+anschlie{\ss}end gemessenem Hintergrundspektrum. Das gestrichelte
+Spektrum \bf c \it ist das ideale Laborhintergrundspektrum von
+Spektrometer 1 (mit Offset 2). \bf b \it zeigt ein mit
+Spektrometer 2 gemessenes Hintergrundspektrum. \bf B \it zeigt die
+zugeh\"{o}rigen Extinktionsspektren. \bf a \it f\"{u}hrt zu einer
+Volumenanteil$\cdot$ Wegl\"{a}nge--Vorhersage von 224.1 ppm$\cdot$m
+(die Verwendung des gemessenen oder idealen Hintergrundes f\"{u}hrt zu
+demgleichen Ergebnis), \bf b \it (Extinktionsspektrum aus \bf A a
+\it und \bf b \it von 269.4 ppm$\cdot$m. Die Intensit\"{a}ten in \bf A
+\it sind in willk\"{u}rlichen Einheiten, die Extinktion in \bf B b \it
+ist mit einem Offset angegeben.}
+
+Abbildung \ref{isoback.wmf} \bf A a \rm zeigt den Spektralbereich
+mit der intensivsten Bande von Isobuten. Dar\"{u}ber ist das gleich im
+Anschluss gemessene Hintergrundspektrum zu sehen. Es zeigt
+deutlich, dass die Isobutenbande in einem Bereich von etwa 75
+cm\up{-1} vorliegt und eine Berechnung des synthetischen
+Hintergrundes mit dem oben vorgestellten Algorithmus nur den
+maximalen Peak um 890 cm\up{-1} erkennen w\"{u}rde und somit f\"{u}r
+diesen Fall nicht einsetzbar ist. Spektrum \bf c \rm zeigt ein
+Laborspektrum desselben Spektrometers. Es ist in diesem kleinen
+Wellenzahlbereich von 800--975 cm\up{-1} identisch mit dem gleich
+im Anschluss an das Isobutenspektrum gemessene
+Hintergrundspektrum. Beide sind somit f\"{u}r die Auswertung der Bande
+geeignet. Spektrum \bf b \rm hingegen ist das
+Atmosph\"{a}renhintergrundspektrum von Spektrometer 2 in diesem
+Bereich. Es ist deutlich zu sehen, dass es f\"{u}r die Auswertung
+dieser breiten Bande nicht geeignet ist. In \bf B \rm werden die
+resultierenden Banden im Extinktionsspektrum gezeigt, wenn in \bf
+a \rm das gemessene Hintergrundspektrum von Spektrometer 1 und in
+\bf b \rm das gemessene Hintergrundspektrum von Spektrometer 2 f\"{u}r
+die Auswertung genommen werden. Die Konzentrationsbestimmung \"{u}ber
+die Extinktionsspektren f\"{u}hrt zu einem Unterschied von 20\%.\\
+
+Bei breiten Banden ist es somit im Normalfall unerl\"{a}sslich,
+Hintergrundspektren, aufgenommen mit demselben Spektrometer,
+vorliegen zu haben, um richtige Ergebnisse erzielen zu k\"{o}nnen. In
+diesem Fall h\"{a}tte auch die Anpassung einer Geraden zwischen 850
+und 925 cm\up{-1} zu einem falschen Ergebnis gef\"{u}hrt.\\
+
+
+
+
+\section{\label{crosscorr}Komponentenerkennung}
+
+W\"{a}hrend in den vorhergehenden Kapiteln die Kenntnis der
+Stoffzusammensetzung als bekannt vorausgesetzt wurde, verwendet
+man Methoden der Mustererkennung ("`pattern recognition"') h\"{a}ufig
+dann, wenn Vorstellungen \"{u}ber die qualitative Zusammensetzung
+fehlen. Eine qualitative Analyse ist dann erforderlich, wenn
+beispielsweise die Basis f\"{u}r die quantitative Spektrenauswertung
+bestimmt werden muss, um verl\"{a}ssliche Ergebnisse \"{u}ber das
+klassische Kalibrationsverfahren zu erhalten (Kap.
+\ref{clstheorie}). F\"{u}r die Bewertung kommen Abstands-- und
+\"{A}hnlichkeitsma{\ss}e in Frage, die z.B. \"{u}ber Trainingssets definiert
+werden. Eine Anwendung f\"{u}r die Erkennung von fl\"{u}chtigen
+organischen Stoffen mittels FT--IR Spektroskopie und
+Diskriminanzanalyse ist bei \cite{kroutil94} beschrieben. Auch
+l\"{a}sst sich eine Spektrenbibliothekssuche f\"{u}r die qualitative
+Mischungsanalyse einsetzen. \cite{lowry85} et al. untersuchten
+beispielsweise verschiedene Vergleichsalgorithmen auf der Basis
+von Vollspektren.\\
+
+F\"{u}r ein Expertensystem zur automatischen Analyse von
+Atmosph\"{a}renspektren mittels CLS (siehe Kap. \ref{expertensystem})
+ist es unerl\"{a}sslich, die qualitative Zusammensetzung des Gemisches
+zu kennen. Das Verfahren der Wahl sollte neben der zuverl\"{a}ssigen
+Erkennung s\"{a}mtlicher im Gemisch enthaltener Stoffe, auch
+unproblematisch jederzeit f\"{u}r zus\"{a}tzliche Substanzen erweiterbar
+sein. F\"{u}r die oben angesprochenen Verfahren ist dies nicht ohne
+weiteres m\"{o}glich. Der alleinige Einsatz des Moduls zur univariaten
+Auswertung einer f\"{u}r jeden Stoff charakteristischen Bande
+erscheint ebenso als nicht sinnvoll, weil in der \"{u}berwiegenden
+Mehrzahl der F\"{a}lle Querempfindlichkeiten mit anderen Stoffen
+auftreten. Aufgrund der bei den meisten Substanzen m\"{o}glichen
+Querempfindlichkeiten, ist eine sichere automatische qualitative
+Information \"{u}ber die Zusammensetzung des Gemisches nicht zu
+erhalten.\\
+
+Die Kreuzkorrelation (siehe z.B. \cite{ehrentreich97}) als ein
+Mustererkennungsverfahren ist von diesen Querempfindlichkeiten
+weit weniger beeinflusst, desweiteren k\"{o}nnen Substanzen in
+geringeren Konzentrationen als bei der univariaten Analyse noch
+erkannt werden. Im Gegensatz zur univariaten Analyse erh\"{a}lt man
+aber \"{u}ber die Kreuzkorrelation noch keine quantitativen Aussagen
+zu den einzelnen Stoffen im Gemisch. Daf\"{u}r ist die Erweiterung des
+Verfahrens auf andere Substanzen schnell und unproblematisch
+m\"{o}glich.\\
+
+F\"{u}r digitalisierte Signale gilt f\"{u}r die Kreuzkorrelationsfunktion
+\bf ccf \rm zweier Spektren \bf a \rm und \bf b \rm mit N
+Datenpunkten:
+\begin{equation}\label{eqcrosscorr}
+ccf_{ab}(i\,\Delta\!\stackrel{\sim}{\nu}) = \sum_{i=-(N-1)}^{N-1}a
+(\stackrel{\sim}{\nu}) \;
+b(\stackrel{\sim}{\nu}+i\,\Delta\!\stackrel{\sim}{\nu})
+\end{equation}
+Durch die Kreuzkorrelation erh\"{a}lt man Informationen \"{u}ber die
+\"{A}hnlichkeit zweier Extinktionsspektren. Sie ist das \"{u}ber den
+betrachteten Wellenzahlbereich integrierte Produkt der beiden
+Spektren als Funktion ihrer Wellenzahlverschiebung
+untereinander.\\
+
+F\"{u}r die Mustererkennung in FT--IR Atmosph\"{a}renspektren wird f\"{u}r
+jede in der Bibliothek vorliegende Referenzsubstanz ein
+charakteristischer Wellenzahlbereich herausgesucht und mit dem
+Atmosph\"{a}renspektrum in diesem Bereich verglichen. Der ausgesuchte
+Bereich sollte die st\"{a}rksten Absorptionsbanden der
+Referenzsubstanz enthalten und m\"{o}glichst wenig H\down{2}O-- und
+CO\down{2}--Querempfindlichkeit besitzen. Ist die Referenzsubstanz
+im Gemisch enthalten, so besitzt die Kreuzkorrelation f\"{u}r die
+Wellenzahlverschiebung $\Delta\!\stackrel{\sim}{\nu}\,=\,0$ ein
+Maximum. Beide Extinktionsspektren werden so aufeinander normiert,
+dass das Maximum der Kreuzkorrelationsfunktion grunds\"{a}tzlich
+kleiner eins ist \cite{ehrentreich97}.\\
+
+F\"{u}r die Praxis sind drei Fragen von Bedeutung. Welche minimale
+Konzentration kann bei einer in einem Gemisch vorliegenden
+Substanz noch erkannt werden, welchen Einfluss haben noch weitere
+Komponenten im betrachteten Wellenzahlbereich und wieweit h\"{a}ngen
+die beiden vorherigen Fragestellungen auch von der Breite der
+betrachteten Banden ab? Diese Fragen k\"{o}nnen jedoch nicht eindeutig
+beantwortet werden, sondern h\"{a}ngen immer vom betrachteten Fall ab,
+wobei sich aber anhand von Beispielen eindeutige Trends erkennen
+lassen. Als Beispielsubstanzen f\"{u}r relevante Atmosph\"{a}renschadgase
+wurden Methan, Ammoniak, o--Xylol und Toluol gew\"{a}hlt. Methan und
+Ammoniak zeigen im ausgew\"{a}hlten Spektralbereich schmale
+Signaturen, o--Xylol besitzt grunds\"{a}tzlich nur sehr breite Banden,
+wohingegen Toluol im betrachteten Bereich eine Mischung aus beiden
+aufweist. Um die minimalen Nachweisgrenzen f\"{u}r diese Substanzen zu
+ermitteln, wurde ein schadgasfreies Atmosph\"{a}renspektrum
+herangezogen, das Rauschen in den betrachteten Bereichen bestimmt,
+das Maximum in den Referenzspektren innerhalb des betrachteten
+spektralen Intervalls auf 0, 2, 3 und 10 $\sigma$ (zur
+Standardabweichung $\sigma$ siehe Kap. \ref{clstheorie}) dieses
+Rauschens normiert und zu dem Atmosph\"{a}renspektrum addiert. Danach
+wurden die zugeh\"{o}rigen Kreuzkorrelationsfunktionen bestimmt.\\
+
+\bild{htb}{ccmeth.wmf}{365}{400}{\it Referenzspektren von Methan
+und typisches Rauschen eines Atmosph\"{a}renspektrums im betrachteten
+Spektralbereich plus dem jeweiligen Referenzspektrum, dessen
+Maximum auf 3 $\sigma$ des RMS--Rauschens normiert wurde (oben).
+Das Rauschspektrum ist mit einem Offset dargestellt. Dazugeh\"{o}rige
+Kreuzkorrelationsfunktionen (unten) f\"{u}r unterschiedliche
+CH\down{4}--Konzentrationen.}
+
+\bild{htb}{ccamm.wmf}{365}{400}{\it Referenzspektren von Ammoniak
+und typisches Rauschen eines Atmosph\"{a}renspektrums im betrachteten
+Spektralbereich plus dem jeweiligen Referenzspektrum, dessen
+Maximum auf 3 $\sigma$ des RMS--Rauschens normiert wurde (oben).
+Das Rauschspektrum ist mit einem Offset dargestellt. Dazugeh\"{o}rige
+Kreuzkorrelationsfunktionen (unten) f\"{u}r unterschiedliche
+NH\down{3}--Konzentrationen.}
+
+\bild{htb}{ccoxyl.wmf}{365}{400}{\it Referenzspektren von o--Xylol
+und typisches Rauschen eines Atmosph\"{a}renspektrums im betrachteten
+Spektralbereich plus dem jeweiligen Referenzspektrum, dessen
+Maximum auf 3 $\sigma$ des Rauschens normiert wurde (oben). Das
+Rauschspektrum ist mit einem Offset dargestellt. Dazugeh\"{o}rige
+Kreuzkorrelationsfunktionen (unten) f\"{u}r unterschiedliche
+o--Xylol--Konzentrationen.}
+
+\bild{htb}{cctol.wmf}{365}{400}{\it Referenzspektren von Toluol
+und typisches Rauschen eines Atmosph\"{a}renspektrums im betrachteten
+Spektralbereich plus dem jeweiligen Referenzspektrum, dessen
+Maximum auf 3 $\sigma$ des Rauschens normiert wurde (oben). Das
+Rauschspektrum ist mit einem Offset dargestellt. Dazugeh\"{o}rige
+Kreuzkorrelationsfunktionen (unten) f\"{u}r unterschiedliche
+Toluol--Konzentrationen.}
+
+Kriterium f\"{u}r die Detektion eines Gases ist, dass das Maximum der
+Kreuzkorrelationsfunktion der beiden Spektren untereinander bei
+der Punktverschiebung null liegt. F\"{u}r schmalbandige Strukturen,
+wie sie Methan und Ammoniak zeigen (siehe Abb. \ref{ccmeth.wmf}
+und \ref{ccamm.wmf}), sind die Kreuzkorrelationsfunktionen recht
+glatt und zeigen ein eindeutiges Maximum. Schon bei
+Extinktionswerten der betrachteten Stoffe, die in der
+Gr\"{o}{\ss}enordnung des 2$\sigma$--Rauschens liegen, wird der Stoff
+durch den Algorithmus erkannt. Eine sichere Zuordnung ist auf
+jeden Fall bei Extinktionswerten \"{u}ber 3$\sigma$ des Rauschens
+m\"{o}glich. Bei der recht breiten o--Xylol--Bande (Abb.
+\ref{ccoxyl.wmf}) hingegen ist die Kreuzkorrelation hinsichtlich
+einer Maximumsausgestaltung schlechter strukturiert und eine
+eindeutige Zuordnung des Maximums erst ab etwa 5$\sigma$ des
+Rauschens m\"{o}glich. Das Extinktionsspektrum der st\"{a}rksten Banden
+von Toluol zeigt eine Mischung aus schmalen und breiten Banden.
+Auch hier ist, wie bei Stoffen mit ausschlie{\ss}lich schmalen
+Strukturen, eine eindeutige Zuordnung des Maximums in der
+Kreuzkorrelationsfunktion ab einer Konzentration des Toluols,
+dessen gr\"{o}{\ss}te Bande etwa 3$\sigma$ des Rauschens entspricht,
+m\"{o}glich.\\
+
+Neben den minimalen Nachweisgrenzen ist das Verhalten der
+Kreuzkorrelationsfunktionen bei vorliegenden Gemischen wichtig. In
+Abbildung \ref{ccat.wmf} \bf A \rm ist ein Atmosph\"{a}renspektrum,
+aufgenommen bei einer Wegl\"{a}nge von 135 m, dargestellt. In dem
+gezeigten Spektralbereich sind Bandenstrukturen von H\down{2}O,
+N\down{2}O und CO enthalten. In \bf C \rm werden die zugeh\"{o}rigen
+Kreuzkorrelationsfunktionen von H\down{2}O und N\down{2}O gezeigt.
+Beide Maxima liegen eindeutig bei der Punktverschiebung null und
+beide Komponenten werden somit erkannt. Das Maximum der
+Kreuzkorrelationsfunktion von CO (\bf B \rm ) hingegen liegt nicht
+bei der Position null, obwohl CO (siehe auch das
+CO--Referenzspektrum) einen signifikanten und deutlich sichtbaren
+Beitrag zum Atmosph\"{a}renspektrum liefert. Nach dem skalierten Abzug
+von H\down{2}O und N\down{2}O (\bf A \rm , Res 1), wird CO durch
+die Kreuzkorrelationsfunktion eindeutig detektiert. In der
+Spektren\"{u}bersicht (\bf A \rm , Res 2) ist vom Res 1 auch CO noch
+einmal skaliert abgezogen worden. Die restlichen Strukturen liegen
+in dem unzureichenden CO--Referenzspektrum begr\"{u}ndet (siehe hierzu
+auch Kap. \ref{motivation}). Auch bei solchen Strukturen l\"{a}sst
+sich durch die Kreuzkorrelationsfunktion noch ein \"{U}berrest von CO
+erkennen (\bf E\rm ).\\
+
+\bild{htb}{ccat.wmf}{365}{480}{\bf A \it Atmosph\"{a}renspektrum von
+H\down{2}O, N\down{2}O und CO (mit Offset). Weiterhin sind das
+CO--Referenzspektrum und die Residuen (mit Offset) nach skalierten
+Abzug von H\down{2}O und N\down{2}O (Res 1) und zus\"{a}tzlich auch CO
+(Res 2) dargestellt. In \bf B\it, \bf C\it, \bf D \it und \bf E
+\it sind die dazugeh\"{o}rigen Kreuzkorrelationsfunktionen dargestellt
+(Kommentar siehe Text, KK--Kreuzkorrelation).}
+
+Dieses Beispiel zeigt, dass es Situationen geben kann, in denen
+die Kreuzkorrelationsfunktion im ersten Schritt nicht s\"{a}mtliche
+Komponenten, obwohl sie signifikant vorhanden sind, herausfindet.
+Abgesehen davon, dass der Wassergehalt in diesem Beispiel um den
+Faktor 2 bis 3 h\"{o}her liegt als in gew\"{o}hnlichen Atmosph\"{a}renspektren
+bei 135 m Wegl\"{a}nge (bei "`normalem"' Wassergehalt w\"{a}ren alle 3
+Komponenten eindeutig erkannt worden), ist die Auswahl des
+Spektralbereichs f\"{u}r die Komponenten nicht optimal gew\"{a}hlt. Eine
+Beschr\"{a}nkung des Spektralbereichs f\"{u}r CO auf den Bereich von
+2164-2180.5 cm\up{-1} ergibt f\"{u}r CO sofort eine
+Kreuzkorrelationsfunktion, die ihr Maximum eindeutig bei der
+Position Null besitzt.\\
+
+\markright{\sl MATHEMATISCHE AUSWERTEVERFAHREN}
+
+Eine sorgf\"{a}ltige Auswahl des Spektralbereichs, in dem f\"{u}r einen
+jeweiligen Referenzstoff die Kreuzkorrelation durchgef\"{u}hrt wird,
+ist also von \"{a}u{\ss}erster Wichtigkeit. Es ist dabei darauf zu achten,
+dass die bekannten Querempfindlichkeiten zu H\down{2}O und
+CO\down{2} so weit wie m\"{o}glich vermieden werden. Desweiteren
+sollte ein Spektralbereich mit den gr\"{o}{\ss}ten Absorptionsbanden und
+mit m\"{o}glichst viel "`Strukturen"' in den Absorptionsbanden
+herausgesucht werden. Unter diesen Voraussetzungen zeigen die
+bisherigen Erfahrungen, dass die automatische Komponentenerkennung
+mittels Kreuzkorrelation sehr gute Ergebnisse liefert. Das
+Beispiel in Abbildung \ref{ccat.wmf} zeigt, dass f\"{u}r die
+Ausnahmef\"{a}lle, in denen die Kreuzkorrelation nicht alle
+Komponenten erkennt und bei denen in den nach der CLS--Auswertung
+verbleibenden Residuen noch Strukturen verbleiben, in einem 2.
+Iterationsschritt auch die restlichen Komponenten erkannt und
+ausgewertet werden k\"{o}nnen, sofern sie in der
+Referenzspektrenbibliothek enthalten sind. Die Implementierung
+eines neuen Referenzstoffes f\"{u}r die Komponentenerkennung mittels
+Kreuzkorrelation ist unproblematisch. Es muss f\"{u}r diesen Stoff nur
+ein charakteristischer Spektralbereich gefunden werden, der o.g.
+Voraussetzungen erf\"{u}llt.\\
+
+
+\section{\label{auswerteverfahren}Mathematische Auswerteverfahren f\"{u}r die
+FTIR--Fernsondierung}
+
+\markright{\sl MATHEMATISCHE AUSWERTEVERFAHREN}
+
+Nachdem in den vorhergehenden Abschnitten die
+spektrometerabh\"{a}ngigen und atmosph\"{a}rischen Einfl\"{u}sse, die das
+Messergebnis verf\"{a}lschen k\"{o}nnen, aufgezeigt und eliminiert worden
+sind, stehen nun auch die Spektren und Informationen zur
+Verf\"{u}gung, die f\"{u}r eine zuverl\"{a}ssige und pr\"{a}zise Auswertung
+unerl\"{a}sslich sind. Hierzu geh\"{o}ren das detektornichtlinearit\"{a}ts--
+und wellenzahlkorrigierte Atmosph\"{a}reneinkanalspektrum, das
+zugeh\"{o}rige Eigenstrahlungsspektrum, das gemessene oder synthetisch
+generierte Hintergrundeinkanalspektrum mit Eigenstrahlungsspektrum
+und die z.B. mittels Kreuzkorrelation erhaltene Information \"{u}ber
+die im Gemisch enthaltenen Komponenten.\\
+
+Bei der mathematischen Auswertung von IR--Spektren unterscheidet
+man zwischen univariaten und multivariaten Methoden. Bei der
+univariaten Auswertung wird nur jeweils eine charakteristische
+Bande einer Komponente analysiert, bei der multivariaten
+Auswertung mehrere oder ein ganzes Spektrensegment in die
+Auswertung miteinbezogen. Im folgenden werden die Vorgehensweisen,
+die zu erhaltenden Nachweisgrenzen und die Vor-- und Nachteile der
+einzelnen Methoden dargelegt.
+
+
+\subsection{\label{univariat}Univariate Auswerteverfahren}
+
+F\"{u}r bestimmte Komponenten liegen \"{u}berlagerungsfreie
+Absorptionslinien vor. Dies betrifft insbesondere kleine Molek\"{u}le,
+die eine aufgel\"{o}ste Rotationsfeinstruktur in den Spektren unter
+den vorgegebenen atmosph\"{a}rischen Bedingungen aufweisen. F\"{u}r
+ausgew\"{a}hlte Szenarien (H\down{2}O, CO\down{2}, N\down{2}O, CO,
+CH\down{4}, NH\down{3}, C\down{2}H\down{6}, SF\down{6},
+C\down{6}H\down{6}, C\down{2}H\down{4} und C\down{3}H\down{6}) ist
+es daher m\"{o}glich, aus den logarithmierten Einkanalspektren
+verl\"{a}ssliche quantitative Informationen \"{u}ber diese Stoffe zu
+erhalten. Durch die Definition von Linienmaximum und Basislinie
+lassen sich ohne gro{\ss}en rechnerischen Aufwand eine Absch\"{a}tzung der
+vorliegenden Konzentrationen vornehmen. Dadurch dass im
+allgemeinen beide Wellenzahlpunkte eng beieinander liegen, k\"{o}nnen
+Basislinienprobleme von vornherein umgangen werden. Auch bei
+gr\"{o}{\ss}eren Molek\"{u}len existieren oftmals schmale
+Q--Zweig--Absorptionen, die f\"{u}r solch 'univariate' Auswertungen
+herangezogen werden k\"{o}nnen. Eng beieinander liegende Minimum-- und
+Maximumpunkte definieren dann die zu ber\"{u}cksichtigenden
+Extinktionen. Eine geringf\"{u}gige Wellenzahlverschiebung ist
+unproblematisch, da z.B. das Linienmaximum in der logarithmischen
+Darstellung der Einkanalspektren innerhalb bestimmter Grenzen
+einwandfrei bestimmbar und der Abstand zum in die Auswertung
+miteinbezogenem Minimum fest vorgegeben ist.\\
+
+Die hiermit erhaltenen Konzentrationssch\"{a}tzungen lassen sich f\"{u}r
+die Aufstellung der Referenzspektrenmatrix nutzen, die bei dem
+klassischen Anpassungsverfahren CLS (Kap. \ref{clstheorie})
+notwendig ist und die m\"{o}glichst nur die vorhandenen Komponenten
+enthalten sollte, die einen Beitrag zum auszuwertenden
+Atmosph\"{a}renspektrum liefern. Die CLS--Anpassung wird in
+Extinktionsbereichen mit nichtlinearen spektralen Strukturen umso
+besser, je n\"{a}her die Konzentrationen der ausgew\"{a}hlten
+Referenzspektren denen in der Mischung entsprechen. Da die
+Kreuzkorrelation nur eine qualitative Aussage \"{u}ber die
+Zusammensetzung der Stoffmatrix, aber keine quantitativen Werte
+f\"{u}r die einzelnen Stoffe liefert, k\"{o}nnen die quantitativen
+Zusatzinformationen der univariaten Analyse genutzt werden, um die
+Referenzspektrenmatrix f\"{u}r die CLS--Analyse aufzustellen.\\
+
+Bei der Auswahl der Linien ist hinsichtlich atmosph\"{a}rischer
+Temperaturschwankungen Sorge zu tragen, wenn nicht explizit die
+Temperaturabh\"{a}ngigkeit ber\"{u}cksichtigt werden kann. Dies ist
+m\"{o}glich, wenn beispielsweise von der HITRAN96--Datenbank
+ausgegangen wird, in der auch Temperaturabh\"{a}ngigkeiten
+dokumentiert sind. Eine Faltung mit den erforderlichen
+instrumentellen Linienfunktionen ist notwendig, um die
+experimentellen Daten sinnvoll auswerten zu k\"{o}nnen (siehe Abb.
+\ref{cotemp.wmf}).
+
+
+\subsubsection{\label{benzol}Benzolproblematik}
+
+In einigen F\"{a}llen wie z.B. beim Benzol ist eine
+"`pseudo"'--univariate Auswertung unerl\"{a}sslich. In
+Atmosph\"{a}renspektren wird die st\"{a}rkste Benzolbande (Q--Zweig bei
+674 cm\up{-1}) stark von der benachbarten CO\down{2}--Bande
+\"{u}berlappt (die Extinktionen unterscheiden sich um ungef\"{a}hr zwei
+Gr\"{o}{\ss}enordnungen). Um niedrige Nachweisgrenzen im ppb--Bereich zu
+erhalten, ist es aber unerl\"{a}sslich, diese Bande auszuwerten, weil
+die \"{u}brigen Schwingungsbanden im mittleren Infrarot weitaus
+schw\"{a}cher ausfallen. Ein die Analyse weiter erschwerender Punkt
+bei bistatischen Systemen ist, dass die Eigenstrahlung f\"{u}r die
+quantitative Bestimmung mitber\"{u}cksichtigt werden muss (siehe auch
+Kap. \ref{photometgen}).\\
+
+\bild{htb}{benzausw.wmf}{365}{480}{\bf A \it Benzolatmosph\"{a}ren--,
+dazugeh\"{o}riges Eigenstrahlungs-- und Kurzwegeinkanalspektrum. \bf B
+\it aufeinander skaliertes und logarithmiertes Benzolatmosph\"{a}ren-
+und CO\down{2}--Referenz--Einkanalspektrum. \bf C \it nach der
+Subtraktion erhaltene Benzolbande bei einer spektralen Aufl\"{o}sung
+von 0.2 cm\up{-1} mit der noch nicht korrigierten
+Extinktionsskala. Die Intensit\"{a}t ist in willk\"{u}rlichen Einheiten
+dargestellt.}
+
+
+F\"{u}r die Analyse eines Benzol--Atmosph\"{a}renspektrums werden das
+zugeh\"{o}rige Eigenstrahlungsspektrum, sowie ein CO\down{2}-- und ein
+Kurzweg--Referenzspektrum ohne CO\down{2}--Banden ben\"{o}tigt (Abb.
+\ref{benzausw.wmf} \bf A\rm ). Aufgrund der gro{\ss}en
+Extinktionsunterschiede zwischen der Benzol-- und der
+CO\down{2}--Bande, muss mit Hilfe eines CO\down{2}--
+Referenzspektrums eine skalierte Subtraktion der CO\down{2}--Bande
+vorgenommen werden. Im CO\down{2}--Referenzspektrum sollte aus
+diesem Grund das ann\"{a}hernd gleiche Produkt aus
+CO\down{2}--Volumenanteil mal Wegl\"{a}nge ber\"{u}cksichtigt werden wie
+im auszuwertenden Atmosph\"{a}renspektrum. Dabei gilt, dass je besser
+die CO\down{2}-- Konzentrationen \"{u}bereinstimmen, desto besser die
+Subtraktion durchf\"{u}hrbar ist. Bei Abweichungen um mehr als 10\%
+ist eine Auswertung i.a. nicht mehr m\"{o}glich. Hinzu kommt, dass bei
+einer durchschnittlichen CO\down{2}--Atmosph\"{a}renkonzentration von
+360 ppm ab einer optischen Wegl\"{a}nge von etwa 150 m aufgrund der
+Durchabsorption der CO\down{2}--Bande eine Analyse in diesem
+Spektralbereich nicht mehr m\"{o}glich ist.\\
+
+Die skalierte CO\down{2}--Subtraktion wird \"{u}ber die
+logarithmierten Einkanalspektren vorgenommen. Die
+Multiplikationsfaktoren erh\"{a}lt man durch einen Least--Squares--Fit
+zwischen den beiden logarithmierten Spektren in den Bereichen
+671.8 -- 673.3 cm\up{-1} und 674.2 -- 676.5 cm\up{-1} (Abb.
+\ref{benzausw.wmf} \bf B\rm ). Dabei ist zu beachten, dass ein
+vorheriger Abzug der Eigenstrahlung von den Einkanalspektren nicht
+m\"{o}glich ist, da aufgrund des dann erheblich schlechteren
+Signal/Rauschverh\"{a}ltnisses eine zufriedenstellende Kompensation
+der CO\down{2}--Bande nicht mehr m\"{o}glich ist. Dies f\"{u}hrt jedoch
+dazu, dass die durch die Subtraktion erhaltene Extinktionsskala
+mit Hilfe einer Transformationsfunktion in die korrekte Skala
+umgerechnet werden muss. Zum Aufstellen dieser
+Transformationsfunktion werden neben dem
+Benzol--Atmosph\"{a}reneinkanalspektrum das zugeh\"{o}rige
+Eigenstrahlungsspektrum und ein Kurzweg--Referenzspektrum
+ben\"{o}tigt.\\
+
+Die Nachweisgrenze f\"{u}r Benzol in Spektren, die bei einer Wegl\"{a}nge
+von 100 m und einer Aufl\"{o}sung von 0.2 cm\up{-1} gemessen wurden,
+liegt bei etwa 25 ppb. Mit einer schlechteren Aufl\"{o}sung von 1
+cm\up{-1} erh\"{a}lt man aufgrund des Gl\"{a}ttungseffekts eine etwas
+verbesserte Subtraktion der CO\down{2}--Bande, was zu einer
+geringf\"{u}gig niedrigeren Nachweisgrenze f\"{u}hrt. Grunds\"{a}tzlich gilt
+aber, dass die Artefakte aufgrund der Subtraktion gr\"{o}{\ss}er sind als
+das Rauschen (Abb. \ref{benzausw.wmf} \bf C\rm ).\\
+
+
+Bei der Analyse von Labor--Benzolspektren mit einer Aufl\"{o}sung von
+0.2 cm\up{-1} im Bereich von 25 -- 400 ppb wurde bei Anwendung
+dieser Auswertungstechnik ein mittlerer relativen Vorhersagefehler
+der Volumenanteile von 11\% erreicht, was bei dieser aufwendigen
+Art der Auswertung ein gutes Ergebnis ist. W\"{u}nschenswert w\"{a}ren
+allerdings noch niedrigere Nachweisgrenzen, da Benzol carcinogen
+wirkt und daher ein MAK--Wert (maximale Arbeitsplatzkonzentration)
+nicht mehr angegeben wird. F\"{u}r Benzol gilt eine toxisch relevante
+Konzentration (TRK--Wert) von 5 ppm, welche problemlos mit der
+FT--IR Spektroskopie gemessen werden k\"{o}nnen.\\
+
+
+
+\subsection{\label{multivariat}Multivariate Auswerteverfahren}
+
+Bei den multivariaten Verfahren, bei denen mehrere Wellenzahlen
+oder ganze Wellenzahlbereiche in die Auswertung miteinbezogen
+werden, unterscheidet man zwischen der klassischen Modellbildung
+(\bf C\rm lassical \bf L\rm east \bf S\rm quares, CLS) und
+statistischen Modellen (z.B. unter Verwendung von \bf P\rm artial
+\bf L\rm east \bf S\rm quares, PLS, Faktorzerlegungsverfahren oder
+auch der Einsatz von neuronalen Netzen). Bei der atmosph\"{a}rischen
+Gasanalytik mittels FT--IR haben sich aber gerade die klassischen
+Verfahren aus Gr\"{u}nden, die im folgenden noch dargelegt werden,
+bew\"{a}hrt, so dass nur in noch zu nennenden Ausnahmef\"{a}llen auf die
+statistischen Modelle zur\"{u}ckgegriffen werden sollte. Aus diesem
+Grund wird auch nur die klassische Modellbildung im folgenden
+ausf\"{u}hrlich behandelt.\\
+
+\subsubsection{\label{clstheorie}Classical Least Squares--Algorithmus}
+
+Ein Gemischspektrum \bf a \rm setzt sich aus der Summe der
+Spektren der im Gasgemisch enthaltenen n--Komponenten $\bf K\rm
+^i$ (i--Spalte der Referenzspektrenmatrix \bf K\rm ) und einem
+Anteil \bf e \rm zusammen, in dem Modellabweichungen und das
+Rauschen ber\"{u}cksichtigt wird. Der multiplikative Faktor $c_i$
+entspricht der Konzentration der jeweiligen Komponente im Gemisch
+(der Einfachheit halber wird angenommen, dass f\"{u}r die
+Referenzspektren Komponentenkonzentrationen von 1 vorliegen). Im
+folgenden werden Matrizen mit fettgedruckten Gro{\ss}buchstaben und
+Vektoren mit fettgedruckten Kleinbuchstaben bezeichnet.
+
+\begin{equation}\label{egcls1}
+  \bf a\rm = \sum^n_{i=1} \bf K\rm ^i\rm  \cdot c_i + \bf e
+\end{equation}
+oder in Matrixschreibweise
+
+\begin{equation}\label{eqcls2}
+  \bf a \rm = \bf K \cdot c \rm + \bf e
+\end{equation}
+Aufgrund des Abweichungsterms \bf e \rm kann dieses
+Gleichungssystem nur n\"{a}herungsweise gel\"{o}st werden. Das Spektrum,
+das nach Subtraktion der Referenzspektren mit den durch die
+Anpassung erhaltenen Koeffizienten vom Atmosph\"{a}renspektrum
+resultiert, wird \it Residuum \rm genannt. Gefordert ist, dass
+dieses resultierende Residuumspektrum \bf r \rm mit der Methode
+der kleinsten Quadrate minimiert wird, wobei man den Vektor \bf c
+\rm so bestimmt, dass die euklidische L\"{a}nge von \bf r \rm minimal
+wird. Die hierzu notwendige (und auch hinreichende) Bedingung
+
+\begin{equation}\label{eqcls3}
+  \nabla_c | \bf a \rm - \bf K \cdot c\rm |^2=0
+\end{equation}
+f\"{u}hrt auf die Normalengleichung
+\begin{equation}\label{eqcls3a}
+  \bf K^T \cdot K \cdot c_{opt} = K^T \cdot a
+\end{equation}
+Diese Gleichungen sind stets l\"{o}sbar, bei einer Matrix $\bf K$ von
+vollem Rang sogar eindeutig l\"{o}sbar mit der L\"{o}sung
+\begin{equation}\label{eqcls4}
+ \bf c_{opt} = (K^T\cdot K)^{-1}\cdot K^T\cdot a\rm
+\end{equation}
+Somit ist f\"{u}r eine eindeutige L\"{o}sung eine Voraussetzung, dass die
+Anzahl der betrachteten Wellenl\"{a}ngen gr\"{o}{\ss}er als die Anzahl der
+Komponenten im Gemisch ist (\cite{haaland85},
+\cite{saarinen91}).\\
+
+In Kap. \ref{bereichsauswahl} werden die Wellenzahlbereiche
+vorgestellt, in denen die CLS--Auswertung die besten Ergebnisse
+liefert. Dort werden zwischen 100 und 5700 spektrale Wertepaare
+ausgewertet, so dass das Gleichungssystem grunds\"{a}tzlich
+\"{u}berbestimmt ist. Eventuell noch vorhandene Basislinien im
+Atmosph\"{a}renspektrum werden dadurch mitangepasst, dass in der
+Referenzspektrenmatrix je ein Vektor f\"{u}r Offset, linearen und
+quadratischen Term bereitgestellt werden. Die Anpassung eines
+kubischen Terms ist i.a. nicht ratsam, da dadurch schon spektrale
+Strukturen mitangepasst werden k\"{o}nnen.\\
+
+Das Rauschen s\"{a}mtlicher Spektren erzeugt, neben den Abweichungen
+vom linearen Modell, den Fehler im Konzentrationsvektor. Bei der
+CLS--Methode wird davon ausgegangen, dass der Abweichungsvektor
+\bf e \rm ausschlie{\ss}lich das Gemischspektrum betrifft, die
+Referenzspektren aber als fehlerfrei angesehen werden. Dies hat
+dadurch seine Berechtigung, dass es bei Aufnahme der
+Referenzspektren im Labor i.a. m\"{o}glich ist, f\"{u}r ein Spektrum \"{u}ber
+eine weit h\"{o}here Anzahl von Einzelmessungen N mit dem Spektrometer
+zu mitteln und damit das Signal--Rausch--Verh\"{a}ltnis um $\sqrt{N}$
+zu verbessern als dies bei Routinemessungen in der offenen
+Atmosph\"{a}re m\"{o}glich ist. Desweiteren wurden in dieser Arbeit
+zus\"{a}tzlich noch einmal \"{u}ber je 28 Referenzspektren f\"{u}r eine
+Komponente gemittelt und somit das Rauschen minimiert, wobei auch
+zus\"{a}tzlich nichtlineare Terme mitber\"{u}cksichtigt werden (siehe Kap.
+\ref{spekaufbereitung}). Sollen auch die unterschiedlichen
+Rauschamplituden in den Referenzspektren ber\"{u}cksichtigt werden,
+ist der \bf T\rm otal \bf L\rm east \bf S\rm quares--Algorithmus
+(TLS) anzuwenden \cite{vanhuffel91}.\\
+
+Beim CLS--Algorithmus ist es zudem sinnvoll, die
+Referenzspektrenmatrix \bf K \rm mittels
+Gram--Schmidt--Orthogonalisierung von vornherein in orthogonalen
+Basisvektoren darzustellen (siehe z.B. \cite{higham96}). Dadurch
+wird die m\"{o}gliche Hinzunahme von Referenzspektren erleichtert,
+weil nicht die vollst\"{a}ndige Invertierung und
+Matrixmultiplikationen aus Gl. \ref{eqcls4} wiederholt werden,
+sondern die Rechnungen nur f\"{u}r die hinzugef\"{u}gten Komponenten
+durchgef\"{u}hrt werden m\"{u}ssen. Desweiteren verhalten sich die
+numerischen Computer--Algorithmen bei der Berechnung komplexer
+Systeme generell stabiler, wenn orthogonale Basisfunktionen
+eingesetzt werden. Bei Verwendung des Gram--Schmidt--Algorithmus
+muss jedoch darauf geachtet werden, dass die Spaltenvektoren von
+\bf K \rm linear unabh\"{a}ngig sind und desweiteren gen\"{u}gend
+Nachkommastellen bei der Berechnung mitber\"{u}cksichtigt werden
+\cite{saarinen91}, da der Algorithmus sonst numerisch instabil
+werden kann. Bei dem hier betrachteten mittleren Infrarotbereich
+ist die lineare Unabh\"{a}ngigkeit der Gasspektren gegeben, so dass
+die Grams--Schmidt--Orthogonalisierung eingesetzt werden kann.
+Ansonsten (z.B. im nahen Infrarotbereich) ist eine
+Orthogonalisierung mit Householder--Matrizen numerisch stabiler
+\cite{golub89}. Die Qualit\"{a}t einer Anpassung mittels CLS
+beschreiben weitgehend drei Gr\"{o}{\ss}en:
+
+\paragraph{\label{paragraphstd}Die spektrale Standardabweichung der Anpassung:}
+
+Die Standardabweichung $\sigma$ ist definiert als die Wurzel aus
+der Summe der Abweichungsquadrate einer Gr\"{o}{\ss}e geteilt durch die
+Anzahl der unabh\"{a}ngigen Observablenpaare (\it Freiheitsgrade\rm ).
+F\"{u}r die Beurteilung von Residuen--Spektren lautet die Gleichung
+somit:
+\begin{equation}\label{eqstd}
+\sigma = \sqrt{ \frac{1}{n-k} \sum^{n}_{i=1}(x_{i}- x_m)^2}
+\end{equation}
+(n--Anzahl der Messpunkte, k--Anzahl der im Gemisch enthaltenen
+Komponenten, $x_i$--Extinktion der gemessenen Gemischspektren an
+der Stelle i, $x_m$--Extinktionswerte des berechneten
+Modellspektrums). Das Quadrat der Standardabweichung $\sigma^2$
+wird \it Varianz \rm genannt.\\
+
+
+\paragraph{\label{paragraphcov}Die Kovarianzmatrix:}
+
+Die Varianz beschreibt die Verteilung von Daten gegen\"{u}ber ihrem
+arithmetischen Mittel f\"{u}r eine einzige Variable (hier die
+resultierende Extinktion im Residuum). Die Verteilung von
+multivariaten Daten kann mit Hilfe der Kovarianzmatrix abgesch\"{a}tzt
+werden. Die Summe der Abweichungsprodukte mehrerer Variablen (hier
+die Extinktionen mehrerer Komponenten) geteilt durch ihre
+Freiheitsgrade ist somit die analoge Gr\"{o}{\ss}e zur Varianz:
+
+\begin{equation}\label{eqcov}
+  COV_{jk}=\frac{1}{n-k}
+  \sum^n_{i=1}(x_{ij}-\overline{x}_j)(x_{ik}-\overline{x}_k),
+\end{equation}
+wobei $x_{ij}$ der i--te Wert der Variablen j und $x_{ik}$ der
+i--te Wert der Variablen k ist.\\
+
+Die Kovarianzmatrix \bf COV \rm ist quadratisch und symmetrisch
+gegen\"{u}ber der Diagonalen, da $x_{ij}=x_{ji}$. Die Diagonalelemente
+entsprechen den Varianzen der einzelnen Komponenten. Somit ergibt
+sich f\"{u}r den absoluten statistischen Konzentrationsfehler einer
+Komponente $\sigma_{Komp}$:
+
+\begin{equation}\label{eqsinglst}
+ \sigma_{Komp}= \sigma \sqrt{[\bf COV \rm]_{ii}^{-1}} \cdot t
+\end{equation}
+mit t--dem Studentfaktor f\"{u}r 95\%--ige Sicherheit.
+
+
+\paragraph{\label{paragraphconc}Die Konditionszahl:}
+
+Ein weiterer wichtiger Punkt ist zum Auffinden der optimalen
+Segmente zur CLS--Auswertung zu beachten. Zur Bildung der
+Least--Squares--L\"{o}sung in Gl. \ref{eqcls4} muss die Matrix der
+Referenzspektren ($\bf K^T \cdot K$) invertiert werden. Die
+Inverse einer Matrix $\bf A$ existiert genau dann, wenn $\rm det
+\bf A \rm \neq 0$:
+
+\begin{equation}\label{eqinv}
+  \bf A^{-1} \rm = \frac{1}{\text{det} \bf A} \quad \bf A^*
+\end{equation}
+Matrizen, die invertierbar sind, werden \it regul\"{a}r \rm genannt.
+F\"{u}r regul\"{a}re Matrizen gilt, dass Rang (\bf A\rm )= n (Anzahl der
+Spaltenvektoren) ist. Der Rang einer Matrix ist gleich der
+Maximalzahl der \it linear unabh\"{a}ngigen \rm Spaltenvektoren. Ist
+Rang (\bf A\rm )< n, so wird die Matrix \it singul\"{a}r \rm
+genannt.\\
+
+Die Least-Squares--L\"{o}sung in Gl. \ref{eqcls4} erfordert somit die
+Aufstellung einer regul\"{a}ren Matrix der Referenzspektren. Ob eine
+Matrix regul\"{a}r ist, kann anhand der Konditionszahl \"{u}berpr\"{u}ft
+werden. Die Konditionszahl ist definiert als der Quotient aus dem
+gr\"{o}{\ss}ten Eigenwert $\lambda_{max}$ und dem kleinsten Eigenwert
+$\lambda_{min}$ einer Matrix:
+
+\begin{equation}\label{eqcond}
+  COND=\frac{\lambda_{max}}{\lambda_{min}}
+\end{equation}
+Dabei ist folgendes zu beachten: Die Matrix $\bf K^T \cdot K$ ist
+symmetrisch und positiv semidefinit; falls \bf K \rm vollen Rang
+hat, liegt sogar eine positiv definite Matrix vor und nur in
+diesem Fall ist es zul\"{a}ssig, die Kondition der Matrix durch Formel
+\ref{eqcond} anzugeben. Es ist anzumerken, dass verrauschte Daten
+meistens automatisch positiv definite Matrizen liefern, wobei die
+Konditionszahlen dann allerdings sehr hoch sind.\\
+
+F\"{u}r die Konditionszahl der Referenzspektrenmatrix folgt daraus,
+dass bei querempfindlichkeitsfreien und normierten
+Referenzspektren die Eigenwerte gleich und somit die
+Konditionszahl 1 ist. Treten Querempfindlichkeiten zwischen den
+Spektren auf, wird der Quotient zwischen gr\"{o}{\ss}tem und kleinstem
+Eigenwert gr\"{o}{\ss}er. Sind zwei Spektren linear abh\"{a}ngig, so ist der
+kleinste Eigenwert 0, die Konditionszahl ist $\infty$. Welche
+Konditionszahlen f\"{u}r die CLS--Analyse noch akzeptiert werden
+k\"{o}nnen, wird in Kap. \ref{bereichsauswahl} diskutiert.\\
+
+\paragraph{\label{paragraphweighted}Gewichtete CLS--Regression:}
+Die Abweichungen vom linearen Modell, welche in Gl. \ref{egcls1}
+im Vektor \bf e \rm auch ber\"{u}cksichtigt worden sind, sind f\"{u}r
+Messungen, denen von vornherein ein hoher systematischer Fehler
+innewohnt, weniger bedeutsam als f\"{u}r Messungen mit kleinem
+systematischen Fehler. Hinzu kommt, dass die Auswertung der
+Spektren in der Extinktionsdom\"{a}ne erfolgt. Durch die
+Logarithmierung der Transmissionsspektren wird dadurch das
+Rauschen bei hohen Extinktionen \"{u}berbetont. Um diese Effekte zu
+kompensieren, wird ein Gewichtsfaktor eingef\"{u}hrt, der aus o.g.
+Gr\"{u}nden umgekehrt proportional zur Varianz $\sigma_{ii}^2$ der
+spektralen Einzelkomponenten (Diagonalelemente der
+Kovarianzmatrix) ist. Die Gewichtsmatrix lautet:
+
+\begin{equation}\label{eqclsweight1}
+ \bf W\rm =
+\begin{pmatrix}
+  1/\sigma_{11}^2 & & & 0\\
+  & 1/\sigma_{22}^2 & & \\
+  & & \ddots & \\
+  0 & & & 1/\sigma_{nn}^2\\
+\end{pmatrix}
+\end{equation}
+mit $\bf U=W^T \cdot W$ folgt dann f\"{u}r den Least Squares Sch\"{a}tzer
+$\bf c_{opt}$ aus Gl. \ref{eqcls4} \cite{massart88}:
+
+\begin{equation}\label{eqclsweight2}
+  \bf c_{opt} \rm = (\bf K^T \cdot U \cdot K\rm )^{-1} \cdot (\bf
+  K^T \cdot U \cdot a\rm )
+\end{equation}
+\\
+
+
+\subsubsection{\label{h2oco2quer}Querempfindlichkeit mit
+atmosph\"{a}rischen Komponenten} \markright{\sl QUEREMPFINDLICHKEIT
+MIT ATMOSPH. KOMPONENTEN}
+
+F\"{u}r die optimale Auswahl der Wellenzahlbereiche, in denen eine
+CLS--Analyse sinnvoll ist, ist es wichtig, den Einfluss der in
+Atmosph\"{a}renspektren immer vorhandenen Komponenten H\down{2}O und
+CO\down{2} zu kennen. Beide Gase besitzen in weiten Bereichen des
+mittleren Infrarot sehr starke Absorptionen, z.T. gibt es auch
+Bereiche, in denen die Transmission extrem kleine Werte annimmt
+und die von vornherein nicht f\"{u}r die Auswertung zur Verf\"{u}gung
+stehen. Diese starken Absorptionen gehen mit gro{\ss}en nichtlinearen
+Abh\"{a}ngigkeiten einher, die bei der Auswertung nur schlecht
+modelliert werden k\"{o}nnen. Eine Option, diese Modellierung zu
+umgehen, besteht nat\"{u}rlich darin, ein Hintergrundspektrum
+m\"{o}glichst unter gleichen spektroskopischen (hinsichtlich der
+optischen Wegl\"{a}nge) und meteorologischen Bedingungen aufzunehmen,
+so dass von vornherein eine gute Kompensation der atmosph\"{a}rischen
+Absorptionen in Gebieten, in denen die Transmission nicht gegen
+null geht, gegeben ist. Wie im Kapitel \ref{hintergrund} aber
+schon aufgezeigt, gibt es Messsituationen, in denen dies nicht
+m\"{o}glich ist, wo aber ein synthetisch berechnetes oder ein im Labor
+gemessenes Hintergrundspektrum helfen. Die H\down{2}O-- und
+CO\down{2}--Banden werden bei der Berechnung des
+Transmissionsspektrums dabei aber nicht kompensiert.\\
+
+ \tabelle{htb}{1.2}{clsh2oreferenz}{{|c c c c c c c c|}\hline
+ & & \multicolumn{2}{c}{\underline{\small \bf Konzentration}} & \multicolumn{2}{c}{\underline{\small \bf nom. Aufl. 0.1 cm\up{-1}}}
+ & \multicolumn{2}{c|}{\underline{\small \bf nom. Aufl. 1 cm\up{-1}}} \\
+ & & \small wahre & \small Referenz & \small Iterat. 1\up{\star} & \small Iterat. 2 &
+ \small  Iterat. 1\up{\star} & \small  Iterat. 4\\
+ \multicolumn{2}{|c}{\raisebox{3.7ex}[-1.5ex]{\underline{\small \bf
+ Komponente}}} & \small  [ppm$\cdot$m] & \small  [ppm$\cdot$m] & \small [\%] & \small [\%] &
+ \small  [\%] & \small  [\%]\\
+ \hline
+ &\small  Gem. 1 & \small  600 & \small 101 & \small 0.5(-1.4) &\small  -1.2 & \small 11.7(-6.0) & \small -3.4\\
+ \raisebox{1.5ex}[-1.5ex]{\small \bf CH\down{4}} &\small  Gem. 2 & \small 400 &  &\small  -0.7(-0.8) &\small  -0.7 & \small 11.5(-3.5) & \small -0.9\\
+ \hline
+ &\small Gem. 1 & \small 500 000 & \small 50 000 & \small -27.5(-28.4) & \small -3.4 & \small -232(-234) & \small -13.1\\
+ \raisebox{1.5ex}[-1.5ex]{\small \bf H\down{2}O} &\small  Gem. 2 & \small 300 000 &  & \small -18.5(-18.7) & \small -2.2 & \small -146(-145) & \small -8.1\\
+ \hline
+ &\small  Gem. 1 & \small 800 & \small 101 &\small  -6.9(-7.2) & \small -7.0 &\small  -22(-25.7) & \small -3.9\up{\dagger}\\
+ \raisebox{1.5ex}[-1.5ex]{\small \bf NH\down{3}} &\small  Gem. 2 & \small 400 &  &\small  -4.5(-4.9) &\small  -4.8 & \small -7.8(-11.7) & \small -1.0\up{\dagger}\\
+ \hline
+ &\small  Gem. 1 & \small 800 & \small 101 & \small 0.5(-0.5) & \small -0.2 & \small 5.4(-2.7) & \small -0.6\\
+ \raisebox{1.5ex}[-1.5ex]{\small \bf SO\down{2}} &\small  Gem. 2 & \small 400 &  & \small 0.8(-0.2) & \small 0.1 & \small -7.1(-1.1) &\small  0.0\\
+ \hline
+ &\small  Gem. 1 &  &  & \small 3.7$\cdot$10\up{-2} & \small 6.8$\cdot$10\up{-3} &\small  6.9$\cdot$10\up{-2} &\small  9.1$\cdot$10\up{-3}\\
+ \raisebox{1.5ex}[-1.5ex]{\small \bf STD} &\small  Gem. 2 &  &  &\small  2.5$\cdot$10\up{-2} & \small 3.8$\cdot$10\up{-3} & \small 4.8$\cdot$10\up{-2} &\small  5.5$\cdot$10\up{-3}\\
+\cline{1-8}
+ \multicolumn{1}{r}{\small \up{\star}} & \multicolumn{7}{l}{\small in Klammern die Resultate f\"{u}r die Anpassung eines
+ Einzelkomponenten--}\\
+ \multicolumn{1}{c}{} &\multicolumn{7}{l}{\raisebox{1.5ex}[-1.5ex]{\small spektrums mit der gegebenen
+ Gemischkonzentration}}\\
+ \multicolumn{1}{r}{\raisebox{1.5ex}[-1.5ex]{\small \up{\dagger}}} & \multicolumn{7}{l}{\raisebox{1.5ex}[-1.5ex]{\small in
+ diesen F\"{a}llen wurde auch das NH\down{3}--Referenzspektrum
+ mitangepasst}}
+ }{Iterative Konzentrationsvorhersage mittels CLS und konzentrationsangepassten H\down{2}O--Referenzspektren
+ (ausgewerteter Bereich: 500-2000 cm\up{-1}, Extinktionslimit 1.0, Dreiecksapodisation).}
+
+Welchen Einfluss vor allem H\down{2}O auf die
+Auswertungsergebnisse haben kann, zeigt Tabelle
+\ref{clsh2oreferenz}. Hier wurden zwei Gemische mit der
+HITRAN96--Datenbank und typischen H\down{2}O--Konzentrationen
+berechnet und mittels CLS im Bereich von 500--2000 cm\up{-1} f\"{u}r
+0.2 und 1 cm\up{-1} Aufl\"{o}sung angepasst. Die nichtlinearen
+spektralen Abh\"{a}ngigkeiten wurden durch schrittweise Neuberechnung
+des Wasserdampfreferenzspektrums mit der Konzentration der
+vorhergehenden Iteration angepasst. Das so dem jeweiligen
+Atmosph\"{a}renspektrum n\"{a}herkommende Wasserdampfspektrum wurde
+solange im n\"{a}chsten Anpassungszyklus eingesetzt, bis keine weitere
+Reduzierung der spektralen Residuen erreicht werden konnte. Hier
+zeigt sich deutlich der Vorteil einer besseren spektralen
+Aufl\"{o}sung, da aufgrund der geringeren nichtlinearen Anteile im
+Spektrum und der besseren Trennung der Komponenten untereinander
+bereits nach einer Iteration zufriedenstellende Ergebnisse erzielt
+werden konnten. Es zeigt sich aber auch, dass die
+Wellenzahlbereiche mit den nichtlinearen Anteilen von H\down{2}O,
+und das gilt auch f\"{u}r CO\down{2}, f\"{u}r die normale CLS--Auswertung
+nach M\"{o}glichkeit zu meiden sind. Dem steht gegen\"{u}ber, dass die
+Strukturen vieler Komponenten von H\down{2}O-- und
+CO\down{2}--Banden \"{u}berlagert sind.\\
+
+\bild{h}{h2oco21.wmf}{400}{390}{Anpassung von CO\down{2} (\bf a\it
+, links) und H\down{2}O (\bf a\it , rechts) in einem
+Atmosph\"{a}renspektrum (Pfadl\"{a}nge: 135 m), wobei die maximalen
+Extinktionen von 0.35 im unteren Bereich liegen. Die
+Extinktionsspektren \bf b \it und \bf c \it wurden mit gemessenen
+Hintergrundspektren (1 h bzw. 5 h sp\"{a}ter aufgenommen), die
+Extinktionsspektren \bf d \it und \bf e \it mit synthetischen
+Hintergrundspektren berechnet. Die Anpassung der CO\down{2} und
+H\down{2}O--Banden in \bf d \it und \bf e \it erfolgte mit
+Laborspektren (\bf d\it , 44 577 ppm$\cdot$m CO\down{2} und 1 162
+055 ppm$\cdot$m H\down{2}O) bzw. HITRAN96--Spektren (\bf e\it , 44
+550 ppm$\cdot$m CO\down{2} und 675 000 ppm$\cdot$m H\down{2}O).
+Die jeweiligen spektralen Standardabweichungen (STD) der
+resultierenden Residuen sind in der Abbildung angegeben. Bis auf
+die Spektren \bf e \it sind die Spektren mit einem Offset
+dargestellt.}
+
+
+\bild{h}{h2oco22.wmf}{400}{390}{Anpassung von H\down{2}O (\bf a\it
+, links) und CO\down{2} (\bf a\it , rechts) in einem
+Atmosph\"{a}renspektrum (Pfadl\"{a}nge: 135 m), wobei die maximalen
+Extinktionen von 1.5 im oberen Bereich liegen. Die
+Extinktionsspektren \bf b \it und \bf c \it wurden mit gemessenen
+Hintergrundspektren (1 h bzw. 5 h sp\"{a}ter aufgenommen), die
+Extinktionsspektren \bf d \it und \bf e \it mit synthetischen
+Hintergrundspektren berechnet. Die Anpassung der H\down{2}O und
+CO\down{2}--Banden in \bf d \it und \bf e \it erfolgte mit
+Laborspektren (1 162 055 ppm$\cdot$m H\down{2}O und \bf d\it , 44
+577 ppm$\cdot$m CO\down{2}) bzw. HITRAN96--Spektren (\bf e\it ,
+675 000 ppm$\cdot$m H\down{2}O und 44 550 ppm$\cdot$m CO\down{2}).
+Die jeweiligen spektralen Standardabweichungen (STD) der
+resultierenden Residuen sind in der Abbildung angegeben. Bis auf
+die Spektren \bf e \it sind die Spektren mit einem Offset
+dargestellt.}
+
+Die Abbildungen \ref{h2oco21.wmf} und \ref{h2oco22.wmf} zeigen
+dasselbe Atmosph\"{a}renspektrum in unterschiedlichen spektralen
+Bereichen, in denen entweder H\down{2}O oder CO\down{2} spektrale
+Strukturen aufweisen (jeweils die Spektren \bf a\rm ). Diese
+Strukturen werden durch vier verschiedene Arten kompensiert. Als
+Ma{\ss} f\"{u}r die G\"{u}te der Kompensation gilt die Standardabweichung des
+resultierenden Residuums. In den Spektren \bf b \rm und \bf c \rm
+werden die Strukturen durch 5 h bzw. 1 h nach dem
+Atmosph\"{a}renspektrum gemessene Hintergrundspektren angepasst. Im
+Spektrum \bf d \rm wird zu dieser Kompensation ein H\down{2}O--
+und CO\down{2}--Laborspektrum, in \bf e \rm ein f\"{u}r die
+Konzentration, Temperatur und Druck berechnetes HITRAN96--Spektrum
+verwandt (jeweilige Konzentrationen siehe Bildunterschrift). In
+Abbildung \ref{h2oco21.wmf} sind Bereiche mit relativ kleinen
+Banden gew\"{a}hlt, in Abbildung \ref{h2oco22.wmf} Bereiche mit Banden
+mittlerer Extinktion.\\
+
+Es zeigt sich deutlich, dass grunds\"{a}tzlich die Anpassung mittels
+gemessenen Hintergrundspektren besser ist. Wie gut in diesem Fall
+kompensiert werden kann, h\"{a}ngt nat\"{u}rlich von den Schwankungen der
+H\down{2}O-- und CO\down{2}--Konzentrationen in der Zeit zwischen
+Aufnahme des Atmosph\"{a}ren-- und des Hintergrundspektrums ab. In dem
+gezeigten Beispiel sind die Schwankungen nur gering. H\down{2}O
+konnte besser angepasst werden als CO\down{2}, die Anpassung von
+H\down{2}O verschlechterte sich zu den Bereichen mit gr\"{o}{\ss}er
+Extinktion um den Faktor 2, bei CO\down{2} um den Faktor 6. Bei
+der Anpassung mit Labor-- oder HITRAN96--Spektren sind diese
+Anpassungen deutlich schlechter (Faktor 17 bzw. 30).\\
+
+F\"{u}r die Spektrenbereichsauswahl ist es somit in jedem Fall
+vorteilhaft, von vornherein Bereiche mit H\down{2}O-- und
+CO\down{2}--Extinktionen gr\"{o}{\ss}er als 0.8 zu meiden, sofern sie
+nicht f\"{u}r die Analyse unbedingt erforderlich sind, weil eine zu
+analysierende Komponente nur in den Spektralbereichen Strukturen
+besitzt. Lassen es die \"{o}rtlichen Gegebenheiten zu, sollte ein
+Hintergrundspektrum gemessen werden, wenn sichergestellt ist, dass
+die zu analysierenden Zielkomponenten nicht im Spektrum enthalten
+sind. In diesem Fall ist es m\"{o}glich, abh\"{a}ngig von den H\down{2}O--
+und CO\down{2}--Schwankungen zwischen der Messung des
+Atmosph\"{a}ren-- und des Hintergrundspektrums, ein wenig gr\"{o}{\ss}ere
+Spektralbereiche zur Auswertung als bei der Verwendung von
+synthetisch berechneten Hintergrundspektren heranzuziehen.\\
+
+
+
+\subsubsection{\label{bereichsauswahl}Spektrenbereichsauswahl zur
+CLS--Auswertung} \markright{SPEKTRENBEREICHSAUSWAHL ZUR
+CLS--AUSWERTUNG}
+
+Die im vorherigen Abschnitt gewonnenen Erkenntnisse \"{u}ber die
+H\down{2}O-- und CO\down{2}--\-Quer\-em\-pfind\-lich\-keit\-en
+lassen nur noch ganz bestimmte spektrale Fenster im mittleren
+Infrarotbereich zu, in denen Atmosph\"{a}renspektren ausgewertet
+werden k\"{o}nnen. Um nun die Frage zu kl\"{a}ren, ob es sinnvoller ist,
+den gesamten Fensterbereich auszuwerten oder diesen zu
+unterteilen, um m\"{o}gliche Querempfindlichkeiten mit anderen Stoffen
+zu minimieren, wird das in Abbildung \ref{spekseg4.wmf} gezeigte
+Gemisch vorgegeben.\\
+
+\bild{htb}{spekseg4.wmf}{400}{360}{\it Gemischspektrum f\"{u}r die
+Ermittlung des optimalen Wellenzahlbereichs der einzelnen
+Komponenten im Segment 4 (2630--3003 cm\up{-1}). Das
+Gemischspektrum setzt sich aus den oben mit Offset dargestellten
+Einzelkomponenten mit den angegebenen Volumenanteilen f\"{u}r eine
+Wegl\"{a}nge von 100 m und einem f\"{u}r 100 m charakteristischen
+Transmissionsrauschen von 8.8$\cdot$10\up{-4} zusammen. Die
+Darstellung der Einzelkomponenten erfolgt f\"{u}r eine Wegl\"{a}nge von
+100 m. Bei einigen Komponenten wurde die spektrale Struktur zur
+besseren Darstellung mit dem angegebenen Faktor multipliziert. Die
+Spektren stammen aus der QASoft-Spektrenbibliothek.}
+
+\tabelle{htb}{1.2}{seg4iteration}{{|l c c c c c|}\hline
+\underline{\small \bf Stoff} & \underline{\small \bf wahre Konz.}
+& \underline{\small \bf ber. Konz.}  & \underline{\small \bf stat.
+Fehl.} & \underline{\small \bf syst. Fehl.} & \underline{\small
+\bf opt. Bereich}\\ & \bf [ppm] & \bf [ppm] & $\bf \pm$ \bf [\%] &
+\bf [\%] & \bf [cm\up{-1}]\\ \hline
+
+Wasser & 5000.00 & 4977.96 & 0.13 & -0.44 & 2633--3003\\
+
+Formald. & 1.7000 & 1.6975 & 0.15 & -0.15 & 2633--2923\\
+
+Acetald. & 1.0000 & 0.9991 & 0.26 & -0.09 & 2638--3003\\
+
+Methan & 3.8000 & 3.7863 & 0.13 & -0.36 & 2653--3003\\
+
+Ethan & 2.6000 & 2.5936 & 0.15 & -0.25 & 2633--3003\\
+
+Methanol & 1.4000 & 1.4050 & 1.07 & +0.36 & 2668--3003\\
+
+Ethanol & 3.2000 & 3.1993 & 0.26 & -0.02 & 2643--3003\\
+
+Butan & 1.5000 & 1.4944 & 0.52 & -0.37 & 2643--3003\\
+
+Pentan & 1.5000 & 1.4954 & 0.39 & -0.31 & 2633--3003\\ \hline
+
+}{Auswertung des Gemischspektrums aus Abb. \ref{spekseg4.wmf}
+mittels CLS. Hierzu wurde das Wellenzahlintervall 2993--3003
+cm\up{-1} als Startintervall genommen und die untere Grenze 2993
+cm\up{-1} in 5 cm\up{-1}--Intervallen bis 2633 cm\up{-1}
+verschoben. Das n\"{a}chste Startintervall war 2983--2993 cm\up{-1}
+usw. Insgesamt wurden somit 1369 Intervalle durchlaufen.
+Dargestellt sind die errechneten Volumenanteile der einzelnen
+Komponenten in dem Intervall, in dem sie die kleinste statistische
+Abweichung aufzeigen.}
+
+Die Spektren f\"{u}r das Gemisch wurden der
+QASoft--Ref\-er\-enz\-spek\-tren\-bib\-lio\-thek entnommen. Um f\"{u}r
+die Auswertung mittels CLS ein vollst\"{a}ndig bekanntes
+Gemischspektrum zu bekommen, wurden sie mit praxisrelevanten
+Konzentrationen f\"{u}r ein Spektrum, gemessen bei einer Wegl\"{a}nge von
+100 m, im Bereich von 2630--3003 cm\up{-1} aufeinander addiert und
+zus\"{a}tzlich in der Transmissionsdom\"{a}ne mit einem entsprechenden f\"{u}r
+ein K300 gemessenes Atmosph\"{a}renspektrum typischen Rauschen belegt.
+Der betrachtete Wellenzahlbereich wird an der oberen und unteren
+Grenze von st\"{a}rkeren Wasserabsorptionen begrenzt. Die Spektren
+weisen teilweise sehr \"{a}hnliche Strukturen auf, es sind aber sowohl
+breite als auch sehr schmale Banden zu sehen. Somit wird eine
+Vielzahl der m\"{o}glichen vorkommenden Szenarien abgedeckt.\\
+
+Um nun s\"{a}mtliche in diesem Bereich m\"{o}gliche Intervalle zu
+ber\"{u}cksichtigen, wurde bei der Auswertung iterativ vorgegangen.
+Als Startsegment wurde das Intervall von 2993--3003 cm\up{-1}
+herangezogen und mittels CLS ausgewertet. Die untere Grenze wurde
+dann jeweils um 5 cm\up{-1} iterativ bis 2633 cm\up{-1} nach unten
+verschoben und jeweils ausgewertet. Anschlie{\ss}end wurde mit dem
+Startsegment von 2983--2993 cm\up{-1} genauso verfahren, bis
+s\"{a}mtliche M\"{o}glichkeiten der Intervallanalyse im Wellenzahlbereich
+von 2630--3003 cm\up{-1} abgedeckt waren (insgesamt wurden 1369
+Intervalle ausgewertet). Tabelle \ref{seg4iteration} zeigt die
+Ergebnisse f\"{u}r das Intervall, in dem die jeweilige Komponente den
+kleinsten statistischen Fehler aufzeigt. Als Referenzspektren bei
+der Auswertung wurden dieselben Spektren genommen, die auch f\"{u}r
+die Addition des Gemischspektrums verwendet wurden. Der
+systematische Fehler resultiert daher zum Teil aus numerischen
+N\"{a}herungen bei der Berechnung der optimalen Konzentration, der
+statistische aus dem im Gemischspektrum enthaltenen Rauschen.
+Grunds\"{a}tzlich ist zu erkennen, dass bei fast allen Spektren das
+gr\"{o}{\ss}tm\"{o}gliche Intervall zum besten Ergebnis f\"{u}hrt, obwohl viele
+Spektren im unteren Bereich keine Signaturen mehr aufweisen. Dies
+ist vor allem darauf zur\"{u}ckzuf\"{u}hren, dass die Selektivit\"{a}t der
+Spektren im Vektorraum mit zunehmendem Intervall auch steigt.\\
+
+\bild{htb}{seg4conc.wmf}{305}{405}{\it Iterative Auswertung dreier
+Beispielkomponenten des Gemischspektrums aus Abb.
+\ref{spekseg4.wmf}. Hierzu wurde das oberste 10
+cm\up{-1}--Wellenzahlintervall (durchgezogene und gestrichelte
+senkrechte Linie auf der rechten Seite dieser Abbildung) des
+jeweiligen optimalen Auswertungsbereichs (siehe Tab.
+\ref{seg4iteration}) als Startintervall genommen und die untere
+Grenze (gestrichelte senkrechte Linie) in 5 cm\up{-1}--Schritten
+bis 2633 cm\up{-1} durchiteriert. Die dabei errechneten
+Volumenanteile (schwarze Punkte) und die dazugeh\"{o}rigen
+statistischen Fehler (gestrichelte Linien), sowie die Ergebnisse
+f\"{u}r die Auswertung im gesamten Segment 4 (2630-3003 cm\up{-1},
+schwarze Rauten) werden ebenso wie der Verlauf der spektralen
+Standardabweichung (nicht gepunktete Linie entspricht den
+Ergebnissen f\"{u}r die gewichtete CLS--Analyse) und der
+Konditionszahl im gesamten Bereich gezeigt.}
+
+In Kapitel \ref{clstheorie} wurden die Standardabweichung, die
+statistische Unsicherheit der Konzentrationssch\"{a}tzung der
+Einzelkomponenten und die Konditionszahlen als Gr\"{o}{\ss}en f\"{u}r die
+Bewertung der Qualit\"{a}t einer CLS--Anpassung vorgestellt. Abbildung
+\ref{seg4conc.wmf} zeigt den Verlauf dieser Gr\"{o}{\ss}en mit zunehmender
+Intervallgr\"{o}{\ss}e. Sowohl die spektrale Standardabweichung wie die
+Konditionszahl nehmen mit zunehmender Intervallgr\"{o}{\ss}e ab. Die
+Standardabweichung ist ein Ma{\ss} f\"{u}r die verbleibenden spektralen
+Strukturen im resultierenden Residuum. Die nichtgepunktete Linie
+zeigt die Ergebnisse f\"{u}r die gewichtete Analyse. Das Rauschen im
+Transmissionsspektrum ist in diesem Beispiel \"{u}ber dem gesamten
+ausgewerteten Intervall gleichverteilt. Die gewichtete Analyse
+ber\"{u}cksichtigt die aus der Logarithmierung der
+Transmissionsspektren resultierenden h\"{o}heren Rauschwerte bei
+gro{\ss}en Extinktionen in der Weise, dass diese Bereiche weniger
+gewichtet in die Analyse eingehen. Hier im idealen Fall, wo die
+Referenzspektren mit den Konzentrationen der Komponenten des
+Gemischspektrums exakt \"{u}bereinstimmen und keine nichtlinearen
+Modellfehler in die Analyse hineinspielen, folgt der Verlauf der
+verbleibenden Standardabweichung den gegl\"{a}tteten Extinktionswerten
+des betrachteten Intervalls im Gemischspektrum. Die auftretende
+Standardabweichung ist in diesem Fall somit zum gro{\ss}en Teil auf
+das h\"{o}here Extinktionsrauschen im Intervall von etwa 2800--3003
+cm\up{-1} zur\"{u}ckzuf\"{u}hren. Bei einer Analyse des gesamten
+Intervalls wird sie minimal.\\
+
+Die Konditionszahl, die ein Ma{\ss} f\"{u}r die lineare Unabh\"{a}ngigkeit der
+Referenzspektren untereinander ist, nimmt mit zunehmender
+Intervallgr\"{o}{\ss}e ab. D.h. je gr\"{o}{\ss}er das Intervall gew\"{a}hlt wird,
+desto stabiler sind die numerischen Algorithmen zur Berechnung der
+optimalen Konzentration. Konditionszahlen um die 40 sind dabei
+nach eigenen Erfahrungen noch tolerabel.\\
+
+Die gestrichelten Linien bei der Konzentrationsanalyse der hier
+exemplarisch gezeigten Gase geben die statistischen
+Fehlerschranken der Analyse wieder. Diese werden mit zunehmendem
+Intervall kleiner. Die Rauten am linken Bildrand zeigen das
+Auswertungsergebnis f\"{u}r das gesamte Intervall von 2630--3003
+cm\up{-1}. Es unterscheidet sich nicht signifikant von den hier
+dargestellten optimalen Intervallen, was unter Beweis stellt, dass
+die Auswertung im gesamten Bereich, den die \it atmosph\"{a}rischen
+Fenster \rm (also Wellenzahlbereiche, die nicht von starken
+H\down{2}O-- oder CO\down{2}--Banden \"{u}berlagert sind) zulassen,
+nicht nur zul\"{a}ssig, sondern zu fordern ist.\\
+
+\tabelle{htb}{1.2}{segmente}{{|c|c|l|}\hline  \bf Segment &
+\rule[-0.25cm]{0mm}{0.85cm} \bf Spektralbereich
+&\parbox[t]{8.5cm}{\bf auszuwertende Stoffe im
+Spektralbereich\\[-0.18cm]}\\ \hline
+
+1 & \rule[-0.25cm]{0mm}{0.85cm}671--680 cm\up{-1} &
+\parbox[t]{8.5cm}{Benzol (Querempfindlichkeit CO\down{2},
+H\down{2}O)\\[-0.18cm]} \\ \hline
+
+
+2 & \rule[-0.25cm]{0mm}{0.85cm}723--1242 cm\up{-1} &
+\parbox[t]{8.5cm}{H\down{2}O, CO\down{2}, O\down{3}, N\down{2}O,
+NH\down{3}, Methan, Ethan, Propan, Butan, Pentan, Hexan, Ethen,
+Propen, Isobuten, Acetylen, 1,3--Butadien, Cyclohexan, Ethanol,
+Phenol, Toluol, m--Xylol, o--Xylol, Aceton, 2--Butanon,
+Dichlormethan, Trichlorethylen, Tetrachlorethylen, Acetaldehyd,
+Formaldehyd, Ameisens\"{a}ure, Essigs\"{a}ure, Schwefelhexafluorid
+\\[-0.18cm]}\\ \hline
+
+3 & \rule[-0.25cm]{0mm}{0.85cm}2091--2224 cm\up{-1} &
+\parbox[t]{8.5cm}{H\down{2}O, CO\down{2}, N\down{2}O, CO\\[-0.18cm]}
+\\ \hline
+
+4 & \rule[-0.25cm]{0mm}{0.85cm}2630-3003 cm\up{-1} &
+\parbox[t]{8.5cm}{H\down{2}O, Methan, Ethan,
+Propan, Butan, Pentan, Hexan, Ethen, Propen, Isobuten,
+1,3--Butadien, Cyclohexan, Methanol, Ethanol, Dichlormethan,
+Toluol, m--Xylol, o--Xylol, p--Xylol, Aceton, 2--Butanon,
+Acetaldehyd, Formaldehyd\\[-0.18cm]}\\ \hline
+
+5 & \rule[-0.25cm]{0mm}{0.85cm}4130--4300 cm\up{-1} &
+\parbox[t]{8.5cm}{H\down{2}O\\[-0.18cm]} \\ \hline
+
+6 & \rule[-0.25cm]{0mm}{0.85cm}732.5--740 cm\up{-1} &
+\parbox[t]{8.5cm}{CO\down{2} (Querempfindlichkeit H\down{2}O),
+ggf. mit Ergebnis aus Segment 2 vergleichen\\[-0.18cm]}
+\\ \hline}{Wahl von 6 Wellenzahlsegmenten zur optimalen Auswertung von
+34 f\"{u}r die Atmosph\"{a}renspektroskopie relevanten Komponenten.}
+
+\bild{htb}{no2.wmf}{400}{470}{\bf A \it NO\down{2}--Spektrum mit
+0.2 cm\up{-1} (unten) und 1 cm\up{-1}--Aufl\"{o}sung (mit Offset), \bf
+B \it NO\down{2}-- und H\down{2}O--Spektrum (gestrichelt) mit 0.2
+cm\up{-1}--Aufl\"{o}sung, \bf C \it NO\down{2}-- und
+H\down{2}O--Spektrum (gestrichelt) mit 1 cm\up{-1}--Aufl\"{o}sung. Die
+Spektren wurden berechnet mit der GEISA--Datenbank,
+NO\down{2}--173 ppm$\cdot$m, H\down{2}O-- 1162000 ppm$\cdot$m.}
+
+\tabelle{htb}{1}{nachweisgr}{{|l|c|c|c|c|c|c|}\hline &
+\multicolumn{2}{c|}{\bf \small CLS--NWG [ppb]} &  &
+\multicolumn{2}{c|}{\bf \small univ. NWG [ppb]} & \bf \small
+univariat\\ \raisebox{1.5ex}[-1.5ex]{\bf \small Stoff} & \bf 0.2
+cm\up{-1} & \small \bf 1 cm\up{-1} & \raisebox{1.5ex}[-1.5ex]{\bf
+\small Segnr.} & \small \bf 0.2 cm\up{-1} & \small \bf 1 cm\up{-1}
+& \small \bf [cm\up{-1}]\\ \hline
+
+\small N\down{2}O & 1 & 1 & 3 & 3 & 2 & 2209.6\\
+
+\small CO & 3 & 1 & 3 & 9 & 9  & 2111.5\\
+
+\small NH\down{3} & 2 & 1  & 2 & 5 & 5  & 1046.5\\
+
+\small Methan & 4 & 5  & 4 & 14 & 17 & 2979.0\\
+
+\small Ethan & 1 & 2 & 4 & 5 & 12 & 2993.5\\
+
+\small Propan & 1 & 1  & 4 & 7 & 5  & 2967.5\\
+
+\small Butan & 1 & 1 & 4 & 7 & 6 & 2966.2\\
+
+\small Pentan & 1 & 1  & 4 & 7 & 5  & 2965.4\\
+
+\small Hexan & 1 & 1 & 4 & 8 & 2 & 2964.4\\
+
+\small Ethen & 1 & 1 & 2 & 3 & 3 & 949.4\\
+
+\small Propen & 1 & 1 & 2 & 6 & 5 & 912.6\\
+
+\small Isobuten & 1 & 1 & 2 & 4 & 5 & 890.4\\
+
+\small Acetylen & 2 & 3 & 2 & 4 & 5 & 729.4\\
+
+\small 1,3--Butadien & 2 & 1 & 2 & 6 & 4 & 908.1\\
+
+\small Cyclohexan & 1 & 1 & 4 & 7 & 2 & 2933.1\\
+
+\small Methanol & 1 & 1 & 2 & 4 & 4 & 1033.4\\
+
+\small Ethanol & 1 & 1 & 2 & 6 & 7 & 1066.4\\
+
+\small Phenol & 1 & 1 & 2 & 5 & 12 & 752.1\\
+
+\small Toluol & 1 & 4 & 4 & 10 & 40 & 2938.4\\
+
+\small m--Xylol & 1 & 2 & 2 & 6 & 8 & 768.7\\
+
+\small o--Xylol & 1 & 1 & 2 & 4 & 3 & 741.5\\
+
+\small p--Xylol & 1 & 2 & 2 & 3 & 12 & 795.5\\
+
+\small Aceton & 1 & 1 & 2 & 7 & 9 & 1217.6\\
+
+\small 2--Butanon & 1 & 2 & 4 & 4 & 20 & 2992.5\\
+
+\small Dichlormethan & 1 & 1 & 2 & 6 & 4 & 749.4\\
+
+\small Trichlorethylen & 1 & 1 & 2 & 5 & 6 & 782.9\\
+
+\small Tetrachlorethylen & 1 & 1 & 2 & 4 & 2 & 916.2\\
+
+\small Acetaldehyd & 1 & 2 & 4 & 19 & 24 & 2739.5\\
+
+\small Formaldehyd & 1 & 2 & 4 & 10 & 16 & 2778.4\\
+
+\small Ameisens\"{a}ure & 1 & 1 & 2 & 6 & 5 & 1104.9\\
+
+\small Essigs\"{a}ure & 1 & 1 & 2 & 15 & 5 & 1183.9\\
+
+\small Schwefelhexafluorid & 1 & 1 & 2 & 4 & 2 & 947.8\\ \hline
+
+\small Benzol & \multicolumn{5}{c|}{bes. Verfahren: 25 ppb (0.2
+cm\up{-1}), 20 ppb (1 cm\up{-1})} & 673.9\\
+\hline}{Nachweisgrenzen NWG relevanter Schadgase f\"{u}r
+Atmosph\"{a}renspektren, aufgenommen bei 100 m Wegl\"{a}nge.}
+
+In Tabelle \ref{segmente} sind diese Wellenzahlbereiche
+aufgef\"{u}hrt, mit 34 f\"{u}r die Atmosph\"{a}renspektroskopie relevanten
+Komponenten. Viele Stoffe haben in mehreren Segmenten Strukturen.
+Zur Auswertung ist dann das Segment zu w\"{a}hlen, in dem der
+statistische Fehler f\"{u}r diese Komponente am geringsten ist.
+Weitere Verbesserungen k\"{o}nnen u.U. dadurch erzielt werden, dass
+die Vektoren s\"{a}mtlicher Segmente mit den Strukturen eines Stoffes
+zusammengef\"{u}gt werden und dann die CLS--Auswertung erfolgt.\\
+
+F\"{u}r einige Komponenten wie die NO\down{x} oder SO\down{2}, deren
+intensivsten Strukturen s\"{a}mtlich von starken Wasserbanden
+\"{u}berlagert sind, sind gesonderte Segmente zu w\"{a}hlen. Die hier
+untersuchten und betriebenen Verbesserungen in der photometrischen
+Genauigkeit insbesondere f\"{u}r starke Absorptionslinien er\"{o}ffnen
+speziell f\"{u}r die Erweiterung der spektralen Bereiche neue
+M\"{o}glichkeiten f\"{u}r analytische Anwendungen, die sonst aufgrund der
+starken atmosph\"{a}rischen Absorptionen nur eingeschr\"{a}nkt nutzbar
+w\"{a}ren. In Abbildung \ref{no2.wmf} ist beispielhaft gezeigt, dass
+nur unter Verwendung einer hohen spektralen Aufl\"{o}sung die
+Auswertung von NO\down{2}--Absorptionssignaturen Sinn macht.\\
+
+
+\paragraph{\label{nwg}Nachweisgrenzen:}
+
+In Tabelle \ref{nachweisgr} sind die Nachweisgrenzen relevanter
+Schadgase zusammengestellt, so wie sie nach den VDI--Richtlinien
+\cite{vdi98} zu bestimmen sind. Dabei wurden in diesem Fall 22
+direkt hintereinander aufgenommene Atmosph\"{a}renspektren genommen
+und das jeweils folgende Spektrum zur Berechnung des
+Extinktionsspektrums verwandt. Diese resultierenden 21
+Extinktionsspektren, die nur noch statistisches Rauschen
+enthalten, werden dann in den oben beschriebenen Segmenten nach
+der jeweiligen Zielkomponente, deren Nachweisgrenze bestimmt
+werden soll, ausgewertet (bei der univariaten Auswertung wurde ein
+Intervall von $\pm$5 cm\up{-1} um die st\"{a}rkste Absorptionsbande
+vorgegeben). Es ergeben sich sowohl negative wie auch positive
+Konzentrationsvorhersagen, deren Standardabweichung $\sigma$
+bestimmt wird, so dass sich die Nachweisgrenze folgenderma{\ss}en
+ergibt:
+
+\begin{equation}\label{eqnwg}
+  NWG = t_{n-1;0.95} \cdot \sigma
+\end{equation}
+\begin{tabbing}
+mit \quad \=-- \=test \=\kill
+
+mit \> t \> -- \> Studentfaktor f\"{u}r eine statistische Sicherheit
+von 95 \%\\
+
+\> $\sigma$ \> -- \>Standardabweichung\\
+
+\> n \> -- \> Anzahl der gemittelten Rauschspektren\\
+\end{tabbing}
+
+Es zeigt sich, dass die multivariaten Verfahren aufgrund des
+verbesserten Sig\-nal/\-Rausch\-ver\-h\"{a}lt\-nisses grunds\"{a}tzlich
+bessere Nachweisgrenzen besitzen als dies bei der univariaten
+Auswertung der Fall ist. Dennoch sind die erhaltenen Werte in
+dieser Tabelle nur mit Einschr\"{a}nkungen praxisrelevant, da m\"{o}gliche
+Querempfindlichkeiten und schlechtere justage-- oder
+wetterbedingte Signal/Rauschverh\"{a}ltnisse nicht ber\"{u}cksichtigt
+werden. Da diese St\"{o}rungen aber sehr von der einzelnen
+Messsituation abh\"{a}ngen, ist eine generellere Angabe der
+Nachweisgrenze nicht m\"{o}glich.\\
+
+
+\subsubsection{\label{alternativen}Alternativen zur
+CLS--Auswertung} \markright{ALTERNATIVEN ZUR CLS--AUSWERTUNG}
+
+Das in den vorhergehenden Abschnitten beschriebene CLS--Verfahren
+(in der IR--\-Spek\-tros\-ko\-pie h\"{a}ufig auch "`\bf K\rm
+--Matrix"' Methode genannt) erfordert, dass s\"{a}mtliche Komponenten,
+die Beitr\"{a}ge zum zu analysierenden Gemischspektrums liefern,
+bekannt sind, um eine verl\"{a}ssliche quantitative Analyse
+sicherzustellen. Ist dies nicht der Fall, ist es in einfachen
+F\"{a}llen unter Zuhilfenahme des Residuums m\"{o}glich, die
+Spektralbereiche, in denen die unbekannte Komponente Strukturen
+hat, auszublenden, die resultierenden Spektralbereiche zu einem
+Vektor zusammenzufassen und mittels CLS auszuwerten.\\
+
+Verfeinerte Methoden wie das \it Kalman--Filter \rm \cite{rutan84}
+verwenden zur iterativen optimalen Auswahl der Spektralbereiche
+der bekannten Komponenten die Kovarianzmatrix und das spektrale
+Rauschen. Damit dieses Filter aber ad\"{a}quate Ergebnisse liefern
+kann, m\"{u}ssen die im Algorithmus gew\"{a}hlten Startwerte f\"{u}r die
+Kovarianzmatrix und das Rauschen sehr sorgf\"{a}ltig ausgew\"{a}hlt
+werden. Eine Anwendung im Bereich der Luftanalytik, speziell
+ausgerichtet auf die Bestimmung von L\"{o}sungsmitteld\"{a}mpfen, wurde
+k\"{u}rzlich beschrieben \cite{gu98}. Die Ergebnisse sind, wie zu
+erwarten, \"{a}quivalent zu denen des CLS--Algorithmus.\\
+
+Ein anderes m\"{o}gliches Vorgehen besteht darin, Bande f\"{u}r Bande
+mittels CLS auszuwerten, und die einzelnen Ergebnisse mit einer
+statistisch leistungsf\"{a}higen Methode zusammenzufassen (siehe z.B.
+\cite{haaland80}).\\
+
+Angemerkt sei, dass die vom Lambert--Beer'schen Gesetz geforderte
+lineare Abh\"{a}ngigkeit jedoch nicht immer gegeben ist, insbesondere
+wenn beispielsweise die spektrale Aufl\"{o}sung im Vergleich zur
+Halbwertsbreite der Absorptionsbanden nicht geeignet gew\"{a}hlt wurde
+(siehe Kap. \ref{photometgen}). Stehen keine Referenzspektren zur
+Verf\"{u}gung, die diese Nichtlinearit\"{a}ten mitber\"{u}cksichtigen (siehe
+Kap. \ref{spekaufbereitung}), m\"{u}ssen bei der Auswertung dann
+Modellerweiterungen vorgenommen werden, bei denen nichtlineare
+Gleichungssysteme zu l\"{o}sen sind (siehe z.B. \cite{haaland87},
+\cite{wuelbern98}).\\
+
+Neben der direkten Least Squares--Methode CLS, d.h. als
+mathematisches Modell wird das Lambert Beer'sche Gesetz
+angenommen, ist es auch m\"{o}glich, das inverse Lambert Beer'sche
+Gesetz (die Konzentration ist eine Funktion des zu analysierenden
+Extinktionsspektrums) als Ausgangspunkt der Anpassung zu nehmen.
+In diesem Fall wird vorausgesetzt, dass der Modellfehler in den
+Konzentrationen liegt. Diese \bf I\rm nversive \bf L\rm east \bf
+S\rm quares (ILS, oder auch \bf P\rm --Matrix)--Methode hat den
+Vorteil, dass nicht alle Komponenten des Gemisches bekannt sein
+m\"{u}ssen. Als Referenzspektren werden in diesem Fall im
+Kalibrationsschritt Gemischspektren verwendet. Aufgrund der
+vorzunehmenden Matrixinversion und der daraus resultierenden
+Forderung von quadratischen Matrizen, kann die Anzahl der im
+Spektrum ber\"{u}cksichtigten Punkte allerdings nicht gr\"{o}{\ss}er sein als
+die Anzahl der verwendeten Gemischreferenzspektren, was wiederum
+die Zahl der zur Verf\"{u}gung stehenden Punkte stark einschr\"{a}nkt.\\
+
+Neben dem beschriebenen ILS werden Verfahren, die die Rolle der
+abh\"{a}ngigen und unabh\"{a}ngigen Variablen im Lambert--Beer'schen
+Gesetz vertauschen, statistische Verfahren genannt. PLS (\bf P\rm
+artial \bf L\rm east \bf S\rm quares) geh\"{o}rt ebenfalls zu den
+statistischen Verfahren, hat aber gegen\"{u}ber ILS den Vorteil, dass
+dieselben breiten Spektralbereiche wie beim CLS genutzt werden
+k\"{o}nnen, gleichzeitig aber nicht alle Komponenten des zu
+analysierenden Gemisches bekannt sein m\"{u}ssen. PLS geh\"{o}rt zu den
+Faktormethoden, d.h. die Kalibrationsmatrix wird hierbei in ein
+neues Koordinatensystem transformiert, in dem die Richtungen
+maximaler Varianz (PCR) die Achsen bilden oder die Kovarianz
+zwischen Spektren-- und Konzentrationsvektor (PLS) den ersten
+Vektor des orthogonalen Basisvektorsystems definiert und iterativ
+die weiteren berechnet werden. Diese Matrix wird nun
+rangreduziert, so dass nur eine reduzierte Anzahl von
+Hauptkomponenten betrachtet werden. Die neuen Basisvektoren werden
+bei dieser Methode \it loadings \rm und die neuen Intensit\"{a}ten \it
+scores \rm genannt.\\
+
+Als Referenzspektren dienen beim PLS i.a. Gemischspektren, die
+allerdings die zu erwartende Varianz der
+Konzentrationsunterschiede in den zu analysierenden Spektren voll
+abdecken m\"{u}ssen. Extrapolationen sind nur beschr\"{a}nkt m\"{o}glich.
+Daraus folgt ein sehr hoher Kalibrieraufwand, auch wenn bei
+Gasspektren i.a. vorausgesetzt werden kann, dass keine
+Wechselwirkungen der Komponenten untereinander stattfinden und
+somit die Gemischspektren additiv aus Spektren der reinen
+Komponenten berechnet werden k\"{o}nnen. Probleme kann es aber hier
+dann auch geben, wenn die Extinktionswerte in den nichtlinearen
+Bereich kommen.\\
+
+Vorgenannte, nicht im Detail besprochene Methoden, werden
+ausf\"{u}hrlich in Lehrb\"{u}chern der Chemometrie besprochen.
+Beispielhaft seien \cite{massart88}, \cite{martens91} und als
+deutsches Lehrbuch \cite{henrion95} genannt. Eine vergleichende
+Abhandlung findet sich auch in \cite{haaland88}.\\
+
+In der Literatur finden sich mehrere Beispiele f\"{u}r die Anwendung
+von neuronalen Netzen bei der Strukturaufkl\"{a}rung von Molek\"{u}len aus
+ihrem IR Spektrum (siehe z.B. \cite{gasteiger97}). Auch f\"{u}r die
+Komponentenerkennung von FTIR--Gasspektren wurden neuronale Netze
+eingesetzt \cite{yang98}. Hierbei muss allerdings angemerkt
+werden, dass mit einer sehr schlechten Aufl\"{o}sung von 8 cm\up{-1}
+gemessen wurde, so dass dort eine Trennung der dort gemessenen
+Alkohole weitaus schwieriger ist als mit hochaufl\"{o}senden
+Spektrometern mit 0.2 cm\up{-1} Aufl\"{o}sung.\\
+
+F\"{u}r die quantitative Analyse von IR--Atmosph\"{a}renspektren mittels
+neuronalen Netzen ist bislang allerdings nur eine Arbeit
+erschienen (\cite{clerbaux95}), worin vertikale H\"{o}henprofile von
+Konzentrationen atmosph\"{a}rischer Gase unter Verwendung von
+IR--Spektren mit Hilfe von neuronalen Netzen berechnet werden. Der
+sehr hohe Trainingsaufwand der Netze und fehlende Werkzeuge zur
+Kontrolle der Qualitit\"{a}t der Ergebnisse lassen die neuronalen
+Netze allerdings als nicht ad\"{a}quate Methode f\"{u}r die quantitative
+Auswertung von IR--Spektren erscheinen.\\
+
+
+
+\subsubsection{\label{vornachteilmulti}Vor- und Nachteile der
+multivariaten Verfahren} \markright{VOR-- UND NACHTEILE DER
+MULTIVARIATEN VERFAHREN}
+
+S\"{a}mtliche multivariate Verfahren bieten gegen\"{u}ber dem univariaten
+Verfahren den gro{\ss}en Vorteil, dass sie die Querempfindlichkeiten,
+gegeben durch die \"{U}berlagerung von Absorptionsbanden der
+verschiedenen Komponenten, ber\"{u}cksichtigen k\"{o}nnen und, wie oben
+bereits angemerkt, verbesserte Nachweisgrenzen gegen\"{u}ber
+univariaten Auswertungen mittels einzelner Absorptionsbanden
+garantieren. So verbessert sich das Signal/Rauschverh\"{a}ltnis
+grunds\"{a}tzlich mit $\sqrt{N}$ zur Anzahl der in die Auswertung
+miteinbezogenen Punkte. Aufgrund der Mittelung \"{u}ber einen gro{\ss}en
+Wellenzahlbereich, wirken sich Temperatureffekte nicht in dem Ma{\ss}e
+auf die Qualit\"{a}t der Analyse aus wie bei der univariaten
+Auswertung. Dennoch hat die pseudo--univariate Auswertung dort
+ihre Bedeutung, wo eine multivariate Auswertung nicht m\"{o}glich ist.
+Dies ist z.B. beim Benzol der Fall, eine \"{a}hnliche Vorgehensweise
+sollte aber auch bei Toluol und den Xylolen bei der Auswertung im
+Fingerprintbereich angestrebt werden. Unterst\"{u}tzend kann sie bei
+den Molek\"{u}len, bei denen eine univariate Auswertung
+querempfindlichkeitsfrei m\"{o}glich ist, neben der Kreuzkorrelation
+bei der Komponentenerkennung eingesetzt werden, und eventuelle
+systematische Fehler bei der multivariaten Analyse aufzeigen.
+Desweiteren kann mit Hilfe der dabei erhaltenen
+Konzentrationswerte die Referenzspektrenmatrix f\"{u}r die
+CLS--Auswertung f\"{u}r diese Komponenten mit Spektren, deren
+Konzentration nahe an der Gemischkonzentration liegt, aufgestellt
+werden.\\
+
+Methode der Wahl bei den multivariaten Verfahren ist die
+klassische CLS--Methode. Der sehr gro{\ss}e Vorteil ist, dass die
+CLS--Methode ohne gro{\ss}en rechnerischen Aufwand auch Sch\"{a}tzungen
+f\"{u}r die Fehler auf der Grundlage der Regressionsresiduen und der
+Inversen der Kovarianzmatrix liefert, so dass Aussagen zum
+Vertrauensbereich der Messung gemacht werden k\"{o}nnen. Informationen
+\"{u}ber Modellfehler (Nichtlinearit\"{a}ten, Interferenzen mit
+unbekannten Komponenten und instrumentelle Messfehler) sind leicht
+zug\"{a}nglich und f\"{u}r den Spektroskopiker verst\"{a}ndlich. Diese
+unmittelbare Qualit\"{a}tskontrolle ist ein Werkzeug, dessen Bedeutung
+sehr hoch einzusch\"{a}tzen ist. Probleme k\"{o}nnen bei schlecht
+konditionierten Systemen auftreten, insbesondere wenn gro{\ss}e
+\"{A}hnlichkeiten bei den Komponentenspektren bestehen. M\"{o}glichkeiten
+zur L\"{o}sung der linearen Gleichungssysteme bestehen darin,
+pseudoinverse Matrizen zu definieren, die mit heutigen
+mathematischen Softwarepaketen berechnet werden k\"{o}nnen, in denen
+leistungsf\"{a}hige Algorithmen zur Matrizeninvertierung zur Verf\"{u}gung
+stehen \cite{golub89}.\\
+
+Der Nachteil der CLS--Methode, dass s\"{a}mtliche Einzelkomponenten
+des Gemischspektrums bekannt sein m\"{u}ssen, ist nicht sehr
+gravierend. Die kommerziell erh\"{a}ltliche Datenbank QASoft (Kap.
+\ref{qasoft}) enth\"{a}lt momentan IR--Spektren von 248 Gasen in den
+Aufl\"{o}sungen von 0.125, 0.25, 0.5 und 1 cm\up{-1}, weitere sind in
+anderen Datenbanken zu bekommen. Dass Abstriche bei der
+quantitativen Genauigkeit dieser Spektren gemacht werden m\"{u}ssen,
+wird an anderer Stelle diskutiert (Kap. \ref{bibliotheken}). In
+dieser Arbeit wurde ein Labor zur Messung qualitativ sehr
+hochwertiger IR--Spektren aufgebaut. Es ist mittlerweile in 1 1/2
+Tagen m\"{o}glich, ein Gas zu vermessen und dabei auch die
+nichtlinearen Anteile zu ber\"{u}cksichtigen (Kap.
+\ref{kalibriergas}). Aus diesem Grund erfolgt in dieser Arbeit die
+quantitative Analyse der FTIR--Atmosph\"{a}renspektren ausschlie{\ss}lich
+mit der CLS--Methode und die multivariaten statistischen Methoden
+werden nicht ausf\"{u}hrlicher behandelt.\\
+
+In den Ausnahmef\"{a}llen, dass Spektren von im Gemisch enthaltenen
+Einzelkomponenten nicht bekannt sind und das Herausschneiden
+bestimmter Bereiche, das Kalman--Filter und die iterative
+CLS--Auswertung einzelner Banden nicht zum Erfolg f\"{u}hren, kann man
+sich der statistischen Modelle bedienen. Diese bringen jedoch, wie
+oben beschrieben, f\"{u}r die Kalibrationsphase einen erheblichen
+Aufwand mit sich, wenn die zu erwartende spektrale Varianz sehr
+hoch ausf\"{a}llt, da diese vollst\"{a}ndig abgedeckt werden muss. Ein
+gro{\ss}er Vorteil der statistischen Verfahren und eine \"{U}berlegenheit
+zum CLS--Verfahren liegt dann vor, wenn starke
+Querempfindlichkeiten, wie sie in festen und fl\"{u}ssigen Proben
+gegeben sind, auftreten. Sie liefern dann verl\"{a}ssliche Ergebnisse
+auch bei gro{\ss}en Konzentrationsunterschieden der einzelnen
+Komponenten untereinander. Starke \"{U}berlagerungen sind in der
+Gasanalytik z.B. bei gleichzeitiger Messung verschiedener
+Kohlenwasserstoffe zu erwarten. Doch auch in einem solchen Fall
+konnte die Anwendung des klassischen CLS--Verfahrens hervorragende
+Ergebnisse liefern \cite{jaakola97}.\\
+
+Applikationen mit statistischen Kalibrationsverfahren f\"{u}r die
+Luftanalytik finden sich erst seit kurzem in der Literatur, wobei
+haupts\"{a}chlich FT--Spektrometer mit geringer Aufl\"{o}sung zum Einsatz
+kommen. So wurden von \cite{johansen97} PLS--Kalibrationen f\"{u}r die
+Raumluftanalytik vorgestellt; die Liste der Substanzen umfasst
+insgesamt 23 verschiedene Stoffe, f\"{u}r die jeweils
+substanzspezifisch optimale spektrale Intervalle ermittelt wurden.
+Der Kalibrieraufwand mit Reinstoffspektren ist enorm, wobei
+insbesondere jeweils die extrem hohe Anzahl von PLS--Faktoren
+anzumerken ist. Wellenzahlbereiche mit hohen Extinktionswerten,
+z.B. gr\"{o}{\ss}er 1.0 f\"{u}r die Referenzspektren bei den maximal zu
+erwartenden Konzentrationen, wurden von vornherein ausgeschlossen,
+um den Einfluss von Nichtlinearit\"{a}ten in Abh\"{a}ngigkeit von der
+Konzentration zu verringern. Die Basisliniendrift (konstante
+Verschiebungen, bzw. lineare Basislinenfunktionen mit
+unterschiedlicher Steigung) kann bei der Kalibrierung wie auch
+beim CLS--Verfahren ebenfalls ber\"{u}cksichtigt und einkalibriert
+werden. Grunds\"{a}tzlich muss festgehalten werden, dass wenn
+s\"{a}mtliche Komponenten im Gemisch bekannt sind und keine
+Modellfehler vorliegen, die statistischen Methoden der klassischen
+nicht \"{u}berlegen sein k\"{o}nnen.
+
+\cleardoublepage

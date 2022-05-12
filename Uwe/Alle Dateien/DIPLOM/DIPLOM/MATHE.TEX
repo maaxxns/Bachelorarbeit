@@ -1,0 +1,465 @@
+
+\chapter{\label{mathe}Mathematische Auswertungsmethoden}
+
+
+In der Literatur wird zur Auswertung von periodischen Signalen im Zeitbereich
+sehr oft die Fouriertransformation verwandt. Dazu wird das Signal in den Frequenzbereich
+transformiert und dann das Frequenzspektrum ausgewertet. Im ersten Teil dieses Kapitels werden noch einmal kurz die
+Eigenschaften der bekannten diskreten Fouriertransformation zusammengestellt.
+Im zweiten Teil des Kapitels wird dann ausfhrlich ein anderes Verfahren vorgestellt, 
+welches die Analyse von bestimmten periodischen Signalen im Zeitbereich
+erm”glicht. Ein Vergleich der beiden Auswertungsmethoden findet im dritten
+Teil dieses Kapitels statt.\\
+
+
+\section{Die diskrete Fouriertransformation}
+
+\bild{t}{foutra4}{135}{200}{Fouriertransformation eines Abtastsignals \cite{brigham}. 
+Wird das Abtastintervall $\Delta t$ zu groá gew„hlt, so k”nnen im 
+periodischen Frequenzspektrum 
+die Ordnungen nicht mehr voneinander getrennt werden (Alialising).}
+
+Die g„ngigste Methode, im Zeitbereich aus periodischen Signalen die Frequenz
+und die D„mpfung zu ermitteln, ist die Fouriertransformation. Um die Fouriertransformierte
+$F(\omega)$ eines abgetasteten Zeitsignals bestimmen zu k”nnen,
+wird die diskrete Fouriertransformation angewandt. Fr einen bestimmten
+Zeitpunkt $T=n\Delta t$ (n ist eine ganze Zahl mit festem Wert) l„át sich 
+ein Abtastwert einer Funktion
+f(t) zum Zeitpunkt T, unter der Voraussetzung der Stetigkeit von f(t) an
+der Stelle t=T, ausdrcken als
+\begin{equation}
+f(t)=f(T) \delta (t-T) \mbox{ .}
+\end{equation}
+Die Deltafunktion, die zur Zeit T auftritt, besitzt ein Gewicht, das gleich 
+dem Funktionswert bei t=T ist. Als Abtastsignal f(t) ergibt sich also somit
+\cite{brigham}:
+\begin{equation}
+f(t)=\sum_{n=-\infty}^{\infty} f(n\Delta t) \delta (t-n\Delta t) \mbox{ .}
+\end{equation}
+
+\clearpage
+
+Das Signal im Zeitbereich entsteht also durch eine Multiplikation des Signals
+f(t) mit einer Folge von Deltafunktionen (siehe auch Abb. \ref{foutra4}). Dies
+entspricht im 
+Frequenzraum einer Faltung der Fouriertransformierten beider
+Funktionen. Aus diesem Grund ist diese Fouriertransformation jedoch nicht
+eindeutig. Diskrete Zeitfunktionen besitzen periodische Frequenzspektren
+$F_D(\omega)=F_D(\omega \frac{k\cdot2\pi}{\Delta t})$, k ist eine beliebige 
+ganze Zahl.\\ 
+
+Die Transformation erfolgt anhand der Vorschrift: 
+\begin{equation}
+F_D(\omega)=\sum_{n=0}^{N-1} f(n \Delta t) \exp(- i \omega n \Delta t)\mbox{ ,}
+\end{equation}
+mit dem Abtastintervall $\Delta t$, der Gesamtzahl der Abtastintervalle N und 
+der ganzen Zahl n (n=$0 \ldots N$).\\
+
+Durch die Periodizit„t des Signals kann es zu Bandberlappungseffekten kommen.
+Um dadurch keinerlei 
+Informationsverluste zu
+haben, muá die Abtastfrequenz $\nu_{\Delta t}=1/\Delta t$ mindestens 
+doppelt so groá
+sein wie die im Signal enthaltene h”chste Frequenz $\nu_{max}$ (\it Abtasttheorem\rm):
+\begin{equation}
+\nu_{\Delta t}=\frac{1}{\Delta t} \ge 2 \nu_{max}\mbox{ .}
+\end{equation}
+Die Verf„lschung der Fouriertransformation durch šberlagerung wird \it 
+Alialising \rm (lat., ein anderer) genannt, wobei die kleinstm”gliche 
+Abtastfrequenz, die das Abtastheorem noch erfllt, \it Nyquist--Abtastrate
+\rm heiát.\\
+
+Ein zweites Ph„nomen, das zu einer Verf„lschung der Fouriertransformierten
+fhrt, ist das \it Leakage\rm. Es resultiert aus der Tatsache, daá nur eine
+endliche Anzahl von Abtastwerten zur Verfgung steht. Das Abtastsignal wird
+abgeschnitten und ist somit zeitlich begrenzt. Um diese Begrenzung zu 
+bercksichtigen, muá eine rechteckige Fensterfunktion (siehe Abb. \ref{foutra1})
+eingefhrt werden, deren Fouriertransformierte
+\begin{equation}
+F_{DF}(\omega)=2T_0\frac{\sin (\omega T_0)}{\omega T_0}
+\end{equation}
+($T_0=N\Delta t/2$) mit der Fouriertransformierten $F_D(\omega)$ des
+Signals gefaltet werden muá.\\
+
+\bild{htb}{foutra1}{130}{46}{Um das Leakage zu vermeiden muá eine geeignete
+Fensterfunktion eingefhrt werden, deren Breite einem Vielfachen der 
+Grundfrequenz des Zeitsignals entspricht. Fr eine Rechteckfunktion ist die
+Fouriertransformierte eine sinc--Funktion.}
+
+Die aus dieser Faltung resultierende Fouriertransformierte ist im Vergleich
+zu $F_D(\omega)$ stark verzerrt (\it Leakage\rm). Um diese Verzerrung nun
+zu unterdrcken, muá die Breite des Rechtecksignals $N \Delta t$ genau ein
+ganzahliges Vielfaches der Periode der Grundschwingung des Zeitsignals sein.
+Nur dann fallen die Nullstellen der $\sin(\omega T_0)/(\omega T_0)$--Funktion mit
+den Abtastwerten zusammen und die Fouriertransformierte der Funktion wird bei
+der Faltung nicht verzerrt.\\
+
+\bild{hbt}{foutra}{130}{41}{Diskrete Fouriertransformation einer ged„mpften
+Sinusschwingung. Die Punkte im Zeitsignal symbolisieren die Abtastwerte des
+ideal vorgegebenen Signals. Bei der gepunkteten Fouriertransformierten wurde eine 
+Fensterfunktion gew„hlt, deren Breite exakt einem ganzzahligen Vielfachen der
+Grundfrequenz der Sinusschwingung entspricht. Bei der durchgezogenen Linie handelt
+es sich um eine Fouriertransformierte, die mit Hilfe einer Fensterfunktion, 
+deren Breite nicht ganz exakt einem ganzzahligem Vielfachen der Grundfrequenz 
+entspricht, errechnet wurde. Die Fouriertransformierte der d„mpfenden
+Exponentialfunktion ist hier nicht dargestellt.}
+
+Stimmt die Breite der Fensterfunktion nicht mit einem ganzzahligen Vielfachen
+der Periode der Grundschwingung des Zeitsignals berein, so treten bei der
+Faltung Seitenmaxima auf (Abb. \ref{foutra}), die aus den Seitenkomponenten der
+$\sin(\omega T_0)/(\omega T_0)$--Funktion resultieren. Dieser Leakage--Effekt 
+l„át sich abschw„chen, wenn man eine Fensterfunktion verwendet, deren
+spektrale Seitenmaxima geringere Amplituden aufweisen als bei einer
+sinc--Funktion. Je kleiner die Amplitude der Seitenmaxima, desto schw„cher sind
+auch die Auswirkungen des Leakage--Effekts auf die Ergebnisse der Fouriertransformation.
+Eine besonders geeignete Fensterfunktion ist z.B. die \it Hanning--Funktion \rm
+\cite{brigham}.
+
+
+\section{\label{barkh}LPSVD--Verfahren von Barkhuijsen et al.}
+
+Das LPSVD--Verfahren von Barkhuijsen et al. \cite{bark} erm”glicht im 
+Zeitbereich das Anpassen von K berlagerten exponentiell
+ged„mpften trigonometrischen Funktionen mit beliebigen Phasen und Rauschen.
+Unter
+der Voraussetzung, daá eine Voraussage der im Signal folgenden Werte anhand der 'Methode der
+kleinsten Quadrate' [\bf L\rm east \bf S\rm quares procedure (LS)] m”glich ist,
+wird eine Eigenwertzerlegung der Meádatenmatrix vorgenommen, die die Unterscheidung zwischen Signal
+und Rauschen erlaubt. Die Methode, die Barkhuijsen et al. LPSVD (\bf L\rm inear
+\bf P\rm rediction by \bf S\rm ingular \bf V\rm alue \bf D\rm ecomposition) nennen,
+extrahiert s„mtliche Frequenzen, Amplituden, D„mpfungsfaktoren und Phasen der in einem Meásignal
+enthaltenen Funktionen. Weiterhin ist LPSVD unempfindlich gegenber einem
+Abschneiden des Signals am Anfang oder am Ende, und ist sogar in der Lage, diesen
+fehlenden Teil wiederherzustellen.
+
+
+\subsubsection{Mathematisches Modell}
+
+Ein Zeitsignal, gemessen zu Zeiten  $n\Delta t$  ($0 \leq n \leq N-1$) bestehe aus
+K exponentiell ged„mpften trigonometrischen  Funktionen. Dann gilt fr jeden der
+N Datenpunkte $x_n$:
+\begin{equation}
+\label{gl1}
+x_n = x(n \Delta t) = \sum_{k=1}^K c_k \exp(-b_k n \Delta t) \cos(\omega_k n \Delta t + \varphi_k) + R\mbox{ ,}
+\end{equation}
+mit den 4 K Parametern ($k = 1 \ldots K$) $\omega_k$ (Frequenzen), $b_k$ 
+(D„mpfungen), $c_k$ (Amplituden), $\varphi_k$ (Phasen) und R (Rauschen).\\
+
+Um Gl. (\ref{gl1}) zu l”sen, fhren Barkhuijsen et al. das Prinzip der \bf L\rm inear
+\bf P\rm rediction (LP) (siehe auch \cite{makhoul}) ein. Es besagt, daá jeder Datenpunkt
+durch eine Linearkombination von M vorhergehenden ausgedrckt werden kann:
+\begin{equation}
+\label{gl2}
+x_n = a_1 x_{n-1} + a_2 x_{n-2} + \ldots + a_M x_{n-M}\mbox{ ,}
+\end{equation}
+(n liegt beliebig zwischen M und N--1, die $a_m$ ($m = 1, \ldots ,M$) sind unabh„ngig
+von n).\\
+
+\cite{kumaresan} zeigte, daá im rauschfreien Fall genau 2K Koeffizienten ben”tigt
+werden. Im verrauschten Fall hingegen liegt die Anzahl der ben”tigten Koeffizienten weit
+ber 2 K, gew”hnlich bei bis zu 0.75 N.\\
+
+Gl. (\ref{gl2}) muá nun an die gemessenen Daten angepaát werden. Sie kann geschrieben
+werden fr N--M Werte von n, dabei erh„lt man dann folgendes Gleichungssystem:
+\begin{equation}
+\label{gl3}
+\bf
+X \rm \vec{a} = \vec{x}\mbox{ ,}
+\end{equation}
+wobei \bf X \rm eine Datenmatrix der Dimension $(N-M) \times M$ und $\rm \vec{x}\rm $,
+ein Vektor der Dimension N--M, bekannt sind. $\rm \vec{a}\rm $, ein Vektor
+der Dimension M, ist zu bestimmen. Dies geschieht mit der LS-Prozedur \cite{lawson}.
+Danach wird \bf X \rm folgendermaáen zerlegt:
+\begin{equation}
+\bf X\rm = \bf U \Lambda V^T\mbox{ ,}
+\rm
+\end{equation}
+wobei $\bf \Lambda\rm $ eine diagonale Matrix dergleichen Dimension wie \bf X \rm ist.
+Die Diagonalelemente enthalten in absteigender Reihenfolge die Eigenwerte von \bf X\rm .
+Die Eigenwerte entsprechen den Eigenwerten der nicht--negativen definiten Matrix 
+$\bf X X^T\rm $. \bf U \rm und \bf V \rm sind orthogonale Matrizen, die $\bf X X^T\rm $
+und $\bf X^T X\rm $ zur Diagonalform reduzieren.\\
+
+Im rauschfreien Fall hat \bf X \rm$ (N-M \times M)$ den Rang $l = 2 K $ und
+l Eigenwerte sind ungleich 0.\
+Im rauschbehafteten Fall werden auch die restlichen Eigenwerte ungleich 0.
+Solange das Signal--Rausch--Verh„ltnis aber in vernnftiger Weise als gut bezeichnet
+werden kann, kann anhand der Gr”áe der Eigenwerte klar zwischen denen, die zum Signal,
+und solchen Eigenwerten, die zum Rauschen geh”ren, unterschieden werden. In Abb. \ref{eigenw1}
+sieht man in der logarithmischen Darstellung, daá der Schnitt nach dem 3. Eigenwert gemacht
+werden muá.
+
+\bildlinks{ht}{eigenw1}{80}{63}{Eigenwerte ei in Abh„ngigkeit von 
+ihrem Betrag $DS_{ei}$. Anhand der Gr”áe der Eigenwerte kann klar entschieden
+werden, welche Eigenwerte zum Signal geh”ren und welche zum Rauschen. In diesem
+Fall geh”ren 3 Eigenwerte (ausgefllte Punkte) zum Signal.}
+
+Die Unterscheidung der Eigenwerte von Signal und Rauschen erm”glicht es, den 
+Beitrag des Rauschens in den LP--Koeffizienten $a_n$
+von Gl. (\ref{gl2}) abzuschneiden. Dies hat zwar keine Auswirkung auf die Anzahl
+der $a_n$, jedoch entscheidende Auswirkung auf die Stabilit„t der folgenden Rechnungen.\\
+
+\cite{lawson} bewies, daá der kleinstm”gliche L”sungssatz fr die LP--Koeffizienten 
+$\rm \vec{a}\rm$ eineindeutig gegeben ist durch:
+\begin{equation}
+\rm
+\vec{a} \bf = V \Lambda^T U^T \rm \vec{x}\bf\mbox{ ,}\\
+\qquad \mbox{\rm mit \bf} \qquad \Lambda \Lambda^T = \left| \begin{array}{cc} \bf E_l \rm & 0\\ 0 & 0
+\end{array} \right|
+\rm
+\end{equation}
+und $\bf E\rm_l$ der Einheitsmatrix vom Rang l. \\
+
+In einem weiteren Schritt muá nun die Verbindung zwischen den eben erhaltenenen
+LP--Koeffizienten $a_n$ und den Frequenzen $\omega_n$, Amplituden $c_n$, D„mpfungen 
+$b_n$ und Phasen $\varphi_n$ der im Signal enthaltenen Funktionen hergestellt werden.\\
+
+Fr eine einzige rauschfreie exponentiell ged„mpfte trigonometrische Funktion
+erh„lt man die 2 LP--Koeffizienten $a_1 = 2 \exp(-b \Delta t) \cos(\omega \Delta t)
+\mbox{ und } a_2 = -\exp(-2 b \Delta t)$.\\
+Mit Gl. (\ref{gl1}) und Gl. (\ref{gl2}) gilt dann:
+\begin{equation}
+\label{gl3}
+\exp[(-b \pm i \omega) \Delta t] = [a_1 \pm \sqrt{(a_1^2 + 4 a_2)}]/2\mbox{ .}
+\end{equation}
+$b$ und $\omega$ erh„lt man nun aus den Wurzeln des Polynoms
+\begin{equation}
+z^2 - a_1 z - a_2 =0\mbox{ .}
+\end{equation}
+Die L”sungen sind Vektoren in der komplexen Ebene, wobei die D„mpfung durch den
+Radius und die Frequenz durch den Winkel zur reellen Achse gegeben ist (nur jeweils
+eine Wurzel wird ben”tigt!). \cite{kay} und \cite{kumaresan} haben gezeigt, daá
+fr K rauschfreie exponentiell ged„mpfte Funktionen die Wurzeln des Polynoms
+\begin{equation}
+\label{gl4}
+z^{2K} - a_1 z^{2K-1} - \ldots - a_{2K} = 0
+\end{equation}
+gel”st werden mssen. Im verrauschten Fall werden mehr LP--Koeffizienten ben”tigt
+($M \ge 2K$), entsprechend steigt auch die Ordnung des Polynoms.\\
+
+In Gl. (\ref{gl2}) wird jeder Datenpunkt durch eine Linearkombination von M \it
+vorhergehenden \rm ausgedrckt. Drckt man nun jeden Datenpunkt durch eine
+Linearkombination von M \it folgenden \rm aus (Backward Prediction), so liegen
+s„mtliche L”sungen, die zum Signal geh”ren, eindeutig auáerhalb des Einheitskreises.
+Alle L”sungen, die mit dem Rauschen verbunden sind, liegen innerhalb des Einheitskreises.
+Abb \ref{eigenw2} zeigt deutlich die 2 L”sungswerte (nur jeweils eine Wurzel wird
+ben”tigt!), die auáerhalb des Einheitskreises liegen. Das gemessene Signal setzt
+sich somit aus 2 Funktionen zusammen.
+
+\bildlinks{ht}{eigenw2}{80}{81}{Die L”sungen des Polynoms Gl. \ref{gl4} in der komplexen
+Ebene. Jede L”sung, die auáerhalb des Einheitskreises liegt (gefllte Punkte), 
+repr„sentiert
+je eine der Funktionen, aus denen sich das Signal zusammensetzt. Es wird jeweils
+nur eine der komplexen Wurzeln ben”tigt!. Das Signal setzt
+sich somit in diesem Fall aus zwei berlagerten Funktionen zusammen.}
+
+S„mtliche Frequenzen und D„mpfungskonstanten der im Signal enthaltenen Funktionen
+sind nun bestimmt. Die Amplituden und Phasen sind noch nicht bekannt, was nicht 
+weiter verwunderlich ist, da die Gl. (\ref{gl2}) fr s„mtliche Datenpunkte gilt
+und somit keine zeitabh„ngige Information wie Amplitude und Phase enthalten
+kann. Setzt man nun die Frequenzen und D„mpfungskonstanten in Gl. (\ref{gl1}) 
+ein und schreibt die Gleichung fr s„mtliche N Datenpunkte auf, so sieht man,
+daá jede Gleichung linear von den unbekannten $c_k \cos \varphi_k$ und 
+$c_k \sin \varphi_k$ abh„ngen. Somit k”nnen die Amplituden und Phasen durch eine
+weitere LS--Prozedur bestimmt werden.\\
+
+Die oben beschriebenen Rechnungen wurden mit \it MathCad 5.0 Plus \rm durchgefhrt.
+Dieses Programm ist im Anhang \ref{mathcad} dokumentiert.\\
+
+\clearpage
+
+
+\section{Vergleich beider Methoden}
+
+\bild{t}{matest1}{152}{200}{Ideal vorgegebene Testfunktionen 
+(durchgezogene Linien), deren Parameter in der Tab. \ref{parameter} angegeben
+sind. Die Punkte zeigen die Anpassung mit dem LPSVD--Verfahren. Im rauschfreien
+Fall stimmen alle Parameter dieser Anpassung mit den vorgegebenen Funktionen
+genau berein.}
+
+\tabelle{h}{1.2}{parameter}
+{{|c||c|c|c|c|c|c|c|c|c|}\hline
+Parameter & test 1 & test 2 & test 3 & test 4 & test 5 & test 6 & test 7 &
+test 8 & test 9\\
+\hline
+\hline
+$\nu_1$ & 10.0 & 10.0 & 10.0 & 10.0 & 10.0 & 10.0 & 10.0 & 10.0 & 10.0\\
+\hline
+$A_1$ & 1 & 1 & 1 & 1 & 1 & 1 & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{2}$\\
+\hline
+$\tau_{{coh_1}}$ & 400 & 610 & 40 & 40 & 390 & 390 & 260 & 200 & 400\\
+\hline
+$\varphi_1$ & $\frac{\pi}{4}$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{2}$ & 
+$\frac{\pi}{6}$ & $\frac{\pi}{6}$ & $\frac{\pi}{16}$ & $\frac{\pi}{8}$ & 
+$\frac{\pi}{2}$\\
+\hline
+$\nu_2$ & --- & --- & 15.0 & 11.0 & 10.5 & 11.0 & 11.0 & 11.0 & 20.0\\
+\hline
+$A_2$ & --- & --- & $\frac{1}{2}$ & 1 & 1 & 1 & 1 & $\frac{1}{4}$ & $\frac{1}{4}$\\
+\hline
+$\tau_{{coh_2}}$ & --- & --- & 500 & 500 & 400 & 420 & 820 & 193 & 100\\
+\hline
+$\varphi_2$ & --- & --- & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & 
+$\frac{\pi}{8}$ & $\frac{\pi}{8}$ & $\frac{\pi}{4}$ & $\frac{\pi}{10}$ & 
+$\frac{\pi}{4}$\\
+\hline
+$\nu_3$ & --- & --- & --- & 12.0 & 11.0 & 12.0 & 12.0 & 12.0 & 30.0\\
+\hline
+$A_3$ & --- & --- & --- & 1 & 1 & 1 & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{6}$\\
+\hline
+$\tau_{{coh_3}}$ & --- & --- & --- & 800 & 410 & 693 & 40 & 650 & 350\\
+\hline
+$\varphi_3$ & --- & --- & --- & $\frac{\pi}{6}$ & 
+$\pi$ & $\pi$ & $\frac{\pi}{8}$ & $\frac{\pi}{3}$ & 
+$\frac{\pi}{6}$\\
+\hline
+$\nu_4$ & --- & --- & --- & --- & --- & --- & 13.0 & 13.0 & 40.0\\
+\hline
+$A_4$ & --- & --- & --- & --- & --- & --- & 1 & 1 & 1\\
+\hline
+$\tau_{{coh_4}}$ & --- & --- & --- & --- & --- & --- & 460 & 460 & 460\\
+\hline
+$\varphi_4$ & --- & --- & --- & --- & 
+--- & --- & $\frac{\pi}{2}$ & $\frac{\pi}{0}$ & 0\\
+\hline}
+{Parameter der verwendeten Testfunktionen. Die Frequenzen $\nu_i$ sind in GHz, 
+die Amplituden $A_i$ in willkrlichen Einheiten und die Koh„renzzeiten 
+$\tau_{coh_i}$ in ps angegeben.}
+
+Die diskrete Fouriertransformation und das LPSVD--Verfahren von Barkhuijsen et al.
+sollen im folgenden miteinander verglichen werden. Dazu ist eine eingehende
+Fehlerbetrachtung notwendig, die in der Literatur allerdings nur sehr 
+unzureichend zu finden ist. Aus diesem Grund werden neun ideale Testfunktionen
+mit K bekannten Frequenzen $\nu$, Amplituden A, Koh„renzzeiten $\tau_{coh}$,
+Phasen $\varphi$ und einem Rauschanteil R vorgegeben (Tab. \ref{parameter}).
+S„mtliche Gr”áen werden
+so gew„hlt, daá sie den gegebenen Meábedingungen entsprechen. Fr die 
+Testfunktionen gilt:
+\begin{equation}
+Testnr(n \Delta t)=\sum_{n=1}^N \sum_{k=1}^K A_k \exp(-\frac{n\Delta t}{\tau_{coh}})
+\cos(2 \pi \nu_k n \Delta t+\varphi)+R\mbox{ .}
+\end{equation}
+Um einen ersten groben Vergleich treffen zu k”nnen, werden nur die in der 
+Tabelle \ref{parameter} 
+\clearpage
+\noindent
+dargestellten Frequenzen und Amplituden variiert, $\tau_{coh}$
+wurde 400 ps, die Phasenver--
+schiebung $\varphi$ und das Rauschen R gleich null
+gesetzt. Die Ergebnisse dieser Testreihe sind in den Abbildungen \ref{matest1}
+und \ref{matest2} gezeigt.\\ 
+
+Die numerische Analyse mit dem LPSVD--Verfahren ergibt eine
+eindeutige Reproduktion der Frequenzen, Amplituden, Koh„renzzeiten und Phasen
+mit Fehlern kleiner als 0.05\%.\\ 
+
+Die Analyse des Signals mit Hilfe der diskreten
+Fouriertransformation gestaltet sich hingegen schwieriger. Ein Alialisingeffekt
+tritt nicht auf, da aufgrund des Kanalabstandes des MCA ($\Delta t=3.65$ ps)
+laut Abtasttheorem die auftretenden Frequenzen kleiner 274 GHz sein mssen.
+Dies ist bei erwarteten h”chsten Frequenzen von ca. 30 GHz v”llig unkritisch.
+Um hingegen den Leakageeffekt so gering wie m”glich zu halten, muá die
+Fensterbreite so gew„hlt werden, daá die Halbwertsbreite der berechneten
+Fouriertransformierten m”glichst klein wird. Um diese Fensterbreite zu finden,
+wird die Testfunktion 1 mit nur einer Frequenz (10 GHz) genommen. Es stellt
+sich heraus, daá die Fensterbreite im vorliegenden Fall nicht genau einem
+ganzzahligen Vielfachen der Grundschwingung gew„hlt werden kann, bei der in der
+Fouriertransformierten nur ein Punkt von 0 verschieden w„re. Die fr 10 GHz
+optimale Fensterbreite wird fr die Auswertung s„mtlicher anderer Testfunktionen
+beibehalten, da die 10 GHz in allen Funktionen enthalten sind. Dabei ist
+zu bedenken, daá fr die anderen auftretenden Frequenzen der Leakage--Effekt
+gr”áer ist als fr 10 GHz.\\
+
+\bild{t}{matest2}{145}{195}{Die durchgezogenen Linien stellen die 
+Fouriertransformierten der Funktionen aus Tab. \ref{parameter} dar. Die
+Fouriertransformierten wurden durch K Lorentzfunktionen, bei genauer Kenntnis
+von Lage und Anzahl der Frequenzen, optimal angepaát (Punkte).}
+ 
+$|F(\omega)|^2$ hat die Form einer Lorentzfunktion, deren spektrale Lage
+des Maximums die Frequenz $\nu$, die H”he des Maximums die Amplitude A und
+deren Halbwertsbreite $\Delta \omega =4/\tau_{coh}$ die 
+Koh„renzzeit des Signals gibt \cite{langer}. S„mtliche Fouriertransformierten
+(durchgezogene Linien in Abb. \ref{matest2}) sind somit durch K Lorentzfunktionen
+anzupassen. Hierbei zeigt sich sehr schnell der groáe Nachteil der Fouriertransformation.
+In Abb. \ref{matest2} sind gepunktet die optimal m”glichen Anpassungen bei vorheriger
+Kenntnis der Anzahl und Lage der im Signal enthaltenen Frequenzen dargestellt.
+In der Praxis hingegen sind sowohl Anzahl wie auch Lage der Frequenzen unbekannt.
+Bei relativ eng beieinander liegenden Frequenzen ist dem Fourierspektrum
+nicht zu entnehmen, wieviele Frequenzen enthalten sind (z.B. Test 5 = 3 Funktionen,
+Test 8 = 4 Funktionen). In der Literatur ist auch keine Aussage darber zu
+finden, ob die Anpassung eineindeutig ist. Weiterhin kann auch keine quantitative
+Aussage ber den Leakagefehler und somit ber den Fehler von A und $\tau_{coh}$
+gemacht werden. Da sowohl diese Information fr die Auswertung von
+Quantum--Beat--Signalen wichtig wie auch eng beieinander liegende Frequenzen
+m”glich sind, ist die Fouriertransformation schon in diesem einfachsten aller
+betrachteten F„lle zur Auswertung nicht optimal geeignet 
+\clearpage
+\noindent
+und wird daher im
+weiteren nicht mehr bercksichtigt.\\
+
+Die LPSVD--Methode bietet den Vorteil, daá ohne Transformation in den 
+Frequenzbereich Frequenzen, Amplituden, D„mpfungen und Phasen aller im Signal
+enthaltenen Funktionen eindeutig reproduziert werden. Sie hat dabei eine
+h”here Aufl”sung als die diskrete Fouriertransformation und erlaubt aufgrund
+der Eigenwertzerlegung eine Unterscheidung zwischen Signal und Rauschen.
+Auch bietet sie die M”glichkeit, abgeschnittene Teile eines Signals 
+wiederherzustellen.\\
+
+Um nun die Fehlergrenzen dieser Methode zu bestimmen, werden weitere
+Testfunktionen analysiert. Dazu werden s„mtliche Parameter, wie oben in
+Tabelle \ref{parameter} aufgefhrt, variiert und fr jede Testreihe ein
+konstantes Signal--Rausch--Verh„ltnis durch šberlagerung einer Random--Funktion
+eingestellt. Die Einheit dieses Signal--Rausch--Verh„ltnisses wird in
+Dezibel (dB) angegeben, welche hier wie folgt definiert ist:
+\begin{equation}
+[dB]=10 \cdot \lg \sqrt{\frac{Signal^2}{Rauschen^2}}\mbox{ .}
+\end{equation}
+
+\tabelle{htb}{1.2}{fehler}
+{{|c||c|c|c|c|} \hline 
+& $\nu$ & A & $\tau_{coh}$ & $\varphi$\\
+\hline
+\hline
+$\infty$ & 0.01\% & 0.30\% & 0.20\% & 0.27\%\\
+\hline
+30 dB & 0.05\% & 1.78\% & 1.28\% & 1.88\%\\
+\hline
+18 dB & 0.17\% & 11.05\% & 10.69\% & 34.92\%\\
+\hline
+15 dB & 0.52\% & 44.49\% & 19.90\% & 38.42\%\\
+\hline}{Mittlerer Abweichungsfehler der mit der LPSVD--Methode angepaáten 
+Funktionen aus Tab. \ref{parameter} in Abh„ngigkeit von verschiedenen
+Signal--Rausch--Verh„ltnissen.}
+
+Folgende Signal--Rausch--Verh„ltnisse wurden gew„hlt: der rauschfreie Fall
+($\infty$); die Grenze, an der der Fehler bercksichtigt werden sollte (30 dB);
+das bei den Messungen dieser Arbeit auftretende mittlere Signal--Rausch--Verh„ltnis
+(18 dB) und eine untere Grenze (15 dB), an der der Fehler fr A, $\tau_{coh}$ und $\varphi$
+signifikant hoch ist. In der Tabelle \ref{fehler} wird der mittlere 
+Abweichungsfehler aufgefhrt. Der Fehler der periodischen Phase wird aus der
+Differenz aus gemessenen Wert und Sollwert dividiert durch den Mittelwert beider
+Werte bestimmt. Eine herk”mmliche Fehlerabweichungsbestimmung macht bei einem
+periodischen Wert wie der Phase $\varphi$ keinen Sinn.\\
+
+Grunds„tzlich sind die Frequenzen auch im ungnstigsten Fall nur
+mit sehr kleinen Fehlern behaftet. Der kritischste Anpaáungsparameter ist die Phase.
+Die gr”áten Abweichungen treten immer in der
+Testfunktion 5 auf, wo 3 Frequenzen eng beieinander liegen (10, 10.5 und 11 GHz)
+und die Phasen stark unterschiedlich sind ($\frac{\pi}{8}, \frac{\pi}{6}, 
+\pi$). Ab einem Signal--Rausch--Verh„ltnis von 18 dB kann das Verfahren
+die Frequenz von 10.5 GHz nicht mehr aufl”sen, was zu groáen Fehlern
+bei den anderen Anpaáungskomponenten fhrt. \\
+
+Es wird somit nun ein Kriterium gesucht, welches eine Aussage darber trifft,
+welche Frequenzabst„nde bei welchen Phasen--, Koh„renzzeiten-- und 
+Amplitudenunterschieden bei gegebenem Signal--Rausch--Verh„ltnis noch 
+aufgel”st werden k”nnen. Umfangreiche weitere Tests fr das bei den Messungen
+gegebene 18 dB Signal--Rausch--Verh„ltnis zeigen, daá die Frequenzaufl”sung
+von den Phasen--, Amplituden-- und Koh„renzzeitenunterschieden der einzelnen
+Funktionen unabh„ngig ist. Entscheidend ist allein das Produkt aus 
+Signal--Rausch--Verh„ltnis und Zahl der bei der Auswertung bercksichtigten 
+Punkte. Die Realisierung in \it MathCad 5.0 plus \rm erlaubt eine maximal
+zu bercksichtigende Punktzahl von 180. In diesem Fall k”nnen fr ein
+Signal--Rausch--Verh„ltnis von 18 dB Frequenzabst„nde $\ge$ 1 GHz sicher
+aufgel”st werden. 
