@@ -33,7 +33,7 @@
 
 % load english (for abstract) and ngerman language
 % the main language has to come last
-\usepackage[american, ngerman]{babel}
+\usepackage[american]{babel}
 
 % intelligent quotation marks, language and nesting sensitive
 \usepackage[autostyle]{csquotes}
@@ -115,7 +115,7 @@
                    % in the references.bib use langid={en} for english sources
 ]{biblatex}
 \addbibresource{references.bib}  % the bib file to use
-\DefineBibliographyStrings{german}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
+\DefineBibliographyStrings{english}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
 
 
 % Last packages, do not change order or insert new packages after these ones
@@ -127,14 +127,14 @@
 %-------------------------    Angaben zur Arbeit   ----------------------------
 %------------------------------------------------------------------------------
 
-\author{Maximilian Nöthe}
-\title{\LaTeX-Dokumentenklasse und Vorlage für Abschlussarbeiten an der TU Dortmund}
-\date{2014}
-\birthplace{Castrop-Rauxel}
-\chair{Lehrstuhl für Experimentelle Physik V}
+\author{Max Koch}
+\title{Generation and time-resolved detection of terahertz radiation}
+\date{2022}
+\birthplace{Bad Driburg}
+\chair{AG Wang}
 \division{Fakultät Physik}
 \thesisclass{Bachelor of Science}
-\submissiondate{31. September 2015}
+\submissiondate{26.06.2022}
 \firstcorrector{Prof.~Dr.~Erstgutachter}
 \secondcorrector{Prof.~Dr.~Zweitgutachter}
 
@@ -143,7 +143,7 @@
 
 \begin{document}
 \frontmatter
-\input{content/hints.tex}
+% \input{content/hints.tex}
 \maketitle
 
 % Gutachterseite
@@ -155,7 +155,6 @@
 
 \mainmatter
 % Hier beginnt der Inhalt mit Seite 1 in arabischen Ziffern
-\input{content/00_abstract.tex}
 \input{content/01_intro.tex}
 \input{content/02_theory.tex}
 \input{content/03_setup.tex}
