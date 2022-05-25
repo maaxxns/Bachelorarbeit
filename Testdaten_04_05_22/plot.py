@@ -7,7 +7,7 @@ import matplotlib
 from scipy.fft import fft, fftfreq
 
 
-files = ['002_EOS_FFT.txt', '002_EOS_FFT2.txt']
+files = ['16_57_45.txt', '002_EOS_FFT2.txt']
 savefiles = ['plot1.pdf', 'plot2.pdf']
 
 
