@@ -1,14 +1,40 @@
 \chapter{Theory}
 
-\section{Electro-optic sampling}\label{sec:eos}
-
 \section{Optical rectification}\label{sec:optic_ref}
+To produce $\si{\tera\hertz}$ radiation we take advantage of optical rectification.
+This effect is caused by a change of polarization from the incoming electric field of the laser pulse.
+The polarization
+
+\begin{equation}
+P = \xi(E) E
+\end{equation}
+
+is directly proportional to the elctric field $E$ and the susceptibilty $\xi(E)$.
+Which in turn can be expanded to 
+
+\begin{equation}
+    \xi(E) = \xi_1 + \xi_2 E +\xi_3 E^2 + ...   \, .
+\end{equation}
+
+As describe earlier optical rectification is a second order effect in thus describe by the $P_\text{el-op} = \xi_2 E^2$ part.
+Because we dont have just one electric field inside the crytsal, but two we have to take in account both fields.
+On of those electric fields oscillats at frequency $\omega_1$ and the other at frequency $\omega_2$.
+The resulting  second order polarization term 
+
+\begin{equation}
+    P_\text{el-op} = \xi_2 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
+\end{equation}
+
+shows a cosin with a diffrence depends $\omega_1-\omega_2$ and one with a sum depends $\omega_1+\omega_2$.
+The one with the diffrence depends results in the production of $\si{\tera\hertz}$ radiation.
+
+\section{Electro-optic sampling}\label{sec:eos}
 
 
 \section{ZnTe}
 One of the crystalls we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
 It allows the production of a wideband coherent $\si{\tera\hertz}$ Field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
-Because optical rectification is a non linear effect it is important to aline the laser to the <110> axis of the crystal.
+Because optical rectification is a non linear effect it is important to aline the laser to the $<110>$ axis of the crystal.
 
 
 %(Nahata, A., Weling, A. S., and Heinz, T. F., A wideband coherent terahertz spectroscopy
