@@ -1,32 +1,41 @@
 \chapter{Theory}
+\section{Terahertz radiation}
 
 \section{Optical rectification}\label{sec:optic_ref}
 To produce $\si{\tera\hertz}$ radiation we take advantage of optical rectification.
-This effect is caused by a change of polarization from the incoming electric field of the laser pulse.
-The polarization
+Optical rectification is a second order non linear effect and thus can be just observed in non linear material.
+This effect causes a DC polarization in the crystal that if moduled correctly causes $\si{\tera\hertz}$ radiation.
+The DC polarization occurs when an outer electric field interacts with the crytal.
+Because of the nonlinear structure and in turn the anharmonic potential of crystal charges, the charges oscillate further into one dircetion then the other.
+The displacement of charge is what causes the DC polarization.
+To discuss the effect in detail we take a look at the polarization
 
 \begin{equation}
 P = \xi(E) E
 \end{equation}
 
-is directly proportional to the elctric field $E$ and the susceptibilty $\xi(E)$.
+which is directly proportional to the elctric field $E$ and the susceptibilty $\xi(E)$.
 Which in turn can be expanded to 
 
 \begin{equation}
     \xi(E) = \xi_1 + \xi_2 E +\xi_3 E^2 + ...   \, .
 \end{equation}
 
-As describe earlier optical rectification is a second order effect in thus describe by the $P_\text{el-op} = \xi_2 E^2$ part.
-Because we dont have just one electric field inside the crytsal, but two we have to take in account both fields.
+As describe earlier optical rectification is a second order effect and describe by the $P_\text{nl} = \xi_2 E^2$ part.
+Because the laser produces electro magnetic radiation at a whole bandwith of frequencies $\delta\omega$ we have to consider all of those electric fields inside the crystal.
+To simplify we first take a look at just two electric fields.
 On of those electric fields oscillats at frequency $\omega_1$ and the other at frequency $\omega_2$.
-The resulting  second order polarization term 
+The resulting second order polarization term 
 
 \begin{equation}
-    P_\text{el-op} = \xi_2 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
+    P_\text{nl} = \xi_2 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
 \end{equation}
 
 shows a cosin with a diffrence depends $\omega_1-\omega_2$ and one with a sum depends $\omega_1+\omega_2$.
 The one with the diffrence depends results in the production of $\si{\tera\hertz}$ radiation.
+% the one with the sum depends is important for second harmonic generation
+
+\cite[289--291]{book_optical_rectification}
 
 \section{Electro-optic sampling}\label{sec:eos}
 
