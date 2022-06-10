@@ -11,7 +11,7 @@ The displacement of charge is what causes the DC polarization.
 To discuss the effect in detail we take a look at the polarization
 
 \begin{equation}
-P = \xi(E) E
+P = \xi(E) E \epsilon_0
 \end{equation}
 
 which is directly proportional to the elctric field $E$ and the susceptibilty $\xi(E)$.
@@ -28,12 +28,24 @@ On of those electric fields oscillats at frequency $\omega_1$ and the other at f
 The resulting second order polarization term 
 
 \begin{equation}
-    P_\text{nl} = \xi_2 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
+    P_\text{nl} = \xi_2 \epsilon_0 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
 \end{equation}
 
-shows a cosin with a diffrence depends $\omega_1-\omega_2$ and one with a sum depends $\omega_1+\omega_2$.
-The one with the diffrence depends results in the production of $\si{\tera\hertz}$ radiation.
-% the one with the sum depends is important for second harmonic generation
+shows a cosin with a diffrence dependency $\omega_1-\omega_2$ and one with a sum dependency $\omega_1+\omega_2$.
+The one with the difference dependence results in the production of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
+To fully understand the effect it is necessary to describe to susceptibilty as a third rank tensor $\xi_\text{ijk}(E)$ aswell as the electric fields and polarization as vectors $\vec{E}$ and $\vec{P}_\text{i}$.
+With these it is now possible to write the $\text{i}$-th component of the second order non linear polarization vector as 
+
+\begin{equation}
+    P_\text{nl, i}^{\omega_1 - \omega_2} = \xi_\text{ijk}(\omega_1-\omega_2)E_\text{j}(\omega_1)E_\text{k}(\omega_2)\epsilon_0
+    \label{eq:polarization_tensor_sus}
+\end{equation}
+
+in which the two electric fields depent on the diffrente frequencies $\omega_1$ and $\omega_2$.
+% xi ist tensor 
+% 
+% wenn omega1-omega2=0  dann DC polarisation
+% wenn omega2 = 0 dann ändert sich die polarisation mit frequence omega1
 
 \cite[289--291]{book_optical_rectification}
 
