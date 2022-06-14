@@ -1,1 +1,37 @@
-\chapter{Setup}\label{setup}
+\chapter{Setup and execution}
+This chapter will discuss the setup that was used to detect the $\si{\tera\hertz}$-electric field.
+Aswell as the methode used to achieve a time resolved measurment of the $\si{\tera\hertz}$ pulse.
+
+\label{Setup}
+To produce $\si{\tera\hertz}$ radition the setup as shown in Figure \ref{fig:setup} is used.
+An incoming $\SI{0.5}{\W}$ laser with a pulselength of $\SI{100}{\femto\second}$ is splitt into pump and probe laser.
+The pump beam receives $90\%$ of the initial laser beam power, the pump beam the remaining $10\%$.
+Now the pump beam passes through a chopper which modulates the laser to a frequency of $\SI{280}{\hertz}$.
+This way the Lock in Amplifier that is used for the measurment can be triggered on that frequency.
+After the chopper a delay stage is placed.
+With this the pump beam path length can be altered.
+This allows a time resolved detection of the $\tera\hertz$ pulse, this we be discussed in detail in section \ref{sec:time_domain}.
+Atlast the beam is reflected onto the emitter crytsall.
+Depending on the measurment a zinc telluride (ZnTe) or a gallium phosphite (GaPh) crytsall is used.
+A sillicon wafer blocks the transmitted laser beam and transmitts the $\si{\tera\hertz}$ radiation, which is transmitted by the emitter crystall.
+Two parabolic mirrors focus the $\si{\tera\hertz}$ beam onto the detection crystall.
+Just as the emitter crystall either ZnTe or GaPh are used as detection crytsall.
+The probe beam, whose power is reduced by a optical density filter, hits the detection crystall at roughly the same position as the pump $\si{\tera\hertz}$ beam.
+As dicussed in section \ref{sec:electrooptic_sampling}, the polarization of the probe beam is change depending on the $\si{\tera\hertz}$-electric field.
+After the change in polarization the probe beam passes thorugh a quater-wave-plate, which changes the linear polarization to a elliptic polarization.
+After the the two beam is splitt into its horizontal and vertical polarization components by a wallston-prism.
+The two seperated beams are passed into photodiodes.
+\\\\
+Depening on the change of polarization the insenity of probe beams after the wallston-prism change.
+The signal of the photodiodes $A$ and $B$ is passed into a Lock in Amplifier, which calculated the diffrence of both signals $A-B$.
+The bigger the diffrence $A-B$ the stronger is the $\si{\tera\hertz}$-electric field in the detction crytsall.
+
+\section{Time resolved $\si{\tera\hertz}$ spectroscopy}
+To achieve a time resolved measurment of the $\si{\tera\hertz}$-pulse a delay stage is build into the setup.
+With the delay stage the path length of the pump beam can be changed.
+This way a time delay between pump pulse and probe pulse is achieved.
+Because the velocity of electromagentic radiation in air is roughly the same as in a vacuum we can calculated the time delay   
+\begin{equation}
+    \Delta t = \frac{\Delta s}{c}
+\end{equation}
+with $c$ as the speed of ligth, and $\Delta s$ the diffrence in beam path.

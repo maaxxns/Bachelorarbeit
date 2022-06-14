@@ -3,7 +3,7 @@
 
 \section{Optical rectification}\label{sec:optic_ref}
 To produce $\si{\tera\hertz}$ radiation we take advantage of optical rectification.
-Optical rectification is a second order non linear effect and thus can be just observed in non linear material.
+Optical rectification is a second order non linear effect and thus can be just observed in non linear materials.
 This effect causes a DC polarization in the crystal that if moduled correctly causes $\si{\tera\hertz}$ radiation.
 The DC polarization occurs when an outer electric field interacts with the crytal.
 Because of the nonlinear structure and in turn the anharmonic potential of crystal charges, the charges oscillate further into one dircetion then the other.
@@ -11,38 +11,38 @@ The displacement of charge is what causes the DC polarization.
 To discuss the effect in detail we take a look at the polarization
 
 \begin{equation}
-P = \xi(E) E \epsilon_0
+P = \chi(E) E \epsilon_0
 \end{equation}
 
-which is directly proportional to the elctric field $E$ and the susceptibilty $\xi(E)$.
+which is directly proportional to the elctric field $E$ and the susceptibilty $\chi(E)$.
 Which in turn can be expanded to 
 
 \begin{equation}
-    \xi(E) = \xi_1 + \xi_2 E +\xi_3 E^2 + ...   \, .
+    \chi(E) = \chi_0 + \chi_1 E +\chi_2 E^2 + ...   \, .
 \end{equation}
 
-As describe earlier optical rectification is a second order effect and describe by the $P_\text{nl} = \xi_2 E^2$ part.
-Because the laser produces electro magnetic radiation at a whole bandwith of frequencies $\delta\omega$ we have to consider all of those electric fields inside the crystal.
+As describe earlier optical rectification is a second order effect and describe by the $P_\text{nl} = \chi_2 E^2$ part.
+Because the laser produces electro magnetic radiation at a whole bandwith of frequencies $\Delta\omega$ we have to consider all of those electric fields inside the crystal.
 To simplify we first take a look at just two electric fields.
-On of those electric fields oscillats at frequency $\omega_1$ and the other at frequency $\omega_2$.
+One of those electric fields oscillats at frequency $\omega_1$ and the other at frequency $\omega_2$.
 The resulting second order polarization term 
 
 \begin{equation}
-    P_\text{nl} = \xi_2 \epsilon_0 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
+    P_\text{nl} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
 \end{equation}
 
 shows a cosin with a diffrence dependency $\omega_1-\omega_2$ and one with a sum dependency $\omega_1+\omega_2$.
-The one with the difference dependence results in the production of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
-To fully understand the effect it is necessary to describe to susceptibilty as a third rank tensor $\xi_\text{ijk}(E)$ aswell as the electric fields and polarization as vectors $\vec{E}$ and $\vec{P}_\text{i}$.
+The one with the difference dependens results in the production of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
+To fully understand the effect it is necessary to describe to susceptibilty as a third rank tensor $\chi_\text{ijk}(E)$ aswell as the electric fields and polarization as vectors $\vec{E}$ and $\vec{P}_\text{i}$.
 With these it is now possible to write the $\text{i}$-th component of the second order non linear polarization vector as 
 
 \begin{equation}
-    P_\text{nl, i}^{\omega_1 - \omega_2} = \xi_\text{ijk}(\omega_1-\omega_2)E_\text{j}(\omega_1)E_\text{k}(\omega_2)\epsilon_0
+    P_\text{nl, i}^{\omega_1 - \omega_2} = \chi_\text{ijk}(\omega_1-\omega_2)E_\text{j}(\omega_1)E_\text{k}(\omega_2)\epsilon_0
     \label{eq:polarization_tensor_sus}
 \end{equation}
 
 in which the two electric fields depent on the diffrente frequencies $\omega_1$ and $\omega_2$.
-% xi ist tensor 
+% chi ist tensor 
 % 
 % wenn omega1-omega2=0  dann DC polarisation
 % wenn omega2 = 0 dann ändert sich die polarisation mit frequence omega1
@@ -50,12 +50,22 @@ in which the two electric fields depent on the diffrente frequencies $\omega_1$ 
 \cite[289--291]{book_optical_rectification}
 
 \section{Electro-optic sampling}\label{sec:eos}
+To detect the $\si{\tera\hertz}$-electric field the electro-optic effect also known as pockels effect is used.
+Through this effect a birefringence is induced in the detection crystal which in turn changes the polarization of the polarization of the probe beam.
+The retardation of the polarization 
+\begin{equation}
+    \Gamma \propto \frac{1}{\lambda} n_0^3 l r E_\text{THz}
+\end{equation}
+is directly proportional to the electric field. 
+It is also proportional to the wavelength $\lambda$, the crystal thickness $l$, the electrooptic coefficient $r$ and the refractive index $n_0$ \cite{wiki_book}.  
+
+Through measurement of the change in polarization it is than possible to determine the intensity of the electric field of the $\si{\tera\hertz}$-pump beam.
 
 
 \section{ZnTe}
 One of the crystalls we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
 It allows the production of a wideband coherent $\si{\tera\hertz}$ Field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
-Because optical rectification is a non linear effect it is important to aline the laser to the $<110>$ axis of the crystal.
+Because optical rectification is a non linear effect it is important to aline the laser to the $<110>$ achis of the crystal.
 
 
 %(Nahata, A., Weling, A. S., and Heinz, T. F., A wideband coherent terahertz spectroscopy
