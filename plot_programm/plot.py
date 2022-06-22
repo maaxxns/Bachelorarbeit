@@ -36,12 +36,7 @@ for n in (range(len(filename))):
     #############################
     #   FFT of Data 
     N  = len(X) # Number of Datapoints in X
-    #timestep_ = np.zeros(len(T)-1)
-    #for k in range(N-1):
-    #    timestep_[k] = Delay[k] - Delay[k+1]
-    #timestep = np.abs(np.sum(timestep_)/(N-1))
-    #timestep = 2*0.001*10**(-3) / (299792458) #comment this out for data that has measured the delay
-    timestep = np.mean(delay)
+    timestep = np.mean(delay[11]-delay[10]) #timestep between two points. Just take 10th and 11th point because I dont want first and second
     FX = fft(X)[0:N//2 +1]
     FDelay = fftfreq(N,d=timestep)[0:N//2 + 1] #Just use the positiv value of the frequencies
     FDelay = np.abs(FDelay)
