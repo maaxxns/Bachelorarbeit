@@ -40,6 +40,12 @@ for n in (range(len(filename))):
     FX = fft(X)[0:N//2 +1]
     FDelay = fftfreq(N,d=timestep)[0:N//2 + 1] #Just use the positiv value of the frequencies
     FDelay = np.abs(FDelay)
+    
+    
+    FX_zeropadding = fft(np.concatenate((np.zeros(2000),X)))[0:len(np.concatenate((np.zeros(2000),X)))//2 +1]
+    FDelay_zeropadding = fftfreq(len(np.concatenate((np.zeros(2000),X))),d=timestep)[0:len(np.concatenate((np.zeros(2000),X)))//2 + 1] #Just use the positiv value of the frequencies
+    FDelay_zeropading = np.abs(FDelay_zeropadding)
+
     #############################
     #For Data without measured delay, the stepsize has to be known though
     step_size = p[1]-p[0]
@@ -50,9 +56,10 @@ for n in (range(len(filename))):
 
     data = np.array([delay*10**12, X]) #from seconds to pico seconds
     Fdata = np.array([FDelay*10**(-12),np.abs(FX)]) #from Hertz to Terahertz
-    data_name = ['X', 'FX', 'log(FX)']
-    data_name_x = ['Delay / ps', 'Frequency / THz', 'log(Frequecy / THz']
-    data_name_y = ['X(V)', 'Fourier[X]', 'log(X)']
+    FData_zeropadding = np.array([FDelay_zeropadding *10**(-12), np.abs(FX_zeropadding)])
+    data_name = ['X', 'FX', 'log(FX)', 'FX_zeropadding', 'log(FX_zeropadding)']
+    data_name_x = ['Delay / ps', 'Frequency / THz', 'log(Frequecy / THz', 'Frequency / THz', 'log(Frequecy / THz)']
+    data_name_y = ['X(V)', 'Fourier[X]', 'log(Fourier[X])', 'Fourier[X]', 'log(Fourier[X])']
     fig, ax = plt.subplots(len(data_name),1, figsize=(16,8))
     ######################
     #   Plotting
@@ -62,9 +69,9 @@ for n in (range(len(filename))):
 
 
     # maybe make plot that includes a x axis labeling with position aswell
-    plot_data = [data, Fdata, Fdata]
+    plot_data = [data, Fdata, Fdata, FData_zeropadding, FData_zeropadding]
     for i in range(len(data_name)):
-        if data_name[i] == 'log(FX)':
+        if data_name[i].find('log(') == 0:
             ax[i].plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
             ax[i].set_yscale('log')
         else:
@@ -74,6 +81,18 @@ for n in (range(len(filename))):
         ax[i].set_ylabel(data_name_y[i])
         ax[i].set_title(data_name[i])
         # ax[i].legend()
-
-    plt.tight_layout()
-    plt.savefig(savefiles[n])
+plt.tight_layout()
+plt.savefig(savefiles[n])
+'''    for i in range(len(data_name)):
+        if data_name[i].find('log(') == 0:
+            plt.plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
+            plt.yscale('log')
+        else:
+            plt.plot(plot_data[i][0], plot_data[i][1], label=data_name[i])
+        plt.grid()
+        plt.xlabel(data_name_x[i])
+        plt.ylabel(data_name_y[i])
+        plt.title(data_name[i])
+        # ax[i].legend()
+        plt.tight_layout()
+        plt.savefig(savefiles[n])'''
