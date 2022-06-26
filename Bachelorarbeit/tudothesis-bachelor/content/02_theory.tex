@@ -1,11 +1,27 @@
 \chapter{Theory}
 \section{Terahertz radiation}
+The radiation that is produced by the following experiment is Terahertz $\si{\tera\hertz}$ radiation.
+As the name describes its frequencies lies at about $0.3-30\cdot\SI{10^12}{\hertz}$.
+Its wavelength can be easily calculated
+\begin{equation}
+    \lambda = \frac{c}{\nu}
+\end{equation}
+with the speed of light $c$ and its frequency $\nu$.
+Which results in a wavelength of about $\SI{100}{\mirko\meter}-\SI{1}{\milli\meter}$
+This means it lies between infrared and microwave radiation.
+Terahertz radiation is produced by various non linear effects which only occur at relativly high intensities.
+The need of high intensities makes it hard to produce it effiecently.
+The result is the so called Terahertz-gap that is slowly being closed by new techniques and advances in science.
+Water has the capability to absorb $\si{\tera\hertz}$ radiation, which will be shown later.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Optical rectification}\label{sec:optic_ref}
 To produce $\si{\tera\hertz}$ radiation we take advantage of optical rectification.
 Optical rectification is a second order non linear effect and thus can be just observed in non linear materials.
 This effect causes a DC polarization in the crystal that if moduled correctly causes $\si{\tera\hertz}$ radiation.
-The DC polarization occurs when an outer electric field interacts with the crytal.
+The DC polarization occurs when an outer electric field interacts with the crystal.
 Because of the nonlinear structure and in turn the anharmonic potential of crystal charges, the charges oscillate further into one dircetion then the other.
 The displacement of charge is what causes the DC polarization.
 To discuss the effect in detail we take a look at the polarization
@@ -22,54 +38,54 @@ Which in turn can be expanded to
 \end{equation}
 
 As describe earlier optical rectification is a second order effect and describe by the $P_\text{nl} = \chi_2 E^2$ part.
-Because the laser produces electro magnetic radiation at a whole bandwith of frequencies $\Delta\omega$ we have to consider all of those electric fields inside the crystal.
+Because the laser produces electro magnetic radiation at a whole bandwith of frequencies $\omega + \Delta\Omega$, in a gaussian profile, we have to consider all of those electric fields mixing inside the crystal.
 To simplify we first take a look at just two electric fields.
 One of those electric fields oscillats at frequency $\omega_1$ and the other at frequency $\omega_2$.
 The resulting second order polarization term 
 
 \begin{equation}
     P_\text{nl} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\left(cos((\omega_1 - \omega_2)t) + cos((\omega_1 + \omega_2)t)\right)
+\label{eq:two_freq_mixing}
 \end{equation}
 
-shows a cosin with a diffrence dependency $\omega_1-\omega_2$ and one with a sum dependency $\omega_1+\omega_2$.
+shows a \textbf{cosin} with a diffrence dependency $\omega_1-\omega_2$ and one with a sum dependency $\omega_1+\omega_2$.
 The one with the difference dependens results in the production of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
-To fully understand the effect it is necessary to describe to susceptibilty as a third rank tensor $\chi_\text{ijk}(E)$ aswell as the electric fields and polarization as vectors $\vec{E}$ and $\vec{P}_\text{i}$.
-With these it is now possible to write the $\text{i}$-th component of the second order non linear polarization vector as 
-
+The sum part of \eqref{eq:two_freq_mixing} is not important for $\si{\tera\hertz}$ is not imporant and will be neglected in further calculations \cite[45--46]{wiki_book}.
+If the whole bandwith $\omega + \Delta\Omega$ is now taken into account not just two freqnecies mix but all.
+This results in the mixing of very simmilar frequencies $\omega_i$ and $\omega_j$.
+Because these are just part of the whole bandwith the result of the mixing is a polarization dependency on the bandwith $\Delta\Omega$ as such
 \begin{equation}
-    P_\text{nl, i}^{\omega_1 - \omega_2} = \chi_\text{ijk}(\omega_1-\omega_2)E_\text{j}(\omega_1)E_\text{k}(\omega_2)\epsilon_0
-    \label{eq:polarization_tensor_sus}
+    P_{\Delta\Omega} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\left(cos((\Delta\Omega)t) \, .
 \end{equation}
+With a bandwith in the femtosecond regime the resulting change in polarization produces $\si{\tera\hertz}$ radiation \cite[289--291]{book_optical_rectification}\cite[46]{wiki_book}.
 
-in which the two electric fields depent on the diffrente frequencies $\omega_1$ and $\omega_2$.
-% chi ist tensor 
-% 
-% wenn omega1-omega2=0  dann DC polarisation
-% wenn omega2 = 0 dann ändert sich die polarisation mit frequence omega1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cite[289--291]{book_optical_rectification}
+%Hier noch Grafik rein und vielleicht nochmal was ändern
+%Patrick hat das ganze ja eher durch das anregen von virtuellen Energielevel erklärt.
+%Dazu wäre eine Grafik auch gut
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Electro-optic sampling}\label{sec:eos}
 To detect the $\si{\tera\hertz}$-electric field the electro-optic effect also known as pockels effect is used.
-Through this effect a birefringence is induced in the detection crystal which in turn changes the polarization of the polarization of the probe beam.
+Through this effect a birefringence is induced in the detection crystal which in turn changes the polarization of the probe beam.
 The retardation of the polarization 
 \begin{equation}
     \Gamma \propto \frac{1}{\lambda} n_0^3 l r E_\text{THz}
 \end{equation}
 is directly proportional to the electric field. 
 It is also proportional to the wavelength $\lambda$, the crystal thickness $l$, the electrooptic coefficient $r$ and the refractive index $n_0$ \cite{wiki_book}.  
-
 Through measurement of the change in polarization it is than possible to determine the intensity of the electric field of the $\si{\tera\hertz}$-pump beam.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ZnTe}
-One of the crystalls we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
-It allows the production of a wideband coherent $\si{\tera\hertz}$ Field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
-Because optical rectification is a non linear effect it is important to aline the laser to the $<110>$ achis of the crystal.
+One of the crystals we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
+It allows the production of a wideband coherent $\si{\tera\hertz}$ field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
+Because optical rectification is a non linear effect it is important to aline the laser to the $<110>$ axis of the crystal.
+It is also used as a detection crytsal for the $\si{\tera\hertz}$ field.
+The ZnTe changes the polarization of the incoming probe beam depedent on the field strength of the $\si{\tera\hertz}$ radiation.
+This effect is discussed in section \ref{sec:eos}.
 
-
-%(Nahata, A., Weling, A. S., and Heinz, T. F., A wideband coherent terahertz spectroscopy
-% system using optical rectification and electrooptic sampling, Appl. Phys. Lett.,
-% 69, 2321, 1996.).
-% (Han, P. Y., and Zhang, X. C., Free-space coherent broadband terahertz time-domain
-% spectroscopy, Meas. Sci. Technol., 12, 2001, 1747.)
