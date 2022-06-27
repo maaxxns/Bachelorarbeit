@@ -1,7 +1,10 @@
 """TO DO 
-cut out the noise behind the signal
-quadrate the fft result to get the intensity
-integrate over the intensity and compare with other plots
+Pulse Energy berechnen
+Pulse Energy/area berechnen
+Conversion effiency berechnen
+Vergleich mit paper
+Wert ohne Filter noch in die Plots einfügen
+time constant bei summe beachten
 
 """
 
@@ -44,6 +47,7 @@ for i in range(len(filename)):
 
 peak_distances = []
 FFT = []
+timestep_ = []
 
 #######################################
 #   functions
@@ -51,14 +55,14 @@ FFT = []
 
 #   qudrate and 'integrate'
 
-def power_fft(FFT, integrate=None):
+def power_fft(FFT, timestep, integrate=None):
     if integrate==True:
         print('not implemented yet')
         #implement a integratrion function like scipy
     else:
         for i in range(len(FFT)):
             FFT[i] = FFT[i]**2
-            FFT[i] = np.sum(FFT[i])
+            FFT[i] = np.sum(FFT[i])*timestep[i]
         return FFT
 
 
@@ -215,27 +219,27 @@ for n in (range(len(filename))):
 
         ###############
         #first the distance between peak low and high
-
+    timestep_.append(timestep)
     FFT.append(FData_zeropadding[1])
     peak_height =(np.abs(np.max(X) + np.min(X)))
     peak_distances.append(peak_height)
-    print('low to high peak distance: ', peak_height)
 
 fig, axis = plt.subplots(2, 1, figsize=(16,8), num=1)
-pump_power = [75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1]
-
+pump_power = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
+pulse_power = pump_power*2 / 1000
+print(timestep_)
 ###########################
 #   peak distances plotted
 ###########################
-if filename[0] == '11_46_58.txt' and filename[-1] == '15_53_33.txt':
-    if len(pump_power) == len(peak_distances):
-        axis[0].plot(pump_power, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
+if filename[0] == '11_46_58.txt' and filename[-1] == '16_12_43.txt':
+    if len(pulse_power) == len(peak_distances):
+        axis[0].plot(pulse_power, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
         axis[0].plot(range(len(peak_distances)), np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances', )
     axis[0].grid()
     axis[0].legend()
-    axis[0].set_xlabel('pump power/mW')
+    axis[0].set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
     axis[0].set_ylabel('percentage of maximum peak distance')
     axis[0].set_title('Peak Distances with diffrent Pump Power')
 
@@ -243,12 +247,12 @@ if filename[0] == '11_46_58.txt' and filename[-1] == '15_53_33.txt':
     #   Power of electric fields plotted
     ##########################
 
-    if len(pump_power) == len(peak_distances):
-        axis[1].plot(pump_power, power_fft(FFT),'kx', label='power electric field')
-        axis[1].set_xlabel('pump power/mW')
+    if len(pulse_power) == len(peak_distances):
+        axis[1].plot(pulse_power, power_fft(FFT, timestep_),'kx', label='power electric field')
+        axis[1].set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
-        axis[1].plot(range(len(peak_distances)), power_fft(FFT),'kx' ,label='power electric field')
+        axis[1].plot(range(len(peak_distances)), power_fft(FFT, timestep_),'kx' ,label='power electric field')
         axis[1].set_xlabel('range()')
     axis[1].grid()
     axis[1].legend()
