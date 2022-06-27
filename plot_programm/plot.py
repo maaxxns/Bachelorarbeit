@@ -234,6 +234,7 @@ if filename[0] == '11_46_58.txt' and filename[-1] == '15_53_33.txt':
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
         axis[0].plot(range(len(peak_distances)), np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances', )
     axis[0].grid()
+    axis[0].legend()
     axis[0].set_xlabel('pump power/mW')
     axis[0].set_ylabel('percentage of maximum peak distance')
     axis[0].set_title('Peak Distances with diffrent Pump Power')
@@ -243,14 +244,16 @@ if filename[0] == '11_46_58.txt' and filename[-1] == '15_53_33.txt':
     ##########################
 
     if len(pump_power) == len(peak_distances):
-        axis[1].plot(pump_power, peak_distances,'kx', label='peak_distance')
+        axis[1].plot(pump_power, power_fft(FFT),'kx', label='power electric field')
+        axis[1].set_xlabel('pump power/mW')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
-        axis[1].plot(range(len(peak_distances)), power_fft(FFT),'kx' ,label='peak_distances')
+        axis[1].plot(range(len(peak_distances)), power_fft(FFT),'kx' ,label='power electric field')
+        axis[1].set_xlabel('range()')
     axis[1].grid()
-    axis[1].set_xlabel('pump power/mW')
-    axis[1].set_ylabel('Power(THz)/arb. units')
+    axis[1].legend()
     axis[1].set_title('power of eletric field')
+    axis[1].set_ylabel('Power(THz)/arb. units')
     #for i in range(len(filename)):
         #axis[2].text(100*i, 100*i, filename[i])
     plt.tight_layout()
