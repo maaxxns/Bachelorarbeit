@@ -55,19 +55,6 @@ timestep_ = []
 
 #   qudrate and 'integrate'
 
-def power_fft(FFT, timestep, integrate=None):
-    if integrate==True:
-        print('not implemented yet')
-        #implement a integratrion function like scipy
-    else:
-        for i in range(len(FFT)):
-            FFT[i] = FFT[i]**2
-            FFT[i] = np.sum(FFT[i])*timestep[i]
-        return FFT
-
-
-
-
 
 for n in (range(len(filename))):
     t, p, delay, X, Y, R, theta = np.genfromtxt( 'daten/' + filename[n], delimiter='\t', unpack=True, skip_header=1) #unpack the txt file with pixel values
@@ -224,42 +211,65 @@ for n in (range(len(filename))):
     peak_height =(np.abs(np.max(X) + np.min(X)))
     peak_distances.append(peak_height)
 
-fig, axis = plt.subplots(2, 1, figsize=(16,8), num=1)
+power_of_fft = []
+for i in range(len(FFT)):
+    power = FFT[i]**2
+    power_of_fft.append(np.sum(power)*timestep_[i])
+    
+power_of_fft = np.array(power_of_fft)
 pump_power = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
+
+# Fluences was measured independetly on a seperate day than the real fluence measurments
+# so maybe they are not that precise
+Fluences = np.array([10.74, 8.38,4.53, 3.31, 1.47, 0.94 ,5.75,15.63])
 pulse_power = pump_power*2 / 1000
-print(timestep_)
+pulse_power_per_area_measured = Fluences*2 / 1000
+#power_of_fft = power_fft(FFT, timestep_)
+conversion_effiency = power_of_fft/(pulse_power *10**(-6))
+Radius_Strahl_auf_Kristall = 1.5875
+area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
+pulse_power_per_area_calculated = pulse_power/area_beam_crytsal
 ###########################
 #   peak distances plotted
 ###########################
+
+fig , (axis1, axis2) = plt.subplots(1, 2, figsize=(24,8))
 if filename[0] == '11_46_58.txt' and filename[-1] == '16_12_43.txt':
     if len(pulse_power) == len(peak_distances):
-        axis[0].plot(pulse_power, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
+        axis1.plot(pulse_power, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
-        axis[0].plot(range(len(peak_distances)), np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances', )
-    axis[0].grid()
-    axis[0].legend()
-    axis[0].set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
-    axis[0].set_ylabel('percentage of maximum peak distance')
-    axis[0].set_title('Peak Distances with diffrent Pump Power')
+        axis1.plot(range(len(peak_distances)), np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances', )
+    axis1.grid()
+    axis1.legend()
+    axis1.set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
+    axis1.set_ylabel('percentage of maximum peak distance')
+    axis1.set_title('Peak Distances with diffrent Pump Power')
 
     ##########################
     #   Power of electric fields plotted
     ##########################
 
-    if len(pulse_power) == len(peak_distances):
-        axis[1].plot(pulse_power, power_fft(FFT, timestep_),'kx', label='power electric field')
-        axis[1].set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
+    if len(pulse_power_per_area_measured) == len(peak_distances):
+        l1, = axis2.plot(pulse_power_per_area_measured, power_of_fft,'k*')
+        l2, = axis2.plot(pulse_power_per_area_calculated, power_of_fft, 'r*')
+        axis3 = axis2.twinx()
+        l3, = axis3.plot(pulse_power_per_area_measured, conversion_effiency, 'bo')
+        l4, = axis3.plot(pulse_power_per_area_calculated, conversion_effiency, 'mx')
+        axis2.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
+        axis3.set_ylabel('conversion effiency (arb. units)')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
-        axis[1].plot(range(len(peak_distances)), power_fft(FFT, timestep_),'kx' ,label='power electric field')
-        axis[1].set_xlabel('range()')
-    axis[1].grid()
-    axis[1].legend()
-    axis[1].set_title('power of eletric field')
-    axis[1].set_ylabel('Power(THz)/arb. units')
+        axis2.plot(range(len(peak_distances)), power_of_fft,'kx' ,label='power electric field')
+        axis2.set_xlabel('range()')
+    axis2.grid()
+    axis2.legend([l1, l2, l3, l4], ['power electric field fluence measured','power electric field power measured', 'conversion effiency fluence measured', 'conversion effiency power measured'])
+    axis2.set_title('power of eletric field')
+    axis2.set_ylabel('Power(THz)/arb. units')
     #for i in range(len(filename)):
         #axis[2].text(100*i, 100*i, filename[i])
     plt.tight_layout()
     plt.savefig('daten/Fluence_comparission.pdf')
     plt.close()
+
+ 
