@@ -55,8 +55,23 @@ If the whole bandwith $\omega + \Delta\Omega$ is now taken into account not just
 This results in a polarization dependency on the bandwith $\Delta\Omega$ as such
 \begin{equation}
     P_{\Delta\Omega} = \chi_2 \epsilon_0 \frac{E_0^2}{2}cos(\Delta\Omega t) \, .
+    \label{eq:polarization_depens}
 \end{equation}
 With a bandwith in the femtosecond regime the resulting change in polarization produces $\si{\tera\hertz}$ radiation \cite[289--291]{book_optical_rectification}\cite[46]{wiki_book}.
+\\\\
+Because the change in polarization is also dependent on the pump beam electric field, as seen in equation \ref{eq:polarization_depens}, part of the experiment is to change the pump fluence.
+The fluence is defined as 
+\begin{equation}
+    H = \int_{0}^{t} E_\text{irr} \symup{d}t
+    \label{eq:fluence}
+\end{equation}
+with $E_\text{irr}$ being the irradiance.
+The irradiance 
+\begin{equation}
+    E_\text{irr} = \frac{\Phi}{A}
+    \label{eq:irradiance}
+\end{equation} 
+is defined as the radiant flux $\Phi$ per area $A$.
 \\\\
 The process $\si{\tera\hertz}$ production can also be explained by the excitation of higher energy levels.
 It is visualized in figure \ref{fig:freq_mix}.
@@ -76,6 +91,8 @@ Because of the conservation of energy the crystal puts out a photon of the resul
 \begin{equation}
     \Delta\Omega = \omega_\text{i} - \omega_\text{j} \, .
 \end{equation}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Hier noch Grafik rein und vielleicht nochmal was ändern
