@@ -8,7 +8,7 @@ To produce $\si{\tera\hertz}$ radition the setup as shown in Figure \ref{fig:set
 An incoming laser with a pulselength of $\SI{100}{\femto\second}$ is splitt into pump and probe laser.
 The pump beam receives $90\%$ of the initial laser beam power, the probe beam the remaining $10\%$.
 The pump beam passes through a chopper which modulates the laser to a frequency of $\SI{280}{\hertz}$.
-This way the Lock in Amplifier that is used for the measurment can be triggered on that frequency.
+This way the lock in Amplifier that is used for the measurment can be triggered on that frequency.
 After the chopper a delay stage is placed.
 With this the pump beam path length can be altered.
 This allows a time resolved detection of the $\si{\tera\hertz}$ pulse, a detailed description can be found in section \ref{sec:time_domain}.
@@ -27,7 +27,7 @@ The beam is then splitt into its horizontal and vertical polarization components
 The two seperated beams are passed into photodiodes.
 \\\\
 Depening on the polarization of the probe beam after the detection crystal the insenity of the probe beams after the wollaston-prism change.
-The signal of the photodiodes $A$ and $B$ is passed into a Lock in Amplifier, which calculates the diffrence of both signals $A-B$.
+The signal of the photodiodes $A$ and $B$ is passed into a lock in Amplifier, which calculates the diffrence of both signals $A-B$.
 The bigger the diffrence $A-B$ the stronger is the $\si{\tera\hertz}$-electric field in the detection crystal.
 \FloatBarrier
 \subsection{Quater-wave plate}
@@ -97,8 +97,31 @@ This processes is repeated until the whole $\si{\tera\hertz}$-pulse is probed.
 \section{Execution}
 This section describes how the measurements were taken. 
 It will be discussed what changes to the setup in figure \ref{fig:setup} are being made to achieve the wanted results.
+\\\\
+Before any measurements are taken the photodiodes have to be balanced.
+For this a chopper is placed inside the probe beam, which modultes its frequency to $\SI{388}{\hertz}$.
+The lock in amplifier gets triggered on that frequency, while its inputs are the $A$ and $B$ value of the two photodiodes.
+It is necessary to move the stage to a point where $\si{\tera\hertz}$-pulse and probe pulse dont overlap, so that the polarization of the probe beam is not changed by the detector crystal.
+Now the quater-wave plate is being rotated until the output of both photodiodes $A-B = 0$. 
+This means the probe beam is circular polarized after the quater-wave plate, while it is not affected by the $\si{\tera\hertz}$ signal.
 \subsection{Fluence measurments}
-
+The goal of the fluence measurements is to determine the effect of diffrent pump fluences on the $\si{\tera\hertz}$ production.
+For it is necessary to change the power of the pump beam before it hits the emitter crystal.
+For that diffrent density filter are placed inside the beam path.
+All that filter that were used can be seen in table \ref{tab:filters}.
+The filters are placed inside a mount right after the chopper.
+After the placementa the pump power is measured behind the filter.
+Then the power meter is removed and a time resolved measurement \ref{sec:time_domain} of the pulse is taken.
+After the measurement the filter is swapped out with another one and the process is started over until all possible fluences are measured.
 \subsection{Electric field measurments}
-
+To determine the electric field of the $\si{\tera\hertz}$ radiation it is necessary to measure the output of the photodiodes $A$ and $B$ seperatly aswell as there diffrence $A-B$.
+Because just the maximum field strength is of particular interest just the greatest $A-B$ value is necessary to measure.
+For this the delay stage is moved at the position of the greatest $A-B$ value and a measurement of the diffrence is taken.
+This process has to be repeated for all pump power values that are wanted.
+After all the diffrences are measured, $A$ and $B$ are measured seperatly.
+The delay stage is moved to a position where there is no $\si{\tera\hertz}$-signal.
+At this position the input of the lock in amplifier is changed to just one of the photodiodes outputs, either $A$ or $B$.
+Because the sum $A+B$ is not affected by the $\si{\tera\hertz}$ electric field, it can be used to norm every difference.
+So the seperatly measured values of $A$ and $B$ have to be measured just once.
+After $A-B$ and $A$ and $B$ are measured the electric field can be calculated.
 \subsection{Transmission measurments}
