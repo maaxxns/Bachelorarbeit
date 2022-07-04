@@ -1,0 +1,2 @@
+The plot.py file does not work on this computer. Or rather I would work if the paths would be the same as on my laptop.
+Maybe I will fix that in the future but right now I have more important stuff to do
