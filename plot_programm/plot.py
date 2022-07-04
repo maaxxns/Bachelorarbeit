@@ -1,10 +1,9 @@
 """TO DO 
-Pulse Energy berechnen
-Pulse Energy/area berechnen
-Conversion effiency berechnen
+
 Vergleich mit paper
-Wert ohne Filter noch in die Plots einfügen
-time constant bei summe beachten
+
+Inlcude new measurements with full power.
+calculate the electric field
 
 """
 
@@ -120,7 +119,7 @@ for n in (range(len(filename))):
     data_name_zeropadding = ['X', 'FX_zeropadding', 'log(FX_zeropadding)'] #if zeropadding isnt wanted just switch the names to none zero padding and the plot_data
     data_name_pulse = ['X', 'FX_pulse', 'log(FX_pulse)']
     
-    data_name_x = ['Delay / ps', 'Frequency / THz', 'log(Frequecy / THz)']
+    data_name_x = ['Delay / ps', 'Frequency / THz', 'Frequecy / THz']
     data_name_y = ['X(V)', 'Fourier[X]', 'log(Fourier[X])']
 
 
@@ -222,21 +221,28 @@ pump_power = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
 # Fluences was measured independetly on a seperate day than the real fluence measurments
 # so maybe they are not that precise
 Fluences = np.array([10.74, 8.38,4.53, 3.31, 1.47, 0.94 ,5.75,15.63])
-pulse_power = pump_power*2 / 1000
-pulse_power_per_area_measured = Fluences*2 / 1000
-#power_of_fft = power_fft(FFT, timestep_)
-conversion_effiency = power_of_fft/(pulse_power *10**(-6))
-Radius_Strahl_auf_Kristall = 1.5875
-area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
-pulse_power_per_area_calculated = pulse_power/area_beam_crytsal
+
+Radius_Strahl_auf_Kristall = 0.343
+area_beam_c  rytsal = np.pi*Radius_Strahl_auf_Kristall**2
+
+pulse_energy = pump_power*2 / 1000
+pulse_energy_per_area_measuredFluence = Fluences*2 / 1000 /area_beam_crytsal
+pulse_energy_fluence = Fluences*2 / 1000 * area_beam_crytsal
+conversion_effiency_power = power_of_fft/(pulse_energy *10**(-6))
+conversion_effiency_fluence = power_of_fft/(pulse_energy_fluence *10**(-6))
+
+pulse_energy_per_area_measuredPower = pulse_energy/area_beam_crytsal
+
 ###########################
 #   peak distances plotted
 ###########################
+print('Pulse energy used: ',pulse_energy)
 
-fig , (axis1, axis2) = plt.subplots(1, 2, figsize=(24,8))
+fig , ((axis1, axis2_1),( axis3_1, axis4)) = plt.subplots(2, 2, figsize=(24,8))
+
 if filename[0] == '11_46_58.txt' and filename[-1] == '16_12_43.txt':
-    if len(pulse_power) == len(peak_distances):
-        axis1.plot(pulse_power, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
+    if len(pulse_energy) == len(peak_distances):
+        axis1.plot(pulse_energy, np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances')
     else:
         print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
         axis1.plot(range(len(peak_distances)), np.array(peak_distances)/np.max(peak_distances),'rx' ,label='peak_distances', )
@@ -250,26 +256,53 @@ if filename[0] == '11_46_58.txt' and filename[-1] == '16_12_43.txt':
     #   Power of electric fields plotted
     ##########################
 
-    if len(pulse_power_per_area_measured) == len(peak_distances):
-        l1, = axis2.plot(pulse_power_per_area_measured, power_of_fft,'k*')
-        l2, = axis2.plot(pulse_power_per_area_calculated, power_of_fft, 'r*')
-        axis3 = axis2.twinx()
-        l3, = axis3.plot(pulse_power_per_area_measured, conversion_effiency, 'bo')
-        l4, = axis3.plot(pulse_power_per_area_calculated, conversion_effiency, 'mx')
-        axis2.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
-        axis3.set_ylabel('conversion effiency (arb. units)')
+    if len(pulse_energy_per_area_measuredFluence) == len(peak_distances):
+        l1, = axis2_1.plot(pulse_energy_per_area_measuredFluence, power_of_fft,'k*')
+        axis2_2 = axis2_1.twinx()                                                       #axis2_1 is power of electric field with measured fluence axis2_2 is its effiency
+        l3, = axis2_2.plot(pulse_energy_per_area_measuredFluence, conversion_effiency_fluence, 'bo')
+        axis2_1.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
+
+        l2, = axis3_1.plot(pulse_energy_per_area_measuredPower, power_of_fft, 'r*')
+        axis3_2 = axis3_1.twinx()                                                      #axis3_1 is power of electric field with measured power axis3_2 is its effiency
+        l4, = axis3_2.plot(pulse_energy_per_area_measuredPower, conversion_effiency_power, 'mx')
+        axis3_1.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
+        axis3_2.set_ylabel('conversion effiency (arb. units)')
+        
+        
     else:
-        print('WARNING pump power array diffrent length then peak distances. subplimantary range(len(peakdistances)) was used')
+        print('WARNING pump power array diffre nt length then peak distances. subplimantary range(len(peakdistances)) was used')
         axis2.plot(range(len(peak_distances)), power_of_fft,'kx' ,label='power electric field')
         axis2.set_xlabel('range()')
-    axis2.grid()
-    axis2.legend([l1, l2, l3, l4], ['power electric field fluence measured','power electric field power measured', 'conversion effiency fluence measured', 'conversion effiency power measured'])
-    axis2.set_title('power of eletric field')
-    axis2.set_ylabel('Power(THz)/arb. units')
-    #for i in range(len(filename)):
-        #axis[2].text(100*i, 100*i, filename[i])
+    
+    axis2_1.grid()
+    axis2_1.legend([l1, l3], ['power electric field fluence measured','conversion effiency fluence measured'])
+    axis2_1.set_title('With measured Fluence values')
+    axis2_1.set_ylabel('Power(THz)/arb. units')
+    axis2_2.set_ylabel('conversion effiency (arb. units)')
+
+    axis3_1.grid()
+    axis3_1.legend([l2,l4], ['power eletric field power measured', 'conversion effiency power measured'])
+    axis3_1.set_title('With measured Power Values (Fluence calculated)')
+    axis3_1.set_ylabel('Power(THz)/arb. units')
+
+    l5, = axis4.plot(pulse_energy_per_area_measuredFluence, power_of_fft,'k*')
+    axis4_2 = axis4.twinx()
+    l6, = axis4_2.plot(pulse_energy_per_area_measuredFluence, conversion_effiency_fluence, 'bo')
+    l7, = axis4.plot(pulse_energy_per_area_measuredPower, power_of_fft, 'r*')
+    l8, = axis4_2.plot(pulse_energy_per_area_measuredPower, conversion_effiency_power, 'mx')
+
+    axis4.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
+    axis4.set_ylabel('Power(THz)/arb. units')
+    axis4_2.set_ylabel('conversion effiency (arb. units)')
+    axis4.legend([l5,l6,l7,l8], ['power eletric field fluence measured', 'conversion effiency fluence measured', 'power eletric field power measured', 'conversion effiency power measured'])
+    axis4.grid()
+    
     plt.tight_layout()
     plt.savefig('daten/Fluence_comparission.pdf')
+    plt.savefig('daten/Fluence_comparission.png')
     plt.close()
 
  
+
+
+ ###########################
