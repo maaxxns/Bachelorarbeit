@@ -1,0 +1,2 @@
+Because the tkinter does not sort by date but by name, I need to artifically sort it by date.
+This is done by giving every file a prefix which starts at 1, for the first day I took measurments and rises up until the last.
