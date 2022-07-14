@@ -53,11 +53,24 @@ timestep_2 = []
 def E(A_B, A,B):
     wavelength = 800 * 10**(-9)
     n_0 = 2.85
-    r = 4.04 *10**(-12)
+    r = 4.04 *10**(-12) 
     L = 1 *10**(-3)
     eltricfield =  (A_B/A+B)*wavelength /(2* np.pi * n_0**3 * r * L) # in SI (V/m)
-    eltricfield = eltricfield *10**(-5)# in kV/cm (1 V/m = 1/10 kV/cm)
+    eltricfield = eltricfield *10**(-5)# in kV/cm 
     return eltricfield
+
+def I(E):
+    c = 299792458
+    e_0 = 8.8541878128*10**(-12)
+    return 1/2 * c*e_0*E**2
+
+def Power(I, r=None): #r is Radius of Spot in SI 
+    if r==None:
+        r=2.5*10**(-3)
+        A = np.pi * r**2
+    else:
+        A = np.pi * r**2
+    return I*A
 
 def pulse_energy(power):
     return power/1000 * 2 #1000 pulses per second with double the energy because of the chopper
@@ -109,3 +122,28 @@ plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$')
 plt.title('electric field per pump power')
 plt.legend()
 plt.savefig('daten/eltric_field_data/eltric_field.pdf')
+plt.close()
+##########################################
+#   Power and Intensity
+##########################################
+
+intensity = I(fields) #Fields in kV/cm
+power_THz = Power(intensity)
+print('Power THz:', power_THz)
+print('pump_power:', pump_power*10**(-3))
+conversion_effiency = power_THz/(pump_power*10**(-3)) # conversion effiency is weird
+
+fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
+axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),fmt='k*') #10**(2) because of conversion in SI +3 for mW
+axis2 = axis1.twinx()
+axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency[:,0]), yerr = unumpy.std_devs(conversion_effiency[:,0]),fmt='bx')
+axis1.grid()
+axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
+axis1.set_ylabel(r'$Power\:THz\:Field \,(\mathrm{mW})$')
+axis1.set_title('peak THz Power per pump power')
+axis1.legend(['peak THz power', 'Conversion effiency'])
+axis2.set_ylabel(r'$Conversion\: Effiency \,(\mathrm{\%})$')
+
+plt.tight_layout()
+plt.savefig('daten/eltric_field_data/Power.pdf')
+plt.close()
