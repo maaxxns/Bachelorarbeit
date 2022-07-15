@@ -17,6 +17,38 @@ Water can absorb $\si{\tera\hertz}$ radiation, which will be shown later.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-linear crystals}
+Optical non-linear crystals exhibit a nonlinearity in their second-order susceptibility $\chi_2$ or in even higher orders.
+For this, they show special non-linear effects at high electric field strengths.
+For different purposes, different kinds of crystals are in use.
+Almost all of these crystals are artificially produced crystals.
+The two crystals that are used in this experiment both show zincblende structure.
+
+
+\subsection{Zinc telluride}
+One of the crystals we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
+It allows the production of a wideband coherent $\si{\tera\hertz}$ field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
+It should be mentioned that ZnTe has a phonon resonance at $\SI{5.3}{\tera\hertz}$ \cite{phonon_modes}, which limits the bandwidth of emitted radiation and its ability to detect radiation of that or higher frequencies.
+Because optical rectification is a non-linear effect it is important to aline the laser to the $<110>$ axis of the crystal.
+The angle between the $<001>$ direction and the polarization of the pump beam is also from importance.
+It can be seen in figure \ref{fig:polarization_dependence_angle} that to angles give the strongest signal.
+It is also used as a detection crystal for the $\si{\tera\hertz}$ field.
+The ZnTe changes the polarization of the incoming probe beam dependent on the field strength of the $\si{\tera\hertz}$ radiation.
+This effect is discussed in section \ref{sec:eos}.
+
+\textbf{Platzhalter für Bild von ZnTe struktur}
+
+\subsection{Gallium phosphide}
+The other crystal that is used to generate $\si{\tera\hertz}$ radiation is Gallium phosphide (GaP).
+It is a common emitter of $\si{\tera\hertz}$ radiation with a broad spectrum.
+This crystal also exhibits a phonon resonance, but a much higher frequency of about $\SI{11}{\tera\hertz}$ \cite[60]{wiki_book}.
+Aswell as ZnTe, Gap needs to stimulated by the laser along its $<110>$ axis.
+
+\textbf{Platzhalter für Bild von GaP struktur}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Optical rectification}\label{sec:optic_ref}
 To produce $\si{\tera\hertz}$ radiation we take advantage of optical rectification or rather a kind of difference frequency mixing that is very similar to optical rectification.
 Optical rectification is a second-order non-linear effect and thus can be just observed in non-linear materials.
@@ -108,11 +140,11 @@ The phase shift
 \begin{equation}
     \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
 \end{equation}
-is directly proportional to the electric field. 
+is directly proportional to the electric field $E_\text{THz}$. 
 It is also proportional to the wavelength $\lambda$, the crystal thickness $l$, the electrooptic coefficient $r$, and the refractive index $n_0$ \cite{wiki_book}. 
-Through measurement of the change in polarization, it is then possible to determine the intensity of the electric field of the $\si{\tera\hertz}$-pump beam.
+Through measurement of the change in polarization, it is then possible to determine the electric field strength of the $\si{\tera\hertz}$-pump beam.
 For this two photodiodes are used, which measure the probe beam intensity in dependence on its polarization.
-It is explained in section \ref{sec:setup} how the beam is split intp its two polarization-dependent parts.
+It is explained in section \ref{sec:setup} how the beam is split into its two polarization-dependent parts.
 One photodiode just measures the intensity of the horizontally polarized probe beam $A$ and one the vertically polarized part $B$.
 With the normed difference 
 
@@ -121,11 +153,11 @@ With the normed difference
     \label{eq:electricfield_A_B}
 \end{equation}
 
-it is possible to determine the field strength $E_\text{THz}$ \cite[7]{THZ_eltric_field}.
-With the electricfield it is then possible to calculate the peak power of the $\si{\tera\hertz}$-electric field.
+it is than possible to determine the field strength $E_\text{THz}$ \cite[7]{THZ_eltric_field}.
+With the electricfield calculated, the peak power of the $\si{\tera\hertz}$-electric field is then attainable.
 For this the intensity
 \begin{equation}
-    I = c \epsilon_0 *E_\text{THz}^2
+    I = c \epsilon_0 E_\text{THz}^2
 \end{equation}
 is calculated. With $\epsilon_0$ beeing the vacuum permittivity.
 The power 
@@ -152,7 +184,7 @@ with
     n_{\text{opt eff}} = n_\text{opt}(\omega) - \lambda_\text{opt}\frac{\partial n_\text{opt}}{\partial \lambda}\big{|}_{\lambda_\text{opt}}   
 \end{equation}
 
-here c is the velocity of light $\omega_{\si{\tera\hertz}} = \frac{2\pi}{\nu_{\si{\tera\hertz}}}$ is the frequency of $\si{\tera\hertz}$ radiation, $\omega_0$ is the frequency of the laser, $n_{\si{\tera\hertz}}$ is the refractive index of $\si{\tera\hertz}$ radiation in the medium, $n_\text{opt}$ is the refractive index of the pump laser wavelength $\lambda_\text{opt}$ and $n_\text{opt eff}$ is the refractive index of the group velocity of the pump laser radiation \cite[3]{coherence_legnth}.
+here c is the velocity of light, $\omega_{\si{\tera\hertz}} = \frac{2\pi}{\nu_{\si{\tera\hertz}}}$ is the frequency of $\si{\tera\hertz}$ radiation, $\omega_0$ is the frequency of the laser, $n_{\si{\tera\hertz}}$ is the refractive index of $\si{\tera\hertz}$ radiation in the medium, $n_\text{opt}$ is the refractive index of the pump laser wavelength $\lambda_\text{opt}$ and $n_\text{opt eff}$ is the refractive index of the group velocity of the pump laser radiation \cite[3]{coherence_legnth}.
 Because the refractive index of $\si{\tera\hertz}$ radiation and $\SI{800}{\nano\meter}$ laser light in ZnTe is very similar for $\si{\tera\hertz}$ frequencies up $\SI{2.5}{\tera\hertz}$ \cite{coherence_legnth} the coherence length for those frequencies are long enough for the application in the setup described in section \ref{sec:setup}.
 The relation between coherence length and $\si{\tera\hertz}$ frequency in ZnTe is shown in figure \ref{fig:coherence_legnth}.
 
@@ -164,28 +196,6 @@ The relation between coherence length and $\si{\tera\hertz}$ frequency in ZnTe i
     The plot was taken from source \cite{coherence_legnth}.}
     \label{fig:coherence_legnth}
 \end{figure}
-
+\textbf{Platzhalter für Grafik mit kohärenzlänge von GaP falls ich dazu was finde}
 % I need a paper to refernce the coherence length of GaP
 \FloatBarrier
-\section{Non-linear crystals}
-Optical non-linear crystals exhibit a nonlinearity in their second-order susceptibility $\chi_2$ or in even higher orders.
-For this, they show special non-linear effects at high electric field strengths.
-For different purposes, different kinds of crystals are in use.
-Almost all of these crystals are artificially produced crystals.
-The two crystals that are used in this experiment both show zincblende structure.
-
-
-\subsection{Zinc telluride}
-One of the crystals we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
-It allows the production of a wideband coherent $\si{\tera\hertz}$ field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
-It should be mentioned that ZnTe has a phonon resonance at $\SI{5.3}{\tera\hertz}$ \cite{phonon_modes}, which limits the bandwidth of emitted radiation and its ability to detect radiation of that or higher frequencies.
-Because optical rectification is a non-linear effect it is important to aline the laser to the $<110>$ axis of the crystal.
-It is also used as a detection crystal for the $\si{\tera\hertz}$ field.
-The ZnTe changes the polarization of the incoming probe beam dependent on the field strength of the $\si{\tera\hertz}$ radiation.
-This effect is discussed in section \ref{sec:eos}.
-
-\subsection{Gallium phosphide}
-The other crystal that is used to generate $\si{\tera\hertz}$ radiation is Gallium phosphide (GaP).
-It is a common emitter of $\si{\tera\hertz}$ radiation with a broad spectrum.
-This crystal also exhibits a phonon resonance, but a much higher frequency of about $\SI{11}{\tera\hertz}$ \cite[60]{wiki_book}.
-Aswell as ZnTe, Gap needs to stimulated by the laser along its $<110>$ axis.
