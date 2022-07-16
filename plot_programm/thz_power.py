@@ -179,7 +179,7 @@ for n in (range(len(filename))):
 
 
         for i in range(len(data_name_all[k])):
-            fig = plt.figure(i)
+            fig = plt.figure(i, figsize=(16,8))
             if data_name_all[k][i].find('log(') == 0:
                 plt.plot(data_all[k][i][0], data_all[k][i][1], label=data_name_all[k][i])
                 plt.yscale('log')
@@ -214,86 +214,87 @@ for n in (range(len(filename))):
         FFT_1.append(FData_zeropadding[1])
         peak_height_1 =(np.abs(np.max(X) + np.min(X)))
         peak_distances_1.append(peak_height_1)
-    else:
+    if filename[n][0] == '2':
         timestep_2.append(timestep)
         FFT_2.append(FData_zeropadding[1])
         peak_height_2 =(np.abs(np.max(X) + np.min(X)))
         peak_distances_2.append(peak_height_2)
 
-power_of_fft_1 = []
-for i in range(len(FFT_1)):
-    power_1 = FFT_1[i]**2
-    power_of_fft_1.append(np.sum(power_1)*timestep_1[i]) #I think this has to be frequency integrated not time wise
+if filename[0][0] == '1':
+    power_of_fft_1 = []
+    for i in range(len(FFT_1)):
+        power_1 = FFT_1[i]**2
+        power_of_fft_1.append(np.sum(power_1)*timestep_1[i]) #I think this has to be frequency integrated not time wise
 
-power_of_fft_2 = []
-for i in range(len(FFT_2)):
-    power_2 = FFT_2[i]**2
-    power_of_fft_2.append(np.sum(power_2)*timestep_2[i]) #I think this has to be frequency integrated not time wise
+    power_of_fft_2 = []
+    for i in range(len(FFT_2)):
+        power_2 = FFT_2[i]**2
+        power_of_fft_2.append(np.sum(power_2)*timestep_2[i]) #I think this has to be frequency integrated not time wise
+
+    power_of_fft_1 = np.array(power_of_fft_1)
+    power_of_fft_2 = np.array(power_of_fft_2)
+    pump_power_1 = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
+
+    pump_power_2 = np.array([135.0, 90.5, 81.6, 56.4, 24.6, 186.4])
+
+    pump_power = np.concatenate((pump_power_1,pump_power_2), axis=None)
+    # Fluences was measured independetly on a seperate day than the real fluence measurments
+    # so maybe they are not that precise
+    #Fluences = np.array([10.74, 8.38,4.53, 3.31, 1.47, 0.94 ,5.75,15.63])
+
+    Radius_Strahl_auf_Kristall = 0.343
+    area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
+
+    pulse_energy = pump_power*2 / 1000
+    pulse_energy_1 = pump_power_1*2 / 1000
+    pulse_energy_2 = pump_power_2*2 / 1000
+    #pulse_energy_per_area_measpuuredFluence = Fluences*2 / 1000 /area_beam_crytsal
+    #pulse_energy_fluence = Fluences*2 / 1000 * area_beam_crytsal
+    conversion_effiency_power_1 = power_of_fft_1/(pulse_energy_1 *10**(-6))
+    conversion_effiency_power_2 = power_of_fft_2/(pulse_energy_2 *10**(-6))
+    #conversion_effiency_fluence = power_of_fft/(pulse_energy_fluence *10**(-6))
+
+    pulse_energy_per_area_measuredPower_1 = pulse_energy_1/area_beam_crytsal
+    pulse_energy_per_area_measuredPower_2 = pulse_energy_2/area_beam_crytsal
+    ###########################
+    #   peak distances plotted
+    ###########################
+    print('Pulse energy used: ',pulse_energy)
+
+    fig , (axis1, axis2_1) = plt.subplots(1, 2, figsize=(24,8))
+    axis1.plot(pulse_energy_1, np.array(peak_distances_1)/np.max(peak_distances_1),'rx' ,label='peak_distances, half power')
+    axis1.plot(pulse_energy_2, np.array(peak_distances_2)/np.max(peak_distances_2),'bx' ,label='peak_distances, full power')
+    axis1.grid()
+    axis1.legend()
+    axis1.set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
+    axis1.set_ylabel('percentage of maximum peak distance')
+    axis1.set_title('Peak Distances with diffrent Pump Power')
+
+
+    ##########################
+    #   Power of electric fields plotted
+    ##########################
+
+    l1, = axis2_1.plot(pulse_energy_per_area_measuredPower_1, power_of_fft_1, 'r*')
+    l2, = axis2_1.plot(pulse_energy_per_area_measuredPower_2, power_of_fft_2, 'b*')
+    axis2_2 = axis2_1.twinx()                                                      #axis2_1 is power of electric field with measured power axis2_2 is its effiency
+    l3, = axis2_2.plot(pulse_energy_per_area_measuredPower_1, conversion_effiency_power_1, 'mx')
+    axis2_2.plot(pulse_energy_per_area_measuredPower_2, conversion_effiency_power_2, 'kx')
+
+    axis2_1.grid()
+    axis2_1.legend([l1, l2, l3], ['power electric field, half power','power electric field, full power','conversion effiency, Power measured'])
+    axis2_1.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
+    axis2_1.set_ylabel('Power(THz)/arb. units')
+    axis2_2.set_ylabel('conversion effiency (arb. units)')
+    axis2_1.set_title('With measured Power Values (Fluence calculated)')
+
+
+    plt.tight_layout()
+    plt.savefig('daten/Fluence_comparission.pdf')
+    plt.savefig('daten/Fluence_comparission.png')
+    plt.close()
+
     
-power_of_fft_1 = np.array(power_of_fft_1)
-power_of_fft_2 = np.array(power_of_fft_2)
-pump_power_1 = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
-
-pump_power_2 = np.array([135.0, 90.5, 81.6, 56.4, 24.6, 186.4])
-
-pump_power = np.concatenate((pump_power_1,pump_power_2), axis=None)
-# Fluences was measured independetly on a seperate day than the real fluence measurments
-# so maybe they are not that precise
-#Fluences = np.array([10.74, 8.38,4.53, 3.31, 1.47, 0.94 ,5.75,15.63])
-
-Radius_Strahl_auf_Kristall = 0.343
-area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
-
-pulse_energy = pump_power*2 / 1000
-pulse_energy_1 = pump_power_1*2 / 1000
-pulse_energy_2 = pump_power_2*2 / 1000
-#pulse_energy_per_area_measpuuredFluence = Fluences*2 / 1000 /area_beam_crytsal
-#pulse_energy_fluence = Fluences*2 / 1000 * area_beam_crytsal
-conversion_effiency_power_1 = power_of_fft_1/(pulse_energy_1 *10**(-6))
-conversion_effiency_power_2 = power_of_fft_2/(pulse_energy_2 *10**(-6))
-#conversion_effiency_fluence = power_of_fft/(pulse_energy_fluence *10**(-6))
-
-pulse_energy_per_area_measuredPower_1 = pulse_energy_1/area_beam_crytsal
-pulse_energy_per_area_measuredPower_2 = pulse_energy_2/area_beam_crytsal
-###########################
-#   peak distances plotted
-###########################
-print('Pulse energy used: ',pulse_energy)
-
-fig , (axis1, axis2_1) = plt.subplots(1, 2, figsize=(24,8))
-axis1.plot(pulse_energy_1, np.array(peak_distances_1)/np.max(peak_distances_1),'rx' ,label='peak_distances, half power')
-axis1.plot(pulse_energy_2, np.array(peak_distances_2)/np.max(peak_distances_2),'bx' ,label='peak_distances, full power')
-axis1.grid()
-axis1.legend()
-axis1.set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
-axis1.set_ylabel('percentage of maximum peak distance')
-axis1.set_title('Peak Distances with diffrent Pump Power')
 
 
-##########################
-#   Power of electric fields plotted
-##########################
-
-l1, = axis2_1.plot(pulse_energy_per_area_measuredPower_1, power_of_fft_1, 'r*')
-l2, = axis2_1.plot(pulse_energy_per_area_measuredPower_2, power_of_fft_2, 'b*')
-axis2_2 = axis2_1.twinx()                                                      #axis2_1 is power of electric field with measured power axis2_2 is its effiency
-l3, = axis2_2.plot(pulse_energy_per_area_measuredPower_1, conversion_effiency_power_1, 'mx')
-axis2_2.plot(pulse_energy_per_area_measuredPower_2, conversion_effiency_power_2, 'kx')
-
-axis2_1.grid()
-axis2_1.legend([l1, l2, l3], ['power electric field, half power','power electric field, full power','conversion effiency, Power measured'])
-axis2_1.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
-axis2_1.set_ylabel('Power(THz)/arb. units')
-axis2_2.set_ylabel('conversion effiency (arb. units)')
-axis2_1.set_title('With measured Power Values (Fluence calculated)')
-
-
-plt.tight_layout()
-plt.savefig('daten/Fluence_comparission.pdf')
-plt.savefig('daten/Fluence_comparission.png')
-plt.close()
-
- 
-
-
- ###########################
+     ###########################
