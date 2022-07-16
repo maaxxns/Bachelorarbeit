@@ -16,7 +16,9 @@ This way the lock-in Amplifier that is used for the measurement can be triggered
 After the chopper, a delay stage is placed.
 With this, the pump beam path length can be altered.
 This allows a time-resolved detection of the $\si{\tera\hertz}$ pulse, a detailed description can be found in section \ref{sec:time_domain}.
-Ultimately the beam is reflected onto the emitter crystal.
+To focus the beam on the crystal a lens with a focal length of $\SI{40}{\centi\meter}$ is placed $\SI{15}{\centi\meter}$ infront of the crystal.
+This distance is just enough to focus all the beam power on the whole crystal surface.
+Ultimately the beam is hits the emitter crystal.
 Depending on the measurement a zinc telluride (ZnTe) or a gallium phosphite (GaP) crystal is used.
 \\
 With this part of the setup done $\si{\tera\hertz}$ radiation can already be produced, just the detection is still missing.
@@ -54,8 +56,18 @@ The bigger the difference $A-B$ the stronger the $\si{\tera\hertz}$-electric fie
 \\\\
 With the setup now done the signal has to be optimized.
 To do this the stage is moved to the position of the strongest signal.
-The changes that are being made to the setup should now increase the hight of the peak or lower the noise in comparission to the peak signal.
-The first step should be to rotated the emitter crystal, to the point were the $<001>$ cyrstal direction is parallel to the polarization of the pump beam. 
+The changes that are being made to the setup should now increase the height of the peak or lower the noise in comparission to the peak signal.
+As shown in subsection \ref{sec:znte} the orientation of the ZnTe is of great importance.
+That is why the first step should be to rotated the emitter crystal, to the point were the $<001>$ cyrstal direction is parallel to the polarization of the pump beam.
+After the correct rotation is found the process is repeated for the detection crystal.
+Now the pump laser beam position on the emitter crystal needs to be adjusted.
+For this the laser mirror before the crystal is slowing being rotated until the signal is at its greatest stregnth.
+Now the parabolic mirrors should be adjusted by moving their position and orientation slightly.
+The signal can also be increased by rotating the detection crystal, so that the probe beam does not hit it perpendicular.
+The best results were achieved with an angle of $\SI{40}{\degree}$.
+Finaly the overlap of $\si{\tera\hertz}$ pump beam and laser probe beam on the detection crystal should be corrected.
+
+
 \FloatBarrier
 \subsection{Quater-wave plate}
 \label{sec:qwp}
@@ -167,4 +179,9 @@ At this position, the input of the lock-in amplifier is changed to just one of t
 Because the sum $A+B$ is not affected by the $\si{\tera\hertz}$ electric field, it can be used to norm every difference.
 So the separately measured values of $A$ and $B$ have to be measured just once.
 After $A-B$ and $A$ and $B$ are measured the electric field can be calculated.
+
+
+
+
+
 \subsection{Transmission measurements}
