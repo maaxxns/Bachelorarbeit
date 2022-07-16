@@ -51,11 +51,12 @@ timestep_2 = []
 #calculate eletric field from paper:
 
 def E(A_B, A,B):
+#    print('A_B in func: ', A_B)
     wavelength = 800 * 10**(-9)
     n_0 = 2.85
     r = 4.04 *10**(-12) 
     L = 1 *10**(-3)
-    eltricfield =  (A_B/A+B)*wavelength /(2* np.pi * n_0**3 * r * L) # in SI (V/m)
+    eltricfield =  (A_B/(2*(A+B)))*wavelength /(2* np.pi * n_0**3 * r * L) # in SI (V/m)
     eltricfield = eltricfield *10**(-5)# in kV/cm 
     return eltricfield
 
@@ -78,18 +79,31 @@ def pulse_energy(power):
 def linear(x, m, b):
     return m*x +b
 
-X_A = np.genfromtxt( 'daten/eltric_field_data/' + 'A.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0) #unpack the txt file with pixel values
+X_A = np.genfromtxt( 'daten/eltric_field_data/' + 'A.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0) #unpack the txt file with  values
 A = ufloat(np.mean(X_A), np.std(X_A))
 A = np.abs(A)
-X_B = np.genfromtxt( 'daten/eltric_field_data/' + 'B.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0) #unpack the txt file with pixel values
+X_B = np.genfromtxt( 'daten/eltric_field_data/' + 'B.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0) #unpack the txt file with  values
 B = ufloat(np.mean(X_B), np.std(X_B))
 B = np.abs(B)
+
+X_A_GaP = np.genfromtxt( 'daten/eltric_field_data/' + 'GaP_A.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0)
+A_GaP = ufloat(np.mean(X_A_GaP), np.std(X_A_GaP))
+A_GaP = np.abs(A_GaP)
+X_B_GaP = np.genfromtxt( 'daten/eltric_field_data/' + 'GaP_B.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0)
+B_GaP = ufloat(np.mean(X_B_GaP), np.std(X_B_GaP))
+B_GaP = np.abs(B_GaP)
+#print('B ', B_GaP, 'A ', A_GaP)
 
 pump_power_1 = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
 
 pump_power_2 = np.array([135, 90.5, 81.6, 56.4, 24.6, 186.4])
 
-pump_power = np.concatenate((pump_power_1, pump_power_2), axis=None)
+pump_power_GaP = np.array([74.4, 56.7, 46.0, 51.5, 35.6, 24.2, 124.2])
+
+if filename[0][0] == '1':
+    pump_power = np.concatenate((pump_power_1, pump_power_2), axis=None)
+if filename[0][0] == 'G':
+    pump_power = pump_power_GaP
 
 fields = []
 for n in (range(len(filename))):
@@ -99,10 +113,14 @@ for n in (range(len(filename))):
     #Isolate the THz Pulse
     peak = find_peaks(X, distance=100000) #finds the highest peak and returns the index
     A_B = X[peak[0]]
-    fields.append(E(A_B, A, B))
+    #print('file: ', filename[n], 'A_B ', A_B)
+    if filename[0][0] == '1':
+        fields.append(E(A_B, A, B))
+    if filename[0][0] == 'G':
+        fields.append(E(A_B, A_GaP, B_GaP))
 
 fields = np.array(fields)
-fields = fields + fields*0.15 # acccount for reflection losses as paper says
+#fields = fields + fields*0.15 # acccount for reflection losses as paper says
 
 params, cov = curve_fit(linear, pump_power, unumpy.nominal_values(fields)[:,0])
 x = np.linspace(np.min(pump_power), np.max(pump_power))
@@ -110,18 +128,28 @@ x = np.linspace(np.min(pump_power), np.max(pump_power))
 ##########################################
 #   plotting
 ##########################################
-plt.errorbar(x = pump_power_1, y = unumpy.nominal_values(fields[:len(pump_power_1)][:,0]) , yerr=unumpy.std_devs(fields[:len(pump_power_1)][:,0]) ,fmt='rx',label='half pump power')
-plt.errorbar(x = pump_power_2, y = unumpy.nominal_values(fields[len(pump_power_1):][:,0]) , yerr=unumpy.std_devs(fields[len(pump_power_1):][:,0]) ,fmt='bx',label='full pump power')
-plt.plot(x, linear(x, *params), '-', label='linear Fit')
+if filename[0][0] == '1':
+    plt.errorbar(x = pump_power_1, y = unumpy.nominal_values(fields[:len(pump_power_1)][:,0]) , yerr=unumpy.std_devs(fields[:len(pump_power_1)][:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
+    plt.errorbar(x = pump_power_2, y = unumpy.nominal_values(fields[len(pump_power_1):][:,0]) , yerr=unumpy.std_devs(fields[len(pump_power_1):][:,0]) ,color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+    plt.plot(x, linear(x, *params), '-', label='linear Fit')
+if filename[0][0] == 'G':
+    plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
+    plt.plot(x, linear(x, *params), '-', label='linear Fit')
 for i in range(len(fields)):
     print('pump power/mW: ', pump_power[i], ' field/(kV/cm): ', fields[i])
 
 plt.grid()
 plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$')
 plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$')
-plt.title('electric field per pump power')
+if filename[0][0] == '1':
+    plt.title('electric field per pump power ZnTe')
+if filename[0][0] == 'G':
+    plt.title('electric field per pump power GaP')
 plt.legend()
-plt.savefig('daten/eltric_field_data/eltric_field.pdf')
+if filename[0][0] == '1':
+    plt.savefig('daten/eltric_field_data/eltric_field_ZnTe.pdf')
+if filename[0][0] == 'G':
+    plt.savefig('daten/eltric_field_data/eltric_field_GaP.pdf')
 plt.close()
 ##########################################
 #   Power and Intensity
@@ -134,14 +162,15 @@ print('pump_power:', pump_power*10**(-3))
 conversion_effiency = power_THz/(pump_power*10**(-3)) # conversion effiency is weird
 
 fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
-axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),fmt='k*') #10**(2) because of conversion in SI +3 for mW
+axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),color='k',ls='' ,marker='o', label='THz Power') #10**(2) because of conversion in SI +3 for mW
+axis1.legend(loc=(0.914,0.05))
 axis2 = axis1.twinx()
-axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency[:,0]), yerr = unumpy.std_devs(conversion_effiency[:,0]),fmt='bx')
+axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency[:,0]), yerr = unumpy.std_devs(conversion_effiency[:,0]),color=((132/255, 184/255, 25/255)),ls='',marker='*', label='Conversion Effiency')
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
 axis1.set_ylabel(r'$Power\:THz\:Field \,(\mathrm{mW})$')
 axis1.set_title('peak THz Power per pump power')
-axis1.legend(['peak THz power', 'Conversion effiency'])
+axis2.legend(loc = 'lower right')
 axis2.set_ylabel(r'$Conversion\: Effiency \,(\mathrm{\%})$')
 
 plt.tight_layout()
