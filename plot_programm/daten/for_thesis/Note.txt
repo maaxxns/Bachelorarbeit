@@ -1,0 +1,10 @@
+2_11_30 was highest power ZnTe with post pulse.
+also shows a nice FFT.
+
+1_14_29 was ZnTe with the lowest power measured.
+Really noisy, but maybe good too understand the diffrence
+
+GaP14_55_42 is the highest pump power with GaP.
+Very noisy but shows a peak
+
+GaP14_20_20 is GaP with lowest power. It has a almost undistingishable peak. Way too much noise
