@@ -26,6 +26,7 @@ The two crystals that are used in this experiment both show zincblende structure
 
 
 \subsection{Zinc telluride}
+\label{sec:znte}
 One of the crystals we use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
 It allows the production of a wideband coherent $\si{\tera\hertz}$ field through means of optical rectification \ref{sec:optic_ref} \cite{ZnTe_Nahata_Weling_1996}.
 It should be mentioned that ZnTe has a phonon resonance at $\SI{5.3}{\tera\hertz}$ \cite{phonon_modes}, which limits the bandwidth of emitted radiation and its ability to detect radiation of that or higher frequencies.
@@ -34,10 +35,12 @@ The angle between the $<001>$ direction and the polarization of the pump beam is
 It can be seen in figure \ref{fig:polarization_dependence_angle} that two angles give the strongest signal.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{refferenced_pic/degreedepenceZnTe.png}
+    \includegraphics[width=0.4\textwidth]{refferenced_pic/degreedepenceZnTe.png}
     \caption{The plot shows the angle dependent emission of $\si{\tera\hertz}$ radiation in ZnTe.
     The angle is between the $<001>$ direction of the crystal and the polarization of the pump beam. An angle of $\theta = \SI{90}{\degree}$ however relates to the pump beam polarization being parallel to the $<001>$ axis.
-    The plot was taken from source \cite{}}
+    The plot was taken from source \cite{selig}.}
+    \label{fig:polarization_dependence_angle}
+\end{figure}
 It is also used as a detection crystal for the $\si{\tera\hertz}$ field.
 The ZnTe changes the polarization of the incoming probe beam dependent on the field strength of the $\si{\tera\hertz}$ radiation.
 This effect is discussed in section \ref{sec:eos}.
@@ -140,7 +143,8 @@ Because of the conservation of energy the crystal puts out a photon of the resul
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Electro-optic sampling}\label{sec:eos}
-To detect the $\si{\tera\hertz}$-electric field the electro-optic effect also known as the pockels effect is used.
+To detect the $\si{\tera\hertz}$-electric field Electro-optic sampling (EOS) is used.
+Which makes use of the electro-optic effect also known as the pockels effect.
 Through this effect, a birefringence is induced in the detection crystal which in turn changes the polarization of the probe beam.
 The phase shift 
 \begin{equation}
