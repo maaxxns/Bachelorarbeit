@@ -15,10 +15,11 @@ Still some of the laser hits the burned part of the crystal.
 \\\\
 To develop an understanding for the data the first figure that should be looked at is the time resolved EOS data.
 For this the lock-in Amplifier output is plotted against the time delay between pump and probe beam.
-The figure \ref{ZnTe:2_11_30_signal} shows the resulting plot.
+The figure \ref{ZnTe:2_11_30_20_signal} shows the resulting plot.
 This measurement is taken with a pump power of $\SI{135.0}{\milli\W}$, which is the highest pump power that is used.
-The typicall trend of a $\si{\tera\hertz}$ pulse can clearly be seen.
-Befor the pulse starts the signal is balanced at $X(V)=0$.
+The typical trend of a $\si{\tera\hertz}$ pulse can clearly be seen.
+\\
+Before the pulse starts the signal is balanced at $X(V)=0$.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{Plots/2_11_30_20normalX.pdf}
@@ -27,9 +28,8 @@ Befor the pulse starts the signal is balanced at $X(V)=0$.
     A post pulse can be seen at a delay of $\SI{84}{\pico\second}$.}
     \label{ZnTe:2_11_30_20_signal}
 \end{figure}
-\\
-At a delay of about $\SI{58}{\pico\second}$ the pulse starts, which manifests in a an increasingly negativ $X(V)$ value.
-After about $\SI{5}{\pico\second}$ after the start the minimum is reached and the lock-in Amplifier output increases drastically up to a value of $\SI{4.20669}{\milli\V}$.
+At a delay of about $\SI{58}{\pico\second}$ the pulse starts, which manifests in an increasingly negativ $X(V)$ value.
+After about $\SI{5}{\pico\second}$ behind the start, the minimum is reached with an $X(V)$ value of $\SI{-0.746}{\milli\V}$ after which the lock-in Amplifier output increases drastically up to a value of $\SI{4.206}{\milli\V}$.
 Here the maximum of the plot is reached, which corresponses to the maximum $\si{\tera\hertz}$ electricfield strength inside the detector crystal.
 After the maximum the signal drops almost to zero.
 \\
@@ -43,18 +43,18 @@ For futher calculations the data that is taken up until the post pulse will be u
 To confirm that the pulse that is shown in figure \ref{ZnTe:2_11_30_20_signal} actually corresponses to a $\si{\tera\hertz}$ pulse a Fourier-Transformation of the data is calculated. %Do I need to mention FFT in theory?
 Because the Fourier-Transformation is done numerically the FFT function of the python package scipy \cite{scipy} is used.
 The resulting Fourierspectrum is shown in figure \ref{fig:2_11_30_20_fft}.
-The Spectrum is also plotted against a logarithmic x-axis, which gives the plot in figure \ref{fig:2_11_30_20_fft_log}.
+The Spectrum is also plotted against a logarithmic y-axis, which results in the plot in figure \ref{fig:2_11_30_20_fft_log}.
+\\
 With this it is easy to confirm that the produced radiation actually lies in the $\si{\tera\hertz}$ regime.
 Most of the radiation that is produced has a frequenzy between $0.3-1.1\,\si{\tera\hertz}$, but radiation with even higher $\si{\tera\hertz}$ frequencies is produced aswell.
-Espacially in the spectrum which is plotted against the logarithmic x-axis the water absorption line of $\SI{1.226}{\tera\hertz}$ is clearly visible.
-This is due to the water vapor in the air between emmitter and detector crystal.
+Espacially in the spectrum which is plotted against the logarithmic y-axis the water absorption line of $\SI{1.226}{\tera\hertz}$ is clearly visible.
+This is due to the water vapor in the air between emitter and detector crystal.
 Some absorption lines at even higher frequencies are visible too.
 \begin{figure}%
     \centering
-    \caption{The Fourierspectrum of the data, that is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
+    \caption{The Fourierspectrum of the data from ZnTe, that is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
     One of the spectras is plotted against a logarithmic axis to see the higher frequencies aswell.}%
     \begin{subfigure}{0.35\textwidth}%
-        \centering%
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normalFX.pdf}%
         \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{ZnTe:2_11_30_20_signal}.
         It can clearly be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
@@ -62,9 +62,8 @@ Some absorption lines at even higher frequencies are visible too.
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
         \begin{subfigure}{0.35\textwidth}%
-        \centering%
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normallog(FX).pdf}%
-        \caption{The Fourierspectrum of the data shown in figure \ref{ZnTe:2_11_30_20_signal} plotted against a logarithmic x-axis.
+        \caption{The Fourierspectrum of the data shown in figure \ref{ZnTe:2_11_30_20_signal} plotted against a logarithmic y-axis.
         This shows that higher $\si{\tera\hertz}$ frequencies are produced aswell. Some absorption lines can also bee seen.}%
         \label{fig:2_11_30_20_fft_log}%
     \end{subfigure}%
@@ -73,19 +72,157 @@ Some absorption lines at even higher frequencies are visible too.
 \FloatBarrier
 
 \subsection{Fluence measurments}
+\FloatBarrier
 
+
+\FloatBarrier
 \subsection{Electric field measurments}
-To determine the peak electricfield of the  $\si{\tera\hertz}$ pulse, several measurements of $A$, $B$ and $A-B$ are taken as described in section \ref{sec:field}.
+\FloatBarrier
+To determine the peak electricfield of the $\si{\tera\hertz}$ pulse, several measurements of $A$, $B$ and $A-B$ are taken as described in section \ref{sec:field}.
 To get the best result and minimize the error through noise for $A$ and $B$, their value is measured $500$ times.
-After the data is taken their mean value is used for futher calculations with error being the standard deviation.
-All futher errors are calculated by 
-With those the electricfield is calculated by equation \ref{eq:electricfield_A_B}.
-
-
+After the data is taken their mean value is used for futher calculations with their error being the standard deviation.
+\\
+All futher errors are calculated with the python package uncertainties \cite{uncertainties}, which uses the standard gaussian error propagation theory described in section \ref{sec:error}.
+With those the electricfield, for every $A-B$ value that is measured, is calculated by equation \ref{eq:electricfield_A_B}.
+All the peak electricfield values are than collected and plotted against their corresponding pump power.
+The resulting plot can be seen in figure \ref{fig:znte_electricfield}.
+\\
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Plots/eltric_field_ZnTe.pdf}
+    \caption{The calculated peak electricfield of the $\si{\tera\hertz}$ pulse is plotted against its corresponding pump laser power.
+    Diffrent initial pump powers are shown through diffrent colors.
+    A linear regression of the calculated values is plotted in blue.}
+    \label{fig:znte_electricfield}
+\end{figure}
+Because the laser power that the setup receives right at the beginning changes from $\SI{579}{\milli\W}$ to $\SI{291}{\milli\W}$, over the course of the measurement, the values that are taken with the higher initial laser power are marked with green stars.
+The lower initial laser power of $\SI{291}{\milli\W}$ is marked with black dots.
+A linear regression is done with the formula
+\begin{equation}
+    f(x) = mx + b,
+    \label{eq:linear}
+\end{equation}
+where $x$ are the pump power values and $f(x)$ are all the peak electricfield values.
+The calculation are done with the function \textbf{curve\_fit} from the python package scipy \cite{scipy}.
+It returns the fit parameters 
+\begin{align*}
+    m =& 0.0189\\
+    b =& 0.2615
+    vielleicht sollte ich kein align nutzen auch wenn es am besten aussieht. das nimmt einfach zu viel platz weg
+\end{align*}
+with which the linear fit is plotted.
+Espacially for lower pump powers the peak electricfield values follow the linear trend.
+However at higher pump powers the calculated electricfield values diverge heavily from the linear fit.
+\\
+A probable cause is that at higher pump powers the burned part of the crystal influeces the production of $\si{\tera\hertz}$ much stronger.
+The linear trend is in good comparission with the literature \cite{electric_field_compare}, which also shows a linear trend at lower pump power/pulse energys.
+However the electricfield strength is way lower than in the literature.
+The maximum electricfield strength that is calculated is $\SI{4.900(19)}{\kilo\V\per\centi\meter}$, which corresponses to a pump power of $\SI{135.0}{\milli\W}$.
+\\
+This is not actually the highest pump power that is used.
+The expectation would be that the highest pump power corresponses to the highest peak electricfield.
+The reason for this annomaly, aswell as the lower electricfield strength compared to the literature, might be the smaller thickness of the crystal as well as the lower quality of the crystal due to its burned spots.
 
 \section{Gallium phosphide}
+As emitter crystal a $\SI{0.3}{\milli\meter}$ GaP crystal is used.
+A $\SI{1}{\milli\meter}$ ZnTe crystal is in use as the detector crystal.
+The measurements and prepartions are the same as for ZnTe and a detailed description can be found in section \ref{sec:execution}.
+A first look at the data that is collected can be taken in figure \ref{fig:GaP14_55_42normalX}.
+\\
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{Plots/GaP14_55_42normalX.pdf}
+    \caption{The EOS data that is collected with GaP as emitter crystal with an applied laser pump power of $\SI{124.2}{\milli\W}$, which is the highest laser pump power that is measured.}
+    \label{fig:GaP14_55_42normalX}
+\end{figure}
+At the start of the measurement the signal is distrubuted around zero, but not totally zero because of the noise.
+Around $\SI{54}{\pico\second}$ a downward trend can be seen, which reaches its minimum at $\SI{55}{\pico\second}$.
+Then the signal gradient becomes positive and increases in a very short interval up to a peak value of $\SI{0.287}{\milli\V}$ at a delay of $\SI{55.9}{\pico\second}$.
+\\
+After the peak the signal drops down again into another minimum with a value of $\SI{-59.128}{\micro\V}$ at a delay of $\SI{56.3}{\pico\second}$.
+Now the signal raises back to zero and shows no further significant features until the end of the measurement.
+This measurement does not show any post pulse feature.
+\\\\
+A Fourier-Transformation has been calculated, which is shown in figure \ref{fig:GaP14_55_42_fft}.
+The Fourierspectrum has also been plotted against a logarithmic y-axis to make absorption lines more visible and acquier more informations about the higher frequencies, that dont appear in the normal Fourierspectrum.
+\\
+This Fourierspectrum that is plotted against the logarithmic y-axis is shown in figure \ref{fig:GaP14_55_42_fft_log}.
+There are no features in the Fourierspectrum that can be clearly recognized as absorption lines.
+The Fourierspectrum shows a linear downward trend from its highest amplitude at a frequency of $\SI{0.3}{\tera\hertz}$ down to a frequency of $\SI{2.5}{\tera\hertz}$.
+After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, which shows that the majority of the produced radiation lies between $0.3$ and $\SI{2.5}{\tera\hertz}$.
+
+\begin{figure}%
+    \centering
+    \caption{The Fourierspectrum of the data for GaP, that is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
+    One of the spectras is plotted against a logarithmic axis to better see absorption lines or other features aswell.}%
+    \begin{subfigure}{0.35\textwidth}%
+        \includegraphics[height=3.5cm]{Plots/GaP14_55_42normalFX.pdf}%
+        \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{fig:GaP14_55_42normalX}.
+        The Fourierspectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
+        After which the spectrum stays almost constant at an value of $0.0005$.}%
+        \label{fig:GaP14_55_42_fft}%
+        \end{subfigure}%
+    \hfill% Fills available space in the center -> space between figures
+        \begin{subfigure}{0.35\textwidth}%
+        \includegraphics[height=3.5cm]{Plots/GaP14_55_42normallog(FX).pdf}%
+        \caption{The Fourierspectrum of the data shown in figure \ref{fig:GaP14_55_42normalX} plotted against a logarithmic y-axis.
+        There are no absorption lines recognizable in the plot.}%
+        \label{fig:GaP14_55_42_fft_log}%
+    \end{subfigure}%
+    \label{fig:fourier_znte}%
+\end{figure}%
+
+\FloatBarrier
 \subsection{Fluence measurments}
+\FloatBarrier
+
+
+
+
+
+\FloatBarrier
 \subsection{Electric field measurments}
+\FloatBarrier
+The electricfield is measured as described in section \ref{sec:field}.
+As emitter crystal a $\SI{0.3}{\milli\meter}$ GaP crystal is used.
+The detector is an $\SI{1}{\milli\meter}$ ZnTe crystal.
+To lower the error through noise the values $A$ and $B$ are measured $500$ times.
+The median of each dataset is used for further calculation.
+The error is given by the standard deviation of the median.
+\\
+To calculated the peak electricfield the positive peak $A-B$ values, which are taken by each measurement are plugged into equation \ref{eq:electricfield_A_B}.
+The peak electricfields for every pump power are than plotted against there corresponding pump powers.
+The resulting plot is shown in figure \ref{fig:gap_electricfield}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Plots/eltric_field_GaP.pdf}
+    \caption{The peak electricfield, marked as black dots, is plotted against its corresponding pump power.
+    A linear fit, as filled blue line, for the plotted datapoints is also shown in the figure.}
+    \label{fig:gap_electricfield}
+\end{figure}
+The calculated peak electricfields show a linear trend.
+For this reason a linear regression has been calculated for equation \ref{eq:linear}.
+The regression is done with the function \textbf{curve\_fit} from the python package scipy.
+Said function returns the parameters
+\begin{align*} 
+    m =& 0.0245\\
+    b =& 0.5403
+\end{align*}
+which are used to make the linear fit shown in figure \ref{fig:gap_electricfield}.
+\textbf{hier brauch ich noch literatur für GaP THz electric field}.
+\\
+The linear regression shows that the datapoints actually follow a linear trend.
+At higher pump powers the datapoints are more distancent from the linear fit.
+The highest eletricfield of $\SI{3.38(5)}{\kilo\V\per\centi\meter}$ calculated, corresponses to a pump power of $\SI{124.2}{\milli\W}$, which is the highest laser pump power that is used.
+This follows the linear trend \textbf{and is in good comparission with the literature?}.
 
+\textbf{It is also intersting that even with very low pump powers $\si{\tera\hertz}$ radiation can still be produced.
+In this case a pump power of $\SI{24.2}{\milli\W}$ is sufficient to produce a peak electricfield of $\SI{0.97(1)}{\kilo\V\per\centi\meter}$.}
 
+\FloatBarrier
 \section{Comparisson}
+Because the GaP crystal is $\SI{0.7}{\milli\meter}$ thinner than the ZnTe crystal all comparissions that are done in this chapter only apply for this specific setup and may not apply universally.
+
+
+GaP no post pulse
+%I should put another GaP plot in the abstracted to show how noisy it is
