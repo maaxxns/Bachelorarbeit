@@ -223,12 +223,19 @@ for n in (range(len(filename))):
 if filename[0][0] == '1':
     power_of_fft_1 = []
     for i in range(len(FFT_1)):
-        power_1 = FFT_1[i]**2
+        c = 299792458
+        e_0 = 8.8541878128*10**(-12)
+        r=2.5*10**(-3)
+        intesity_1 = 1/2 *c * e_0* FFT_1[i]**2
+        power_1 = intsity_1*r**2*np.pi
         power_of_fft_1.append(np.sum(power_1)*timestep_1[i]) #I think this has to be frequency integrated not time wise
-
     power_of_fft_2 = []
     for i in range(len(FFT_2)):
-        power_2 = FFT_2[i]**2
+        c = 299792458
+        e_0 = 8.8541878128*10**(-12)
+        r=2.5*10**(-3)
+        intesity_2 = 1/2 *c * e_0* FFT_2[i]**2
+        power_2 = intsity_2*r**2*np.pi
         power_of_fft_2.append(np.sum(power_2)*timestep_2[i]) #I think this has to be frequency integrated not time wise
 
     power_of_fft_1 = np.array(power_of_fft_1)
@@ -250,8 +257,8 @@ if filename[0][0] == '1':
     pulse_energy_2 = pump_power_2*2 / 1000
     #pulse_energy_per_area_measpuuredFluence = Fluences*2 / 1000 /area_beam_crytsal
     #pulse_energy_fluence = Fluences*2 / 1000 * area_beam_crytsal
-    conversion_effiency_power_1 = power_of_fft_1/(pulse_energy_1 *10**(-6))
-    conversion_effiency_power_2 = power_of_fft_2/(pulse_energy_2 *10**(-6))
+    conversion_effiency_power_1 = power_of_fft_1/(pulse_energy_1 *10**(-3))
+    conversion_effiency_power_2 = power_of_fft_2/(pulse_energy_2 *10**(-3))
     #conversion_effiency_fluence = power_of_fft/(pulse_energy_fluence *10**(-6))
 
     pulse_energy_per_area_measuredPower_1 = pulse_energy_1/area_beam_crytsal
@@ -279,10 +286,10 @@ if filename[0][0] == '1':
     l2, = axis2_1.plot(pulse_energy_per_area_measuredPower_2, power_of_fft_2, 'b*')
     axis2_2 = axis2_1.twinx()                                                      #axis2_1 is power of electric field with measured power axis2_2 is its effiency
     l3, = axis2_2.plot(pulse_energy_per_area_measuredPower_1, conversion_effiency_power_1, 'mx')
-    axis2_2.plot(pulse_energy_per_area_measuredPower_2, conversion_effiency_power_2, 'kx')
+    l4, = axis2_2.plot(pulse_energy_per_area_measuredPower_2, conversion_effiency_power_2, 'kx')
 
     axis2_1.grid()
-    axis2_1.legend([l1, l2, l3], ['power electric field, half power','power electric field, full power','conversion effiency, Power measured'])
+    axis2_1.legend([l1, l2, l3, l4], ['power electric field, half power','power electric field, full power','conversion effiency lower power', 'conversion effiency higher power'])
     axis2_1.set_xlabel('pulse energy per unit area ' + r'$(\mathrm{mJ}/\mathrm{cm}^2)$')
     axis2_1.set_ylabel('Power(THz)/arb. units')
     axis2_2.set_ylabel('conversion effiency (arb. units)')

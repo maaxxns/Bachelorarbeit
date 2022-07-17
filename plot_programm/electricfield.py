@@ -131,6 +131,7 @@ fields = np.array(fields)
 params, cov = curve_fit(linear, pump_power, unumpy.nominal_values(fields)[:,0])
 x = np.linspace(np.min(pump_power), np.max(pump_power))
 
+print('params: ', params, 'max field: ', np.max(fields))
 ##########################################
 #   plotting
 ##########################################
