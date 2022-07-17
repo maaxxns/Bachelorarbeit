@@ -53,9 +53,15 @@ timestep_2 = []
 def E(A_B, A,B):
 #    print('A_B in func: ', A_B)
     wavelength = 800 * 10**(-9)
-    n_0 = 2.85
-    r = 4.04 *10**(-12) 
-    L = 1 *10**(-3)
+    if filename[0][0] == '1':
+        n_0 = 2.85
+        r = 4.04 *10**(-12) 
+        L = 1 *10**(-3)
+    if filename[0][0] == 'G':
+        n_0 = 3.193
+        r = 4.04 *10**(-12) 
+        L = 0.3 *10**(-3)
+        
     eltricfield =  (A_B/(2*(A+B)))*wavelength /(2* np.pi * n_0**3 * r * L) # in SI (V/m)
     eltricfield = eltricfield *10**(-5)# in kV/cm 
     return eltricfield
