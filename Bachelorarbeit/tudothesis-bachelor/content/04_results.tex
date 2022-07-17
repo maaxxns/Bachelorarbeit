@@ -6,6 +6,7 @@ Futher a comparission between the different spectras of ZnTe and GaP will be sho
 \section{Zinc telluride}
 For this measurments a $\SI{1}{\milli\meter}$ thick ZnTe crystal is used as the emitter.
 Another $\SI{1}{\milli\meter}$ thick ZnTe crystal is used as the detector.
+The measurements are taken as described in section \ref{sec:execution}.
 At this point it should be said, that the Znte crystal that is used as the emitter has two burn marks on it.
 The burned crystal can be seen in figure \ref{fig:ZnTe_burned}.
 Obviously the burned part of the crystal negatively effects the efficiency of $\si{\tera\hertz}$ production.
@@ -45,6 +46,9 @@ The resulting Fourierspectrum is shown in figure \ref{fig:2_11_30_20_fft}.
 The Spectrum is also plotted against a logarithmic x-axis, which gives the plot in figure \ref{fig:2_11_30_20_fft_log}.
 With this it is easy to confirm that the produced radiation actually lies in the $\si{\tera\hertz}$ regime.
 Most of the radiation that is produced has a frequenzy between $0.3-1.1\,\si{\tera\hertz}$, but radiation with even higher $\si{\tera\hertz}$ frequencies is produced aswell.
+Espacially in the spectrum which is plotted against the logarithmic x-axis the water absorption line of $\SI{1.226}{\tera\hertz}$ is clearly visible.
+This is due to the water vapor in the air between emmitter and detector crystal.
+Some absorption lines at even higher frequencies are visible too.
 \begin{figure}%
     \centering
     \caption{The Fourierspectrum of the data, that is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
@@ -67,9 +71,16 @@ Most of the radiation that is produced has a frequenzy between $0.3-1.1\,\si{\te
     \label{fig:fourier_znte}%
 \end{figure}%
 \FloatBarrier
+
 \subsection{Fluence measurments}
 
 \subsection{Electric field measurments}
+To determine the peak electricfield of the  $\si{\tera\hertz}$ pulse, several measurements of $A$, $B$ and $A-B$ are taken as described in section \ref{sec:field}.
+To get the best result and minimize the error through noise for $A$ and $B$, their value is measured $500$ times.
+After the data is taken their mean value is used for futher calculations with error being the standard deviation.
+All futher errors are calculated by 
+With those the electricfield is calculated by equation \ref{eq:electricfield_A_B}.
+
 
 
 \section{Gallium phosphide}

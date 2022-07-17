@@ -5,8 +5,8 @@ As well as the method that is used to achieve a time-resolved measurement of the
 \section{Setup}
 \label{sec:setup}
 To produce $\si{\tera\hertz}$ radiation the setup as shown in Figure \ref{fig:setup} is used.
-A Ti-sapphire laser is used to produce the necessary laser radiation.
-It produces a pulsed laser beam with a power of around $\SI{6.9}{\W}$, with a frequency of $\SI{1000}{\Hz}$.
+An $\SI{800}{\nano\meter}$ Ti-sapphire laser is used to produce the necessary laser radiation.
+It produces a pulsed laser beam with a power of around $\SI{6.9}{\W}$, at a frequency of $\SI{1000}{\Hz}$.
 However because the laser feeds into several setups only a fraction of the initial power reaches each setup.
 This setup receives between $\SI{579}{\milli\W}$ and $\SI{291}{\milli\W}$ depending on the configurations of the other setups. 
 The incoming laser with a pulse length of $\SI{100}{\femto\second}$ is split into a pump and a probe laser.
@@ -137,6 +137,7 @@ To get a good resolution $1000$ measurements with a distance of $\SI{0.004}{\mil
 This distance corresponds to a time resolution of $\SI{13.34}{\femto\second}$.
 
 \section{Execution}
+\label{sec:execution}
 This section describes how the measurements were taken. 
 It will be discussed what changes to the setup in figure \ref{fig:setup} are being made to achieve the wanted results.
 \\\\
@@ -169,6 +170,7 @@ This makes it important to only measure the initial pulse but not the pre- and p
 After the measurement, the filter is swapped out with another one and the process is started over until all fluences are measured.
 
 \subsection{Electric field measurements}
+\label{sec:field}
 To determine the electric field of the $\si{\tera\hertz}$ radiation it is necessary to measure the output of the photodiodes $A$ and $B$ separately as well as their difference $A-B$.
 Because just the maximum field strength is of particular interest just the greatest $A-B$ value is necessary to measure.
 For this, the delay stage is moved into the peak of the pulse, which is the position of the greatest $A-B$ value and a measurement of the difference is taken.
