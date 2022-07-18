@@ -54,14 +54,14 @@ Some absorption lines at even higher frequencies are visible too.
     \centering
     \caption{The Fourierspectrum of the data from ZnTe, that is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
     One of the spectras is plotted against a logarithmic axis to see the higher frequencies aswell.}%
-    \begin{subfigure}{0.35\textwidth}%
+    \begin{subfigure}{\columnwidth}%
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normalFX.pdf}%
         \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{ZnTe:2_11_30_20_signal}.
         It can clearly be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
         \label{fig:2_11_30_20_fft}%
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
-        \begin{subfigure}{0.35\textwidth}%
+        \begin{subfigure}{\columnwidth}%
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normallog(FX).pdf}%
         \caption{The Fourierspectrum of the data shown in figure \ref{ZnTe:2_11_30_20_signal} plotted against a logarithmic y-axis.
         This shows that higher $\si{\tera\hertz}$ frequencies are produced aswell. Some absorption lines can also bee seen.}%
@@ -70,13 +70,8 @@ Some absorption lines at even higher frequencies are visible too.
     \label{fig:fourier_znte}%
 \end{figure}%
 \FloatBarrier
-
-\subsection{Fluence measurments}
-\FloatBarrier
-
-
-\FloatBarrier
 \subsection{Electric field measurments}
+\label{sec:znte_electricfield}
 \FloatBarrier
 To determine the peak electricfield of the $\si{\tera\hertz}$ pulse, several measurements of $A$, $B$ and $A-B$ are taken as described in section \ref{sec:field}.
 To get the best result and minimize the error through noise for $A$ and $B$, their value is measured $500$ times.
@@ -91,7 +86,7 @@ The resulting plot can be seen in figure \ref{fig:znte_electricfield}.
     \centering
     \includegraphics[width=0.5\textwidth]{Plots/eltric_field_ZnTe.pdf}
     \caption{The calculated peak electricfield of the $\si{\tera\hertz}$ pulse is plotted against its corresponding pump laser power.
-    Diffrent initial pump powers are shown through diffrent colors.
+    Diffrent initial laser powers are shown through diffrent colors. The high power being $\SI{579}{\milli\W}$ the lower being $\SI{291}{\milli\W}$.
     A linear regression of the calculated values is plotted in blue.}
     \label{fig:znte_electricfield}
 \end{figure}
@@ -122,7 +117,41 @@ The maximum electricfield strength that is calculated is $\SI{4.900(19)}{\kilo\V
 This is not actually the highest pump power that is used.
 The expectation would be that the highest pump power corresponses to the highest peak electricfield.
 The reason for this annomaly, aswell as the lower electricfield strength compared to the literature, might be the smaller thickness of the crystal as well as the lower quality of the crystal due to its burned spots.
+\FloatBarrier
+\subsection{Power measurments}
+\FloatBarrier
+To calculate the peak electricfield power of the $\si{\tera\hertz}$ pulse the spotsize of the pulse is measured.
+The spot has a radius of $\SI{2.5}{\milli\meter}$ according the aperature opening.
+If a circular spot is assumed the spotarea is $\SI{19.62}{\milli\meter\squared}$.
+With the electricfield values that are calculated in section \ref{sec:znte_electricfield} the intensity can then be calculated according to equation \ref{eq:intensity}.
+Now all variables to calculate the $\si{\tera\hertz}$ electricfield power are known and just need to be plugged into equation \ref{eq:power}.
+\\
+The resulting power values are then plotted against their corresponding pump powers and shown in figure \ref{fig:znte_power}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{Plots/ZnTePower.pdf}
+    \caption{The calculated peak electricfield powers of the $\si{\tera\hertz}$ pulses are plotted against their corresponding pump powers.
+    Because the initial laser powers that are fed into the setup change over the course of the measurement, the different laser power are marked with green stars, for the higher power, or black dots, for the lower power.
+    The high initial laser power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
+    A conversion efficiency from pump power to $\si{\tera\hertz}$ power has been calculated and shown as blue crosses.}
+    \label{fig:znte_power}
+\end{figure}
+Because the initial laser power that comes into the setup changes the different laser powers are marked with green starts, for high power, and black dots, for lower power.
+The high initial power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
+\\
+A conversion efficiency from laser pump power to $\si{\tera\hertz}$ peak electricfield power has been calculated and plotted as blue crosses in figure \ref{fig:znte_power}.
+The calculated peak electricfield power of the $\si{\tera\hertz}$ pulse, shows a linear trend up until a pump power of $\SI{90.5}{\milli\W}$.
+Here the peak electricfield power has a value of $\SI{0.1421(11}{\micro\W}$.
+\\
+With pump powers that are even greater than $\SI{90.5}{\milli\W}$ the peak electricfield power of the $\si{\tera\hertz}$ pulse does not increase.
+The only exception for that is at a pump power of $\SI{135.0}{\milli\W}$ with a peak electricfield power of $\SI{0.6255(46)}{\mirco\W}$.
+This exception is most probably an error in the measurement and does not really reflect the behavior of the emitter crystal.
+%or maybe this would be the real behavior if the crystal is not burned. so that the power would rise linearly for even longer.
+\\\\
+The conversion efficiency lies between $\SI{2.544(19)e-07}{}$ for a pump power of $\SI{7.28}{\milli\W}$ and $\SI{4.634(35)e-06}{}$ with a pump power of $\SI{135.0}{\milli\W}$
 
+
+\FloatBarrier
 \section{Gallium phosphide}
 As emitter crystal a $\SI{0.3}{\milli\meter}$ GaP crystal is used.
 A $\SI{1}{\milli\meter}$ ZnTe crystal is in use as the detector crystal.
@@ -155,7 +184,7 @@ After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, w
     \centering
     \caption{The Fourierspectrum of the data for GaP, that is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
     One of the spectras is plotted against a logarithmic axis to better see absorption lines or other features aswell.}%
-    \begin{subfigure}{0.35\textwidth}%
+    \begin{subfigure}{\columnwidth}%
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normalFX.pdf}%
         \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{fig:GaP14_55_42normalX}.
         The Fourierspectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
@@ -163,7 +192,7 @@ After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, w
         \label{fig:GaP14_55_42_fft}%
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
-        \begin{subfigure}{0.35\textwidth}%
+        \begin{subfigure}{\columnwidth}%
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normallog(FX).pdf}%
         \caption{The Fourierspectrum of the data shown in figure \ref{fig:GaP14_55_42normalX} plotted against a logarithmic y-axis.
         There are no absorption lines recognizable in the plot.}%
@@ -171,15 +200,6 @@ After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, w
     \end{subfigure}%
     \label{fig:fourier_znte}%
 \end{figure}%
-
-\FloatBarrier
-\subsection{Fluence measurments}
-\FloatBarrier
-
-
-
-
-
 \FloatBarrier
 \subsection{Electric field measurments}
 \FloatBarrier
@@ -218,6 +238,8 @@ This follows the linear trend \textbf{and is in good comparission with the liter
 
 \textbf{It is also intersting that even with very low pump powers $\si{\tera\hertz}$ radiation can still be produced.
 In this case a pump power of $\SI{24.2}{\milli\W}$ is sufficient to produce a peak electricfield of $\SI{0.97(1)}{\kilo\V\per\centi\meter}$.}
+\FloatBarrier
+\subsection{Power measurments}
 
 \FloatBarrier
 \section{Comparisson}

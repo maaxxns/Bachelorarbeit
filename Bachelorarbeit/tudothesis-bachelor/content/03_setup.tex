@@ -150,8 +150,8 @@ Usually, the difference is never zero, because the photodiode output suffers fro
 To acount for the noise the quarter-wave plate is rotated until the average of $A-B$ over a small time period is zero.
 If that is the case the probe beam is circularly polarized after the quarter-wave plate, while it is not affected by the $\si{\tera\hertz}$ signal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fluence measurements}
-The goal of the fluence measurements is to determine the effect of different pump fluences on the $\si{\tera\hertz}$ production.
+\subsection{Power measurements}
+The goal of the power measurements is to determine the effect of different pump fluences on the $\si{\tera\hertz}$ production.
 For it is necessary to change the power of the pump beam before it hits the emitter crystal.
 For that different density filters are placed inside the beam path.
 All the filters that were used can be seen in table \ref{tab:filters}.
@@ -167,7 +167,17 @@ It should also be said that reflections inside the emitter and the detector crys
 These are unwanted byproducts of the initial pulse and will interfere with later calculations.
 This makes it important to only measure the initial pulse but not the pre- and post-pulse.
 After the measurement, the filter is swapped out with another one and the process is started over until all fluences are measured.
-
+\\\\
+To calculate the peak power of the $\si{\tera\hertz}$ electricfield, it is necessary to measure the spotsize.
+Usually this would be done with an $\si{\tera\hertz}$-optical camera, which atomtically measures the spotsize.
+In the case of this setup however, the $\si{\tera\hertz}$ electricfield is too weak to be detected by the camera.
+The solution to this problem is too measure the spotsize directly.
+\\
+To do that an aperature is paced inside the probebeam.
+Then the delaystage is moved to the position of the greatest electricfield, where it is fixed.
+Now the $A-B$ value of the photodiodes output is measured, while the aperature is slowy being closed.
+When the $A-B$ value starts to lose strength the probebeam spot should be as big as the $\si{\tera\hertz}$ spot on the detector crystal.
+The opening area of the aperature should now be the same area as the $\si{\tera\hertz}$ spot on the detector crystal.
 \subsection{Electric field measurements}
 \label{sec:field}
 To determine the electric field of the $\si{\tera\hertz}$ radiation it is necessary to measure the output of the photodiodes $A$ and $B$ separately as well as their difference $A-B$.
