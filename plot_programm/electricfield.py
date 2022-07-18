@@ -99,7 +99,8 @@ X_B_GaP = np.genfromtxt( 'daten/eltric_field_data/' + 'GaP_B.txt', delimiter='\t
 B_GaP = ufloat(np.mean(X_B_GaP), np.std(X_B_GaP))
 B_GaP = np.abs(B_GaP)
 #print('B ', B_GaP, 'A ', A_GaP)
-
+print(A_GaP, B_GaP)
+print(A, B)
 pump_power_1 = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
 
 pump_power_2 = np.array([135, 90.5, 81.6, 56.4, 24.6, 186.4])
@@ -119,6 +120,7 @@ for n in (range(len(filename))):
     #Isolate the THz Pulse
     peak = find_peaks(X, distance=100000) #finds the highest peak and returns the index
     A_B = X[peak[0]]
+    print('A-B with peak func: ', A_B, 'A-B with max', np.max(X))
     #print('file: ', filename[n], 'A_B ', A_B)
     if filename[0][0] == '1':
         fields.append(E(A_B, A, B))
