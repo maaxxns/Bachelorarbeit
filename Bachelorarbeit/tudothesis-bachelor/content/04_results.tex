@@ -121,7 +121,7 @@ The reason for this annomaly, aswell as the lower electricfield strength compare
 \FloatBarrier
 \subsection{Power measurments}
 \FloatBarrier
-To calculate the peak electricfield power of the $\si{\tera\hertz}$ pulse the spotsize of the pulse is measured.
+To calculate the peak electricfield power of the $\si{\tera\hertz}$ pulse the spotsize of the pulse is measured as described in section \ref{sec:power}.
 The spot has a radius of $\SI{2.5}{\milli\meter}$ according the aperature opening.
 If a circular spot is assumed the spot area is $\SI{19.62}{\milli\meter\squared}$.
 With the electricfield values that are calculated in section \ref{sec:znte_electricfield} the intensity can then be calculated according to equation \ref{eq:intensity}.
@@ -134,14 +134,17 @@ The resulting power values are then plotted against their corresponding pump pow
     \caption{The calculated peak electricfield powers of the $\si{\tera\hertz}$ pulses are plotted against their corresponding pump powers.
     Because the initial laser powers that are fed into the setup change over the course of the measurement, the different laser power are marked with green stars, for the higher power, or black dots, for the lower power.
     The high initial laser power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
-    A conversion efficiency from pump power to $\si{\tera\hertz}$ power is calculated and shown as blue crosses.}
+    Another x-axis, at the top, is shown in the figure, which shows the pulse energy per unit area.
+    A conversion efficiency from pump power to $\si{\tera\hertz}$ power is calculated and shown as blue crosses. 
+    The conversion efficiency is plotted against an additional y-axis, which is visible on the right side.}
     \label{fig:znte_power}
 \end{figure}
 Because the initial laser power that comes into the setup changes the different laser powers are marked with green starts, for high power, and black dots, for lower power.
 The high initial power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
 \\
 A conversion efficiency from laser pump power to $\si{\tera\hertz}$ peak electricfield power is calculated and plotted as blue crosses in figure \ref{fig:znte_power}.
-It is calculated by 
+It is calculated by equation \ref{eq:conversion}.
+\\\\
 The calculated peak electricfield power of the $\si{\tera\hertz}$ pulse, shows a linear trend up until a pump power of $\SI{90.5}{\milli\W}$.
 Here the peak electricfield power has a value of $\SI{0.1421(11)}{\micro\W}$.
 \\
@@ -258,8 +261,40 @@ This follows the linear trend \textbf{and is in good comparission with the liter
 In this case a pump power of $\SI{24.2}{\milli\W}$ is sufficient to produce a peak electricfield of $\SI{0.97(1)}{\kilo\V\per\centi\meter}$.}
 \FloatBarrier
 \subsection{Power measurments}
+From the peak electricfields of the $\si{\tera\hertz}$ radiation the peak power can be calculated.
+For this the intensity $I$, which is defined by equation \ref{eq:intensity} needs to be determined first.
+\\
+Additionaly to the intensity the area of the $\si{\tera\hertz}$ spot on the detector crystal needs to be measured.
+How the spotsize is determined is explained in section \ref{sec:power}.
+The spotsize has an estimated area of $\SI{19.62}{\milli\meter\squared}$.
+The power is then calculated with equation \ref{eq:power}, the resulting values for the peak electricfield powers are shown in figure \ref{fig:gap_power}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Plots/Powergap.pdf}
+    \caption{The calculated peak electricfield powers are plotted against their corresponding pump powers, as black dots.
+    This is done for another x-axis that shows the pulse energy per unit area.
+    The conversion efficiency, for each pump power, is calculated and also plotted against an additional y-axis on the right side.
+    The conversion efficiency is shown as blue crosses.}
+    \label{fig:gap_power}
+\end{figure}
+In this figure the peak electricfield powers are plotted against their corresponding pump powers.
+An additional x-axis shows the pulse energy per unit area, to simplify later comparission with the ZnTe measurements or literature.
+For this the pump power is converted into the pulse energy per unit area, by divinding it by the number of pulses per second and the area that the beam hits on the emitter crystal.
+\\\\
+
+\textbf{Ich glaub entweder stimmt irgednwas mit meiner berechung der leistung nicht oder GaP hat eine höhere leistung als ZnTe.
+Das kann ich mir aber kaum vorstellen weil die graphen echt nicht gut aussahen.}
+
+
+
 
 \FloatBarrier
+
+
+
+
+
+
 \section{Comparisson}
 Because the GaP crystal is $\SI{0.7}{\milli\meter}$ thinner than the ZnTe crystal all comparissions that are done in this chapter only apply for this specific setup and may not apply universally.
 
