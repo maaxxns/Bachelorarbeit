@@ -164,22 +164,33 @@ plt.close()
 
 intensity = I(fields) #Fields in kV/cm
 power_THz = Power(intensity)
-print('Power THz:', power_THz)
-print('pump_power:', pump_power*10**(-3))
-conversion_effiency = power_THz/(pump_power*10**(-3)) # conversion effiency is weird
+
+conversion_effiency = power_THz[:,0]/(pump_power*10**(-3)) # conversion effiency is weird
+
+for i in range(len(pump_power)):
+    print('pump_power:', pump_power[i]*10**(-3), 'Power THz:', power_THz[i])
+    print('pump power: ', pump_power[i], 'conversion: ', conversion_effiency[i])
 
 fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
-axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),color='k',ls='' ,marker='o', label='THz Power') #10**(2) because of conversion in SI +3 for mW
-axis1.legend(loc=(0.914,0.05))
 axis2 = axis1.twinx()
-axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency[:,0]), yerr = unumpy.std_devs(conversion_effiency[:,0]),color=((132/255, 184/255, 25/255)),ls='',marker='*', label='Conversion Effiency')
+axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x', alpha=0.5,label='Conversion Effiency')
+axis2.legend(loc = 'lower right')
+if filename[0][0] == '1':
+    axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='half pump power') #10**(2) because of conversion in SI +3 for mW
+    axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+if filename[0][0] == 'G':
+    axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='half pump power')
+axis1.legend(loc=(0.914,0.05))
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
 axis1.set_ylabel(r'$Power\:THz\:Field \,(\mathrm{mW})$')
 axis1.set_title('peak THz Power per pump power')
-axis2.legend(loc = 'lower right')
-axis2.set_ylabel(r'$Conversion\: Effiency \,(\mathrm{\%})$')
+axis2.set_ylabel(r'$Conversion\: Effiency$')
 
 plt.tight_layout()
-plt.savefig('daten/eltric_field_data/Power.pdf')
+if filename[0][0] == '1':
+    plt.savefig('daten/eltric_field_data/Powerznte.pdf')
+if filename[0][0] == 'G':
+    plt.savefig('daten/eltric_field_data/Powergap.pdf')
 plt.close()
+
