@@ -99,8 +99,8 @@ X_B_GaP = np.genfromtxt( 'daten/eltric_field_data/' + 'GaP_B.txt', delimiter='\t
 B_GaP = ufloat(np.mean(X_B_GaP), np.std(X_B_GaP))
 B_GaP = np.abs(B_GaP)
 #print('B ', B_GaP, 'A ', A_GaP)
-print(A_GaP, B_GaP)
-print(A, B)
+print(A_GaP, B_GaP) #A_Gap and B_GaP is from low power measurement
+print(A, B) # A and B is from the full power measurment, which makes it way higher 
 pump_power_1 = np.array([75, 58.2, 36.80, 26.5, 10.24, 7.28, 45.1, 259/2])
 
 pump_power_2 = np.array([135, 90.5, 81.6, 56.4, 24.6, 186.4])
@@ -122,7 +122,9 @@ for n in (range(len(filename))):
     A_B = X[peak[0]]
     print('A-B with peak func: ', A_B, 'A-B with max', np.max(X))
     #print('file: ', filename[n], 'A_B ', A_B)
-    if filename[0][0] == '1':
+    if filename[n][0] == '1':
+        fields.append(E(A_B, A_GaP, B_GaP))
+    if filename[n][0] == '2':
         fields.append(E(A_B, A, B))
     if filename[0][0] == 'G':
         fields.append(E(A_B, A_GaP, B_GaP))
@@ -140,7 +142,7 @@ print('params: ', params, 'max field: ', np.max(fields))
 if filename[0][0] == '1':
     plt.errorbar(x = pump_power_1, y = unumpy.nominal_values(fields[:len(pump_power_1)][:,0]) , yerr=unumpy.std_devs(fields[:len(pump_power_1)][:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
     plt.errorbar(x = pump_power_2, y = unumpy.nominal_values(fields[len(pump_power_1):][:,0]) , yerr=unumpy.std_devs(fields[len(pump_power_1):][:,0]) ,color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
-    plt.plot(x, linear(x, *params), '-', label='linear Fit')
+    #plt.plot(x, linear(x, *params), '-', label='linear Fit')
 if filename[0][0] == 'G':
     plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
     plt.plot(x, linear(x, *params), '-', label='linear Fit')
