@@ -51,10 +51,10 @@ Espacially in the spectrum which is plotted against the logarithmic y-axis the w
 This is due to the water vapor in the air between emitter and detector crystal.
 Some absorption lines at even higher frequencies are visible too.
 \begin{figure}%
-    \centering
     \caption{The Fourierspectrum of the data from ZnTe, that is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
     One of the spectras is plotted against a logarithmic axis to see the higher frequencies aswell.}%
     \begin{subfigure}{\columnwidth}%
+        \centering
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normalFX.pdf}%
         \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{ZnTe:2_11_30_20_signal}.
         It can clearly be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
@@ -62,6 +62,7 @@ Some absorption lines at even higher frequencies are visible too.
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
         \begin{subfigure}{\columnwidth}%
+        \centering
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normallog(FX).pdf}%
         \caption{The Fourierspectrum of the data shown in figure \ref{ZnTe:2_11_30_20_signal} plotted against a logarithmic y-axis.
         This shows that higher $\si{\tera\hertz}$ frequencies are produced aswell. Some absorption lines can also bee seen.}%
@@ -122,35 +123,51 @@ The reason for this annomaly, aswell as the lower electricfield strength compare
 \FloatBarrier
 To calculate the peak electricfield power of the $\si{\tera\hertz}$ pulse the spotsize of the pulse is measured.
 The spot has a radius of $\SI{2.5}{\milli\meter}$ according the aperature opening.
-If a circular spot is assumed the spotarea is $\SI{19.62}{\milli\meter\squared}$.
+If a circular spot is assumed the spot area is $\SI{19.62}{\milli\meter\squared}$.
 With the electricfield values that are calculated in section \ref{sec:znte_electricfield} the intensity can then be calculated according to equation \ref{eq:intensity}.
 Now all variables to calculate the $\si{\tera\hertz}$ electricfield power are known and just need to be plugged into equation \ref{eq:power}.
 \\
 The resulting power values are then plotted against their corresponding pump powers and shown in figure \ref{fig:znte_power}.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{Plots/ZnTePower.pdf}
+    \includegraphics[width=\textwidth]{Plots/Powerznte.pdf}
     \caption{The calculated peak electricfield powers of the $\si{\tera\hertz}$ pulses are plotted against their corresponding pump powers.
     Because the initial laser powers that are fed into the setup change over the course of the measurement, the different laser power are marked with green stars, for the higher power, or black dots, for the lower power.
     The high initial laser power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
-    A conversion efficiency from pump power to $\si{\tera\hertz}$ power has been calculated and shown as blue crosses.}
+    A conversion efficiency from pump power to $\si{\tera\hertz}$ power is calculated and shown as blue crosses.}
     \label{fig:znte_power}
 \end{figure}
 Because the initial laser power that comes into the setup changes the different laser powers are marked with green starts, for high power, and black dots, for lower power.
 The high initial power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
 \\
-A conversion efficiency from laser pump power to $\si{\tera\hertz}$ peak electricfield power has been calculated and plotted as blue crosses in figure \ref{fig:znte_power}.
+A conversion efficiency from laser pump power to $\si{\tera\hertz}$ peak electricfield power is calculated and plotted as blue crosses in figure \ref{fig:znte_power}.
+It is calculated by 
 The calculated peak electricfield power of the $\si{\tera\hertz}$ pulse, shows a linear trend up until a pump power of $\SI{90.5}{\milli\W}$.
-Here the peak electricfield power has a value of $\SI{0.1421(11}{\micro\W}$.
+Here the peak electricfield power has a value of $\SI{0.1421(11)}{\micro\W}$.
 \\
 With pump powers that are even greater than $\SI{90.5}{\milli\W}$ the peak electricfield power of the $\si{\tera\hertz}$ pulse does not increase.
-The only exception for that is at a pump power of $\SI{135.0}{\milli\W}$ with a peak electricfield power of $\SI{0.6255(46)}{\mirco\W}$.
+The only exception for that is at a pump power of $\SI{135.0}{\milli\W}$ with a peak electricfield power of $\SI{0.6255(46)}{\micro\W}$.
 This exception is most probably an error in the measurement and does not really reflect the behavior of the emitter crystal.
 %or maybe this would be the real behavior if the crystal is not burned. so that the power would rise linearly for even longer.
 \\\\
 The conversion efficiency lies between $\SI{2.544(19)e-07}{}$ for a pump power of $\SI{7.28}{\milli\W}$ and $\SI{4.634(35)e-06}{}$ with a pump power of $\SI{135.0}{\milli\W}$
-
-
+It shows a linear increasing trend with rising pump power.
+The trend stops at a pump power of $\SI{90.5}{\milli\W}$ after which the conversion efficiency stays constannt except for one value.
+Just like the peak electricfield power, this value corresponses to a pump power of $\SI{135.0}{\milli\W}$.
+The conversion efficiency for this pump power is $\SI{4.634(35)e-06}{}$.
+\\\\
+A comparisson with the literature is quite hard, because most other setups use pump powers that are higher than the once reached in this setup.
+However the measurements from the paper \cite[5]{THZ_eltric_field} shows a similar trend at low pulse energys per area.
+Pump power can easily be converted into pulse energy per area, just by multiplying with the pump laser spot size on the emitter crystal and divinding by the number of pulses per second.
+The pulse energy per area can be seen in the additional x-axis in figure \ref{fig:znte_power}.
+\\
+\textbf{doppelte x achse für plot, ich weiß nur noch nicht ob das ganz richtig ist.}  
+This shows that the conversion efficiency of this setup is about ten times lower than in the said paper.
+The most probable reason for that are the burned parts of the crystal, that lowers the efficiency of the crystal.
+The conversion from pump power to pulse energy per unit area is also just a rough estimation because the laser power is not equally distrubuted over the laser spot, but rather follows a gaussian distrubution.
+It is to be expected that a lot of the laser power also does not even hit the crystal because the lens, that is positioned infront of the crystal, focuses the beam not enough for all the beam power to hit the crystal.
+This results in some laser power hitting the holder of the ZnTe crystal.
+The reason for not focusing down enough is to avoid reaching the damage threshold of the crystal as it is already damaged.
 \FloatBarrier
 \section{Gallium phosphide}
 As emitter crystal a $\SI{0.3}{\milli\meter}$ GaP crystal is used.
@@ -172,7 +189,7 @@ After the peak the signal drops down again into another minimum with a value of 
 Now the signal raises back to zero and shows no further significant features until the end of the measurement.
 This measurement does not show any post pulse feature.
 \\\\
-A Fourier-Transformation has been calculated, which is shown in figure \ref{fig:GaP14_55_42_fft}.
+A Fourier-Transformation is calculated, which is shown in figure \ref{fig:GaP14_55_42_fft}.
 The Fourierspectrum has also been plotted against a logarithmic y-axis to make absorption lines more visible and acquier more informations about the higher frequencies, that dont appear in the normal Fourierspectrum.
 \\
 This Fourierspectrum that is plotted against the logarithmic y-axis is shown in figure \ref{fig:GaP14_55_42_fft_log}.
@@ -181,10 +198,10 @@ The Fourierspectrum shows a linear downward trend from its highest amplitude at 
 After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, which shows that the majority of the produced radiation lies between $0.3$ and $\SI{2.5}{\tera\hertz}$.
 
 \begin{figure}%
-    \centering
     \caption{The Fourierspectrum of the data for GaP, that is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
     One of the spectras is plotted against a logarithmic axis to better see absorption lines or other features aswell.}%
     \begin{subfigure}{\columnwidth}%
+        \centering
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normalFX.pdf}%
         \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse shown in figure \ref{fig:GaP14_55_42normalX}.
         The Fourierspectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
@@ -193,6 +210,7 @@ After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, w
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
         \begin{subfigure}{\columnwidth}%
+        \centering
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normallog(FX).pdf}%
         \caption{The Fourierspectrum of the data shown in figure \ref{fig:GaP14_55_42normalX} plotted against a logarithmic y-axis.
         There are no absorption lines recognizable in the plot.}%
@@ -221,7 +239,7 @@ The resulting plot is shown in figure \ref{fig:gap_electricfield}.
     \label{fig:gap_electricfield}
 \end{figure}
 The calculated peak electricfields show a linear trend.
-For this reason a linear regression has been calculated for equation \ref{eq:linear}.
+For this reason a linear regression is calculated for equation \ref{eq:linear}.
 The regression is done with the function \textbf{curve\_fit} from the python package scipy.
 Said function returns the parameters
 \begin{align*} 
