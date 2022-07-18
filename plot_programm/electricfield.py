@@ -161,6 +161,15 @@ plt.close()
 ##########################################
 #   Power and Intensity
 ##########################################
+def pulse_energy_to_power(E):
+    Radius_Strahl_auf_Kristall = 0.343
+    area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
+    return E*area_beam_crytsal*500*np.exp(1)
+
+def power_to_pulse_energy(P):
+    Radius_Strahl_auf_Kristall = 0.343
+    area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
+    return P/(500*area_beam_crytsal*np.exp(1))
 
 intensity = I(fields) #Fields in kV/cm
 power_THz = Power(intensity)
@@ -173,19 +182,25 @@ for i in range(len(pump_power)):
 
 fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
 axis2 = axis1.twinx()
+conversion_effiency = conversion_effiency *10**6
 axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x', alpha=0.5,label='Conversion Effiency')
 axis2.legend(loc = 'lower right')
 if filename[0][0] == '1':
     axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='half pump power') #10**(2) because of conversion in SI +3 for mW
     axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+    secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
+    secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
 if filename[0][0] == 'G':
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='half pump power')
+    secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
+    secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
 axis1.legend(loc=(0.914,0.05))
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
 axis1.set_ylabel(r'$Power\:THz\:Field \,(\mathrm{mW})$')
 axis1.set_title('peak THz Power per pump power')
-axis2.set_ylabel(r'$Conversion\: Effiency$')
+axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$')
+
 
 plt.tight_layout()
 if filename[0][0] == '1':
