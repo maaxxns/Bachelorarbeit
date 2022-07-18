@@ -165,6 +165,7 @@ plt.close()
 ##########################################
 #   Power and Intensity
 ##########################################
+
 def pulse_energy_to_power(E):
     Radius_Strahl_auf_Kristall = 0.343
     area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
@@ -179,29 +180,32 @@ intensity = I(fields) #Fields in kV/cm
 power_THz = Power(intensity)
 
 conversion_effiency = power_THz[:,0]/(pump_power*10**(-3)) # conversion effiency is weird
-
+fields = fields*10**(-2)
 for i in range(len(pump_power)):
     print('pump_power:', pump_power[i]*10**(-3), 'Power THz:', power_THz[i])
     print('pump power: ', pump_power[i], 'conversion: ', conversion_effiency[i])
-
+print('maximum thz power: ', np.max(power_THz))
+print('maximum field strength: ', np.max(fields)*10**2)
 fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
 axis2 = axis1.twinx()
 conversion_effiency = conversion_effiency *10**6
 axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x', alpha=0.5,label='Conversion Effiency')
 axis2.legend(loc = 'lower right')
 if filename[0][0] == '1':
-    axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='half pump power') #10**(2) because of conversion in SI +3 for mW
-    axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+    power_THz = power_THz*10**6 #convert to muW
+    axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='half pump power') #10**(2) because of conversion in SI +3 for mW
+    axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
     secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
     secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
 if filename[0][0] == 'G':
-    axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]*10**(2+3)), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='half pump power')
+    power_THz = power_THz*10**6 #convert to muW
+    axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='half pump power')
     secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
     secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
 axis1.legend(loc=(0.914,0.05))
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
-axis1.set_ylabel(r'$Power\:THz\:Field \,(\mathrm{mW})$')
+axis1.set_ylabel(r'$Power\:THz\:Field \,(\mu\mathrm{W})$')
 axis1.set_title('peak THz Power per pump power')
 axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$')
 
