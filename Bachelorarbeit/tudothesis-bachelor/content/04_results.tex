@@ -76,7 +76,8 @@ Some absorption lines at even higher frequencies are visible too.
 \FloatBarrier
 To determine the peak electricfield of the $\si{\tera\hertz}$ pulse, several measurements of $A$, $B$ and $A-B$ are taken as described in section \ref{sec:field}.
 To get the best result and minimize the error through noise for $A$ and $B$, their value is measured $500$ times.
-After the data is taken their mean value is used for futher calculations with their error being the standard deviation.
+This is done for the high initial laser power and the lower initial laser power.
+After the data is taken the mean value of $A$ and $B$ at low and the mean value of $A$ and $B$ at high power, is used for futher calculations with their error being the standard deviation.
 \\
 All futher errors are calculated with the python package uncertainties \cite{uncertainties}, which uses the standard gaussian error propagation theory described in section \ref{sec:error}.
 With those the electricfield, for every $A-B$ value that is measured, is calculated by equation \ref{eq:electricfield_A_B}.
@@ -87,40 +88,40 @@ The resulting plot can be seen in figure \ref{fig:znte_electricfield}.
     \centering
     \includegraphics[width=0.5\textwidth]{Plots/eltric_field_ZnTe.pdf}
     \caption{The calculated peak electricfield of the $\si{\tera\hertz}$ pulse is plotted against its corresponding pump laser power.
-    Diffrent initial laser powers are shown through diffrent colors. The high power being $\SI{579}{\milli\W}$ the lower being $\SI{291}{\milli\W}$.
-    A linear regression of the calculated values is plotted in blue.}
+    Diffrent initial laser powers are shown through diffrent colors. The high power being $\SI{579}{\milli\W}$ the lower being $\SI{291}{\milli\W}$.}
     \label{fig:znte_electricfield}
 \end{figure}
 Because the laser power that the setup receives right at the beginning changes from $\SI{579}{\milli\W}$ to $\SI{291}{\milli\W}$, over the course of the measurement, the values that are taken with the higher initial laser power are marked with green stars.
 The lower initial laser power of $\SI{291}{\milli\W}$ is marked with black dots.
-A linear regression is done with the formula
-\begin{equation}
-    f(x) = mx + b,
-    \label{eq:linear}
-\end{equation}
-where $x$ are the pump power values and $f(x)$ are all the peak electricfield values.
-The calculation are done with the function \textbf{curve\_fit} from the python package scipy \cite{scipy}.
-It returns the fit parameters 
-\begin{align*}
-    m =& 0.0189\\
-    b =& 0.2615
-    vielleicht sollte ich kein align nutzen auch wenn es am besten aussieht. das nimmt einfach zu viel platz weg
-\end{align*}
-with which the linear fit is plotted.
-Espacially for lower pump powers the peak electricfield values follow the linear trend.
-However at higher pump powers the calculated electricfield values diverge heavily from the linear fit.
+%A linear regression is done with the formula
+%\begin{equation}
+%    f(x) = mx + b,
+%    \label{eq:linear}
+%\end{equation}
+%where $x$ are the pump power values and $f(x)$ are all the peak electricfield values.
+%The calculation are done with the function \textbf{curve\_fit} from the python package scipy \cite{scipy}.
+%It returns the fit parameters 
+%\begin{align*}
+%    m =& 0.0189\\
+%    b =& 0.2615
+%    vielleicht sollte ich kein align nutzen auch wenn es am besten aussieht. das nimmt einfach zu viel platz weg
+%\end{align*}
+%with which the linear fit is plotted.
+The lower initial laser power electricfields show a linear trend, the same can be said for the higher initial laser power if looked at isolated.
+However the gradient of the higher initial laser power is less than that of the lower initial laser power.
 \\
-A probable cause is that at higher pump powers the burned part of the crystal influeces the production of $\si{\tera\hertz}$ much stronger.
-The linear trend is in good comparission with the literature \cite{electric_field_compare}, which also shows a linear trend at lower pump power/pulse energys.
-However the electricfield strength is way lower than in the literature.
-The maximum electricfield strength that is calculated is $\SI{4.900(19)}{\kilo\V\per\centi\meter}$, which corresponses to a pump power of $\SI{135.0}{\milli\W}$.
-\\
+%The linear trend is in good comparission with the literature \cite{electric_field_compare} if just the lower initial pump power is looked at.
+The maximum electricfield strength that is calculated is $\SI{9.59(15)}{\kilo\V\per\centi\meter}$, which corresponses to a pump power of $\SI{129.5}{\milli\W}$.
 This is not actually the highest pump power that is used.
 The expectation would be that the highest pump power corresponses to the highest peak electricfield.
-The reason for this annomaly, aswell as the lower electricfield strength compared to the literature, might be the smaller thickness of the crystal as well as the lower quality of the crystal due to its burned spots.
+The reason for this annomaly, aswell as the the lower field strengths in the higher initial laser power, might be that the beam path from the low and high power measurements diverge from one another.
+This leads to a mismatch of the $\si{\tera\hertz}$ pump beam and the probe beam at the higher initial laser power.
+Because the pump and probe beam are than not aligned properly, the probebeam polarization changes less in comparission to the lower initial pump power.
+
 \FloatBarrier
 \subsection{Power measurments}
 \FloatBarrier
+\textbf{this is the worst part and definetly needs a lot more work}
 To calculate the peak electricfield power of the $\si{\tera\hertz}$ pulse the spotsize of the pulse is measured as described in section \ref{sec:power}.
 The spot has a radius of $\SI{2.5}{\milli\meter}$ according the aperature opening.
 If a circular spot is assumed the spot area is $\SI{19.62}{\milli\meter\squared}$.
@@ -139,33 +140,35 @@ The resulting power values are then plotted against their corresponding pump pow
     The conversion efficiency is plotted against an additional y-axis, which is visible on the right side.}
     \label{fig:znte_power}
 \end{figure}
-Because the initial laser power that comes into the setup changes the different laser powers are marked with green starts, for high power, and black dots, for lower power.
-The high initial power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
+Because the initial laser power that comes into the setup changes, the different laser powers are marked with green starts, for high power, and black dots, for lower power.
+The high initial laser power has a value of $\SI{579}{\milli\W}$, the lower a value of $\SI{291}{\milli\W}$.
 \\
 A conversion efficiency from laser pump power to $\si{\tera\hertz}$ peak electricfield power is calculated and plotted as blue crosses in figure \ref{fig:znte_power}.
 It is calculated by equation \ref{eq:conversion}.
 \\\\
-The calculated peak electricfield power of the $\si{\tera\hertz}$ pulse, shows a linear trend up until a pump power of $\SI{90.5}{\milli\W}$.
-Here the peak electricfield power has a value of $\SI{0.1421(11)}{\micro\W}$.
+Because the measurements of the low initial power and the high initial laser power diverge from on anothor, just the lower initial laser power is looked at at first.
+The calculated peak electricfield powers of the $\si{\tera\hertz}$ pulse, show a linear trend.
+The peak electricfield power has a value of $\SI{2.389(75)}{\micro\W}$ at a pump power of $\SI{129.5}{\milli\W}$.
 \\
-With pump powers that are even greater than $\SI{90.5}{\milli\W}$ the peak electricfield power of the $\si{\tera\hertz}$ pulse does not increase.
-The only exception for that is at a pump power of $\SI{135.0}{\milli\W}$ with a peak electricfield power of $\SI{0.6255(46)}{\micro\W}$.
-This exception is most probably an error in the measurement and does not really reflect the behavior of the emitter crystal.
+The peak electricfield powers for the high initial laser power also show a linear trend.
+Their gradient is smaller however, than the gradient of the other dataset, with its highest peak electricfield power being $\SI{0.626(4)}{\micro\W}$.
+The reason for this divergend is the same as the one that influences the electricfield strengths, as the peak eletricfield powers are calculated out of the field strengths.
 %or maybe this would be the real behavior if the crystal is not burned. so that the power would rise linearly for even longer.
+\\
+The conversion efficiency of the lower pump power shows a linear increasing trend with rising pump power.
+It reaches its maximum at $\SI{75.0}{\milli\W}$ with its conversion efficiency being $\SI[(2.08(7)e-05]$.
+After a pump power of $\SI{75.0}{\milli\W}$ the conversion efficiency actually drops down a bit, but stays almost constant.
+A similar trend is seen in the paper \cite{THZ_eltric_field}, where the conversion efficiency stays constant for increasing pump powers.
+\textbf{The pulse energy per unit area that correspond to that conversion efficiency do diverge from the ones that are used in this setup however.
+This is mostlikely due to the lower crystal qaulity.}
 \\\\
-The conversion efficiency lies between $\SI{2.544(19)e-07}{}$ for a pump power of $\SI{7.28}{\milli\W}$ and $\SI{4.634(35)e-06}{}$ with a pump power of $\SI{135.0}{\milli\W}$
-It shows a linear increasing trend with rising pump power.
-The trend stops at a pump power of $\SI{90.5}{\milli\W}$ after which the conversion efficiency stays constannt except for one value.
-Just like the peak electricfield power, this value corresponses to a pump power of $\SI{135.0}{\milli\W}$.
-The conversion efficiency for this pump power is $\SI{4.634(35)e-06}{}$.
-\\\\
-A comparisson with the literature is quite hard, because most other setups use pump powers that are higher than the once reached in this setup.
+A comparisson of the peak electric field powers with the literature is quite hard, because most other setups use pump powers that are higher than the once reached in this setup.
 However the measurements from the paper \cite[5]{THZ_eltric_field} shows a similar trend at low pulse energys per area.
 Pump power can easily be converted into pulse energy per area, just by multiplying with the pump laser spot size on the emitter crystal and divinding by the number of pulses per second.
 The pulse energy per area can be seen in the additional x-axis in figure \ref{fig:znte_power}.
 \\
-\textbf{doppelte x achse für plot, ich weiß nur noch nicht ob das ganz richtig ist.}  
-This shows that the conversion efficiency of this setup is about ten times lower than in the said paper.
+\textbf{doppelte x achse für plot, ich weiß nur noch nicht ob das ganz richtig ist.}
+The conversion efficiency
 The most probable reason for that are the burned parts of the crystal, that lowers the efficiency of the crystal.
 The conversion from pump power to pulse energy per unit area is also just a rough estimation because the laser power is not equally distrubuted over the laser spot, but rather follows a gaussian distrubution.
 It is to be expected that a lot of the laser power also does not even hit the crystal because the lens, that is positioned infront of the crystal, focuses the beam not enough for all the beam power to hit the crystal.
@@ -282,10 +285,7 @@ An additional x-axis shows the pulse energy per unit area, to simplify later com
 For this the pump power is converted into the pulse energy per unit area, by divinding it by the number of pulses per second and the area that the beam hits on the emitter crystal.
 \\\\
 
-\textbf{Ich glaub entweder stimmt irgednwas mit meiner berechung der leistung nicht oder GaP hat eine höhere leistung als ZnTe.
-Das kann ich mir aber kaum vorstellen weil die graphen echt nicht gut aussahen.}
-
-
+\textbf{now analyze}
 
 
 \FloatBarrier
