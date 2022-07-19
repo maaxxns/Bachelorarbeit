@@ -140,23 +140,25 @@ print('params: ', params, 'max field: ', np.max(fields))
 #   plotting
 ##########################################
 if filename[0][0] == '1':
-    plt.errorbar(x = pump_power_1, y = unumpy.nominal_values(fields[:len(pump_power_1)][:,0]) , yerr=unumpy.std_devs(fields[:len(pump_power_1)][:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
-    plt.errorbar(x = pump_power_2, y = unumpy.nominal_values(fields[len(pump_power_1):][:,0]) , yerr=unumpy.std_devs(fields[len(pump_power_1):][:,0]) ,color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+    plt.errorbar(x = pump_power_1, y = unumpy.nominal_values(fields[:len(pump_power_1)][:,0]) , yerr=unumpy.std_devs(fields[:len(pump_power_1)][:,0]) ,color = 'k',ls='' ,marker='o',label='lower initial power')
+    plt.errorbar(x = pump_power_2, y = unumpy.nominal_values(fields[len(pump_power_1):][:,0]) , yerr=unumpy.std_devs(fields[len(pump_power_1):][:,0]) ,color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full initial power')
     #plt.plot(x, linear(x, *params), '-', label='linear Fit')
 if filename[0][0] == 'G':
-    plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='half pump power')
+    plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='lower initial power')
     plt.plot(x, linear(x, *params), '-', label='linear Fit')
 for i in range(len(fields)):
     print('pump power/mW: ', pump_power[i], ' field/(kV/cm): ', fields[i])
-
+plt.xticks(size = 20)
+plt.yticks(size = 20)
 plt.grid()
-plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$')
-plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$')
+plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
+plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
 if filename[0][0] == '1':
-    plt.title('electric field per pump power ZnTe')
+    plt.title('electric field ZnTe', fontsize = 24)
 if filename[0][0] == 'G':
-    plt.title('electric field per pump power GaP')
-plt.legend()
+    plt.title('electric field GaP', fontsize = 24)
+plt.legend(loc='upper left')
+plt.tight_layout()
 if filename[0][0] == '1':
     plt.savefig('daten/eltric_field_data/eltric_field_ZnTe.pdf')
 if filename[0][0] == 'G':
@@ -166,7 +168,7 @@ plt.close()
 #   Power and Intensity
 ##########################################
 
-def pulse_energy_to_power(E):
+def pulse_energy_to_power(E): 
     Radius_Strahl_auf_Kristall = 0.343
     area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
     return E*area_beam_crytsal*500*np.exp(1)
@@ -174,7 +176,7 @@ def pulse_energy_to_power(E):
 def power_to_pulse_energy(P):
     Radius_Strahl_auf_Kristall = 0.343
     area_beam_crytsal = np.pi*Radius_Strahl_auf_Kristall**2
-    return P/(500*area_beam_crytsal*np.exp(1))
+    return P/(500*area_beam_crytsal)* 1/np.exp(1)
 
 intensity = I(fields) #Fields in kV/cm
 power_THz = Power(intensity)
@@ -186,31 +188,37 @@ for i in range(len(pump_power)):
     print('pump power: ', pump_power[i], 'conversion: ', conversion_effiency[i])
 print('maximum thz power: ', np.max(power_THz))
 print('maximum field strength: ', np.max(fields)*10**2)
-fig , (axis1) = plt.subplots(1, 1, figsize=(24,8))
+fig , (axis1) = plt.subplots(1, 1, figsize=(16,8),  constrained_layout=True)
+for tick in axis1.xaxis.get_major_ticks():
+    tick.label.set_fontsize(20) 
+for tick in axis1.yaxis.get_major_ticks():
+    tick.label.set_fontsize(20) 
 axis2 = axis1.twinx()
 conversion_effiency = conversion_effiency *10**6
 axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x', alpha=0.5,label='Conversion Effiency')
-axis2.legend(loc = 'lower right')
+axis2.legend(loc = 'upper left')
+axis2.yaxis.set_tick_params(labelsize=20)
 if filename[0][0] == '1':
     power_THz = power_THz*10**6 #convert to muW
-    axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='half pump power') #10**(2) because of conversion in SI +3 for mW
-    axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full pump power')
+    axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='lower initial power') #10**(2) because of conversion in SI +3 for mW
+    axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full initial power')
     secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
-    secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
+    secax.set_xlabel(r'$pulse \: energy \, (\mathrm{mJ}/\mathrm{cm})$', fontsize=20)
+    secax.xaxis.set_tick_params(labelsize=20)
 if filename[0][0] == 'G':
     power_THz = power_THz*10**6 #convert to muW
-    axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='half pump power')
+    axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
     secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
-    secax.set_xlabel(r'$pulse energy (\mu\mathrm{J}/\mathrm{A})$')
-axis1.legend(loc=(0.914,0.05))
+    secax.set_xlabel(r'$pulse \: energy \, (\mathrm{mJ}/\mathrm{cm})$', fontsize=20)
+    secax.xaxis.set_tick_params(labelsize=20)
+axis1.legend(loc=(0.005,0.87))
 axis1.grid()
-axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$')
-axis1.set_ylabel(r'$Power\:THz\:Field \,(\mu\mathrm{W})$')
-axis1.set_title('peak THz Power per pump power')
-axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$')
+axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
+axis1.set_ylabel(r'$Power\:THz\:Field \,(\mu\mathrm{W})$', fontsize=20)
+axis1.set_title('peak THz Power per pump power', fontsize=24)
+axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$', fontsize=20)
 
 
-plt.tight_layout()
 if filename[0][0] == '1':
     plt.savefig('daten/eltric_field_data/Powerznte.pdf')
 if filename[0][0] == 'G':

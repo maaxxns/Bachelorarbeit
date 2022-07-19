@@ -186,11 +186,12 @@ for n in (range(len(filename))):
             else:
                 plt.plot(data_all[k][i][0], data_all[k][i][1], label=data_name_all[k][i])
             
-            
+            plt.xticks(size = 20)
+            plt.yticks(size = 20)
             plt.grid()
-            plt.xlabel(data_name_x[i])
-            plt.ylabel(data_name_y[i])
-            plt.title(data_name_all[k][i])
+            plt.xlabel(data_name_x[i], size=20)
+            plt.ylabel(data_name_y[i], size=20)
+            plt.title(data_name_all[k][i], size=20)
             plt.tight_layout()
             plt.savefig('daten/plots/' + filename[n].split('.')[0] + '/' + filename[n].split('.')[0] + savename[k]+ data_name_all[k][i]+'.pdf')
             plt.clf()
