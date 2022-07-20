@@ -123,8 +123,8 @@ for n in (range(len(filename))):
     data_name_zeropadding = ['X', 'FX_zeropadding', 'log(FX_zeropadding)'] #if zeropadding isnt wanted just switch the names to none zero padding and the plot_data
     data_name_pulse = ['X', 'FX_pulse', 'log(FX_pulse)']
     
-    data_name_x = ['Delay / ps', 'Frequency / THz', 'Frequecy / THz']
-    data_name_y = ['X(V)', 'Fourier[X]', 'log(Fourier[X])']
+    data_name_x = ['Delay (ps)', 'Frequency (THz)', 'Frequecy (THz)']
+    data_name_y = ['X (V)', 'Fourier[X (V)]', 'log(Fourier[X (V)])']
 
 
     ######################################
@@ -146,7 +146,7 @@ for n in (range(len(filename))):
     #First we make a plot with the data, the FFT of data and the log(FFT(data)) all in one file
     for k in range(len(data_all)):
 
-        f, ax = plt.subplots(len(data_all[k]),1, figsize=(16,8), num=10)
+        f, ax = plt.subplots(len(data_all[k]),1, figsize=(10,8), num=10)
         for i in range(len(data_name_all[k])):
             if data_name_all[k][i].find('log(') == 0:
                 ax[i].plot(data_all[k][i][0], data_all[k][i][1], label=data_name_all[k][i])
@@ -166,7 +166,7 @@ for n in (range(len(filename))):
             ax[i].grid()
             ax[i].set_xlabel(data_name_x[i])
             ax[i].set_ylabel(data_name_y[i])
-            ax[i].set_title(data_name_all[k][i])
+#            ax[i].set_title(data_name_all[k][i])
 
 
         plt.tight_layout()
@@ -191,7 +191,7 @@ for n in (range(len(filename))):
             plt.grid()
             plt.xlabel(data_name_x[i], size=20)
             plt.ylabel(data_name_y[i], size=20)
-            plt.title(data_name_all[k][i], size=20)
+#            plt.title(data_name_all[k][i], size=20)
             plt.tight_layout()
             plt.savefig('daten/plots/' + filename[n].split('.')[0] + '/' + filename[n].split('.')[0] + savename[k]+ data_name_all[k][i]+'.pdf')
             plt.clf()
@@ -276,7 +276,7 @@ if filename[0][0] == '1':
     axis1.legend()
     axis1.set_xlabel('pulse energy ' + r'$(\mu\mathrm{J})$')
     axis1.set_ylabel('percentage of maximum peak distance')
-    axis1.set_title('Peak Distances with diffrent Pump Power')
+#    axis1.set_title('Peak Distances with diffrent Pump Power')
     plt.tight_layout()
     plt.savefig('daten/peak_distnance_normed.pdf')
 

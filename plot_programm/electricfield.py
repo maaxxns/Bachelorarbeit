@@ -153,10 +153,10 @@ plt.yticks(size = 20)
 plt.grid()
 plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
 plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
-if filename[0][0] == '1':
-    plt.title('electric field ZnTe', fontsize = 24)
-if filename[0][0] == 'G':
-    plt.title('electric field GaP', fontsize = 24)
+#if filename[0][0] == '1':
+##    plt.title('electric field ZnTe', fontsize = 24)
+#if filename[0][0] == 'G':
+#    plt.title('electric field GaP', fontsize = 24)
 plt.legend(loc='upper left')
 plt.tight_layout()
 if filename[0][0] == '1':
@@ -202,20 +202,14 @@ if filename[0][0] == '1':
     power_THz = power_THz*10**6 #convert to muW
     axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='lower initial power') #10**(2) because of conversion in SI +3 for mW
     axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full initial power')
-    secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
-    secax.set_xlabel(r'$pulse \: energy \, (\mathrm{mJ}/\mathrm{cm})$', fontsize=20)
-    secax.xaxis.set_tick_params(labelsize=20)
 if filename[0][0] == 'G':
     power_THz = power_THz*10**6 #convert to muW
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
-    secax = axis1.secondary_xaxis('top', functions=(power_to_pulse_energy, pulse_energy_to_power))
-    secax.set_xlabel(r'$pulse \: energy \, (\mathrm{mJ}/\mathrm{cm})$', fontsize=20)
-    secax.xaxis.set_tick_params(labelsize=20)
 axis1.legend(loc=(0.005,0.87))
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
 axis1.set_ylabel(r'$Power\:THz\:Field \,(\mu\mathrm{W})$', fontsize=20)
-axis1.set_title('peak THz Power per pump power', fontsize=24)
+#axis1.set_title('peak THz Power per pump power', fontsize=24)
 axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$', fontsize=20)
 
 
