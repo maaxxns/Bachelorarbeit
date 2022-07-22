@@ -1,4 +1,6 @@
 \chapter{Theory}
+This chapter will explain what terahertz radiation is, how it is generated through optical-rectification \ref{sec:optic_ref} and how the terahertz radiation is detected through electro-optic sampling \ref{sec:eos}.
+Furthermore, the calculation of the terahertz electric field will be explained \ref{sec:eos} and how the power of the terahertz electric field can be determined out of the electric field will be shown.
 \section{Terahertz radiation}
 This thesis will show the means of generating Terahertz ($\si{\tera\hertz}$) radiation, with two non-linear crystals.
 As the name describes, its frequency regime lies at about $(0.3-30)\cdot10^{12}\,\si{\hertz}$.
@@ -14,17 +16,39 @@ The need for high intensities, as well as the lack of emitters, makes it hard to
 The result is the so-called $\si{\tera\hertz}$ gap that is slowly being closed by new techniques and advances in science.
 Some of these are the generation of $\si{\tera\hertz}$ radiation through in- and inorganic crystals, as well as the use of semiconductors.
 \\
-$\si{\tera\hertz}$ radiation is non-ionizing but is absorbed by water.
+$\si{\tera\hertz}$ radiation is non-ionizing but is absorbed by water \cite{water_absorption}.
 This makes it of particular interest for medical uses.
 The water absorption will be shown later. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Non-linear crystals}
+\section{Terahertz emitters}
+\label{sec:emitters}
+There are different kinds of $\si{\tera\hertz}$ emitters, such as photoconductive antennas, organic and inorganic crystals \cite{Tutorial}.
+These emitters all have advantages and disadvantages, which makes them more usefull for some applications then others.
+$\si{\tera\hertz}$ emitters such as photoconductive antennas generate a narrowband spectrum, wich is not tunnable.
+This makes them suitable for more specialized uses, where only a specific frequency is of use and other frequencies are unwated.
+\\
+In contrast to that, non-linear crystals produce a broadband $\si{\tera\hertz}$ spectrum, that is of the greatest use for most labatory applications, as it is more versatile.
+The broad spectrum can be broken down with filters into the specific frequency that is wanted.
+Non-linear organic crystal offer are very broad spectrum of $\si{\tera\hertz}$ generation as well, but have the disadvantage of being very fragile \cite{organic_crystals}.
+This is usually not the case for inorganic non-linear crystals.
+\\\\
 Optical non-linear crystals exhibit a non-linearity in their second-order susceptibility $\chi_2$ or in even higher orders.
 For this, they show special non-linear effects at high electric field strengths.
-For different purposes, different kinds of crystals are in use.
+This effects can be taken advantage off to generate $\si{\tera\hertz}$ radiation by exiting the crystals with a high power laser beam.
+\\
+However, depending on the refractive index of the crystal at the laser frequency and the $\si{\tera\hertz}$ frequency a mismatch in velocity limits the effective generation of $\si{\tera\hertz}$ radiation in the crystals.
+The length at wich this mismatch can still be tollarated is called the coherence length, which is explained in section \ref{sec:coherence_length}.
+This makes the choice of crystals very important, as it needs to fit to the laser frequency.
+\\\\
+This thesis focusses on the generation of $\si{\tera\hertz}$ radiation, with zinc telluride and gallium phosphide, as zinc telluride has a very similar refractive index at the lasers frequency and the $\si{\tera\hertz}$ frequencies \cite{coherence_legnth}.
+Secondly gallium phosphide was favoured because of its good availibilty.
+The resulting high coherence length in zinc telluride makes it possible to use a very compact setup because the laser can be shot on the crystal perpendicular to the crystal surface.
+It should be mentioned that there are ways, such as pulse-ftont tilting, to lengthen the coherence length inside crystals that have different refractive indices at laser and $\si{\tera\hertz}$ frequencies.
+These are commonly applied at crystals that generate $\si{\tera\hertz}$ radiation very efficiently but have very low coherence lengths such as lithium niobate \cite{pulsefront_tilting}.
+%For different purposes, different kinds of crystals are in use.
 \subsection{Zinc telluride}
 \label{sec:znte}
 One of the crystals that is in use to generate $\si{\tera\hertz}$ radiation is zinc telluride (ZnTe). 
@@ -44,18 +68,15 @@ It can be seen in figure \ref{fig:polarization_dependence_angle} that two angles
 It is also used as a detection crystal for the $\si{\tera\hertz}$ field.
 The ZnTe changes the polarization of the incoming probe beam dependent on the field strength of the $\si{\tera\hertz}$ radiation.
 This effect is discussed in section \ref{sec:eos}.
-The refractive index of ZnTe at $\SI{800}{\nano\meter}$ is $n_\text{ZnTe} = 2.85$ \cite{refractive_index_znte}.
-
-\textbf{Platzhalter für Bild von ZnTe struktur}
-
+The refractive index of ZnTe at $\SI{800}{\nano\meter}$ is $n_\text{ZnTe, 800\,nm} = 2.85$ \cite{refractive_index_znte} at a frequency of $\SI{1}{\tera\hertz}$ it lies around  $n_\text{ZnTe, 1\,THz} = 3.17$ \cite{hebling2004tunable}.
+This difference effects the production off $\SI{1}{\tera\hertz}$ radiation negatively compared to higher or lower frequencies.
+The relationship between $\si{\tera\hertz}$ frequencies and coherence length can be seen in figure \ref{fig:coherence_legnth}.
 \subsection{Gallium phosphide}
 The other crystal that is used to generate $\si{\tera\hertz}$ radiation is gallium phosphide (GaP).
 It is a common emitter of $\si{\tera\hertz}$ radiation with a broad spectrum.
 This crystal also exhibits a phonon resonance, but at a much higher frequency of about $\SI{11}{\tera\hertz}$ \cite{wiki_book}.
 As well as ZnTe, GaP needs to be stimulated by the laser along its $(110)$ axis.
-The refractive index of GaP at $\SI{800}{\nano\meter}$ is $n_\text{GaP} = 3.193$ \cite{refractive_index_gap}.
-
-\textbf{Platzhalter für Bild von GaP struktur}
+The refractive index of GaP at $\SI{800}{\nano\meter}$ is $n_\text{GaP, 800\, nm} = 3.193$ \cite{refractive_index_gap} at $\SI{1}{\tera\hertz}$ the refractive index is $n_\text{GaP \, THz} = 3.34$ \cite{hebling2004tunable}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -79,7 +100,7 @@ and is directly proportional to the electric field $E$ and the susceptibility $\
 Which in turn can be expanded to 
 
 \begin{equation}
-    \chi(E) = \chi_0 + \chi_1 E +\chi_2 E^2 + ...   \, .
+    \chi(E) = \chi_1 + \chi_2 E +\chi_3 E^2 + ...   \, .
 \end{equation}
 
 As described earlier, optical rectification is a second-order effect and is described by the $P_\text{nl} = \chi_2 E^2$ term.
@@ -97,7 +118,7 @@ shows a \textbf{cosine} with a difference dependency $\omega_\text{i}-\omega_\te
 The one with the difference dependency results in the generation of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
 The sum term of equation \eqref{eq:two_freq_mixing} is not important for $\si{\tera\hertz}$ generation and will be neglected in further calculations \cite{wiki_book}.
 If the whole bandwidth $\omega + \symup{\Delta}\Omega$ is now taken into account all the frequencies interact with the crystal.
-This results in a polarization dependency on the bandwidth $\symup{\Delta}\Omega$ as such
+This results in a polarization dependency on all the frequencies in the bandwidth $\symup{\Delta}\Omega$ as such
 \begin{equation}
     P_{\symup{\Delta}\Omega} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\cos(\symup{\Delta}\Omega t) \, ,
     \label{eq:polarization_depens}
@@ -105,20 +126,6 @@ This results in a polarization dependency on the bandwidth $\symup{\Delta}\Omega
 where $\epsilon_0$ is the vacuum permittivity.
 With a bandwidth in the femtosecond regime, the resulting change in polarization generates $\si{\tera\hertz}$ radiation \cite{book_optical_rectification}\cite{wiki_book}.
 \\\\
-% Because the change in polarization is also dependent on the pump beam electric field, as seen in equation \ref{eq:polarization_depens}, part of the experiment is to change the pump fluence.
-% The fluence is defined as 
-% \begin{equation}
-%     H = \int_{0}^{t} E_\text{irr} \symup{d}t
-%     \label{eq:fluence}
-% \end{equation}
-% with $E_\text{irr}$ being the irradiance.
-% The irradiance 
-% \begin{equation}
-%     E_\text{irr} = \frac{\Phi}{A}
-%     \label{eq:irradiance}
-% \end{equation} 
-% is defined as the radiant flux $\Phi$ per area $A$.
-% \\\\
 The process of $\si{\tera\hertz}$ generation can also be explained by the excitation of higher energy levels.
 It is visualized in figure \ref{fig:freq_mix}.
 \begin{figure}
@@ -131,14 +138,17 @@ It is visualized in figure \ref{fig:freq_mix}.
     \label{fig:freq_mix}
 \end{figure}
 The frequency $\omega_\text{i}$ that goes into the crystal excites a higher energy level.
-Now the other frequency $\omega_\text{j}$ that goes into the crystal lowers the energy state again.
-Because of the conservation of energy the crystal puts out a photon of the resulting difference
+Now the other frequency $\omega_\text{j}$ that goes into the crystal excites a two-photon emission that in turn lowers the energy level again, but not all the way to the ground state.
+This two photon emission can also occure without the presence of the frequency $\omega_\text{j}$ however, its propability is way lower.
+From the lower energy level the system then drops back to the ground state again.
+Because of the conservation of energy the crystal puts out a photon of the difference
 
 \begin{equation}
-    \symup{\Delta}\Omega = \omega_\text{i} - \omega_\text{j} \, .
+    \symup{\Delta}\Omega = \omega_\text{i} - \omega_\text{j} \,
 \end{equation}
 
-
+where $\omega_\text{i}$ corresponse to the higher and $\omega_\text{j}$ to the lower energy level.
+With the right input frequencies the difference result is in the $\si{\tera\hertz}$ regime \cite{boyd2020nonlinear}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Hier noch Grafik rein und vielleicht nochmal was ändern
@@ -158,32 +168,31 @@ The phase shift
 is directly proportional to the electric field $E_\text{THz}$. 
 It is also inversely proportional to the wavelength $\lambda$, the crystal thickness $l$, the electrooptic coefficient $r$, and the refractive index $n_0$ \cite{wiki_book}. 
 Through measurement of the change in polarization, it is then possible to determine the electric field strength of the $\si{\tera\hertz}$-pump beam.
-For this two photodiodes are used, which measure the probe beam intensity in dependence on its polarization.
-It is explained in section \ref{sec:setup} how the beam is split into its two polarization-dependent parts.
-One photodiode just measures the intensity of the horizontally polarized probe beam $A$ and one the vertically polarized part $B$.
+For this the difference of intensity of the horizontally and vertiically polarized party of the beam $\symup{\Delta}I$ is measured.
+It is explained in section \ref{sec:setup} how the beam is split into its two polarization-dependent parts and how the intensities are then measured.
 With the normed difference 
 
 \begin{equation}
-    \frac{A-B}{A+B} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
+    \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
     \label{eq:electricfield_A_B}
 \end{equation}
 
-it is then possible to determine the field strength $E_\text{THz}$ \cite{THZ_eltric_field}.
-With the electric field calculated, the peak power of the $\si{\tera\hertz}$-electric field is then attainable.
+of the intensities over the whole intensity $I$ it is then possible to determine the field strength $E_\text{THz}$ \cite{THZ_eltric_field}.
+With the electric field calculated, the peak power of the $\si{\tera\hertz}$ electric field is then attainable.
 For this the intensity
 \begin{equation}
-    I = c \epsilon_0 E_\text{THz}^2
+    I_\text{THz} = c \epsilon_0 E_\text{THz}^2
     \label{eq:intensity}
 \end{equation}
-is calculated.
+of the $\si{\tera\hertz}$ electric field is calculated.
 The power 
 \begin{equation}
-    P = \int\, I \,\symup{d}A_\text{spot}
+    P = \int\, I_\text{THz} \,\symup{d}A_\text{spot}
 \end{equation}
-can then be derived by integrating the intensity $I$ over the area of the $\si{\tera\hertz}$ spot $A_\text{spot}$.
+can then be derived by integrating the intensity $I_\text{THz}$ over the area of the $\si{\tera\hertz}$ spot $A_\text{spot}$.
 If an equally distributed intensity is assumed the equation simplifies to 
 \begin{equation}
-    P = IA_\text{spot}\,.
+    P = I_\text{THz}A_\text{spot}\,.
     \label{eq:power}
 \end{equation}
 With the power of the electric field, a conversion efficiency $C$ can be calculated by formula
@@ -197,7 +206,9 @@ in which $P_\text{THz}$ is the peak electric field power and $P_\text{pump}$ is 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Coherence length}
-Because the refractive indices of the $\SI{800}{\nano\meter}$ laser pump beam and the generated $\si{\tera\hertz}$ radiation differs from one another, the pulses travel at different speeds inside the crystal.
+\label{sec:coherence_length}
+As mentioned in section \ref{sec:emitters} the refractive index of the laser and the $\si{\tera\hertz}$ radiation has a great impact on the generation of $\si{\tera\hertz}$ radiation.
+Because the refractive indices of the $\SI{800}{\nano\meter}$ laser pump beam and the generated $\si{\tera\hertz}$ radiation generally differs from one another, the pulses travel at different speeds inside the crystal.
 If the mismatch is too big the efficiency of generation and detection of $\si{\tera\hertz}$ radiation through the crystals suffers.
 The effective length at which the velocity mismatch can be tolerated is called the coherence length
 
@@ -222,6 +233,5 @@ The relation between coherence length and $\si{\tera\hertz}$ frequency in ZnTe i
     The solid line includes the effect of dispersion at optical frequencies. The dotted line neglects the dispersion at optical frequencies \cite{coherence_legnth}.}
     \label{fig:coherence_legnth}
 \end{figure}
-\textbf{Platzhalter für Grafik mit kohärenzlänge von GaP falls ich dazu was finde}
 % I need a paper to refernce the coherence length of GaP
 \FloatBarrier

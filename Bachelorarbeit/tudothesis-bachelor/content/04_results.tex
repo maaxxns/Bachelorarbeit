@@ -29,7 +29,7 @@ Before the pulse starts the signal is balanced at $X(V)=0$.
     \label{ZnTe:2_11_30_20_signal}
 \end{figure}
 At a delay of about $\SI{58}{\pico\second}$ the pulse starts, which manifests in an increasingly negative $X(V)$ value.
-After about $\SI{5}{\pico\second}$ behind the start, the minimum is reached with an $X(V)$ value of $\SI{-0.746}{\milli\V}$ after which the lock-in amplifier output increases drastically up to a value of $\SI{4.206}{\milli\V}$.
+After about $\SI{5}{\pico\second}$ behind the start, the minimum is reached with an $X(V)$ value of $\SI{-0.746}{\milli\V}$ after which the lock-in amplifier output increases up to a value of $\SI{4.206}{\milli\V}$.
 Here the maximum of the plot is reached, which corresponds to the maximum $\si{\tera\hertz}$ electric field strength inside the detector crystal.
 After the maximum, the signal drops almost to zero.
 \\
@@ -47,28 +47,31 @@ The spectrum is also plotted against a logarithmic y-axis, which results in the 
 \\
 With this, it is easy to confirm that the generated radiation lies in the $\si{\tera\hertz}$ regime.
 Most of the radiation that is generated has a frequency between $0.3-1.1\,\si{\tera\hertz}$, but radiation with even higher $\si{\tera\hertz}$ frequencies is generated as well.
-Especially in the spectrum which is plotted against the logarithmic y-axis the water absorption line of $\SI{1.226}{\tera\hertz}$ is visible.
+Especially in the spectrum which is plotted against the logarithmic y-axis the water absorption line of $\SI{1.226}{\tera\hertz}$ is visible \cite{water_absorption}.
 This is due to the water vapor in the air between the emitter and detector crystal.
 Some absorption lines at even higher frequencies are visible too.
 \begin{figure}%
     \centering
-    \caption{The Fourier spectrum of the data from ZnTe, which is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
-    One of the spectrums is plotted against a logarithmic axis to see the higher frequencies as well.}%
     \begin{subfigure}{\columnwidth}%
         \centering
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normalFX.pdf}%
-        \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse that is shown in figure \ref{ZnTe:2_11_30_20_signal}.
-        It can be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
+        \phantomsubcaption
+    %    \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse that is shown in figure \ref{ZnTe:2_11_30_20_signal}.
+    %    It can be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
         \label{fig:2_11_30_20_fft}%
     \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
     \begin{subfigure}{\columnwidth}%
         \centering
         \includegraphics[height=3.5cm]{Plots/2_11_30_20normallog(FX).pdf}%
-        \caption{The Fourier spectrum of the data that is shown in figure \ref{ZnTe:2_11_30_20_signal} is plotted against a logarithmic y-axis.
-        This shows that higher $\si{\tera\hertz}$ frequencies are generated as well. Some absorption lines can also be seen.}%
+        \phantomsubcaption
+ %       \caption{The Fourier spectrum of the data that is shown in figure \ref{ZnTe:2_11_30_20_signal} is plotted against a logarithmic y-axis.
+  %      This shows that higher $\si{\tera\hertz}$ frequencies are generated as well. Some absorption lines can also be seen.}%
         \label{fig:2_11_30_20_fft_log}%
     \end{subfigure}%
+    \caption{The Fourier spectrum of the data from ZnTe, which is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
+    The upper figure \ref{fig:2_11_30_20_fft} shows the Fourierspectrum of the $\si{\tera\hertz}$ radiation that is emitted by ZnTe, plotted against two linear axis.
+    The lower Figure \ref{fig:2_11_30_20_fft_log} shows the spectrum plotted against a logarithmic y-axis to see the higher frequencies as well.}%
     \label{fig:fourier_znte}%
 \end{figure}%
 \FloatBarrier
@@ -197,27 +200,33 @@ The Fourier spectrum that is plotted against the logarithmic y-axis is shown in 
 There are no features in the Fourier spectrum that can be recognized as absorption lines.
 The Fourier spectrum drops down from its highest amplitude at a frequency of $\SI{0.3}{\tera\hertz}$ to a frequency of $\SI{2.5}{\tera\hertz}$.
 After $\SI{2.5}{\tera\hertz}$ the Spectrum stays almost constant in amplitude, which shows that the majority of the generated radiation lies between $0.3$ and $\SI{2.5}{\tera\hertz}$.
-
+\\
+However, the low amplitude at higher frequencies could also be caused by the detection crystal.
+As ZnTe has a phonon mode at $\SI{5.3}{\tera\hertz}$, which limits its ability to detect higher frequencies.
+But because the amplitude of frequencies that are below the phonon mode are already low, it is more probable that the limitation lies at the emitter.
 \begin{figure}%
     \centering
-    \caption{The Fourier spectrum of the data for GaP, which is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
-    One of the spectrums is plotted against a logarithmic axis to better see absorption lines or other features as well.}%
     \begin{subfigure}{0.8\columnwidth}%
         \centering
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normalFX.pdf}%
-        \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse from GaP shown in figure \ref{fig:GaP14_55_42normalX}.
-        The Fourier spectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
-        After which the spectrum stays almost constant.}%
+        \phantomsubcaption
+%        \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse from GaP shown in figure \ref{fig:GaP14_55_42normalX}.
+%        The Fourier spectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
+%        After which the spectrum stays almost constant.}%
         \label{fig:GaP14_55_42_fft}%
         \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
         \begin{subfigure}{0.8\columnwidth}%
         \centering
         \includegraphics[height=3.5cm]{Plots/GaP14_55_42normallog(FX).pdf}%
-        \caption{The Fourier spectrum of the GaP data is shown in figure \ref{fig:GaP14_55_42normalX}, plotted against a logarithmic y-axis.
-        There are no absorption lines recognizable in the plot.}%
+        \phantomsubcaption
+%        \caption{The Fourier spectrum of the GaP data is shown in figure \ref{fig:GaP14_55_42normalX}, plotted against a logarithmic y-axis.
+%        There are no absorption lines recognizable in the plot.}%
         \label{fig:GaP14_55_42_fft_log}%
     \end{subfigure}%
+    \caption{The Fourier spectrum of the data for GaP shown in figure \ref{fig:GaP14_55_42normalX}, which is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
+    The upper figure \ref{fig:GaP14_55_42_fft} shows the $\si{\tera\hertz}$ Fourierspectrum emitted by GaP plotted against two linear axis.
+    The lower Figure \ref{fig:GaP14_55_42_fft_log} shows the Fourierspectrum plotted against a logarithmic y-axis.}%
     \label{fig:fourier_gap}%
 \end{figure}%
 \FloatBarrier
@@ -247,15 +256,11 @@ Said function returns the parameters
     b &= 0.5403
 \end{align*}
 which are used to make the linear fit shown in figure \ref{fig:gap_electricfield}.
-\textbf{hier brauch ich noch literatur für GaP THz electric field}.
 \\
 The linear regression shows that the data points follow a linear trend.
 At higher pump powers the data points are more distant from the linear fit.
 The highest electric field of $\SI{3.38(5)}{\kilo\V\per\centi\meter}$ that is calculated, corresponds to a pump power of $\SI{124.2}{\milli\W}$, which is the highest laser pump power that is used.
-This follows the linear trend \textbf{and is in good comparison with the literature?}.
-
-\textbf{It is also interesting that even with very low pump powers $\si{\tera\hertz}$ radiation can still be generated.
-In this case, a pump power of $\SI{24.2}{\milli\W}$ is sufficient to generate a peak electric field of $\SI{0.97(1)}{\kilo\V\per\centi\meter}$.}
+This follows the linear trend.
 \FloatBarrier
 \subsection{Power measurements}
 From the peak electric fields of the $\si{\tera\hertz}$ radiation, the peak power can be calculated.
@@ -301,9 +306,9 @@ Besides that, the GaP Spectrum seems to be more broadband than the ZnTe crystal,
 The electric field strength of both crystals shows a linear dependency on the pump power, which shows no saturation at the powers that are used.
 However, the measured data from ZnTe shows some contradictory results, with its reason most likely being the switch to the higher initial pump power, which altered the pump beam path.
 In further comparison, just the lower initial laser power will be looked at.
-The maximum generate electric field of ZnTe is $\SI{2.836(61)}{}$ times larger than that of GaP, even though the pump powers are almost the same with GaP at $\SI{124.2}{\milli\W}$ and ZnTe at $\SI{129.5}{\milli\W}$.
+The maximum generate electric field of ZnTe is about three times larger than that of GaP, even though the pump powers are almost the same with GaP at $\SI{124.2}{\milli\W}$ and ZnTe at $\SI{129.5}{\milli\W}$.
 \\\\
 At low pump powers, the power of the generated $\si{\tera\hertz}$ radiation of ZnTe shows an exponential trend, which GaP does not show.
 Both follow a linear trend between pump powers between $50$ and $\SI{80}{\milli\W}$ after which both of their gradients lowers.
 This behavior can also be seen in the conversion efficiency as it is the derivation of the peak $\si{\tera\hertz}$ power with respect to the pump power.
-However, the peak conversion efficiency of ZnTe is $\SI{7.674(343)}{}$ times higher than that of GaP. 
+However, the peak conversion efficiency of ZnTe is about $7.5$ times higher than that of GaP. 
