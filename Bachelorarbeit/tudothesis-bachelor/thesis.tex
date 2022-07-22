@@ -95,7 +95,7 @@
 \usepackage{graphicx}
 % currently broken
 % \usepackage{grffile}
-
+\usepackage{pdfpages} %append pdfs 
 % allow figures to be placed in the running text by default:
 \usepackage{scrhack}
 \usepackage{float}
@@ -121,10 +121,10 @@
   autolang=hyphen, % load hyphenation rules for if language of bibentry is not
                    % german, has to be loaded with \setotherlanguages
                    % in the references.bib use langid={en} for english sources
+  sorting=none,
 ]{biblatex}
 \addbibresource{references.bib}  % the bib file to use
 \DefineBibliographyStrings{english}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
-
 
 % Last packages, do not change order or insert new packages after these ones
 \usepackage[pdfusetitle, unicode, linkbordercolor=tugreen, citebordercolor=tugreen]{hyperref}
@@ -142,7 +142,7 @@
 \chair{AG Wang}
 \division{Fakultät Physik}
 \thesisclass{Bachelor of Science}
-\submissiondate{26.06.2022}
+\submissiondate{26.07.2022}
 \firstcorrector{Prof.~Dr.~Wang Z.}
 \secondcorrector{Prof.~Dr.~Cinchetti M.}
 
@@ -176,5 +176,6 @@
 \printbibliography
 
 \cleardoublepage
-\input{content/eid_versicherung.tex}
+\includepdf{content/Eidesstattliche_Versicherung.pdf}
+%\input{content/eid_versicherung.tex}
 \end{document}
