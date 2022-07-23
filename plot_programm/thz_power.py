@@ -123,7 +123,7 @@ for n in (range(len(filename))):
     data_name_zeropadding = ['X', 'FX_zeropadding', 'log(FX_zeropadding)'] #if zeropadding isnt wanted just switch the names to none zero padding and the plot_data
     data_name_pulse = ['X', 'FX_pulse', 'log(FX_pulse)']
     
-    data_name_x = ['Delay (ps)', 'Frequency (THz)', 'Frequecy (THz)']
+    data_name_x = ['Delay (ps)', 'frequency (THz)', 'frequency (THz)']
     data_name_y = ['X (V)', 'Fourier[X (V)]', 'log(Fourier[X (V)])']
 
 
@@ -186,11 +186,11 @@ for n in (range(len(filename))):
             else:
                 plt.plot(data_all[k][i][0], data_all[k][i][1], label=data_name_all[k][i])
             
-            plt.xticks(size = 20)
-            plt.yticks(size = 20)
+            plt.xticks(size = 25)
+            plt.yticks(size = 25)
             plt.grid()
-            plt.xlabel(data_name_x[i], size=20)
-            plt.ylabel(data_name_y[i], size=20)
+            plt.xlabel(data_name_x[i], size=25)
+            plt.ylabel(data_name_y[i], size=25)
 #            plt.title(data_name_all[k][i], size=20)
             plt.tight_layout()
             plt.savefig('daten/plots/' + filename[n].split('.')[0] + '/' + filename[n].split('.')[0] + savename[k]+ data_name_all[k][i]+'.pdf')

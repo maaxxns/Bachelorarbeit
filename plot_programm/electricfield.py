@@ -135,7 +135,7 @@ fields = np.array(fields)
 params, cov = curve_fit(linear, pump_power, unumpy.nominal_values(fields)[:,0])
 x = np.linspace(np.min(pump_power), np.max(pump_power))
 
-print('params: ', params, 'max field: ', np.max(fields))
+print('params: ', params,' +/- ',np.sqrt(np.diag(cov)), ' max field: ', np.max(fields), )
 ##########################################
 #   plotting
 ##########################################
@@ -147,12 +147,12 @@ if filename[0][0] == 'G':
     plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='lower initial power')
     plt.plot(x, linear(x, *params), '-', label='linear Fit')
 for i in range(len(fields)):
-    print('pump power/mW: ', pump_power[i], ' field/(kV/cm): ', fields[i])
+    print('pump power (mW): ', pump_power[i], ' field (kV/cm): ', fields[i])
 plt.xticks(size = 20)
 plt.yticks(size = 20)
 plt.grid()
 plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
-plt.ylabel(r'$electric\: Field \,(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
+plt.ylabel(r'$electric\: field \,(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
 #if filename[0][0] == '1':
 ##    plt.title('electric field ZnTe', fontsize = 24)
 #if filename[0][0] == 'G':
@@ -195,22 +195,23 @@ for tick in axis1.yaxis.get_major_ticks():
     tick.label.set_fontsize(20) 
 axis2 = axis1.twinx()
 conversion_effiency = conversion_effiency *10**6
-axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x', alpha=0.5,label='Conversion Effiency')
-axis2.legend(loc = 'upper left')
+axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x',label='Conversion efficiency')
+axis2.legend(loc = 'upper left', prop={'size': 18})
 axis2.yaxis.set_tick_params(labelsize=20)
 if filename[0][0] == '1':
     power_THz = power_THz*10**6 #convert to muW
     axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='lower initial power') #10**(2) because of conversion in SI +3 for mW
     axis1.errorbar(x = pump_power_2, y = unumpy.nominal_values(power_THz[len(pump_power_1):][:,0]), yerr = unumpy.std_devs(power_THz[len(pump_power_1):][:,0]),color = ((132/255, 184/255, 25/255)),ls='',marker='*',label='full initial power')
+    axis1.legend(loc=(0.009,0.80), prop={'size': 18})    
 if filename[0][0] == 'G':
     power_THz = power_THz*10**6 #convert to muW
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
-axis1.legend(loc=(0.005,0.87))
+    axis1.legend(loc=(0.009,0.86), prop={'size': 18})
 axis1.grid()
 axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
-axis1.set_ylabel(r'$Power\:THz\:Field \,(\mu\mathrm{W})$', fontsize=20)
+axis1.set_ylabel(r'$Power\:THz\:field \,(\mu\mathrm{W})$', fontsize=20)
 #axis1.set_title('peak THz Power per pump power', fontsize=24)
-axis2.set_ylabel(r'$Conversion\: Effiency\: \cdot \,10^{-6}$', fontsize=20)
+axis2.set_ylabel(r'$Conversion\: efficiency\: \cdot \,10^{-6}$', fontsize=20)
 
 
 if filename[0][0] == '1':
