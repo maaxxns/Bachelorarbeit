@@ -61,7 +61,7 @@ After the change in polarization, the probe beam passes through a quarter-wave p
 The quarter-wave plate is also used to balance the signal while there is no $\si{\tera\hertz}$ electric field.
 The effect of the quarter-wave plate is further described in section \ref{sec:qwp}.
 \\
-This way the photodiodes have an equal output if there is no $\si{\tera\hertz}$ electric field inside the detector crystal.
+This way the photodiodes have an equal input if there is no $\si{\tera\hertz}$ electric field inside the detector crystal.
 The beam is then split into its horizontal and vertical polarization components by a Wollaston prism, which is further explained in subsection \ref{sec:wollaston}.
 The two separate beams are passed into photodiodes.
 \\\\
@@ -74,7 +74,7 @@ The bigger the difference $\symup{\Delta}I = A-B$ the stronger the $\si{\tera\he
 With the setup now done the signal has to be optimized.
 To do this the stage is moved to the position of the strongest signal.
 The goal is to lower the noise or increase the peak height of the signal, through changes in the setup.
-As shown in the subsection \ref{sec:znte} the orientation of the ZnTe is of great importance.
+As shown in the subsection \ref{sec:emitters} the orientation of the crystals is of great importance.
 That is why the first step is to rotate the emitter crystal, to the point where the $(001)$ crystal direction is parallel to the polarization of the pump beam.
 After the correct orientation is found the process is repeated for the detection crystal.
 \\\\
@@ -160,9 +160,10 @@ The result is passed through a low pass filter, which removes the AC signals.
 This means that only if $\omega_\text{sig}$ and $\omega_\text{lock}$ are equal does anything come out of the filter.
 In that case the result 
 \begin{equation}
-    V = \frac{1}{2}V_\text{sig}\cos(\theta_\text{sig}-\theta_\text{lock})
+    V = \frac{1}{2}V_\text{sig}V_\text{lock}\cos(\theta_\text{sig}-\theta_\text{lock})
 \end{equation} 
 can be detected and measured without the noise from other frequencies.
+Because $V_\text{lock}$ is already known it is possible to calculate the signal.
 The reference frequency that is used in this setup is the frequency at which the chopper modulates the pump beam.
 \section{Time-resolved THz spectroscopy}
 \label{sec:time_domain}
@@ -178,7 +179,7 @@ The time-resolved measurement now works by taking one measurement at the delay s
 Then the stage is moved to position $s_2$ this lengthens or shortens the beam path of the pump beam.
 At stage position $s_2$ a new measurement is taken which corresponds to time $t_2$.
 \\
-Because just the pump beam path is change, it arrival time at the crystal changes, compared to the probe beam.
+Because just the pump beam path is changed, it arrival time at the crystal changes, compared to the probe beam.
 This results in a time delay $\symup{\Delta} t = t_1-t_2$.
 This process is repeated until the whole $\si{\tera\hertz}$-pulse is probed.
 For this, the delay stage has to be moved $\SI{4}{\milli\meter}$ in total.
@@ -192,7 +193,7 @@ It will be discussed what changes to the setup in figure \ref{fig:setup} are mad
 \\\\
 Before any measurements are taken the photodiodes have to be balanced.
 For this, a chopper is placed inside the probe beam, which modulates its frequency to $\SI{388}{\hertz}$.
-The lock-in amplifier gets triggered on that frequency, while its inputs are the $A$ and $B$ values of the two photodiodes.
+The lock-in amplifier gets triggered on that frequency, while its inputs are currents $A$ and $B$ of the two photodiodes.
 \\
 It is necessary to move the stage to a point where $\si{\tera\hertz}$-pulse and probe pulse do not overlap.
 So that the polarization of the probe beam does not change.
@@ -208,8 +209,8 @@ For this, it is necessary to change the power of the pump beam before the emitte
 For that various density filters are placed inside the pump beam path.
 All the utilized filters can be seen in Table \ref{tab:filters}.
 \\
-After the placement behind the chopper, the pump power is measured infront of the emitter crystal.
-Then the power meter is removed so that the pump beam hit the emitter crystal.
+After the placement behind the chopper, the pump power is measured in front of the emitter crystal.
+Then the power meter is removed so that the pump beam hits the emitter crystal.
 \\
 Now a short measurement with a low time resolution is taken, to roughly determine the position of the signal peak.
 After the peak position is found a time-resolved measurement, as described in section \ref{sec:time_domain} is taken.
@@ -232,9 +233,9 @@ To do that an aperture is paced inside the probe beam.
 Then the delay stage is moved to the position of the greatest electric field, where it is fixed.
 Now the $A-B$ value of the output of the photodiodes is measured.
 Usually the probe beam spot on the detector is bigger than the $\si{\tera\hertz}$ spot.
-Through closing the aperture the probe beam spot size becomes smaller, until it has the same size as the $\si{\tera\hertz}$ spot.
+Through closing the aperture the probe beam spot size becomes smaller until it has the same size as the $\si{\tera\hertz}$ spot.
 If the probe beam spot becomes smaller than the $\si{\tera\hertz}$ spot the signal strength starts to drop.
-This means the aperture opening has be reduced until the signal loses strength. 
+This means the aperture opening has to be reduced until the signal loses strength. 
 At which point the opening area of the aperture is the same as the $\si{\tera\hertz}$ spot on the detector crystal.
 \subsection{Electric field measurements}
 \label{sec:field}
@@ -249,6 +250,6 @@ After all the differences are measured, the sum of the intensities $I = A + B$ n
 The delay stage is moved to a position where there is no $\si{\tera\hertz}$ signal.
 Because the lock-in amplifier can not calculate the sum of $A$ and $B$ it is necessary to measure them separately.
 The input of the lock-in amplifier is changed to just one of the outputs of the photodiodes, either $A$ or $B$.
-After one, the other is measured aswell.
-Because the sum $A+B$ is the same for all $\si{\tera\hertz}$ electric field, it can be used to norm every difference.
+After one, the other is measured as well.
+Because the sum $A+B$ is the same for all $\si{\tera\hertz}$ electric fields, it can be used to norm every difference.
 After $A-B$ and $A$ and $B$ are measured the electric field can be calculated.
