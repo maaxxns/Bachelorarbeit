@@ -12,6 +12,8 @@ from tkinter.filedialog import askopenfilenames
 import os
 from scipy.optimize import curve_fit
 
+hfont = 'fantasy'
+plt.rcParams["font.family"] = hfont #change plot font globaly
 
 
 root = Tk()
@@ -85,6 +87,10 @@ def pulse_energy(power):
 def linear(x, m, b):
     return m*x +b
 
+def signaltonoise_dB(peak, noise,axis=0, ddof=0):
+    noise = np.std(noise)
+    return peak/noise
+
 X_A = np.genfromtxt( 'daten/eltric_field_data/' + 'A.txt', delimiter='\t', unpack=True, skip_header=1, usecols=0) #unpack the txt file with  values
 A = ufloat(np.mean(X_A), np.std(X_A))
 A = np.abs(A)
@@ -121,13 +127,16 @@ for n in (range(len(filename))):
     peak = find_peaks(X, distance=100000) #finds the highest peak and returns the index
     A_B = X[peak[0]]
     print('A-B with peak func: ', A_B, 'A-B with max', np.max(X))
-    #print('file: ', filename[n], 'A_B ', A_B)
+    print('file: ', filename[n], 'signal to noise', signaltonoise_dB(A_B, X[0:100]))
     if filename[n][0] == '1':
         fields.append(E(A_B, A_GaP, B_GaP))
     if filename[n][0] == '2':
         fields.append(E(A_B, A, B))
     if filename[0][0] == 'G':
         fields.append(E(A_B, A_GaP, B_GaP))
+    
+    
+
 
 fields = np.array(fields)
 #fields = fields + fields*0.15 # acccount for reflection losses as paper says
@@ -151,8 +160,8 @@ for i in range(len(fields)):
 plt.xticks(size = 20)
 plt.yticks(size = 20)
 plt.grid()
-plt.xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
-plt.ylabel(r'$electric\: field \,(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
+plt.xlabel('Pump power ' + r'$(\mathrm{mW})$', fontsize=20)
+plt.ylabel('electric field '+ r'$(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
 #if filename[0][0] == '1':
 ##    plt.title('electric field ZnTe', fontsize = 24)
 #if filename[0][0] == 'G':
@@ -208,10 +217,10 @@ if filename[0][0] == 'G':
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
     axis1.legend(loc=(0.009,0.86), prop={'size': 18})
 axis1.grid()
-axis1.set_xlabel(r'$Pump \: power \, (\mathrm{mW})$', fontsize=20)
-axis1.set_ylabel(r'$Power\:THz\:field \,(\mu\mathrm{W})$', fontsize=20)
+axis1.set_xlabel('Pump power ' + r'$(\mathrm{mW})$', fontsize=20)
+axis1.set_ylabel('Power THz field ' + r'$(\mu\mathrm{W})$', fontsize=20)
 #axis1.set_title('peak THz Power per pump power', fontsize=24)
-axis2.set_ylabel(r'$Conversion\: efficiency\: \cdot \,10^{-6}$', fontsize=20)
+axis2.set_ylabel('Conversion efficiency ' + r'$ \cdot \,10^{-6}$', fontsize=20)
 
 
 if filename[0][0] == '1':
