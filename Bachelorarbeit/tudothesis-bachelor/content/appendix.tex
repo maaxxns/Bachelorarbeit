@@ -1,11 +1,11 @@
 \chapter{Appendix}
 \label{sec:appendix}
-\section{Filters that were used for the fluence measurements}
+\section{Filters that are used for the fluence measurements}
 \begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
-        Filter & Transmission (\%)  & power after filter ($\si{\milli\watt}$) \\
+        Filter & Transmission (\%)  & Power after filter ($\si{\milli\watt}$) \\
         \midrule
         None & 100 & 270.0 \\
         NE02A-B & 67.94 &  186.4 \\
@@ -15,12 +15,13 @@
         NE09A-B & 20.15 & 56.4 \\
         NE13A-B & 9.01 & 24.6 \\
         \bottomrule
-    \end{tabular} 
+    \end{tabular}
+    \\
     \caption{The filters that are used to lower the power of the pump beam. In the second collum, the transmission of every filter is shown. In the third collum, the pump power after the filter and after the chopper is shown.
-    Note that the power values correspond to the highest laser power that is available with the given setup. Measurements with lower initial laser power are also taken. All the filters that are used were bought from Thorlabs \cite{thorlabs}.}
+    Note that the power values correspond to the highest laser power that is available with the given setup. Measurements with lower initial laser power are also taken. All the filters that are used were bought from thorlabs \cite{thorlabs}.}
     \begin{tabular}{ccc}
         \toprule
-        Filter & Transmission (\%)  & power after filter ($\si{\milli\watt}$) \\
+        Filter & Transmission (\%)  & Power after filter ($\si{\milli\watt}$) \\
         \midrule
         None & 100 & 129.5 \\
         NE02A-B & 67.94 &  75.0 \\
@@ -30,23 +31,26 @@
         NE09A-B & 20.15 & 26.5 \\
         NE13A-B & 9.01 & 10.24\\
         \bottomrule
-    \end{tabular} 
+    \end{tabular}
+    \\
     \caption{The filters that are used to lower the power of the pump beam. In the second collum, the transmission of every filter is shown. In the third collum, the pump power after the filter and after the chopper is shown.
     Note that the power values correspond to a lower laser power than the one in the upper table. All the filters that are used are supplied by thorlabs \cite{thorlabs}}
     \label{tab:filters}
 \end{table}
-
+\newpage
+\section{Burned ZnTe crystal surface}
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Plots/burned_crystal.jpeg}
-    \caption{The $\SI{1}{\milli\meter}$ ZnTe crystal that is used as the emitter.
-    Two burned spots can be seen on the crystal surface.}
+    \caption{The $\SI{1}{\milli\meter}$ ZnTe crystal that is used as the emitter. The crystal is fixed inside a rotation mount.
+    Two burned spots can be seen on the crystals surface.}
     \label{fig:ZnTe_burned}
 \end{figure}
-
+\newpage
+\section{EOS signal of GaP with lowest pump power}
 \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{Plots/GaP14_20_20normalX.pdf}
+    \includegraphics[width=\textwidth]{Plots/GaP14_20_20normalX.pdf}
     \caption{A EOS signal with GaP as emitter crystal. A pump power of $\SI{24.2}{\milli\W}$ is used.
     The low pump power, combined with the thin crystal results in a very noisy measurement.}
     \label{fig:GaP_noise}

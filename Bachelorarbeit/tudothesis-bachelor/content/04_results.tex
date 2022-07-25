@@ -8,8 +8,8 @@ The efficiency of producing radiation will be discussed.
 For these measurements, a $\SI{1}{\milli\meter}$ thick ZnTe crystal is used as the emitter.
 Another $\SI{1}{\milli\meter}$ thick ZnTe crystal is used as the detector.
 The measurements are taken as described in section \ref{sec:execution}.
-At this point, it should be mentioned, that the ZnTe crystal that is used as the emitter has two burn marks on it.
 \\
+At this point, it should be mentioned, that the ZnTe crystal that is used as the emitter has two burn marks on it.
 The burned crystal can be seen in figure \ref{fig:ZnTe_burned}.
 The burned part of the crystal harms the efficiency of $\si{\tera\hertz}$ generation.
 This is why the part of the laser with the highest power is not focused on the burned part.
@@ -29,15 +29,16 @@ The typical trend of a $\si{\tera\hertz}$ pulse can be seen.
     \label{ZnTe:2_11_30_20_signal}
 \end{figure}
 \FloatBarrier
-Before the pulse starts the signal is balanced at $X(V)=0$.
-At a delay of about $\SI{58}{\pico\second}$ the pulse starts, which manifests in an increasingly negative $X(V)$ value.
-After about $\SI{5}{\pico\second}$ behind the start, the minimum is reached with an $X(V)$ value of $\SI{-0.746}{\milli\V}$ after which the lock-in amplifier output increases up to a value of $\SI{4.206}{\milli\V}$.
+Before the pulse starts the output signal of the lock-amplifier $X$ is balanced at zero.
+The value $X$ is directly proportional to the diffrence in intensity $\symup{\Delta} I$ that the silicon photodiodes measure.
+At a delay of about $\SI{58}{\pico\second}$ the pulse starts, which manifests in an increasingly negative $X$ value.
+After about $\SI{5}{\pico\second}$ behind the start, the minimum is reached with an $X$ value of $\SI{-0.746}{\milli\V}$ after which the lock-in amplifier output increases up to a value of $\SI{4.206}{\milli\V}$.
 Here the maximum of the plot is reached, which corresponds to the maximum $\si{\tera\hertz}$ electric field strength inside the detector crystal.
 After the maximum, the signal drops almost to zero.
 \\
 From this point on there are some oscillations, but no major features are visible. %are those oscillations acuatlly caused by water?
-Up until a delay of $\SI{84}{\pico\second}$, where the post pulse starts.
-The post pulse is caused by reflections of the $\si{\tera\hertz}$ pulse inside the crystal.
+The oscillates go on until a delay of $\SI{84}{\pico\second}$, where the post pulse starts.
+The post pulse is caused by reflections of the $\si{\tera\hertz}$ pulse inside the detection crystal.
 This is why the post pulse is just an echo of the initial pulse and thus alters the signal in a negative way.
 For further calculations, the data that is taken up until the post pulse will be used.
 \\\\
@@ -54,26 +55,26 @@ This is due to the water vapor in the air between the emitter and detector cryst
 Some features at even higher frequencies are visible too, which might be additional absorption lines.
 \begin{figure}%
     \centering
-    \begin{subfigure}{.55\textwidth}%
+    \begin{subfigure}{.5\textwidth}%
         \centering
         \includegraphics[width=\textwidth]{Plots/2_11_30_20normalFX.pdf}%
-        \phantomsubcaption
+        \caption{}
     %    \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse that is shown in figure \ref{ZnTe:2_11_30_20_signal}.
     %    It can be seen that the frequency of the radiation lies in the lower $\si{\tera\hertz}$ regime.}%
         \label{fig:2_11_30_20_fft}%
     \end{subfigure}%
     \hfill% Fills available space in the center -> space between figures
-    \begin{subfigure}{.55\textwidth}%
+    \begin{subfigure}{.5\textwidth}%
         \centering
         \includegraphics[width=\textwidth]{Plots/2_11_30_20normallog(FX).pdf}%
-        \phantomsubcaption
+        \caption{}
  %       \caption{The Fourier spectrum of the data that is shown in figure \ref{ZnTe:2_11_30_20_signal} is plotted against a logarithmic y-axis.
   %      This shows that higher $\si{\tera\hertz}$ frequencies are generated as well. Some absorption lines can also be seen.}%
         \label{fig:2_11_30_20_fft_log}%
     \end{subfigure}%
     \caption{The Fourier spectrum of the data from ZnTe, which is collected with the highest pump power of $\SI{135.0}{\milli\W}$.
-    The upper figure \ref{fig:2_11_30_20_fft} shows the Fourier spectrum of the $\si{\tera\hertz}$ radiation that is emitted by ZnTe, plotted against two linear axes.
-    The lower Figure \ref{fig:2_11_30_20_fft_log} shows the spectrum plotted against a logarithmic y-axis to see the higher frequencies as well.}%
+    The upper figure \ref{fig:2_11_30_20_fft} shows the Fourier spectrum of the $\si{\tera\hertz}$ radiation that is emitted by ZnTe.
+    The lower figure \ref{fig:2_11_30_20_fft_log} shows the spectrum plotted against a logarithmic y-axis to see the higher frequencies as well.}%
     \label{fig:fourier_znte}%
 \end{figure}\FloatBarrier
 \subsection{Electric field measurements}
@@ -92,7 +93,7 @@ The resulting plot can be seen in figure \ref{fig:znte_electricfield}.\FloatBarr
     \centering
     \includegraphics[width=0.65\textwidth]{Plots/eltric_field_ZnTe.pdf}
     \caption{The calculated peak electric fields of the $\si{\tera\hertz}$ pulse from ZnTe are plotted against their corresponding pump laser powers.
-    Different initial laser powers are shown through different colors. The high power is $\SI{579}{\milli\W}$ the lower is $\SI{291}{\milli\W}$.}
+    Different initial laser powers are shown through different colors, the high power of $\SI{579}{\milli\W}$ is shown in green the lower is $\SI{291}{\milli\W}$ is shown in black.}
     \label{fig:znte_electricfield}
 \end{figure}\FloatBarrier
 The laser changes its power from $\SI{291}{\milli\W}$ to $\SI{579}{\milli\W}$, over the course of the measurement. 
@@ -113,7 +114,7 @@ The lower initial laser power of $\SI{291}{\milli\W}$ is marked with black dots.
 %\end{align*}
 %with which the linear fit is plotted.
 The lower initial laser power electric fields show a linear trend, the same can be said for the higher initial laser power if looked at isolated.
-However, the gradient of the higher initial laser power is less than that of the lower initial laser power.
+However, the slope of the higher initial laser power is less than that of the lower initial laser power.
 \\\\
 %The linear trend is in good comparison with the literature \cite{electric_field_compare} if just the lower initial pump power is looked at.
 The maximum electric field strength that is calculated is $\SI{9.59(15)}{\kilo\V\per\centi\meter}$, which corresponds to a pump power of $\SI{129.5}{\milli\W}$.
@@ -154,11 +155,11 @@ The calculated peak electric field powers of the $\si{\tera\hertz}$ pulse, show 
 The highest peak electric field power has a value of $\SI{2.389(75)}{\micro\W}$ at a pump power of $\SI{129.5}{\milli\W}$.
 \\
 The peak electric field powers for the high initial laser power also show a low exponential trend but reach a maximum at $\SI{135.0}{\milli\W}$, after which the power of the $\si{\tera\hertz}$ electric field drops again.
-Their gradient is smaller than the gradient of the other dataset, with its highest peak electric field power being $\SI{0.626(4)}{\micro\W}$.
+Their slope is smaller than the slope of the other dataset, with its highest peak electric field power being $\SI{0.626(4)}{\micro\W}$.
 The reason for this divergence is the same as the one that influences the electric field strengths, as the peak electric field powers are calculated out of the field strengths.
 %or maybe this would be the real behavior if the crystal is not burned. so that the power would rise linearly for even longer.
 \\
-Now to the lower initial laser power.
+The following part describes the results for lower initial laser power.
 The conversion efficiency of the lower initial laser power shows a linear increasing trend with rising pump power.
 It reaches its maximum at $\SI{75.0}{\milli\W}$ with its conversion efficiency being $\SI{2.08(7)e-05}{}$.
 After a pump power of $\SI{75.0}{\milli\W}$, the conversion efficiency drops down a bit but stays almost constant.
@@ -188,11 +189,12 @@ A first look at the data that is collected can be taken in figure \ref{fig:GaP14
 \end{figure}\FloatBarrier
 At the start of the measurement, the signal is distributed around zero, but not totally zero because of the noise.
 Around $\SI{54}{\pico\second}$ a downward trend can be seen, which reaches its minimum at $\SI{55}{\pico\second}$.
-Then the signal gradient becomes positive and increases in a very short interval up to a peak value of $\SI{0.287}{\milli\V}$ at a delay of $\SI{55.9}{\pico\second}$.
+Then the signal slope becomes positive and increases in a very short interval up to a peak value of $\SI{0.287}{\milli\V}$ at a delay of $\SI{55.9}{\pico\second}$.
 \\
 After the peak, the signal drops down again to another minimum with a value of $\SI{-59.128}{\micro\V}$ at a delay of $\SI{56.3}{\pico\second}$.
 Now the signal raises back to zero and shows no further significant features until the end of the measurement.
 This measurement does not show any post pulse feature, probably because the noise is too high to see the post pulse.
+The higher noise and lower signal strength is a result from the short coherence length in GaP.
 \\\\
 A Fourier-Transformation is calculated, which is shown in figure \ref{fig:GaP14_55_42_fft}.
 The Fourier spectrum is also plotted against a logarithmic y-axis to make absorption lines more visible and acquire more information about the higher frequencies, that do not appear in the normal Fourier spectrum.
@@ -203,14 +205,14 @@ The Fourier spectrum drops down from its highest amplitude at a frequency of $\S
 After $\SI{2.5}{\tera\hertz}$ the spectrum stays almost constant in amplitude, which shows that the majority of the generated radiation lies between $0.3$ and $\SI{2.5}{\tera\hertz}$.
 \\
 However, the low amplitude at higher frequencies could also be caused by the detection crystal.
-As ZnTe has a phonon mode at $\SI{5.3}{\tera\hertz}$, which limits its ability to detect higher frequencies.
+As ZnTe has a phonon mode at $\SI{5.3}{\tera\hertz}$\cite{phonon_modes}\cite{phonon_ZnTe}, which limits its ability to detect higher frequencies.
 But because the amplitude of frequencies that are below the phonon mode is already low, it is more probable that the limitation lies at the emitter.
 \begin{figure}%
     \centering
     \begin{subfigure}{.6\textwidth}%
         \centering
         \includegraphics[width=\textwidth]{Plots/GaP14_55_42normalFX.pdf}%
-        \phantomsubcaption
+        \caption{}
 %        \caption{The Fourier-Transformation of the $\si{\tera\hertz}$ pulse from GaP shown in figure \ref{fig:GaP14_55_42normalX}.
 %        The Fourier spectrum shows a linear downward trend from $\SI{0.3}{\tera\hertz}$ to $\SI{2.5}{\tera\hertz}$.
 %        After which the spectrum stays almost constant.}%
@@ -220,13 +222,13 @@ But because the amplitude of frequencies that are below the phonon mode is alrea
         \begin{subfigure}{.6\textwidth}%
         \centering
         \includegraphics[width=\textwidth]{Plots/GaP14_55_42normallog(FX).pdf}%
-        \phantomsubcaption
+        \caption{}
 %        \caption{The Fourier spectrum of the GaP data is shown in figure \ref{fig:GaP14_55_42normalX}, plotted against a logarithmic y-axis.
 %        There are no absorption lines recognizable in the plot.}%
         \label{fig:GaP14_55_42_fft_log}%
     \end{subfigure}%
     \caption{The Fourier spectrum of the data for GaP, shown in figure \ref{fig:GaP14_55_42normalX}, which is collected with the highest pump power of $\SI{124.2}{\milli\W}$.
-    The upper figure \ref{fig:GaP14_55_42_fft} shows the $\si{\tera\hertz}$ Fourier spectrum emitted by GaP which is plotted against two linear axes.
+    The upper figure \ref{fig:GaP14_55_42_fft} shows the $\si{\tera\hertz}$ Fourier spectrum emitted by GaP.
     The lower figure \ref{fig:GaP14_55_42_fft_log} shows the Fourier spectrum plotted against a logarithmic y-axis.}%
     \label{fig:fourier_gap}%
 \end{figure}%
@@ -242,7 +244,7 @@ The resulting plot is shown in figure \ref{fig:gap_electricfield}.\FloatBarrier
     \includegraphics[width=0.65\textwidth]{Plots/eltric_field_GaP.pdf}
     \caption{The peak electric fields of GaP, marked as black dots, are plotted against their corresponding pump powers.
     A linear fit, as filled blue line, for the plotted data points are also shown in the figure.
-    The fit parameter is its gradient with $m=\SI{0.0245(30)}{\kilo\V\per\milli\W\centi\meter}$ and the y-axis crossing at $b=\SI{0.5403(2002)}{\kilo\V\per\centi\meter}$.}
+    The fit parameter is its slope with ${m=\SI{0.0245(30)}{\kilo\V\per\milli\W\centi\meter}}$ and the y-axis crossing at ${b=\SI{0.5403(2002)}{\kilo\V\per\centi\meter}}$.}
     \label{fig:gap_electricfield}
 \end{figure}\FloatBarrier
 The calculated peak electric fields show a linear trend.
@@ -250,21 +252,21 @@ For this reason a linear regression is calculated for equation
 \begin{equation}
     f(x) = mx+b \,.
 \end{equation}
-The regression is done with the function \textbf{curve\_fit} from the python package scipy.
+The regression is done with the function curve\_fit from the python package scipy.
 Said function returns the parameters
 \begin{align*} 
     m &= \SI{0.0245(30)}{\kilo\V\per\milli\W\centi\meter}\\
-    b &= \SI{0.5403(2002)}{\kilo\V\per\centi\meter}
+    b &= \SI{0.5403(2002)}{\kilo\V\per\centi\meter} \, ,
 \end{align*}
 which are used to make the linear fit shown in figure \ref{fig:gap_electricfield}.
 \\
-The linear regression confirms that the data points follow a linear trend.
+Through the fit the linear trend of the measured values can be seen.
 At higher pump powers the data points are more distant from the linear fit.
 The highest electric field of $\SI{3.38(5)}{\kilo\V\per\centi\meter}$ that is calculated, corresponds to a pump power of $\SI{124.2}{\milli\W}$, which is the highest laser pump power that is used.
 \FloatBarrier
 \subsection{Power measurements}
 Out of the peak electric fields of the $\si{\tera\hertz}$ radiation, the peak power can be estimated.
-For this, the intensity $I$, defined in equation \ref{eq:intensity}, needs to be determined first.
+For this, the intensity $I$, defined in equation \eqref{eq:intensity}, needs to be determined first.
 \\
 Additionally to the intensity, the area of the $\si{\tera\hertz}$ spot on the detector crystal needs to be measured.
 How the spot size is determined is explained in section \ref{sec:power}.
@@ -283,26 +285,26 @@ In this figure the peak electric field powers are plotted against their correspo
 The peak $\si{\tera\hertz}$ electric field powers of GaP show a low exponential growth which switches to a linear trend after about $\SI{50}{\milli\W}$, with its maximum being $\SI{0.297(9)}{\micro\W}$ at a pump power of $\SI{124.2}{\milli\W}$, which is the highest pump power that is used.
 Between $40$ and $60 \, \si{\milli\W}$ pump power the linear trend seems to stagnate.
 \\
-The conversion efficiency seems to follow a similar linear trend, with there also being a negative gradient between  $40$ and $60 \, \si{\milli\W}$.
+The conversion efficiency seems to follow a similar linear trend, with there also being a negative slope between  $40$ and $60 \, \si{\milli\W}$.
 It already reaches its maximum at a pump power of $\SI{74.4}{\milli\W}$ with the conversion efficiency being $\SI{2.71(8)e-6}{}$.
 At the higher pump power of $\SI{124.2}{\milli\W}$, the conversion efficiency drops down a bit to a value of $\SI{2.39(7)e-6}{}$.
-It seems like there is a stagnation in the gradient of the conversion efficiencies at this pump power, but this can only be determined with more measurements.
+It seems like there is a stagnation in the slope of the conversion efficiencies at this pump power, but this can only be determined with more measurements.
 \FloatBarrier
 \section{Comparison}
-Because the GaP crystal is $\SI{0.7}{\milli\meter}$ thinner than the ZnTe crystal all comparisons that are done in this chapter only apply to this specific setup and may not apply universally.
+Because the GaP crystal is $\SI{0.7}{\milli\meter}$ thinner than the ZnTe crystal, all comparisons that are done in this chapter only apply to this specific setup and may not apply universally.
 \\
 The collected EOS signal from both ZnTe and GaP show a significant peak.
 Before and after the peak, both signals show a small dip into the negative $A-B$ values.
 The highest signal-to-noise ratio of ZnTe is higher than that of GaP, with it having a signal-to-noise ratio of $104/1$, while GaP has a signal-to-noise ratio of $14/1$, which is due to the smaller thickness of the GaP crystal that does not generate such high $\si{\tera\hertz}$ electric fields.
 The signal to noise is calculated by 
 \begin{equation}
-    SNR = \frac{P_\text{signal}}{\sigma_\text{noise}}
+    SNR = \frac{P_\text{signal}}{\sigma_\text{noise}}\, ,
 \end{equation}
 where $P_\text{signal}$ is the peak of the signal and $\sigma_\text{noise}$ is the standard deviation of the noise.
 Furthermore, the signal-to-noise ratio of the lowest pump power with GaP goes down to $4.48/1$, which EOS signal can be seen in figure \ref{fig:GaP_noise}.
 The oscillation after the pulse that is seen with the ZnTe crystal is strong and identifiable.
 This is not the case for GaP, as the EOS signal is too noisy.
-Furthermore, does the GaP EOS not show a post pulse, the most likely reason for this is that it is not distinguishable from the noise.
+Furthermore, the GaP EOS does not show a post pulse, the most likely reason for this is that it is not distinguishable from the noise.
 \\\\
 The Fourier spectrum shows that ZnTe and the GaP crystal, generate $\si{\tera\hertz}$ radiation with most of it having frequencies between $0.3$ and $\SI{2}{\tera\hertz}$.
 Moreover, in the ZnTe spectrum an absorption line can be seen, which is not the case with GaP, neither the logarithmic nor the normal Fourier spectrum show absorption lines.
@@ -314,6 +316,6 @@ In further comparison, just the lower initial laser power will be examined.
 The maximum generated electric field of ZnTe is about three times larger than that of GaP, even though the pump powers are almost the same with GaP at $\SI{124.2}{\milli\W}$ and ZnTe at $\SI{129.5}{\milli\W}$.
 \\\\
 At low pump powers, the power of the generated $\si{\tera\hertz}$ radiation of ZnTe shows an exponential trend, which GaP does not show.
-Both follow a linear trend at pump powers between $50$ and $\SI{80}{\milli\W}$ after which both of their gradients lowers.
+Both follow a linear trend at pump powers between $50$ and $\SI{80}{\milli\W}$ after which both of their slopes lower.
 This behavior can also be seen in the conversion efficiency as it is the derivation of the peak $\si{\tera\hertz}$ power with respect to the pump power.
 However, the peak conversion efficiency of ZnTe is about $7.5$ times higher than that of GaP. 
