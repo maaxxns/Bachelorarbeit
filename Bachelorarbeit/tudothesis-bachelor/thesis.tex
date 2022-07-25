@@ -41,7 +41,7 @@
 
 % load english (for abstract) and ngerman language
 % the main language has to come last
-\usepackage[american]{babel}
+\usepackage[ngerman, english]{babel}
 
 % intelligent quotation marks, language and nesting sensitive
 \usepackage[autostyle]{csquotes}
@@ -65,6 +65,7 @@
   nabla=upright,
   partial=upright,
 ]{unicode-math}
+
 \setmathfont{Latin Modern Math}
 
 % nice, small fracs for the text with \sfrac{}{}
@@ -80,6 +81,9 @@
   separate-uncertainty=true,
   per-mode=symbol-or-fraction,
 ]{siunitx}
+\addto\extrasngerman{\sisetup{locale = DE}}
+\addto\extrasenglish{\sisetup{locale = UK}}
+
 \sisetup{math-micro=\text{µ},text-micro=µ}
 
 %------------------------------------------------------------------------------
