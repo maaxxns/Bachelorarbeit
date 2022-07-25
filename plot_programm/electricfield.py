@@ -12,9 +12,6 @@ from tkinter.filedialog import askopenfilenames
 import os
 from scipy.optimize import curve_fit
 
-hfont = 'fantasy'
-plt.rcParams["font.family"] = hfont #change plot font globaly
-
 
 root = Tk()
 root.withdraw() # we don't want a full GUI, so keep the root window from appearing
@@ -154,13 +151,13 @@ if filename[0][0] == '1':
     #plt.plot(x, linear(x, *params), '-', label='linear Fit')
 if filename[0][0] == 'G':
     plt.errorbar(x = pump_power_GaP, y = unumpy.nominal_values(fields[:,0]) , yerr=unumpy.std_devs(fields[:,0]) ,color = 'k',ls='' ,marker='o',label='lower initial power')
-    plt.plot(x, linear(x, *params), '-', label='linear Fit')
+    plt.plot(x, linear(x, *params), '-', label='linear fit')
 for i in range(len(fields)):
     print('pump power (mW): ', pump_power[i], ' field (kV/cm): ', fields[i])
 plt.xticks(size = 20)
 plt.yticks(size = 20)
 plt.grid()
-plt.xlabel('Pump power ' + r'$(\mathrm{mW})$', fontsize=20)
+plt.xlabel('pump power ' + r'$(\mathrm{mW})$', fontsize=20)
 plt.ylabel('electric field '+ r'$(\mathrm{kV}/\mathrm{cm})$', fontsize=20)
 #if filename[0][0] == '1':
 ##    plt.title('electric field ZnTe', fontsize = 24)
@@ -204,7 +201,7 @@ for tick in axis1.yaxis.get_major_ticks():
     tick.label.set_fontsize(20) 
 axis2 = axis1.twinx()
 conversion_effiency = conversion_effiency *10**6
-axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x',label='Conversion efficiency')
+axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x',label='conversion efficiency')
 axis2.legend(loc = 'upper left', prop={'size': 18})
 axis2.yaxis.set_tick_params(labelsize=20)
 if filename[0][0] == '1':
@@ -217,10 +214,10 @@ if filename[0][0] == 'G':
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
     axis1.legend(loc=(0.009,0.86), prop={'size': 18})
 axis1.grid()
-axis1.set_xlabel('Pump power ' + r'$(\mathrm{mW})$', fontsize=20)
-axis1.set_ylabel('Power THz field ' + r'$(\mu\mathrm{W})$', fontsize=20)
+axis1.set_xlabel('pump power ' + r'$(\mathrm{mW})$', fontsize=20)
+axis1.set_ylabel('power THz field ' + r'$(\mu\mathrm{W})$', fontsize=20)
 #axis1.set_title('peak THz Power per pump power', fontsize=24)
-axis2.set_ylabel('Conversion efficiency ' + r'$ \cdot \,10^{-6}$', fontsize=20)
+axis2.set_ylabel('conversion efficiency ' + r'$ \cdot \,10^{-6}$', fontsize=20)
 
 
 if filename[0][0] == '1':

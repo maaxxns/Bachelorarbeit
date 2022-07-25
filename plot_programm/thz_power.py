@@ -123,7 +123,7 @@ for n in (range(len(filename))):
     data_name_zeropadding = ['X', 'FX_zeropadding', 'log(FX_zeropadding)'] #if zeropadding isnt wanted just switch the names to none zero padding and the plot_data
     data_name_pulse = ['X', 'FX_pulse', 'log(FX_pulse)']
     
-    data_name_x = ['Delay (ps)', 'frequency (THz)', 'frequency (THz)']
+    data_name_x = ['delay (ps)', 'frequency (THz)', 'frequency (THz)']
     data_name_y = ['X (V)', 'Fourier[X (V)]', 'log(Fourier[X (V)])']
 
 
