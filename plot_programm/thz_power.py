@@ -185,12 +185,12 @@ for n in (range(len(filename))):
                 plt.yscale('log')
             else:
                 plt.plot(data_all[k][i][0], data_all[k][i][1], label=data_name_all[k][i])
-            
-            plt.xticks(size = 25)
-            plt.yticks(size = 25)
+                #plt.locator_params(axis='y', nbins=6)
+            plt.xticks(size = 30)
+            plt.yticks(size = 30)
             plt.grid()
-            plt.xlabel(data_name_x[i], size=25)
-            plt.ylabel(data_name_y[i], size=25)
+            plt.xlabel(data_name_x[i], size=30)
+            plt.ylabel(data_name_y[i], size=30)
 #            plt.title(data_name_all[k][i], size=20)
             plt.tight_layout()
             plt.savefig('daten/plots/' + filename[n].split('.')[0] + '/' + filename[n].split('.')[0] + savename[k]+ data_name_all[k][i]+'.pdf')
