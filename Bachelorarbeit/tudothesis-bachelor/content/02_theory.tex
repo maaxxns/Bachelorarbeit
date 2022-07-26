@@ -1,22 +1,21 @@
 \chapter{Theory}
 \label{sec:theory}
-This chapter will explain what \hyperref[sec:terahertz]{terahertz} is, how to generate it through \hyperref[sec:optic_ref]{optical rectification}, and the detection through \hyperref[sec:eos]{electro-optic sampling}.
+This chapter will explain what \hyperref[sec:terahertz]{terahertz} radiation is, how to generate it through \hyperref[sec:optic_ref]{optical rectification}, and the detection through \hyperref[sec:eos]{electro-optic sampling}.
 Furthermore, the calculation of the terahertz electric field and its power will be presented in section \ref{sec:eos}.
 \section{Terahertz radiation}
 \label{sec:terahertz}
 This thesis will show the means of generating terahertz ($\si{\tera\hertz}$) radiation, with two non-linear crystals.
 As the name describes, its frequency regime lies at about \\${(0.3-30)\cdot10^{12}\,\si{\hertz}}$.
-Its wavelength can be easily calculated by
+Its wavelength can be calculated by
 \begin{equation}
     \lambda = \frac{c}{\nu}
 \end{equation}
-with the speed of light $c$ and its frequency $\nu$.
-Which results in a wavelength of about $\SI{100}{\micro\meter}-\SI{1}{\milli\meter}$.
+with the speed of light $c$ and its frequency $\nu$, which results in a wavelength of about $\SI{100}{\micro\meter}-\SI{1}{\milli\meter}$.
 This means it lies between infrared and microwave radiation.
 $\si{\tera\hertz}$ radiation is caused by various linear and non-linear effects which only occur at relatively high powers \cite{Thz_sources}.
 The need for high powers, as well as the lack of emitters, makes it hard to generate it efficiently.
 The result is the so-called $\si{\tera\hertz}$ gap that is slowly being closed by new techniques and advances in science.
-Some of these are the generation of $\si{\tera\hertz}$ radiation through organic and inorganic crystals, as well as the use of semiconductors.
+Some of these are the generation of $\si{\tera\hertz}$ radiation through organic and inorganic crystals, as well as the use of semiconductors \cite{sources_thz}.
 \\
 $\si{\tera\hertz}$ radiation is non-ionizing but is absorbed by water \cite{water_absorption}.
 This makes it of particular interest for medical uses.
@@ -32,7 +31,7 @@ These emitters all have advantages and disadvantages, which makes them more usef
 $\si{\tera\hertz}$ emitters such as photoconductive antennas generate a narrowband spectrum, which is not tunable \cite{PCA_bandwidth}.
 This makes them suitable for more specialized uses, where only a specific frequency is of use and other frequencies are unwanted.
 \\
-In contrast to that, non-linear crystals generate a broadband $\si{\tera\hertz}$ spectrum, which is of the greatest use for most laboratory applications, as it is more versatile.
+In contrast to that, non-linear crystals generate a broadband $\si{\tera\hertz}$ spectrum, which is of the greatest use for most laboratory applications, as it is more versatile \cite{Thz_sources}.
 The broad spectrum can be narrowed with filters into the specific frequency that is wanted.
 Non-linear organic crystals offer a very broad spectrum of $\si{\tera\hertz}$ generation as well but have the disadvantage of being very fragile \cite{organic_crystals}.
 This is usually not the case for inorganic non-linear crystals.
@@ -88,45 +87,38 @@ At $\SI{1}{\tera\hertz}$ the refractive index is $n_\text{GaP, 1\,THz} = 3.34$ \
 To generate $\si{\tera\hertz}$ radiation advantage is taken of optical rectification or rather a kind of difference frequency mixing that is very similar to optical rectification.
 Optical rectification is a second-order non-linear effect and thus can be just observed in non-linear materials.
 This effect causes a DC polarization in the crystal \cite{wiki_book}.
-If the DC polarization is moduled correctly it will cause $\si{\tera\hertz}$ radiation.
+If the DC polarization is modulated correctly it will cause $\si{\tera\hertz}$ radiation.
 The DC polarization occurs when an electric field interacts with the crystal.
 To discuss the effect in detail the effect of the electric field on the polarization needs to be looked at.
 The polarization is defined as
-
 \begin{equation}
-P = \chi(E) E \epsilon_0
+P = \chi(E) E \epsilon_0\, ,
 \end{equation}
-
-and is directly proportional to the electric field $E$ and the susceptibility $\chi(E)$.
-Which in turn can be expanded to 
-
+where $\epsilon_0$ is the vacuum permittivity.
+The polarization is directly proportional to the electric field $E$ and the susceptibility $\chi(E)$, which can than be expanded to 
 \begin{equation}
     \chi(E) = \chi_1 + \chi_2 E +\chi_3 E^2 + ...   \, .
 \end{equation}
-
-As described earlier, optical rectification is a second-order effect and is described by the $P_\text{nl} = \chi_2 E^2$ term.
+As described earlier, optical rectification is a second-order effect and is described by the $P_\text{nl} = \epsilon_0\chi_2 E^2$ term.
 Because the laser generates electromagnetic radiation at the whole bandwidth of frequencies $\omega + \symup{\Delta}\Omega$, in a gaussian profile, it is necessary to consider all of those electric fields mixing inside the crystal.
 To simplify it is best to look at just two electric fields first.
 One of those electric fields oscillates at frequency $\omega_\text{i}$ and the other at frequency $\omega_\text{j}$.
-The two electric fields can then be writen as$E_\text{i} = E_0\cos{\omega_\text{i}}$ and $E_\text{j} = E_0\cos{\omega_\text{j}}$ id they have the same amplitude $E_0$.
+The two electric fields can then be writen as $E_\text{i} = E_0\cos(\omega_\text{i} t)$ and $E_\text{j} = E_0\cos(\omega_\text{j} t)$ with the same amplitude $E_0$.
 The resulting second-order polarization term 
-
 \begin{equation}
     P_\text{nl} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\left[\cos((\omega_\text{i} - \omega_\text{j})t) + \cos((\omega_\text{i} + \omega_\text{j})t)\right]
 \label{eq:two_freq_mixing}
 \end{equation}
-
 shows a cosine with a difference dependency $\omega_\text{i}-\omega_\text{j}$ and one with a sum dependency $\omega_\text{i}+\omega_\text{j}$.
 The one with the difference dependency results in the generation of $\si{\tera\hertz}$ radiation. % the one with the sum depends is important for second harmonic generation
-The sum term of equation \eqref{eq:two_freq_mixing} is not important for $\si{\tera\hertz}$ generation and will be neglected in further calculations \cite{wiki_book}.
+The sum term of equation \eqref{eq:two_freq_mixing}, results in second-harmonic generation \cite{boyd2020nonlinear} and is not important for $\si{\tera\hertz}$ generation and will be neglected in further calculations \cite{wiki_book}.
 If the whole bandwidth $\omega + \symup{\Delta}\Omega$ is now taken into account, all the frequencies interact with the crystal.
 This results in a polarization dependency on all the frequencies $\symup{\Delta}\Omega$ in the bandwidth as such
 \begin{equation}
-    P_{\symup{\Delta}\Omega} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\cos(\symup{\Delta}\Omega t) \, ,
+    P_{\symup{\Delta}\Omega} = \chi_2 \epsilon_0 \frac{E_0^2}{2}\cos(\symup{\Delta}\Omega t) \, .
     \label{eq:polarization_depens}
 \end{equation}
-where $\epsilon_0$ is the vacuum permittivity.
-With a bandwidth in the femtosecond regime, the resulting change in polarization generates $\si{\tera\hertz}$ radiation \cite{book_optical_rectification,wiki_book}.
+With the right bandwidth, the resulting change in polarization generates $\si{\tera\hertz}$ radiation \cite{book_optical_rectification,wiki_book}.
 \\\\
 The process of $\si{\tera\hertz}$ generation can also be explained by the excitation of higher energy levels.
 It is visualized in figure \ref{fig:freq_mix}.\FloatBarrier
@@ -139,16 +131,14 @@ It is visualized in figure \ref{fig:freq_mix}.\FloatBarrier
     Here $\omega_\text{i}$ excites a higher virtual energy level, from which $\omega_\text{j}$ gets substracted which leaves $\symup{\Delta}\Omega$.}
     \label{fig:freq_mix}
 \end{figure}\FloatBarrier
-The field with frequency $\omega_\text{i}$ that goes into the crystal excites a higher energy level.
-Now the other field  with frequency $\omega_\text{j}$ that goes into the crystal excites a two-photon emission that in turn lowers the energy level again but not to the ground state.
+A field with frequency $\omega_\text{i}$ goes into the crystal excites a higher energy level.
+Now another field  with frequency $\omega_\text{j}$ goes into the crystal excites a two-photon emission that in turn lowers the energy level again but not to the ground state.
 There can also occur a spontaneous two-photon emission without the presence of the frequency $\omega_\text{j}$ however, its probability is way lower.
 From the lower energy level, the system then drops back to the ground state.
 Because of the conservation of energy, the crystal puts out a photon of the difference
-
 \begin{equation}
     \symup{\Delta}\Omega = \omega_\text{i} - \omega_\text{j} \, ,
 \end{equation}
-
 where $\omega_\text{i}$ corresponds to the higher and $\omega_\text{j}$ to the lower energy level.
 With the right input frequencies, the difference result is in the $\si{\tera\hertz}$ regime \cite{boyd2020nonlinear}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,15 +160,13 @@ The phase shift
 is directly proportional to the electric field $E_\text{THz}$. 
 It is also proportional to the crystal thickness $l$, the electro-optic coefficient $r$, and the refractive index $n_0$ and inversely proportional to the wavelength $\lambda$ \cite{wiki_book}. 
 Through measurement of the change in polarization, it is then possible to determine the electric field strength of the $\si{\tera\hertz}$-pump beam.
-For this, the difference in intensity of the horizontally and vertically polarized party of the beam $\symup{\Delta}I$ is measured.
+For this, the difference in intensity of the horizontally and vertically polarized part of the beam $\symup{\Delta}I$ is measured.
 It is explained in section \ref{sec:setup} how the beam is split into its two polarization-dependent parts and how the intensities are then measured.
 With the normed difference 
-
 \begin{equation}
     \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
     \label{eq:electricfield_A_B}
 \end{equation}
-
 of the intensities over the whole intensity $I$ it is then possible to determine the field strength $E_\text{THz}$ \cite{THZ_eltric_field}.
 With the electric field calculated, the peak power of the $\si{\tera\hertz}$ electric field is then attainable.
 For this the intensity
@@ -192,7 +180,7 @@ The power
     P = \int\, I_\text{THz} \,\symup{d}A_\text{spot}
 \end{equation}
 can then be obtained by integrating the intensity $I_\text{THz}$ over the area of the $\si{\tera\hertz}$ spot $A_\text{spot}$ \cite{griffiths}.
-Because it is not possible to measure the distrubution of the intensity in this setup, an equally distributed intensity has to be assumend.
+Because it is not possible to measure the distrubution of the intensity in this setup, an equally distributed intensity has to be assumed.
 With this the equation simplifies to 
 \begin{equation}
     P = I_\text{THz}A_\text{spot}\,.
@@ -214,19 +202,15 @@ As mentioned in section \ref{sec:emitters} the refractive index of the crystal a
 Because the refractive indices of the $\SI{800}{\nano\meter}$ laser pump beam and the generated $\si{\tera\hertz}$ radiation generally differ from one another, the pulses travel at different speeds inside the crystal.
 If the mismatch is too big the efficiency of generation and detection of $\si{\tera\hertz}$ radiation through the crystals suffers.
 The effective length at which the velocity mismatch can be tolerated is called the coherence length
-
 \begin{equation}
     l(\omega_{\si{\tera\hertz}}) = \frac{\pi c}{\omega_{\si{\tera\hertz}} \left | n_\text{opt eff}(\omega_0) - n_{\si{\tera\hertz}}(\omega_{\si{\tera\hertz}})\right |}
 \end{equation}
-
 with 
-
 \begin{equation}
     n_{\text{opt eff}} = n_\text{opt}(\omega) - \lambda_\text{opt}\frac{\partial n_\text{opt}}{\partial \lambda}\biggl{|}_{\lambda_\text{opt}} \, .  
 \end{equation}
-
-Here $\omega_{\si{\tera\hertz}} = \frac{2\pi}{\nu_{\si{\tera\hertz}}}$ is the frequency of $\si{\tera\hertz}$ radiation, $\omega_0$ is the frequency of the laser, $n_{\si{\tera\hertz}}$ is the refractive index of $\si{\tera\hertz}$ radiation in the medium, $n_\text{opt}$ is the refractive index at the pump laser wavelength $\lambda_\text{opt}$ and $n_\text{opt eff}$ is the refractive index of the group velocity of the pump laser radiation in the crystal \cite{coherence_legnth}.
-Because the refractive index of $\si{\tera\hertz}$ radiation and $\SI{800}{\nano\meter}$ laser light in ZnTe is very similar for almost all $\si{\tera\hertz}$ frequencies up to $\SI{2.5}{\tera\hertz}$ \cite{coherence_legnth}, the coherence length for those frequencies is long enough for the application in the setup described in section \ref{sec:setup}.
+Here $\omega_{\si{\tera\hertz}} = 2\pi  \nu_{\si{\tera\hertz}}$ is the frequency of $\si{\tera\hertz}$ radiation, $\omega_0$ is the frequency of the laser, $n_{\si{\tera\hertz}}$ is the refractive index of $\si{\tera\hertz}$ radiation in the medium, $n_\text{opt}$ is the refractive index at the pump laser wavelength $\lambda_\text{opt}$ and $n_\text{opt eff}$ is the refractive index of the group velocity of the pump laser radiation in the crystal \cite{coherence_legnth}.
+Because the refractive index of $\si{\tera\hertz}$ radiation and $\SI{800}{\nano\meter}$ laser light in ZnTe is similar for most $\si{\tera\hertz}$ frequencies up to $\SI{2.5}{\tera\hertz}$ \cite{coherence_legnth}, the coherence length for those frequencies is long enough for the application in the setup described in section \ref{sec:setup}.
 The relation between coherence length and $\si{\tera\hertz}$ frequency in ZnTe is shown in figure \ref{fig:coherence_legnth}.
 \\\\
 GaP has a lower coherence length at $\SI{800}{\nano\meter}$ laser light and most $\si{\tera\hertz}$ frequencies.
