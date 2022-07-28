@@ -1,4 +1,4 @@
-all: build/example.pdf
+all: build/slides.pdf
 
 texoptions = \
 	     --lualatex \
@@ -6,11 +6,11 @@ texoptions = \
 	     --halt-on-error \
 	     --output-directory=build
 
-build/example.pdf: FORCE | build
-	latexmk $(texoptions) example.tex
+build/slides.pdf: FORCE | build
+	latexmk $(texoptions) slides.tex
 
 preview: FORCE | build
-	latexmk $(texoptions) -pvc example.tex
+	latexmk $(texoptions) -pvc slides.tex
 
 FORCE:
 
