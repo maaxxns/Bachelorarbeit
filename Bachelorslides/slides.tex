@@ -14,9 +14,23 @@
 
 \usepackage{hyperref}
 \usepackage{bookmark}
-
+\usepackage[
+  locale=UK,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+\usepackage[
+  backend=biber,   % use modern biber backend
+  autolang=hyphen, % load hyphenation rules for if language of bibentry is not
+  % german, has to be loaded with \setotherlanguages
+  % in the references.bib use langid={en} for english sources
+  sorting=none,
+  ]{biblatex}
+  \addbibresource{references.bib}  % the bib file to use
+  \DefineBibliographyStrings{english}{andothers = {{et\,al\adddot}}}  % replace u.a. with et al.
+  
+  
 % load the theme after all packages
-
 \usetheme[
   showtotalframes, % show total number of frames in the footline
 ]{tudo}
@@ -45,7 +59,9 @@ terahertz radiation}
 
 \begin{frame}{The Gap}
   \subsection{The spectrum}
-%    \icludegraphic{content/spectrum.png}
+  \begin{center}
+  \includegraphics[width=0.7\textwidth]{images/spectrum.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Outline}
@@ -53,6 +69,7 @@ terahertz radiation}
 \end{frame}
 
 \begin{frame}{Terahertz}
+  \subsection{Applications}
   So why do we need terahertz radiation?
   \begin{itemize}
     \item medizin
@@ -70,25 +87,165 @@ terahertz radiation}
 
 \section{Theory}
 \begin{frame}{Optical-rectification}
-  So what's the theory behind terahertz generation?
-  \begin{itemize}
-    \item Two photons go in
-    \item Higher energy level
-    \item two photon emission 
-    \item energy drops to gorundstate
-  \end{itemize}
-  \includegraphics[width=0.5\textwidth]{images/diffrence_frequency_mixing.PNG}
+ Polarisation
+  \begin{align}
+    \frac{P}{\epsilon_0} =& \chi_1E + \chi_2 E^2 + \chi_3 E^3 + ... \\
+    \frac{P_\text{nl}}{\epsilon_0} =& \chi_2 \frac{E^2}{2} \left[ \cos((\omega_\text{i} - \omega_\text{j})t) + \cos((\omega_\text{i} + \omega_\text{j})t) \right ]
+  \end{align}
+  Energy conservation
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item Two photons go in
+        \item Higher energy level
+        \item two photon emission 
+        \item energy drops to gorundstate
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=\textwidth]{images/diffrence_frequency_mixing.PNG}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Electro-optic sampling}
-  And how to detect it?
-
+\begin{frame}{Electro-optic sampling (EOS)}
+  And how to detect it?\\
+  \textbf{Pockels effect!}\cite{THZ_eltric_field}
+  \begin{equation}
+    \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
+\end{equation}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/detectionunit.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Coherence-length}
-
+\begin{equation}
+    l(\omega_{\text{THz}}) = \frac{\pi c}{\omega_{\text{THz}} \left | n_\text{opt eff}(\omega_0) - n_{\text{THz}}(\omega_{\text{THz}})\right |}
+\end{equation}
+with 
+\begin{equation}
+    n_{\text{opt eff}} = n_\text{opt}(\omega) - \lambda_\text{opt}\frac{\partial n_\text{opt}}{\partial \lambda}\biggl{|}_{\lambda_\text{opt}}  
+\end{equation}
+\begin{center}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+    \begin{figure}
+      \includegraphics[width=0.9\textwidth]{images/coherence_length_ZnTe.png}
+      \caption{(ZnTe) With $\SI{800}{\nano\meter}$ pump laser.}
+    \end{figure}%
+    \end{column}
+    \begin{column}{.4\textwidth}
+    \begin{figure}
+      \includegraphics[width=0.8\textwidth]{images/GAP_coherencelength.png}
+      \caption{(GaP) With various pump laser wavelengths.}
+    \end{figure}
+    \end{column}
+  \end{columns}
+\end{center}
 \end{frame}
 
 \section{Results}
+\subsection{ZnTe}
+\begin{frame}{EOS ZnTe}
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/2_11_30_20normalX.pdf}
+\end{figure}
+\end{frame}
 
+\begin{frame}{Spectrum ZnTe}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/2_11_30_20normalFX.pdf}
+  \end{figure}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{images/2_11_30_20normallog(FX).pdf}
+    \end{figure}    
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{GaP}
+\begin{frame}{EOS GaP}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Spectrum GaP}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/GaP14_55_42normalFX.pdf}
+  \end{figure}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{images/GaP14_55_42normallog(FX).pdf}
+    \end{figure}    
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Comparisson}
+
+\begin{frame}{Spectra}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/2_11_30_20normallog(FX).pdf}
+  \end{figure}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{images/GaP14_55_42normallog(FX).pdf}
+    \end{figure}    
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Electric field}
+  \begin{equation}
+    \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
+  \end{equation}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/eltric_field_ZnTe.pdf}
+  \end{figure}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{images/eltric_field_GaP.pdf}
+    \end{figure}    
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Power}
+  \begin{align}
+    I_\text{THz} =& c \epsilon_0 E_\text{THz}^2 \\
+    P =& \int\, I_\text{THz} \,\symup{d}A_\text{spot}\\
+    P =& I_\text{THz}\cdot A_\text{spot}
+\end{align}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{images/Powerznte.pdf}
+  \end{figure}
+  \end{column}
+  \begin{column}{.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth]{images/Powergap.pdf}
+    \end{figure}    
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Sources}
+\printbibliography
 \end{document}
