@@ -210,7 +210,7 @@ with
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
-      \includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}
+      \includegraphics[width=\textwidth]{images/GaP14_55_42normalFX.pdf}
       \caption{Spectrum GaP with $\SI{124.2}{\milli\W }$}
     \end{figure}    
   \end{column}
@@ -231,24 +231,26 @@ with
   \begin{equation}
     \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
   \end{equation}
+  \begin{center}
   \begin{columns}
     \begin{column}{.5\textwidth}
-  \begin{figure}
-    \begin{overprint}
-      \onslide<1>\includegraphics[width=\textwidth]{images/2_11_30_20normalX.pdf}
-      \onslide<2>\includegraphics[width=\textwidth]{images/eltric_field_ZnTe.pdf}
-    \end{overprint}
-  \end{figure}
+      \begin{figure}
+        \begin{overprint}
+          \onslide<1>\includegraphics[width=\textwidth]{images/2_11_30_20normalX.pdf}\caption{EOS signal of ZnTe.}
+          \onslide<2>\includegraphics[width=0.7\textwidth]{images/eltric_field_ZnTe.pdf}\caption{Peak electric fields of ZnTe with different pump powers.}
+        \end{overprint}
+      \end{figure}
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
       \begin{overprint}
-        \onslide<1>\includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}
-        \onslide<2>\includegraphics[width=\textwidth]{images/eltric_field_GaP.pdf}
+        \onslide<1>\includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}\caption{EOS signal of GaP.}
+        \onslide<2>\includegraphics[width=0.75\textwidth]{images/eltric_field_GaP.pdf}\caption{Peak electric fields of GaP with different pump powers.}
       \end{overprint}
-    \end{figure}    
+    \end{figure}
   \end{column}
   \end{columns}
+\end{center}
 \end{frame}
 
 \begin{frame}{Power}
@@ -260,12 +262,14 @@ with
   \begin{columns}
     \begin{column}{.5\textwidth}
   \begin{figure}
-    \includegraphics[width=\textwidth]{images/Powerznte.pdf}
+    \includegraphics[width=0.8\textwidth]{images/Powerznte.pdf}
+    \caption{ZnTe peak electric field powers and conversion effiency for different pump powers.}
   \end{figure}
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
-      \includegraphics[width=\textwidth]{images/Powergap.pdf}
+      \includegraphics[width=0.8\textwidth]{images/Powergap.pdf}
+      \caption{GaP peak electric field powers and conversion effiency for different pump powers.}
     \end{figure}    
   \end{column}
   \end{columns}
