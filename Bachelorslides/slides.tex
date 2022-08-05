@@ -64,33 +64,35 @@ terahertz radiation}
   \end{center}
 \end{frame}
 
-\begin{frame}{Outline}
-  \tableofcontents
-\end{frame}
 
 \begin{frame}{Terahertz}
   \subsection{Applications}
   So why do we need terahertz radiation?
   \begin{itemize}
-    \item medizin
+    \item medicine
     \item security
     \item data transmission \& saving
     \item physics
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
 \section{Setup}
 
-\begin{frame}{Okay THz good, but how?}
+\begin{frame}{But how to produce THz?}
   \includegraphics[width=\textwidth]{images/Aufbau.pdf}
 \end{frame}
 
 \section{Theory}
+\subsection{Optical-rectification}
 \begin{frame}{Optical-rectification}
  Polarisation
   \begin{align}
     \frac{P}{\epsilon_0} =& \chi_1E + \chi_2 E^2 + \chi_3 E^3 + ... \\
-    \frac{P_\text{nl}}{\epsilon_0} =& \chi_2 \frac{E^2}{2} \left[ \cos((\omega_\text{i} - \omega_\text{j})t) + \cos((\omega_\text{i} + \omega_\text{j})t) \right ]
+    \frac{P_\text{nl}}{\epsilon_0} =& \chi_2 \frac{E_0^2}{2} \left[ \cos((\omega_\text{i} - \omega_\text{j})t) + \cos((\omega_\text{i} + \omega_\text{j})t) \right ]
   \end{align}
   Energy conservation
   \begin{columns}
@@ -107,7 +109,7 @@ terahertz radiation}
     \end{column}
   \end{columns}
 \end{frame}
-
+\subsection{Electro-optic sampling}
 \begin{frame}{Electro-optic sampling (EOS)}
   And how to detect it?\\
   \textbf{Pockels effect!}\cite{THZ_eltric_field}
@@ -120,6 +122,7 @@ terahertz radiation}
 \end{figure}
 \end{frame}
 
+\subsection{Coherence-length}
 \begin{frame}{Coherence-length}
 \begin{equation}
     l(\omega_{\text{THz}}) = \frac{\pi c}{\omega_{\text{THz}} \left | n_\text{opt eff}(\omega_0) - n_{\text{THz}}(\omega_{\text{THz}})\right |}
@@ -150,7 +153,7 @@ with
 \subsection{ZnTe}
 \begin{frame}{EOS ZnTe}
 \begin{figure}
-  \includegraphics[width=\textwidth]{images/2_11_30_20normalX.pdf}
+  \includegraphics[width=0.8\textwidth]{images/2_11_30_20normalX.pdf}
 \end{figure}
 \end{frame}
 
@@ -159,11 +162,13 @@ with
     \begin{column}{.5\textwidth}
   \begin{figure}
     \includegraphics[width=\textwidth]{images/2_11_30_20normalFX.pdf}
+    \caption{Spectrum ZnTe with $\SI{135.0}{\milli\W}$.}
   \end{figure}
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
       \includegraphics[width=\textwidth]{images/2_11_30_20normallog(FX).pdf}
+      \caption{Spectrum ZnTe with $\SI{135.0}{\milli\W}$ with log y-axis.}
     \end{figure}    
   \end{column}
   \end{columns}
@@ -172,7 +177,7 @@ with
 \subsection{GaP}
 \begin{frame}{EOS GaP}
   \begin{figure}
-    \includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}
+    \includegraphics[width=0.8\textwidth]{images/GaP14_55_42normalX.pdf}
   \end{figure}
 \end{frame}
 
@@ -181,11 +186,13 @@ with
     \begin{column}{.5\textwidth}
   \begin{figure}
     \includegraphics[width=\textwidth]{images/GaP14_55_42normalFX.pdf}
+    \caption{Spectrum GaP with $\SI{124.2}{\milli\W}$.}
   \end{figure}
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
       \includegraphics[width=\textwidth]{images/GaP14_55_42normallog(FX).pdf}
+      \caption{Spectrum GaP with $\SI{124.2}{\milli\W}$ with log y-axis.}
     \end{figure}    
   \end{column}
   \end{columns}
@@ -197,12 +204,14 @@ with
   \begin{columns}
     \begin{column}{.5\textwidth}
   \begin{figure}
-    \includegraphics[width=\textwidth]{images/2_11_30_20normallog(FX).pdf}
+    \includegraphics[width=\textwidth]{images/2_11_30_20normalFX.pdf}
+    \caption{Spectrum of ZnTe with $\SI{135.0}{\milli\W}$ pump power.}
   \end{figure}
   \end{column}
   \begin{column}{.5\textwidth}
     \begin{figure}
-      \includegraphics[width=\textwidth]{images/GaP14_55_42normallog(FX).pdf}
+      \includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}
+      \caption{Spectrum GaP with $\SI{124.2}{\milli\W }$}
     \end{figure}    
   \end{column}
   \end{columns}
