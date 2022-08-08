@@ -196,14 +196,14 @@ print('maximum thz power: ', np.max(power_THz))
 print('maximum field strength: ', np.max(fields)*10**2)
 fig , (axis1) = plt.subplots(1, 1, figsize=(16,8),  constrained_layout=True)
 for tick in axis1.xaxis.get_major_ticks():
-    tick.label.set_fontsize(29) 
+    tick.label.set_fontsize(35) 
 for tick in axis1.yaxis.get_major_ticks():
-    tick.label.set_fontsize(29) 
+    tick.label.set_fontsize(35) 
 axis2 = axis1.twinx()
 conversion_effiency = conversion_effiency *10**6
 axis2.errorbar(x = pump_power, y = unumpy.nominal_values(conversion_effiency), yerr = unumpy.std_devs(conversion_effiency),color='blue',ls='',marker='x',label='conversion efficiency')
 axis2.legend(loc = 'upper left', prop={'size': 18})
-axis2.yaxis.set_tick_params(labelsize=29)
+axis2.yaxis.set_tick_params(labelsize=35)
 if filename[0][0] == '1':
     power_THz = power_THz*10**6 #convert to muW
     axis1.errorbar(x = pump_power_1, y = unumpy.nominal_values(power_THz[:len(pump_power_1)][:,0]), yerr = unumpy.std_devs(power_THz[:len(pump_power_1)][:,0]),color='k',ls='' ,marker='o', label='lower initial power') #10**(2) because of conversion in SI +3 for mW
@@ -214,10 +214,10 @@ if filename[0][0] == 'G':
     axis1.errorbar(x = pump_power, y = unumpy.nominal_values(power_THz[:,0]), yerr = unumpy.std_devs(power_THz[:,0]),color = 'k',ls='',marker='o',label='lower initial power')
     axis1.legend(loc=(0.009,0.86), prop={'size': 18})
 axis1.grid()
-axis1.set_xlabel('pump power ' + r'$(\mathrm{mW})$', fontsize=29)
-axis1.set_ylabel('power THz field ' + r'$(\mu\mathrm{W})$', fontsize=29)
+axis1.set_xlabel('pump power ' + r'$(\mathrm{mW})$', fontsize=35)
+axis1.set_ylabel('power THz field ' + r'$(\mu\mathrm{W})$', fontsize=35)
 #axis1.set_title('peak THz Power per pump power', fontsize=24)
-axis2.set_ylabel('conversion efficiency ' + r'$ \cdot \,10^{-6}$', fontsize=29)
+axis2.set_ylabel('conversion efficiency ' + r'$ \cdot \,10^{-6}$', fontsize=35)
 
 
 if filename[0][0] == '1':
