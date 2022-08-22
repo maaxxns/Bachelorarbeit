@@ -59,27 +59,34 @@ terahertz radiation}
 
 \section{Intro}
 
-\begin{frame}{The Gap}
+\begin{frame}{The THz Gap}
   \subsection{The spectrum}
   \begin{center}
     \begin{figure}
       \includegraphics[width=0.7\textwidth]{images/spectrum.png}
-      \caption{\textcolor{tugreen}{The electromagntic spectrum} from G. P. Williams, Filling the THz gap—high power sources and applications, Rep. Prog. Phys, \textbf{69} (2005)\nocite{spectrum_pic}.}
+      \caption{\textcolor{tugreen}{The electromagntic spectrum} from G. P. Williams, Rep. Prog. Phys, \textbf{69} (2005)\nocite{spectrum_pic}.}
     \end{figure}
   \end{center}
 \end{frame}
 
 
 \begin{frame}{Terahertz}
-  \subsection{Applications}
-  So why do we need terahertz radiation?
-  \begin{itemize}
-    \item medicine \nocite{THzgap_applications}
-    \item security \nocite{thz_explosive_detec}
-    \item data transmission \& saving \nocite{communication,datasaving}
-    \item physics \nocite{wiki_book}
-  \end{itemize}
-
+  \subsection{Applications for THz}
+  \begin{center}
+    \begin{minipage}[c]{0.5\linewidth}
+      So why do we need terahertz radiation?
+      \vspace{0.2in}
+      \begin{itemize}
+        \item medicine \nocite{THzgap_applications}
+        \vspace{0.1in}
+        \item security \nocite{thz_explosive_detec}
+        \vspace{0.1in}
+        \item data transmission \& saving \nocite{communication,datasaving}
+        \vspace{0.1in}
+        \item physics \nocite{wiki_book}
+      \end{itemize}
+    \end{minipage}
+\end{center}
 \end{frame}
 
 \begin{frame}{Outline}
@@ -88,7 +95,7 @@ terahertz radiation}
 
 \section{Setup}
 
-\begin{frame}{But how to produce THz?}
+\begin{frame}{But how to generate THz?}
   \includegraphics[width=\textwidth]{images/Aufbau.pdf}
 \end{frame}
 
@@ -104,10 +111,10 @@ terahertz radiation}
   \begin{columns}
     \begin{column}{.4\textwidth}
       \begin{itemize}
-        \item Two photons go in
-        \item Higher energy level
+        \item two photons go in
+        \item higher energy level
         \item two photon emission 
-        \item energy drops to gorundstate
+        \item energy drops to groundstate
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -148,7 +155,7 @@ terahertz radiation}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Spectrum ZnTe}
+\begin{frame}{Spectrum ZnTe with FFT}
   \begin{columns}
     \begin{column}{.5\textwidth}
   \begin{figure}
@@ -173,7 +180,7 @@ terahertz radiation}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Spectrum GaP}
+\begin{frame}{Spectrum GaP with FFT}
   \begin{columns}
     \begin{column}{.5\textwidth}
   \begin{figure}
@@ -190,59 +197,69 @@ terahertz radiation}
   \end{columns}
 \end{frame}
 
-\subsection{Comparisson}
+\subsection{Comparison}
 
-\begin{frame}{Comparisson Spectra}
+\begin{frame}{Comparison Spectra}
   \begin{columns}
     \begin{column}{.5\textwidth}
-  \begin{figure}
-    \includegraphics[width=\textwidth]{images/2_11_30_20normalFX.pdf}
-    \caption{\textcolor{tugreen}{Spectrum} of ZnTe with $\SI{135.0}{\milli\W}$ pump power.}
-  \end{figure}
+      \begin{center}
+        \begin{figure}
+          \includegraphics[width=\textwidth]{images/2_11_30_20normalFX.pdf}
+          \caption{\textcolor{tugreen}{Spectrum} of ZnTe with $\SI{135.0}{\milli\W}$ pump power.}
+        \end{figure}
+      \end{center}
   \end{column}
   \begin{column}{.5\textwidth}
-    \begin{figure}
-      \includegraphics[width=\textwidth]{images/GaP14_55_42normalFX.pdf}
-      \caption{\textcolor{tugreen}{Spectrum} of GaP with $\SI{124.2}{\milli\W }$}
-    \end{figure}    
+    \begin{center}
+      \begin{figure}
+        \includegraphics[width=\textwidth]{images/GaP14_55_42normalFX.pdf}
+        \caption{\textcolor{tugreen}{Spectrum} of GaP with $\SI{124.2}{\milli\W }$ pump power.}
+      \end{figure}  
+    \end{center}  
   \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}{Filter}
   Switch filter for different pump powers:
+  \begin{center}
   \begin{figure}
     \begin{overprint}
       \onslide<1>\includegraphics[width=\textwidth]{images/Aufbau.pdf}
       \onslide<2>\includegraphics[width=\textwidth]{images/Aufbau_blue_square.pdf}
     \end{overprint}
   \end{figure}  
+\end{center}
 \end{frame}
 
 \begin{frame}{Electric field}
   \begin{equation}
     \frac{\symup{\Delta}I}{I} = \text{sin}(\theta) = \frac{2\pi}{\lambda} n_0^3 l r E_\text{THz}
   \end{equation}
-  \begin{center}
   \begin{columns}
     \begin{column}{.5\textwidth}
+      \begin{center}
       \begin{figure}
+        \centering
         \begin{overprint}
           \onslide<1>\includegraphics[width=\textwidth]{images/2_11_30_20normalX.pdf}\caption{\textcolor{tugreen}{EOS signal} of ZnTe with $\SI{135.0}{\milli\W}$ pump power.}
           \onslide<2>\includegraphics[width=0.75\textwidth]{images/eltric_field_ZnTe.pdf}\caption{\textcolor{tugreen}{Peak electric fields} of ZnTe with different pump powers.}
         \end{overprint}
       \end{figure}
+    \end{center}
   \end{column}
   \begin{column}{.5\textwidth}
+    \begin{center}
     \begin{figure}
+      \centering
       \begin{overprint}
         \onslide<1>\includegraphics[width=\textwidth]{images/GaP14_55_42normalX.pdf}\caption{\textcolor{tugreen}{EOS signal} of GaP with $\SI{124.2}{\milli\W }$.}
         \onslide<2>\includegraphics[width=0.75\textwidth]{images/eltric_field_GaP.pdf}\caption{\textcolor{tugreen}{Peak electric fields} of GaP with different pump powers.}
       \end{overprint}
     \end{figure}
+  \end{center}
   \end{column}
   \end{columns}
-\end{center}
 \end{frame}
 
 \begin{frame}{THz Power}
@@ -265,6 +282,36 @@ terahertz radiation}
     \end{figure}    
   \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}{Conclusion}
+  \begin{center}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \textbf{ZnTe reached}\\
+      \only<1->{electric field strengths $\SI{9.59}{\kilo\V\per\centi\meter}$\\}
+      \only<3->{conversion effiencies $\SI{2.08e-5}{}$}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \textbf{GaP reached}\\
+      \only<2->{electric field strengths $\SI{3.38}{\kilo\V\per\centi\meter}$\\}
+      \only<4>{conversion effiencies of $\SI{2.71e-6}{}$}
+    \end{column}
+  \end{columns}
+  \vspace{0.2in}
+  \begin{itemize}
+  \item recommend further use of ZnTe as easy to use broadband THz-source
+  \item GaP seems to be not suited for the generation of THz radation with a $\SI{800}{\nano\meter}$ Laser
+  \item Further measurments with more comparable crystal size are recommend
+  \end{itemize}
+  \end{center}
+\end{frame}
+
+\section*{Thank you}
+\begin{frame}{}
+  \begin{center}
+  \textbf{\textcolor{tugreen}{Thank you all for your attention!}}
+  \end{center}
 \end{frame}
 
 \section{References }
